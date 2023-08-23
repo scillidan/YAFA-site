@@ -60,6 +60,9 @@ markdown_extensions:
   - smarty
   - tables
   - def_list
+  - admonition
+  - toc:
+      permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
@@ -78,9 +81,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - admonition
-  - toc:
-      permalink: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       # auto_append: ["assets/css/extra.css"]
