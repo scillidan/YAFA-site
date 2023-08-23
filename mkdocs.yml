@@ -1,0 +1,119 @@
+site_name: 𝔜𝔄𝔉𝔄 𝔪𝔞𝔯𝔨𝔱 # Change this to your site name
+site_url: # Change this to your site URL
+site_description: "yafa markt, 雅法"
+site_author: scillidan
+copyright: Copyright © 2023 scillidan
+# repo_name: YAFA-site
+# repo_url: https://github.com/scillidan/YAFA-site
+
+theme:
+    name: material
+    logo: assets/favicon.png
+    favicon: assets/favicon.png
+    # custom_dir: overrides
+    language: en
+    # font: false
+    icon:
+      admonition:
+        note: material/pin
+      repo: fontawesome/brands/git-alt
+      view: material/eye
+    palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    features:
+        - navigation.indexes
+        - navigation.prune
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.instant
+        - navigation.sections
+        - navigation.top
+        # - navigation.tabs.sticky
+        # - navigation.expand
+        - content.tooltips
+        - content.tabs.link
+        - content.code.copy
+        - search.suggest
+        - search.highlight
+markdown_extensions:
+  - callouts
+  - mdx_truly_sane_lists:
+      nested_indent: 4
+  - mdx_breakless_lists
+  # - sane_lists
+  - footnotes
+  - attr_list
+  - meta
+  - smarty
+  - tables
+  - def_list
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tasklist:
+       custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      # auto_append: ["assets/css/extra.css"]
+      base_path: ["docs"]
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+plugins:
+  - table-reader
+  - glightbox
+  - autolinks
+  - meta-manager
+  - literate-nav:
+      nav_file: SUMMARY.md
+  # - awesome-pages
+  # - pagenav-generator
+  # - blog:
+  #     blog_dir: .
+  #     blog_toc: true
+  #     post_date_format: short
+  #     post_url_format: "{slug}"
+  #     archive_date_format: yyyy
+# nav:
+#   - Blog:
+#     - vps: posts/deploy-sites-to-vps.md
+#   - Log:
+#     - log/index.md
+extra_css:
+  - assets/css/extra.css
+# extra_javascript:
+#   - assets/javascripts/extra.js
