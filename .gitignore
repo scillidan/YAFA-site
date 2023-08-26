@@ -1,3 +1,6 @@
 site/
 .editorconfig
-docs/.obsidian
+docs/.obsidian/
+docs/id
+docs/officia
+docs/*.sync-conflict*
