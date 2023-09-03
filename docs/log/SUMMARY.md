@@ -1,2 +1,0 @@
-- [RenpyLog](renpylog.md)
-- [2023Log](2023log.md)
