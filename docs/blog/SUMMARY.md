@@ -1,0 +1,4 @@
+- [mpv-lrc](use-mpv-to-play-lyrics.md)
+- [vps-ex (tbd)](deploy-sites-to-vps-expand.md)
+- [vps (tbd)](deploy-sites-to-vps.md)
+- [srt-ass](make-la.isla.minima.2014.srt.ass.md)
