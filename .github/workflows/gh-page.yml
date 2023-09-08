@@ -1,4 +1,4 @@
-name: ci 
+name: ci
 on:
   push:
     branches:
@@ -13,13 +13,13 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v3
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
-      - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin markdown-callouts mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager
+      - run: pip install mkdocs-material
+      - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin markdown-callouts mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager mkdocs-auto-tag-plugin mkdocs-exclude mkdocs-exclude-search
       - run: mkdocs gh-deploy --force
