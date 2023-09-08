@@ -8,7 +8,9 @@ tags: [example#, reference#]
 --8<-- "assets/css/extra.css"
 ```
 
-{{ read_csv("../data/currency-code.csv") }}
+```
+{{ read_csv("../some.csv") }}
+```
 
 ## Reference
 
