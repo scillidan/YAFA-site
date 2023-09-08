@@ -4,14 +4,6 @@ tags: [example#, reference#]
 
 ## Example
 
-``` title="extra.css"
---8<-- "assets/css/extra.css"
-```
-
-```
-{{ read_csv("../some.csv") }}
-```
-
 ## Reference
 
 - [Embedding external files](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#embedding-external-files)

@@ -1,3 +1,3 @@
 ---
-hide: [toc, tags]
+hide: [navigation, toc, tags]
 ---
