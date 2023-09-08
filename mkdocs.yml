@@ -3,6 +3,8 @@ site_url: # Change this to your site URL
 site_description: "yafa markt, 雅法"
 site_author: scillidan
 copyright: Copyright © 2023 scillidan
+# docs_dir: .
+# site_dir: ../site
 # repo_name: YAFA-site
 # repo_url: https://github.com/scillidan/YAFA-site
 
@@ -94,12 +96,50 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
-  - table-reader
   - glightbox
   - autolinks
+  - table-reader
   - meta-manager
   - literate-nav:
       nav_file: SUMMARY.md
+  - tags:
+      tags_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      tags_slugify_separator: "-"
+      tags_file: Note/index.md
+  - autotag:
+      globs:
+        "Blog/**": Blog
+        "Note/**": Note
+      regex:
+        "([^/]+)/([^/]+)/.*":
+        # - "{0}"
+        - "{1}/"
+        # - "{0}/{1}/"
+  - search
+  - exclude-search:
+      exclude:
+        - docs/.htaccess
+        - docs/robots.txt
+      # ignore:
+      #   - dir/second.md#some-heading
+      exclude_unreferenced: true
+  - exclude:
+      glob:
+        - "*.pdf"
+        - ".obsidian"
+      # regex:
+      #   - '.*\.(tmp|bin|tar|.obsidian)$'
+  # - monorepo
+  # - multirepo:mkdo
+  #     cleanup: true
+  #     keep_docs_dir: true
+  #     repos:
+  #       - section: "Readme-page"
+  #         section_path: Readme
+  #         import_url: "https://github.com/scillidan/README-page?branch=main"
+  # - same-dir
   # - awesome-pages
   # - pagenav-generator
   # - blog:
@@ -108,12 +148,10 @@ plugins:
   #     post_date_format: short
   #     post_url_format: "{slug}"
   #     archive_date_format: yyyy
-# nav:
-#   - Blog:
-#     - vps: posts/deploy-sites-to-vps.md
-#   - Log:
-#     - log/index.md
 extra_css:
   - assets/css/extra.css
 # extra_javascript:
 #   - assets/javascripts/extra.js
+# nav:
+  # - Version:
+  #   - v1: '*include /*/mkdocs.yml'

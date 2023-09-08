@@ -12,6 +12,8 @@ description: >
 
 我在浏览[Ajatt-Tools/mpvacious](https://github.com/Ajatt-Tools/mpvacious#secondary-subtitles)这个库时，还看到了一段关于mpv的[`--secondary-sid=`](https://mpv.io/manual/master/#options-secondary-sid)选项的介绍和演示，用于选择第二条字幕轨。这个功能的表现，有点像是分离式的双语`.ass`字幕文件，第二条字幕轨会显示在画面顶部。
 
+<!-- more -->
+
 ## 命令
 
 有了`mpv`，还需要在命令后，跟上一堆可选项：
@@ -51,7 +53,7 @@ lyric somemusic
 ```
 
 或者`lyric`，然后把`歌曲`拖进mpv窗口。
-## 命令可选项（About Options）
+## 命令可选项
 
 其中的`选项`和`值`的意思是：
 
