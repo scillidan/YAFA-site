@@ -21,5 +21,5 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
-      - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin markdown-callouts mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager
+      - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin markdown-callouts mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager mkdocs-auto-tag-plugin mkdocs-exclude-search mkdocs-exclude
       - run: mkdocs gh-deploy --force
