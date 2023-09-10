@@ -102,21 +102,21 @@ plugins:
   - meta-manager
   - literate-nav:
       nav_file: SUMMARY.md
-  - tags:
-      tags_slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
-      tags_slugify_separator: "-"
-      tags_file: Note/index.md
-  - autotag:
-      globs:
-        "Blog/**": Blog
-        "Note/**": Note
-      regex:
-        "([^/]+)/([^/]+)/.*":
-        # - "{0}"
-        - "{1}/"
-        # - "{0}/{1}/"
+  # - tags:
+  #     tags_slugify: !!python/object/apply:pymdownx.slugs.slugify
+  #       kwds:
+  #         case: lower
+  #     tags_slugify_separator: "-"
+  #     tags_file: Note/index.md
+  # - autotag:
+  #     globs:
+  #       "Blog/**": Blog
+  #       "Note/**": Note
+  #     regex:
+  #       "([^/]+)/([^/]+)/.*":
+  #       # - "{0}"
+  #       - "{1}/"
+  #       # - "{0}/{1}/"
   - search
   - exclude-search:
       exclude:

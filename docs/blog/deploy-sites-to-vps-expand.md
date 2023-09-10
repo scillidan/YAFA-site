@@ -104,7 +104,7 @@ yarn global add pm2
 
 克隆库：
 
-```
+```bash
 cd /var/www
 git clone https://github.com/excalith/excalith-start-page
 cd excalith-start-page
@@ -118,7 +118,7 @@ yarn
 
 README.md中提到了`yarn dev`命令。这里用`package.json`中写的另外的`script`：
 
-```
+```bash
 yarn build
 yarn start
 ```
@@ -139,23 +139,23 @@ yarn start
 
 但我在运行时遇到了`error`信息，根据这个回答[error Delete `··` prettier/prettie](https://github.com/prettier/eslint-plugin-prettier/issues/219#issuecomment-835770395)，需要先：
 
-```
+```bash
 yarn lint --fix
 ```
 
 这次运行成功后。按`Ctrl + C`退出。
 
-```
+```bash
 pm2 start npm --name "excalith-start-page" --watch -- start
 ```
 
-```
+```bash
 rsync -r "/cygdrive/d/yourpath/excalith-start-page/" "root@yourvpsip:/var/www/excalith-start-page" --include={'.*'} --exclude={'.github','.next/','build/','node_modules/','.git'}
 ```
 
 这里用子域名来访问。新建一个VirtualHost（虚拟主服务器）配置
 
-```
+```bash
 vi /etc/httpd/conf.d/sub.example.com.conf
 ```
 
@@ -174,9 +174,9 @@ vi /etc/httpd/conf.d/sub.example.com.conf
 
 ↪ †	[How to deploy Next.js website on Apache webserver](https://stackoverflow.com/questions/74681648)
 
-尝试：
+### TODO
 
-```
+```sh
 vi package.json
 ```
 
@@ -186,20 +186,15 @@ vi package.json
 
 To
 
-``` package.json linenums="7"
+```json title="package.json" linenums="7"
 		"start": "next start -p 3100",
 ```
 
-https://stackoverflow.com/questions/31502351/how-to-specify-a-port-number-for-pm2
-https://medium.com/frontendweb/how-to-change-port-in-nextjs-1b99930bb81f
+↪ [How to specify a port number for pm2](https://stackoverflow.com/questions/31502351/how-to-specify-a-port-number-for-pm2)
+↪ [How to change the port in nextjs?](https://medium.com/frontendweb/how-to-change-port-in-nextjs-1b99930bb81f)
 
 ## rsync
 
 ```bash
 dnf install rsync
 ```
-
-## Grafana
-
-↪ [通过 Grafana 使用 CLS](https://cloud.tencent.com/document/product/614/52102)
-

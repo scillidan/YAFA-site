@@ -8,9 +8,8 @@ description: >
 
 ## VPS
 
-!!! note "「旧笔记」"
-
-    这里用的腾讯云VPS，随着平台更新，操作流程可能会变化。我沿用了2021年的「关键步骤」的笔记。
+NOTE: **「旧笔记」**
+这里用的腾讯云VPS，随着平台更新，操作流程可能会变化。我沿用了2021年的「关键步骤」的笔记。
 
 1. 注册腾讯云帐号 → 实名认证
 2. 云服务器 → 立即选购
@@ -57,7 +56,7 @@ description: >
 	  dnf install httpd php -y
 	  systemctl enable httpd
 	  ```
-		↪	 [Apache web server multiple site setup](https://docs.rockylinux.org/guides/web/apache-sites-enabled)
+		↪ [Apache web server multiple site setup](https://docs.rockylinux.org/guides/web/apache-sites-enabled)
 
 === "Ubuntu"
 
@@ -66,7 +65,7 @@ description: >
     sudo service nginx restart
     systemctl daemon-reload
     ```
-    ↪	 [How to Install Nginx on CentOS 8](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-8)
+    ↪ [How to Install Nginx on CentOS 8](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-8)
 
 ## Edit sites.conf
 
@@ -94,8 +93,8 @@ description: >
     sudo systemctl restart httpd
     sudo systemctl status httpd
     ```
-		↪	 [Apache web server multiple site setup](https://docs.rockylinux.org/guides/web/apache-sites-enabled)  
-		↪	 [Encrypt Apache Webserver with Let's Encrypt SSL Certificate on Rocky Linux 8 - How to do it ?](https://linuxapt.com/blog/706-encrypt-apache-webserver-with-lets-encrypt-ssl-certificate-on-rocky-linux-8)
+		↪ [Apache web server multiple site setup](https://docs.rockylinux.org/guides/web/apache-sites-enabled)  
+		↪ [Encrypt Apache Webserver with Let's Encrypt SSL Certificate on Rocky Linux 8 - How to do it ?](https://linuxapt.com/blog/706-encrypt-apache-webserver-with-lets-encrypt-ssl-certificate-on-rocky-linux-8)
 
 === "Ubuntu"
 
@@ -157,7 +156,7 @@ description: >
     ```bash
     sudo systemctl restart httpd
     ```
-    ↪	 †	 link diushi he sunhuai
+    ↪ † link diushi he sunhuai
 
 > 术语虚拟主机指的是在单一机器上运行多个网站 (例如 `company1.example.com` 和 `company2.example.com`) 。 虚拟主机可以“[基于 IP](https://httpd.apache.org/docs/2.4/vhosts/ip-based.html)”，即每个 IP 一个站点； 或者“[基于名称](https://httpd.apache.org/docs/2.4/vhosts/name-based.html)”， 即每个 IP 多个站点。这些站点运行在同一物理服务器上的事实不会明显的透漏给最终用户。
 
@@ -187,7 +186,7 @@ description: >
     sudo certbot renew --dry-run
     sudo certbot --apache delete -d example1.com
     ```
-		↪	 [Secure Apache with Let’s Encrypt Certificate on Rocky Linux](https://www.tecmint.com/secure-apache-with-ssl-in-rocky-linux)
+		↪ [Secure Apache with Let’s Encrypt Certificate on Rocky Linux](https://www.tecmint.com/secure-apache-with-ssl-in-rocky-linux)
 
 === "Ubuntu"
 
@@ -200,11 +199,11 @@ description: >
     sudo certbot --nginx -d example.com
     sudo certbot renew --dry-run
     ```
-		↪	 [How To Secure Nginx with Let's Encrypt on CentOS 8](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-centos-8)
+		↪	[How To Secure Nginx with Let's Encrypt on CentOS 8](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-centos-8)
 
 ## git init (on PC)
 
-```cmd
+```sh
 git config --global user.name "yourname"
 git config --global user.email youremail
 git config --list
@@ -218,7 +217,7 @@ Open https://github.com/new, then create a repository.
 
 === "General"
 
-    ```cmd
+    ```sh
     mkdir yoursite
     cd yoursite
     git init
@@ -245,7 +244,7 @@ Open https://github.com/new, then create a repository.
 
     Edit `yoursite/_config.yml`:
 
-    ``` title="_config.yml"
+    ```yaml title="_config.yml"
     deploy:
       - type: git
         repo: git@github.com:yourname/repo.git
@@ -296,11 +295,11 @@ cp -rf ${TMP_GIT_CLONE}/apath/* ${PUBLIC_WWW} // Fill in with path that like pub
 # cp -rf ${TMP_GIT_CLONE}/* ${PUBLIC_WWW}
 ```
 
-↪	 [Deploy Hexo sites to VPS](https://scillidan.github.io/repo_archive/Deploy%20Hexo%20sites%20to%20VPS.md.html)
+↪ [Deploy Hexo sites to VPS](https://scillidan.github.io/repo_archive/Deploy%20Hexo%20sites%20to%20VPS.md.html)
 
 ## git push (on PC)
 
-```cmd
+```sh
 git add .
 git commit -m "text"
 git push -u origin master
