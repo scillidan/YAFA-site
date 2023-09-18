@@ -151,7 +151,7 @@ plugins:
   #     post_date_format: short
   #     post_url_format: "{slug}"
   #     archive_date_format: yyyy
-  - mkdocs/exporter
+  # - mkdocs/exporter
   # - mkdocs/exporter/pdf:
   #     concurrency: 8
   #     covers:
