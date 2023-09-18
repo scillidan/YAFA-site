@@ -8,7 +8,7 @@ description: >
 
 我使用的本地音乐播放器，大多数时候是按文件夹播放的[Exaile](https://exaile.org/)。偶尔，也会选中文件，拖进[Qmmp](https://qmmp.ylsoftware.com/)播放。或者用[mpv](https://mpv.io/)打开播放列表`.m3u`。
 
-另一方面，我有一些没使用的`.lrc`文件。Exaile只静态地显示`.mp3`格式的，元数据中的`Lyric`内容。Qmmp，在它的`设置 → 插件`界面，有一项已安装的`歌词插件`，但我一直不知道这个功能在哪里。mpv默认会加载同名的字幕文件（包括`.lrc`），也会显示名同名的，或者名为`cover`的图片（一般是`.jpg`、`.png`）。
+另一方面，我有一些没使用的`.lrc`文件。Exaile只静态地显示`.mp3`格式的，元数据中的`Lyric`内容。Qmmp，在它的`设置 → 插件`界面，有一项已安装的`歌词插件`，但我一直没找到这个功能，直到我偶然间点开了右键菜单。mpv默认会加载同名的字幕文件（包括`.lrc`），也会显示名同名的，或者名为`cover`的图片（一般是`.jpg`、`.png`）。
 
 我在浏览[Ajatt-Tools/mpvacious](https://github.com/Ajatt-Tools/mpvacious#secondary-subtitles)这个库时，还看到了一段关于mpv的[`--secondary-sid=`](https://mpv.io/manual/master/#options-secondary-sid)选项的介绍和演示，用于选择第二条字幕轨。这个功能的表现，有点像是分离式的双语`.ass`字幕文件，第二条字幕轨会显示在画面顶部。
 

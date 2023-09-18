@@ -56,6 +56,7 @@ markdown_extensions:
       nested_indent: 4
   - mdx_breakless_lists
   # - sane_lists
+  # - markdown_captions
   - footnotes
   - attr_list
   - meta
@@ -96,7 +97,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
-  - glightbox
+  - glightbox:
+     auto_caption: true
+     caption_position: bottom
   - autolinks
   - table-reader
   - meta-manager
@@ -148,6 +151,22 @@ plugins:
   #     post_date_format: short
   #     post_url_format: "{slug}"
   #     archive_date_format: yyyy
+  - mkdocs/exporter
+  # - mkdocs/exporter/pdf:
+  #     concurrency: 8
+  #     covers:
+  #       front: D:/cacher/mkdocs_exporter/resources/templates/covers/front.html.j2
+  #       back: D:/cacher/mkdocs_exporter/resources/templates/covers/back.html.j2
+  #     stylesheets:
+  #       - D:/cacher/mkdocs_exporter/resources/stylesheets/pdf.scss
+  # - mkdocs/exporter/extras:
+  #     buttons:
+  #       - title: Download as PDF
+  #         enabled: !!python/name:mkdocs_exporter.plugins.pdf.button.enabled
+  #         icon: !!python/name:mkdocs_exporter.plugins.pdf.button.icon
+  #         attributes:
+  #           href: !!python/name:mkdocs_exporter.plugins.pdf.button.href
+  #           download: !!python/name:mkdocs_exporter.plugins.pdf.button.download
 extra_css:
   - assets/css/extra.css
 # extra_javascript:
