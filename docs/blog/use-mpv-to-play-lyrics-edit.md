@@ -12,7 +12,7 @@ description: >
 - **屏幕控制器** 在视频的上层，有一栏可浮现的简单控件。
 - **显卡硬件解码** 有需要时，也可发挥显卡的性能。
 - **脚本编写** 支持脚本、插件。
-- **可嵌入性** 对于开发者，MPV 易于作为库使用。
+- **可嵌入性** 对于开发者，mpv 易于作为库使用。
 - **积极开发** 它还在不断地发展。
 
 ## 作为视频播放器的 MPV
@@ -28,7 +28,7 @@ description: >
 打个比方来说，MPC-HC 始终是一个好的「建筑物」，mpv 则有「建筑」的概念。除了建筑的壳，它还有种种的抽象的资产。比如说好读的[文档手册](https://mpv.io/manual/master/)、较活跃的用户氛围等等。
 ## 作为音乐播放器的 MPV 和想看歌词的我
 
-日常里，我使用了多个本地音乐播放器。我在 [Exaile](https://exaile.org/) 中按文件夹播放，也会将一些临时的文件拖拽进 [Qmmp](https://qmmp.ylsoftware.com/) 。前些年时候，我用音频标签编辑器 [TagScanner](https://www.xdlab.ru/en/) 制作了一些自用的`.m3u`格式的播放列表文件，用来配合插件 [Mpv Filenavigator](https://github.com/jonniek/mpv-filenavigator)、[Mpv-Playlistmanager](https://github.com/jonniek/mpv-playlistmanager) 在mpv中播放歌曲。
+日常里，我使用了多个本地音乐播放器。我在 [Exaile](https://exaile.org/) 中按文件夹播放，也会将一些临时的文件拖拽进 [Qmmp](https://qmmp.ylsoftware.com/) 。前些年时候，我用音频标签编辑器 [TagScanner](https://www.xdlab.ru/en/) 制作了一些自用的`.m3u`格式的播放列表文件，用来配合插件 [Mpv Filenavigator](https://github.com/jonniek/mpv-filenavigator)、[Mpv-Playlistmanager](https://github.com/jonniek/mpv-playlistmanager) 在 mpv 中播放歌曲。
 
 有时候，我想看看歌词。在这件事上，**Exaile**，只静态地显示`.mp3`格式的、元数据中的`lyric`内容。**Qmmp**，在曲目的右键菜单中有一个`显示歌词`功能，但不能用。**mpv**，能够以字幕的形式、样式显示`.lrc`格式的歌词，但实质、视觉上都只是字幕。
 
@@ -81,7 +81,7 @@ description: >
 
 ### 新建脚本文件
 
-新建一个`lyric.cmd`文件，粘贴进下面的内容，删除`//`和后面的注释内容：
+新建一个`lyric.cmd`文件，粘贴进下面的内容，并删除`//`和后面的注释：
 
 ```sh
 mpv ^
@@ -114,7 +114,7 @@ mpv ^
 `--external-files`的值，可留空或填写成视频封面的路径。
 ### 安装字体
 
-推荐「霞鹜文楷 GB」，从 [Github](https://github.com/lxgw/LxgwWenkaiGB) 或 [猫啃网](https://www.maoken.com/freefonts/16864.html) 下载都可以。
+推荐楷体、收录范围很广的「霞鹜文楷 GB」，从 [Github](https://github.com/lxgw/LxgwWenkaiGB) 或 [猫啃网](https://www.maoken.com/freefonts/16864.html) 下载都可以。
 ### 运行脚本
 
 在设置好 PATH 后，就可以在终端中运行`lyric yourmusic`。
@@ -137,7 +137,7 @@ some lyrics
 ...
 ```
 
-但在首次加载时，因为上面的设置关系，它会从居中位置、而不是顶部开始显示歌词。可以使用 [reload.lua](https://github.com/sibwaf/mpv-scripts#reloadlua) 进行重载，或者忽略掉。
+但在首次加载时，因为上面的设置关系，它会从居中位置、而不是顶部开始显示歌词。可以使用 [reload.lua](https://github.com/sibwaf/mpv-scripts#reloadlua) 进行重载，或者忽略掉也可以。
 ### 不想从终端启动
 
 如果你不想从终端启动`lyric.cmd`，可以再新建一个`mpv_lyric.vbs`：
@@ -148,10 +148,10 @@ Set WshShell = CreateObject("WScript.Shell")
 Set WshShell = Nothing
 ```
 
-你可以把`mpv_lyric.vbs`当做是快捷方式。控制台窗口被隐藏了，你能够像使用一般的应用那样去打开它。
+你可以把`mpv_lyric.vbs`当做是快捷方式，你能够像使用一般的应用那样去打开它，控制台窗口也被隐藏了。
 
 ## 结语
 
-最后提一下，也是封面加载的默认顺序，依次是：内镶封面 → `--cover-art-files`处设置封面 → `--external-files`处设置的视频 → `同名文件.*`图片 → `cover.*`图片。
+最后提一下，封面加载的默认顺序，依次是：内镶封面 → `--cover-art-files`处设置封面 → `--external-files`处设置的视频 → `同名文件.*`图片 → `cover.*`图片。
 
 ![](mpv-lrc.jpg)
