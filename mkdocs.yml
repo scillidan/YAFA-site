@@ -98,8 +98,14 @@ markdown_extensions:
       alternate_style: true
 plugins:
   - glightbox:
-     auto_caption: true
-     caption_position: bottom
+      auto_caption: true
+      caption_position: bottom
+      skip_classes:
+        - skip-lightbox
+  - mkdocs-video:
+      is_video: True
+      video_muted: True
+      video_controls: True
   - autolinks
   - table-reader
   - meta-manager

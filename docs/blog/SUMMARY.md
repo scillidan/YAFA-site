@@ -1,5 +1,6 @@
-- [mpv-lrc edit](use-mpv-to-play-lyrics-edit.md)
-- [mpv-lrc](use-mpv-to-play-lyrics.md)
+- [e-dict](e-dictionaries-plugin.md)
+- [mpv-lrc edit](play-lyrics-with-mpv-edit.md)
+- [mpv-lrc](play-lyrics-with-mpv.md)
 - [vps ex (tbd)](deploy-sites-to-vps-expand.md)
 - [vps](deploy-sites-to-vps.md)
 - [srt-ass](make-la.isla.minima.2014.srt.ass.md)
