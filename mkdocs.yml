@@ -106,6 +106,8 @@ plugins:
       is_video: True
       video_muted: True
       video_controls: True
+      css_style:
+        width: "100%"
   - autolinks
   - table-reader
   - meta-manager
@@ -173,6 +175,8 @@ plugins:
   #         attributes:
   #           href: !!python/name:mkdocs_exporter.plugins.pdf.button.href
   #           download: !!python/name:mkdocs_exporter.plugins.pdf.button.download
+  # - heti:
+  #     disable_serve: false
 extra_css:
   - assets/css/extra.css
 # extra_javascript:

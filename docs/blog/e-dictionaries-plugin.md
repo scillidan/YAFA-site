@@ -4,18 +4,18 @@ description: >
 		Yomichan, translation, dictionary
 ---
 
-早些年时候，由于剩余的精力和兴致，我有时在 Wiki 上翻一些不着边的天文地理等等的中文页。有时因为页面的中文内容，只是翻译了原文的开头部分，我就点到语言栏，切到英语，量了量篇幅。那些密密麻麻的鬼话，就构成了我很长一段时间里，对网络上的英语内容的印象。
+早些年时候，由于剩余的精力和兴致，我在 Wiki 上翻过一些天文地理等等的不着边的页面。一些的中文页，只是翻译了原文的开头或部分的内容。有几次，我就点进了语言栏，切到英语，目测了篇幅。那些密密麻麻的鬼话，就构成了我很长一段时间里，对网络上的英文内容的印象。
 
-2018 年左右，我在看一些中文文章时，里面介绍到了 [Chocolatey](https://chocolatey.org/)、[Hexo](https://hexo.io/index.html)、[Cmder](https://cmder.app/) 等软件和框架。我在读它们的中文文档、中文页时，更容易咀嚼和消化这些「本地化」的内容。它们也帮助我，作为担惊受怕的小白渡过了新手上路阶段。「源」对我来说，还是隐约在远处铺开的狂野、陌生的生境。
+2018 年左右，我在搜索和阅读时，初识了 [Chocolatey](https://chocolatey.org/)、[Cmder](https://cmder.app/)、[Hexo](https://hexo.io/index.html) 等一众软件或框架。食用着中文文章和文档，我作为小白渡过了担惊受怕的菜鸟阶段。
 
-后来有了 [沙拉查词](https://saladict.crimx.com/) 等字典工具，我得以摸索「本地化」外的地盘。
+随着打怪升级，也终于装备上了 [沙拉查词](https://saladict.crimx.com/)、[Yomichan](https://foosoft.net/projects/yomichan) 等翻译、字典工具。我开始探索「本地化」外的地盘，处理和食用「生肉」。
 ## 沙拉查词
 
 我在浏览器内外，都使用 [沙拉查词](https://saladict.crimx.com/) 来查段落或者句子，通过 [剪切板作为中继](https://saladict.crimx.com/native.html#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%96%E5%88%92%E8%AF%8D) 的方式。可以说，只要有英文，我就可能使用它。
 
 为了让功能更稳定，我在「设置 → 词典帐号」中添加了词典帐号，在「设置 → 词典设置」添加了 [腾讯翻译君](https://fanyi.qq.com/)，也就是 [腾讯云](https://cloud.tencent.com/) 的 [机械翻译 TMT](https://cloud.tencent.com/act/cps/redirect?redirect=10324&cps_key=f92625eba44ff7159e1b611916c36826) 服务。如果同时使用代理梯子，需要在梯子的规则中设置域名`tencentcloudapi.com`为「直连」。
 
-作为一种廉价、机械的服务，机械翻译始终是一板一眼的，也不是成品。它读起来生硬，还保留了原文的些许痕迹，也倒方便了作对照。如果你不需要进行具体的翻译作业，那么沙拉查词足够好。例如，这是博物学家 [阿尔弗雷德·华莱士](https://en.wikipedia.org/wiki/Alfred_Russel_Wallace) 的 [「马来群岛」](https://book.douban.com/subject/25728832/) 的 [介绍文](https://vivliostyle.org/viewer/#src=//vivliostyle.github.io/vivliostyle_doc/samples/variable-page-size/TheMalayArchipelago/main.xhtml) 的机翻文：
+作为一种廉价、机械的服务，机械翻译始终是一板一眼的。它生硬难啃，还保留了原文的些许痕迹，也倒方便了作对照。如果你不需要进行具体的翻译作业，那么沙拉查词足够好用。例如，这是博物学家 [阿尔弗雷德·华莱士](https://en.wikipedia.org/wiki/Alfred_Russel_Wallace) 的 [「马来群岛」](https://book.douban.com/subject/25728832/) 的 [一篇介绍](https://vivliostyle.org/viewer/#src=//vivliostyle.github.io/vivliostyle_doc/samples/variable-page-size/TheMalayArchipelago/main.xhtml) 的机翻文：
 
 ![](saladict_the-malay-archipelago.png)
 
@@ -27,71 +27,162 @@ description: >
 
 ## 在线词典助手
 
-读过段落后，我可能想查一些词的词义。这方面，我想要词典「功能稳、速度快、排版密集、使用鼠标取词」。我找到了 [ODH（Online Dictionary Helper）](https://github.com/ninja33/ODH)，它的中文名虽是「在线词典助手」，但我主要使用内置的「柯林斯英汉双解」词典。
+翻译工具以外，我还需要词典。我想要它「速度快、排版密集、使用鼠标取词」。我找到了 [ODH（Online Dictionary Helper）](https://github.com/ninja33/ODH)，它的中文名虽是「在线词典助手」，但我主要使用内置的、也就是离线的「柯林斯英汉双解」词典。
 
-另外，因为我想显示更多更密，也很少去看例句，就按这个 [Issues](https://github.com/ninja33/ODH/issues/296#issuecomment-1474730378) 里的步骤隐藏了例句内容。
+但它在交互功能上有些不足。在 Chrome 里，`Alt`键被浏览器默认占用，也因此闲置。ODH 没能像沙拉查词和 [Yomichan](https://foosoft.net/projects/yomichan) 那样夺回`Alt`键。而分配`Shift`键时，输入文字时按到`Shift`，会有奇怪的 Bug。也因此，这个插件默认处于关闭状态。
+
+另外，因为我想密集地显示词义，也很少去看例句，就按这个 [Issues](https://github.com/ninja33/ODH/issues/296#issuecomment-1474730378) 里的步骤隐藏了英文例句。
 
 ![](odh.png)
 ## 在线词典
 
 ### Etymonline
 
-一些时候，我对英语词的词源感兴趣。我在 Chrome 的地址栏中添加了 [Etymonline](https://www.etymonline.com/)，以方便搜索它。需要这样设置：
+我对词源很感兴趣。我在 Chrome 的地址栏中添加了 [Etymonline](https://www.etymonline.com/) 网站，以方便搜索它。需要这样设置：
 
-Chrome地址栏 → 右键 → 管理搜索引擎和网站搜索 → 添加网站搜索 → 「网址格式」处填写`https://www.etymonline.com/search?q=%s` → 「搜索引擎」「快捷字词」处按需填写 → 在地址栏输入`快捷字词`然后`Tab`即可搜索
+Chrome地址栏 → 右键 → 管理搜索引擎和网站搜索 → 添加网站搜索 → 「网址格式」处填写`https://www.etymonline.com/search?q=%s` → 「搜索引擎」「快捷字词」处按需填写 → 在地址栏输入`快捷字词`然后`Tab`即可搜索。
 
 ![](etymonline.png)
 
 ### 汉典
 
-查中文字时，我喜欢浏览 [汉典](https://www.zdic.net/) 下列出的典故。不过我打算以后在 [Yomichan](https://foosoft.net/projects/yomichan/) 中使用 [简体版](https://github.com/MarvNC/yomichan-dictionaries#mandarin-chinese) 的 [漢語大詞典](https://gist.github.com/shoui520/25460fd2e9fb194d3e5152fa2ce42ca2#dictionaries)。
+查中文字时，我喜欢读一读 [汉典](https://www.zdic.net/) 下列出的典故。
 
 ![](zdic.png)
-![](yomichan_hanyudacidian.png)
 ## Yomichan 
 
-[Yomichan](https://github.com/FooSoft/yomichan)，按官方介绍，它最早出于个人用途而开发，主要用于培养日语素养，曾想成为一个全方位的学习工具。因其灵活、丰富的特性，也成了另一些工具或软件如 [Kamite](https://github.com/fauu/Kamite)、[Lazy Guide](https://xelieu.github.io/jp-lazy-guide/setup/)、[Memento](https://github.com/ripose-jp/Memento) 的套件。
+[Yomichan](https://foosoft.net/projects/yomichan)，按官方介绍，它最早出于个人用途而开发，主要用于培养日语素养，也曾想成为一个全方位的学习工具。因其灵活、丰富的特性，成为了另一些工具如 [Kamite](https://github.com/fauu/Kamite)、[Lazy Guide](https://xelieu.github.io/jp-lazy-guide/setup/)、[Memento](https://github.com/ripose-jp/Memento) 的套件。
 
-优点是「离线使用、多词典支持、自动分词、速度极快」。虽然没有 [Mouse Dictionary](http://github.com/wtetsu/mouse-dictionary) 快，但后者不算好用。
+就一般用户来说，优点主要有：
 
-和使用 ODH 时一样，我使用鼠标来取词。它和 ODH 在呈现上有相似之处，细节上有些差别。就我的体验上，使用 Yomichan 更为舒适。另外一点，沙拉查词和 Yomichan 能够设置取词的热键为`Alt`，这个键在 Chrome 里，被浏览器默认占用了。这样一来，就可以把`Shift`键留给 ODH。
+1. 可离线使用、支持多词典、速度快
+2. 默认排版紧凑美观
+3. 配置项丰富、实用
+4. 交互灵活、体验好
 
-按照 [Kamite](https://github.com/fauu/Kamite#animevideo-text-extraction) 的说明，。最近，我想用它来读一些日版漫画，我不是很想去读英文版。使用 OCR 工具如[Vis2](https://github.com/iseahound/Vis2) 就可以）。后来，我发现它可以用于看一些文言文的书籍。虽然目前，我还没有看到这边来。
+额外的，我使用了 [缝合楷](https://github.com/lxgw/FusionKai) 作为字典的字体。先下载并安装这个字体，然后在 Yomichan 里进行设置：选项 → Popup Appearance → Configure custom CSS → Popup CSS → Custom CSS
 
-在导入特定格式的离线字典后，在浏览器内，按住设定的键，同时移动鼠标，就能对文本内容进行快速地扫描、分词、查词。
-### 看动画
+```
+body {
+    font-family: "Fusion Kai G", sans-serif;
+    font-style: normal;
+}
+```
 
-我原本没有使用 Yomichan 的场景。我按照 Kamite 自述下的 [一段说明](https://github.com/fauu/Kamite#animevideo-text-extraction)，配置了「看动画日文字幕」的场景。我一般看翻译的字幕，所以没有实际用上。
+### 啃动画生肉
 
-![type:video](Kamite_Preview_01.mkv)
-![]()
-### 看漫画
+我一般看翻译的字幕。但按照 [这段说明](https://github.com/fauu/Kamite#animevideo-text-extraction)，可以用于啃日语生肉。
 
+首先，安装 [Yomichan](https://foosoft.net/projects/yomichan)、[Kamite](https://github.com/fauu/Kamite#animevideo-text-extraction) 、[mpv](https://mpv.io/)。
 
-![type:video](Kamite_Preview_02.mkv)
+然后，在 Yomichan 拓展程序的图标处右键 → 选项 → Dictionaries → Configure installed and enabled dictionaries → 启用词典「JMdict」。
 
-https://shonenjumpplus.com/episode/3270375685341574016, raw,
+之后，新建一个`kamite.cmd`：
 
-[Deepl](https://www.deepl.com)，译成「chainsaw man」，https://www.reverso.net/，「チェンソーマン」译成「Chen Sawman」、「陈索曼」
-### 看 PDF
+```sh
+mpv ^
+  --input-ipc-server=\\.\pipe\kamite-mpvsocket ^
+  --sub-file=%2 ^
+  --sid=2 ^
+  --secondary-sid=1 ^
+  --secondary-sub-visibility=no ^
+  --save-position-on-quit ^
+  %1
+```
 
-只是在看`.pdf`时使用了 Yomichan。
-### 看 EPUB
+启动 Kamite 后，去终端里运行`kamite yourmovie your-jpn-subtitle`就行了。
 
-电子出版物「ePub」，也就是`.epub`，是一种泛用的电子书格式，在大部分智能手机、平板、电脑上都有相应的软件可使用。我主要在手机上使用 [Librera](https://f-droid.org/zh_Hans/packages/com.foobnix.pro.pdf.reader/)，而最近在电脑上，我尝试了 [ePubViewer](https://github.com/pgaskin/ePubViewer)。清理浏览器缓存的话，它能够记住读到的位置。
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/dict/Kamite_Preview_01.mkv){ .skip-lightbox }
+### 啃漫画生肉
 
-几乎被所有硬件阅读器支持，会重做一遍
+也可以用于看日版漫画。
 
-- __OCF(OEBPS Container Format, 容器格式) 1.0__ 
+在有了 Yomichan、Kamite 后，参考 [Setting up “Manga OCR” (Local)](https://github.com/fauu/Kamite#setting-up-manga-ocr-local) 段落，使用 [pipx](https://pypa.github.io/pipx/) 安装 [manga-ocr](https://github.com/kha-white/manga-ocr)。
 
-所以，这里不包括`.epub`格式电子书。`.pdf`
+之后，编辑配置文件`C:/Users/yourname/AppData/Roaming/kamite/config.hocon`的`ocr`部分，没有提提及的内容，保留默认设置即可：
 
-有兴趣的去页面上的 [BookDNA](https://www.bookdna.cn/book-4905.html) 购买复刻版，但我并不清楚是什么格式。但`.mobi`、`.epub`等格式之间应该很好转换。
+```
+ocr: {
+  engine: mangaocr
+  mangaocr: {
+    pythonPath: "C:/Users/yourname/.local/pipx/venvs/manga-ocr/Scripts/python.exe"
+  }
+}
+```
 
-因为要查字、读，所以使用简体版。用FusionT，添加一种繁体字的风味。
+如果你还需要机翻功能，修改`config.hocon`的`lookup`和`LOOKUP_TARGETS`部分：
 
-Dictionaries → Configure installed and enabled dictionaries → Import → 选择压缩包，之后启用词典即可
+```
+lookup {
+  targets = [
+    ${LOOKUP_TARGETS.reverso}
+    ...
+  ]
+}
 
-汉语大词典 (On) → Priority (99)
+LOOKUP_TARGETS {
+  reverso {
+    symbol = DEP // 借用DeepL的图标
+    name = Reverso
+    url = "https://www.reverso.net/text-translation#sl=jpn&tl=eng&text={}"
+  }
+  ...
+}
+```
 
-Clipboard → Enable background clipboard text monitoring (On) → Enable search page clipboard text monitoring (On)
+在风味上，[Reverso](https://www.reverso.net/) 的机翻味很重。如果想使用 [Deepl](https://www.deepl.com)，需要参考 [Lookups](https://github.com/fauu/Kamite#lookups) 段落来设置（略麻烦）。
+
+最后，启动 Kamite，再打开漫画阅读窗口就行了。
+
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/dict/Kamite_Preview_02.mkv){ .skip-lightbox }
+### 啃文言 PDF
+
+之前听播客时，我听到了一期 [「红楼梦」](https://www.ximalaya.com/sound/587170813)。按照播客内容推荐的版本，我在网络上找到了两个简体版的`.pdf`、和一个繁体竖排版的`.epub`。按版本号排序的话，应该是这样的：
+
+![](hong-lou-meng_cover.jpg)
+
+需要注意的是，`.pdf`由社区发布，供个人免费、正当使用。`.epub`则是由出版公司发行，可按页面上的网址购入。不过页面上给到的信息不多，文件应该是用在 [Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle) 上的`.mobi`格式。可以自己试着用 [Calibre](https://calibre-ebook.com/) 转换成`.epub`。
+
+![](hong-lou-meng_shuoming.jpg)
+
+在后一个`.pdf`里，当我复制其中文字时，字符没有被正确识别。我不清楚怎么去修复，所以这里以前一个`.pdf`为例。
+
+首先，下载 [漢語大詞典(简体版)](https://github.com/MarvNC/yomichan-dictionaries#mandarin-chinese)。
+
+然后，在 Yomichan 的设置里导入词典：选项 → Dictionaries → Configure installed and enabled dictionaries → Import → 选择下载的压缩包 → 待导入完成，启用词典。
+
+在交互方面，进行「鼠标取词」，这里需要使用 Web端 PDF阅读器，如 [doqment-demo](https://shivaprsd.github.io/doqment/src/pdfjs/web/viewer.html) 或者 [PDF.js-demo](https://github.com/mozilla/pdf.js#online-demo)。
+
+![](yomichan_pdf_01.png)
+
+如果你使用本地阅读器如 [Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader) ，或者浏览器插件如 [doqment PDF Reader](https://github.com/shivaprsd/doqment#installation)——因为 Yomichan 不能在浏览器外取词，也不能在插件里用插件——需要用「剪切板」的方式交互：选项 → Clipboard → Enable background clipboard text monitoring (开) → Enable search page clipboard text monitoring (开)。
+
+之后，当你在阅读器里`Ctrl+C`时，就会弹出字典面板。面板出现时尺寸偏小，需手动调整，或者使用 [Sizer](http://www.brianapps.net/sizer/) 保存一个固定的尺寸。
+
+![](yomichan_pdf_02.png)
+### 啃文言 EPUB
+
+电子出版物「ePub」，也就是`.epub`，是一种泛用的电子书格式，在大部分智能手机、平板、电脑上都有相应的软件可使用。
+
+[ePubViewer](https://github.com/pgaskin/ePubViewer) 是一个美观易用的 Web端 ePub阅读器。它的外观和菜单如图：
+
+![](epubviewer_01.png)
+![](epubviewer_02.jpg)
+
+使用方法有好几种，步骤从简单到复杂：
+
+- 直接使用原作者的 [网站](https://pgaskin.net/ePubViewer/) 或者 fork库的 [网站](https://gm-epubviewer.vercel.app/)
+- `clone`源码到本地 → 在浏览器中打开`index.html`。如果不清除浏览器缓存，它能够保存阅读进度。
+- 从源码 fork → 按需修改，参考此处的 [index.html](https://github.com/scillidan/ePubViewer/blob/gh-pages/index.html)、[style.css](https://github.com/scillidan/ePubViewer/blob/gh-pages/style.css) → 部署 fork库到 [gh-page](https://docs.github.com/zh/pages/getting-started-with-github-pages/creating-a-github-pages-site) 或者 [Vercel](https://vercel.com) → 使用网页
+- 从源码 fork → `clone` fork库到本地 → 按需修改 → 使用 [PM2] 部署它 → 使用网页（运行在本地）。
+
+但它们在功能上没有多大区别。区别之一是，如果你使用的是平台托管的 Web服务，在设置文字字体时，会用到`.woff`、`.woff2`格式的 Web字体。如果你在本地使用，可以用电脑上已安装的字体：
+
+1. 以在 Chrome 中为例 → 设置 → 外观 → 自定义字体 → Serif 字体 → 选择本地字体
+2. ePubViewer → 更多菜单 → 设置 → Font → 选择任何一个 Serif 字体
+
+之后，只需要去 Yomichan 里导入并启用 [漢語大詞典](https://gist.github.com/shoui520/25460fd2e9fb194d3e5152fa2ce42ca2#dictionaries) 就可以了。
+
+字体方面，推荐上图中的 [思源宋体](https://github.com/adobe-fonts/source-han-serif) 和 下图的 [缝合楷](https://github.com/lxgw/FusionKai)。
+
+![](yomichan_epub_02.png)

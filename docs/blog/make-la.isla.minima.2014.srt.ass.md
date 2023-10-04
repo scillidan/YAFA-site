@@ -219,7 +219,7 @@ NOTE: **「feria」 2023-04**
 
 ![](La.isla.minima.2014.mkv_snapshot_01.07.58.png)
 
-00:09:16处，胡安问「这是什么（酒）」，罗西奥回答「cangrejos de rio（河）」。这个词从电子辞典或搜索引擎检索出来是「小龙虾」「淡水鳌虾」，el cangrejo通常是「螃蟹」。影片01:35:56处，再次提到了fábrica（工厂） de cangrejos，而在01:07:57附近，画面中出现了一只龙虾。
+00:09:16处，胡安问「这是什么（酒）」，罗西奥回答「cangrejos de rio（河）」。这个词从电子辞典或搜索引擎检索出来是「小龙虾」「淡水鳌虾」，el cangrejo通常是「螃蟹」。影片01:35:56处，再次提到了fábrica（工厂）de cangrejos，而在01:07:57附近，画面中出现了一只龙虾。
 
 ![](La.isla.minima.2014.mkv_snapshot_00.16.09.png)
 
