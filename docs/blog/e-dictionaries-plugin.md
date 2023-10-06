@@ -133,13 +133,13 @@ LOOKUP_TARGETS {
 最后，启动 Kamite，再打开漫画阅读窗口就行了。
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/dict/Kamite_Preview_02.mkv){ .skip-lightbox }
-### 啃文言 PDF
+### 啃古典文学 PDF
 
 之前听播客时，我听到了一期 [「红楼梦」](https://www.ximalaya.com/sound/587170813)。按照播客内容推荐的版本，我在网络上找到了两个简体版的`.pdf`、和一个繁体竖排版的`.epub`。按版本号排序的话，应该是这样的：
 
 ![](hong-lou-meng_cover.jpg)
 
-需要注意的是，`.pdf`由社区发布，供个人免费、正当使用。`.epub`则是由出版公司发行，可按页面上的网址购入。不过页面上给到的信息不多，文件应该是用在 [Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle) 上的`.mobi`格式。可以自己试着用 [Calibre](https://calibre-ebook.com/) 转换成`.epub`。
+需要注意的是，`.pdf`由社区发布，供个人免费、正当使用。`.epub`则是由出版公司发行，可按页面上的网址购入，不过页面上给到的信息不多。文件应该是用在 [Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle) 上的`.mobi`格式，可以自己试试用 [Calibre](https://calibre-ebook.com/) 转换成`.epub`。
 
 ![](hong-lou-meng_shuoming.jpg)
 
@@ -158,7 +158,7 @@ LOOKUP_TARGETS {
 之后，当你在阅读器里`Ctrl+C`时，就会弹出字典面板。面板出现时尺寸偏小，需手动调整，或者使用 [Sizer](http://www.brianapps.net/sizer/) 保存一个固定的尺寸。
 
 ![](yomichan_pdf_02.png)
-### 啃文言 EPUB
+### 啃古典文学 EPUB
 
 电子出版物「ePub」，也就是`.epub`，是一种泛用的电子书格式，在大部分智能手机、平板、电脑上都有相应的软件可使用。
 
@@ -169,18 +169,28 @@ LOOKUP_TARGETS {
 
 使用方法有好几种，步骤从简单到复杂：
 
-- 直接使用原作者的 [网站](https://pgaskin.net/ePubViewer/) 或者 fork库的 [网站](https://gm-epubviewer.vercel.app/)
-- `clone`源码到本地 → 在浏览器中打开`index.html`。如果不清除浏览器缓存，它能够保存阅读进度。
-- 从源码 fork → 按需修改，参考此处的 [index.html](https://github.com/scillidan/ePubViewer/blob/gh-pages/index.html)、[style.css](https://github.com/scillidan/ePubViewer/blob/gh-pages/style.css) → 部署 fork库到 [gh-page](https://docs.github.com/zh/pages/getting-started-with-github-pages/creating-a-github-pages-site) 或者 [Vercel](https://vercel.com) → 使用网页
+- 直接使用原作者的 [网页](https://pgaskin.net/ePubViewer/) 或者 [fork网页](https://gm-epubviewer.vercel.app/)。
+- `clone`源码到本地 → 在浏览器中打开`index.html`。
+- 从源码 fork → 按需修改（参考此处的 [index.html](https://github.com/scillidan/ePubViewer/blob/gh-pages/index.html)、[style.css](https://github.com/scillidan/ePubViewer/blob/gh-pages/style.css)、[script.js](https://github.com/scillidan/ePubViewer/blob/gh-pages/script.js)） → 部署 fork库到 [gh-page](https://docs.github.com/zh/pages/getting-started-with-github-pages/creating-a-github-pages-site) 或者 [Vercel](https://vercel.com) → 使用网页
 - 从源码 fork → `clone` fork库到本地 → 按需修改 → 使用 [PM2] 部署它 → 使用网页（运行在本地）。
 
-但它们在功能上没有多大区别。区别之一是，如果你使用的是平台托管的 Web服务，在设置文字字体时，会用到`.woff`、`.woff2`格式的 Web字体。如果你在本地使用，可以用电脑上已安装的字体：
+它们在主要功能上没有多大区别。区别之一是，如果你使用的是平台托管的 Web服务，在设置文字字体时，会用到`.woff`、`.woff2`格式的 Web字体。如果你在本地使用，可以用电脑上已安装的字体：
 
 1. 以在 Chrome 中为例 → 设置 → 外观 → 自定义字体 → Serif 字体 → 选择本地字体
 2. ePubViewer → 更多菜单 → 设置 → Font → 选择任何一个 Serif 字体
 
-之后，只需要去 Yomichan 里导入并启用 [漢語大詞典](https://gist.github.com/shoui520/25460fd2e9fb194d3e5152fa2ce42ca2#dictionaries) 就可以了。
-
-字体方面，推荐上图中的 [思源宋体](https://github.com/adobe-fonts/source-han-serif) 和 下图的 [缝合楷](https://github.com/lxgw/FusionKai)。
+字体方面，推荐上图中的 [思源宋体](https://github.com/adobe-fonts/source-han-serif) 和 下图的 [缝合楷](https://github.com/lxgw/FusionKai)。词典则使用 [漢語大詞典](https://gist.github.com/shoui520/25460fd2e9fb194d3e5152fa2ce42ca2#dictionaries)。
 
 ![](yomichan_epub_02.png)
+
+作为电子书阅读器，需要注意的是：
+
+- 如果不清除浏览器的缓存，它能够保存阅读进度。
+- 它不能记住上一次打开的文件。如果不想每一次打开网页，都要重新定位`.epub`文件，可以参考这个 [issues](https://github.com/pgaskin/ePubViewer/issues/4#issuecomment-1687223964)，在网址里带上`文件地址`。
+### 在安卓上使用
+
+参考 [Setup Yomichan Android](https://xelieu.github.io/jp-lazy-guide/setupYomichanOnAndroid/) 里的详细说明，可以在安卓手机上使用 Yomichan。安装和设置好后：在浏览器里打开 [fork网页](https://gm-epubviewer.vercel.app/) → 浏览器 → 更多 → 桌面版网站 (开)。
+
+![](yomichan_android.jpg)
+
+我只进行了测试。如果你有触控笔，可能使用体验会好一些。
