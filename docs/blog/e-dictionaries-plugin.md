@@ -165,7 +165,7 @@ LOOKUP_TARGETS {
 [ePubViewer](https://github.com/pgaskin/ePubViewer) 是一个美观易用的 Web端 ePub阅读器。它的外观和菜单如图：
 
 ![](epubviewer_01.png)
-![](epubviewer_02.jpg)
+![](epubviewer_02.png)
 
 使用方法有好几种，步骤从简单到复杂：
 
@@ -187,7 +187,7 @@ LOOKUP_TARGETS {
 
 - 如果不清除浏览器的缓存，它能够保存阅读进度。
 - 它不能记住上一次打开的文件。如果不想每一次打开网页，都要重新定位`.epub`文件，可以参考这个 [issues](https://github.com/pgaskin/ePubViewer/issues/4#issuecomment-1687223964)，在网址里带上`文件地址`。
-### 在安卓上使用
+### 在安卓上
 
 参考 [Setup Yomichan Android](https://xelieu.github.io/jp-lazy-guide/setupYomichanOnAndroid/) 里的详细说明，可以在安卓手机上使用 Yomichan。安装和设置好后：在浏览器里打开 [fork网页](https://gm-epubviewer.vercel.app/) → 浏览器 → 更多 → 桌面版网站 (开)。
 
