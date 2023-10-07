@@ -280,7 +280,7 @@ NOTE: **「feria」 2023-04**
 |2022.01||后期|[平家物语](https://assrt.net/xml/sub/648/648399.xml)|
 |2021.09|DeepL|机翻、粗校|[Rosy](https://assrt.net/xml/sub/648/648393.xml)|
 |2021.09|沙拉查词、GoldenDict|校对|[The Green Knight](https://assrt.net/xml/sub/644/644477.xml)|
-|2021.08|Reverso、GoldenDict、沙拉查词|翻译、校对、后期|[La isla minima](https://assrt.net/xml/sub/648/648395.xml)|
+|2021.08|Reverso、GoldenDict、沙拉查词|翻译、校对、后期|[La isla minima](https://assrt.net/xml/sub/663/663797.xml)|
 |2019.12||校对、后期|[Lolita（1997）](https://assrt.net/xml/sub/641/641712.xml)|
 |2019.01|谷歌翻译|翻译|词条[Sibyl](https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%AF%94%E6%8B%89)|
 |2018.03|谷歌翻译|翻译|[Das Herz ist ein dunkler Wald](https://assrt.net/xml/sub/644/644933.xml)|
