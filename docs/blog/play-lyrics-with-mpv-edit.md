@@ -8,7 +8,13 @@ keywords: >
 locale: en
 ---
 
-## 关于 MPV
+READ: **少数派⾸发**
+文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
+日期：2022-09-19  
+归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
+备注：1)根据编辑的建议从[原稿](../play-lyrics-with-mpv)大修改的版本 2)原始的内容 3)排版上不同 4)另外，页面底部的`Created`日期是我记的写的初稿的开始日期
+
+## 关于MPV
 
 [mpv](https://mpv.io/)，参见官方的介绍，它是一款免费（且自由开放的）媒体播放器。支持多种媒体格式、音视频编解码器、字幕类型。它有一些或基础、或高级的特性：
 
@@ -21,7 +27,7 @@ locale: en
 
 <!-- more -->
 
-## 作为视频播放器的 MPV
+## 作为视频播放器的MPV
 
 直到去年，我都在使用轻便、好用、有真正的图形用户界面的播放器[MPC-HC](https://github.com/clsid2/mpc-hc)。但它在播放流行的HDR（**H**igh **D**ynamic **R**ange Imaging，高动态范围成像）影像时有些问题，所以我安装了mpv。
 
@@ -32,7 +38,8 @@ locale: en
 但mpv究竟是怎样的？
 
 打个比方来说，MPC-HC始终是一个好的「建筑物」，mpv则有「建筑」的概念。除了建筑的壳，它还有种种的抽象的资产。比如说好读的[文档手册](https://mpv.io/manual/master/)、较活跃的用户氛围等等。
-## 作为音乐播放器的 MPV 和想看歌词的我
+
+## 作为音乐播放器的MPV和想看歌词的我
 
 日常里，我使用了多个本地音乐播放器。我在[Exaile](https://exaile.org/)中按文件夹播放，也会将一些临时的文件拖拽进[Qmmp](https://qmmp.ylsoftware.com/) 。前些年时候，我用音频标签编辑器[TagScanner](https://www.xdlab.ru/en/)制作了一些自用的`.m3u`格式的播放列表文件，用来配合插件[Mpv Filenavigator](https://github.com/jonniek/mpv-filenavigator)、[Mpv-Playlistmanager](https://github.com/jonniek/mpv-playlistmanager)在mpv中播放歌曲。
 
@@ -55,6 +62,7 @@ locale: en
 **最后**，我用这个配置听了一遍[Until The Ribbon Breaks - Orca](https://genius.com/Until-the-ribbon-breaks-orca-lyrics)，还有一些其他的歌。
 
 总结一下：**一**，关键功能几乎都基于mpv自带；**二**，视觉风格是根据自己偏好设置；**三**，使用了插件来获得更好的用户体验，或是处理特殊情况。
+
 ## 呈现效果
 
 ![](mpv-lrc.gif)
@@ -118,17 +126,21 @@ mpv ^
 `--cover-art-files`的值，填写成封面图片的完整路径。
 
 `--external-files`的值，可留空或填写成视频封面的路径。
+
 ### 安装字体
 
 推荐楷体、收录范围很广的「霞鹜文楷 GB」，从[Github](https://github.com/lxgw/LxgwWenkaiGB)或[猫啃网](https://www.maoken.com/freefonts/16864.html)下载都可以。
+
 ### 运行脚本
 
 在设置好PATH后，就可以在终端中运行`lyric yourmusic`。
+
 ## 特殊情况
 
 ### 播放歌曲文件夹
 
 当你拖拽文件夹进mpv来播放时，mpv不会将`.lrc`等文件排除在播放列表外。这时，你可以使用[reload.lua](https://github.com/sibwaf/mpv-scripts#reloadlua)进行重载。它会清除当前播放列表，而使用文件浏览器。
+
 ### 显示静态歌词
 
 创建一个`.srt`文件，只写一条时间轴，就可以静态地显示多行歌词：
@@ -144,6 +156,7 @@ some lyrics
 ```
 
 但在首次加载时，因为上面的设置关系，它会从居中位置、而不是顶部开始显示歌词。可以使用[reload.lua](https://github.com/sibwaf/mpv-scripts#reloadlua)进行重载，或者忽略掉也可以。
+
 ### 不想从终端启动
 
 如果你不想从终端启动`lyric.cmd`，可以再新建一个`mpv_lyric.vbs`：

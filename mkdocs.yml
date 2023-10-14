@@ -16,8 +16,8 @@ theme:
     language: en
     # font: false
     icon:
-      admonition:
-        note: material/pin
+      # admonition:
+      #   note: material/pin
       repo: fontawesome/brands/git-alt
       view: material/eye
     palette:
@@ -97,12 +97,20 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
+  # - heti:
+  #     disable_serve: false
   - meta-manager
   - meta-descriptions
   - git-revision-date-localized:
       locale: en
       type: iso_date
       enable_creation_date: true
+      fallback_to_build_date: true
+      exclude:
+        - index.md
+        - blog/deploy-sites-to-vps.md
+        - blog/deploy-sites-to-vps-expand.md
+        - blog/make-la.isla.minima.2014.srt.ass.md
   # - footermatter
   - autolinks
   - glightbox:
@@ -148,8 +156,6 @@ plugins:
         - ".obsidian"
       # regex:
       #   - '.*\.(tmp|bin|tar|.obsidian)$'
-  # - heti:
-  #     disable_serve: false
   # - monorepo
   # - multirepo:mkdo
   #     cleanup: true
@@ -187,8 +193,17 @@ plugins:
   #     disable_serve: false
 extra_css:
   - assets/css/extra.css
+  - assets/css/admonition.css
 # extra_javascript:
 #   - assets/javascripts/extra.js
 # nav:
   # - Version:
   #   - v1: '*include /*/mkdocs.yml'
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/scillidan/YAFA-site
+      name: YAFA-site
+    - icon: fontawesome/brands/creative-commons-by
+      link: https://creativecommons.org/licenses/by/4.0/
+      name: CC BY 4.0
