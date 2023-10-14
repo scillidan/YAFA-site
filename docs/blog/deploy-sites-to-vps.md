@@ -1,7 +1,8 @@
 ---
 date: 2023-05-01
-description: >
-		Blog, Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
+author: scillidan
+keywords: >
+		Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
 ---
 
 # Deploy Sites to VPS

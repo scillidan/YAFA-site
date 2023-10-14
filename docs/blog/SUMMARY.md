@@ -1,3 +1,4 @@
+- [file folder](file-folder.md)
 - [e-dict](e-dictionaries-plugin.md)
 - [mpv-lrc edit](play-lyrics-with-mpv-edit.md)
 - [mpv-lrc](play-lyrics-with-mpv.md)

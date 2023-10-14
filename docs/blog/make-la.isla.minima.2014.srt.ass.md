@@ -1,7 +1,8 @@
 ---
 date: 2021-12-01
-description: >
-		Blog, Subtitle, Translation, GoldenDict, 沙拉查词, Saladict, autosub, alass-cli
+author: scillidan
+keywords: >
+		subtitle, translate, GoldenDict, Saladict, autosub, alass-cli
 ---
 
 # Make la.isla.minima.2014.srt.ass
@@ -43,7 +44,7 @@ NOTE: **「便携版」 2022-09**
 通过Scoop安装的该版本，在菜单项「编辑 → 词典」处，仅有固定的词典存放位置。可使用[linkshellextension](https://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html)，选择词典文件所在的文件夹，创建目录链接到该位置，然后「重新扫描」。
 
 1. `scoop install goldendict`，或者到[GoldenDict官网](http://goldendict.org/download.php)下载32-bit Windows installer这个安装包
-2. 下载词典。这里在[某个论坛](https://www.pdawiki.com/forum)新注册账号后，从[该帖](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=38700) 里的链接，下载了Oxford Spanish English（牛津西语-英语词典）这个文件夹——其中的.mdx（Mdict词典文件）就是所需的
+2. 下载词典。这里在[某个论坛](https://www.pdawiki.com/forum)新注册账号后，从[该帖](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=38700)里的链接，下载了Oxford Spanish English（牛津西语-英语词典）这个文件夹——其中的.mdx（Mdict词典文件）就是所需的
 3. 导入词典。`Win`+`Q` → Goldendict → 编辑 → 词典 → 词典来源 → 添加 → 选择文件夹 → 应用 → 等待扫描完成
 4. 回到软件的主窗口，便可在导航栏搜索词汇
 

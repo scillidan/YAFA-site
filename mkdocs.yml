@@ -111,6 +111,7 @@ plugins:
   - autolinks
   - table-reader
   - meta-manager
+  - meta-descriptions
   - literate-nav:
       nav_file: SUMMARY.md
   # - tags:
@@ -142,6 +143,8 @@ plugins:
         - ".obsidian"
       # regex:
       #   - '.*\.(tmp|bin|tar|.obsidian)$'
+  # - heti:
+  #     disable_serve: false
   # - monorepo
   # - multirepo:mkdo
   #     cleanup: true

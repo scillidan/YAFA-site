@@ -1,6 +1,8 @@
 ---
+title: "使用MPV播放歌词(初稿)"
 date: 2023-09-06
-description: >
+author: scillidan
+keywords: >
 		mpv, lyric, cover
 ---
 

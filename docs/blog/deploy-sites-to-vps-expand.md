@@ -1,7 +1,8 @@
 ---
 date: 2023-05-03
-description: >
-		Blog, VPS, CDN, VNC, pm2, rsync, Rocky Linux, Apache , 腾讯云
+author: scillidan
+keywords: >
+		腾讯云VPS, CDN, VNC, pm2, rsync
 ---
 
 # Deploy Sites to VPS - Expand Content
