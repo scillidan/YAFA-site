@@ -1,11 +1,12 @@
 ---
-date: 2023-05-01
-author: scillidan
+title: 部署网站到VPS"
+date:
+    created: 2023-05-01
+    updated: 2023-05-01
 keywords: >
-		Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
+	Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
+locale: en
 ---
-
-# Deploy Sites to VPS
 
 ## VPS
 

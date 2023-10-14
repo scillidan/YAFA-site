@@ -1,7 +1,8 @@
 ---
 title: "浏览器中的机械翻译、电子词典插件"
-date: 2023-09-26
-author: scillidan
+date:
+    created: 2023-09-26
+    updated: 2022-10-13
 keywords: >
 		translate, e-dictionary, Yomichan, Saladict, ODH
 ---
@@ -9,6 +10,8 @@ keywords: >
 早些年时候，由于剩余的精力和兴致，我在Wiki上翻过一些天文地理等等的不着边的页面。一些的中文页，只是翻译了原文的开头或部分的内容。有几次，我就点进了语言栏，切到英语，目测了篇幅。那些密密麻麻的鬼话，就构成了我很长一段时间里，对网络上的外语内容的印象。
 
 2018 年左右，我在搜索和阅读时，了解到了[Chocolatey](https://chocolatey.org/)、[Cmder](https://cmder.app/)、[Hexo](https://hexo.io/index.html)等一众软件或框架。翻着中文文章和文档，我作为小白渡过了担惊受怕的初见阶段。随着经验值提升，在某一天，我也终于装备上了[沙拉查词](https://saladict.crimx.com/)、[Yomichan](https://foosoft.net/projects/yomichan)等翻译、字典工具，开始到「本地化」外的地方野游。
+
+<!-- more -->
 
 ## 沙拉查词
 
@@ -207,3 +210,4 @@ LOOKUP_TARGETS {
 ![](yomichan_android.jpg)
 
 我只进行了测试。如果你有触控笔，可能使用体验会好一些。
+

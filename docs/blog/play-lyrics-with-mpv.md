@@ -1,12 +1,14 @@
 ---
-title: "使用MPV播放歌词(初稿)"
-date: 2023-09-06
-author: scillidan
+title: "使用MPV播放歌词（初稿）"
+date:
+		created: 2023-09-01
+		updated: 2023-09-06
 keywords: >
 		mpv, lyric, cover
+locale: en
 ---
 
-### 前情提要
+## 前情提要
 
 我使用的本地音乐播放器，大多数时候是按文件夹播放的[Exaile](https://exaile.org/)。偶尔，也会选中文件，拖进[Qmmp](https://qmmp.ylsoftware.com/)播放。或者用[mpv](https://mpv.io/)打开播放列表`.m3u`。
 

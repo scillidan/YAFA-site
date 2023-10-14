@@ -1,11 +1,12 @@
 ---
-date: 2023-05-03
-author: scillidan
+title: "部署网站到VPS·番外"
+date:
+    created: 2023-05-03
+    updated: 2023-05-03
 keywords: >
-		腾讯云VPS, CDN, VNC, pm2, rsync
+	腾讯云VPS, CDN, VNC, pm2, rsync
+locale: en
 ---
-
-# Deploy Sites to VPS - Expand Content
 
 ## CDN
 
@@ -15,6 +16,7 @@ keywords: >
 3. DNS解析 → 添加记录 → 记录类型CNAME...
 
 [Hexo 腾讯云CDN主动刷新插件](https://github.com/Techeek/hexo-deploy-tencentcloud-cdn)
+
 ### HTTPS
 
 1. 云产品 → SSL证书 → 我的证书 → 申请

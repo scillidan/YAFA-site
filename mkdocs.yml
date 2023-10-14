@@ -97,6 +97,14 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
+  - meta-manager
+  - meta-descriptions
+  - git-revision-date-localized:
+      locale: en
+      type: iso_date
+      enable_creation_date: true
+  # - footermatter
+  - autolinks
   - glightbox:
       auto_caption: true
       caption_position: bottom
@@ -108,10 +116,7 @@ plugins:
       video_controls: True
       css_style:
         width: "100%"
-  - autolinks
   - table-reader
-  - meta-manager
-  - meta-descriptions
   - literate-nav:
       nav_file: SUMMARY.md
   # - tags:

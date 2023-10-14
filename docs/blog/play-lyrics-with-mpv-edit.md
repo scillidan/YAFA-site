@@ -1,9 +1,11 @@
 ---
 title: "使用MPV播放歌词"
-date: 2023-09-06
-author: scillidan
+date:
+	created: 2023-09-15
+	updated: 2023-09-18
 keywords: >
-		mpv, lyric, cover
+	mpv, lyric, cover
+locale: en
 ---
 
 ## 关于 MPV
@@ -16,6 +18,8 @@ keywords: >
 - **脚本编写** 支持脚本、插件。
 - **可嵌入性** 对于开发者，mpv 易于作为库使用。
 - **积极开发** 它还在不断地发展。
+
+<!-- more -->
 
 ## 作为视频播放器的 MPV
 
