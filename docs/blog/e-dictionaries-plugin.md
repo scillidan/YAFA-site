@@ -15,7 +15,7 @@ READ: **少数派⾸发**
 
 早些年时候，由于剩余的精力和兴致，我在Wiki上翻过一些天文地理等等的不着边的页面。一些的中文页，只是翻译了原文的开头或部分的内容。有几次，我就点进了语言栏，切到英语，目测了篇幅。那些密密麻麻的鬼话，就构成了我很长一段时间里，对网络上的外语内容的印象。
 
-2018 年左右，我在搜索和阅读时，了解到了[Chocolatey](https://chocolatey.org/)、[Cmder](https://cmder.app/)、[Hexo](https://hexo.io/index.html)等一众软件或框架。翻着中文文章和文档，我作为小白渡过了担惊受怕的初见阶段。随着经验值提升，在某一天，我也终于装备上了[沙拉查词](https://saladict.crimx.com/)、[Yomichan](https://foosoft.net/projects/yomichan)等翻译、字典工具，开始到「本地化」外的地方野游。
+2018年左右，我在搜索和阅读时，了解到了[Chocolatey](https://chocolatey.org/)、[Cmder](https://cmder.app/)、[Hexo](https://hexo.io/index.html)等一众软件或框架。翻着中文文章和文档，我作为小白渡过了担惊受怕的初见阶段。随着经验值提升，在某一天，我也终于装备上了[沙拉查词](https://saladict.crimx.com/)、[Yomichan](https://foosoft.net/projects/yomichan)等翻译、字典工具，开始到「本地化」外的地方野游。
 
 <!-- more -->
 
@@ -41,7 +41,7 @@ READ: **少数派⾸发**
 
 ![](odh.png)
 
-但它在交互功能上有些不足。在Chrome里，`Alt`键被浏览器默认占用，也因此闲置。ODH没能像沙拉查词和 [Yomichan](https://foosoft.net/projects/yomichan)那样夺回`Alt`键。而分配`Shift`键时，输入文字时按到`Shift`，会有奇怪的Bug。也因此，这个插件默认处于关闭状态。
+但它在交互功能上有些不足。在Chrome里，`Alt`键被浏览器默认占用，也因此闲置。ODH没能像沙拉查词和[Yomichan](https://foosoft.net/projects/yomichan)那样夺回`Alt`键。而分配`Shift`键时，输入文字时按到`Shift`，会有奇怪的Bug。也因此，这个插件默认处于关闭状态。
 
 另外，因为我想密集地显示词义，也不常看例句，就按这个[issue](https://github.com/ninja33/ODH/issues/296#issuecomment-1474730378)里的步骤隐藏了英文例句。
 
@@ -85,7 +85,7 @@ body {
 
 我一般看翻译的字幕。但按照[这段说明](https://github.com/fauu/Kamite#animevideo-text-extraction)，可以用于啃日语生肉。
 
-首先，安装[Yomichan](https://foosoft.net/projects/yomichan)、[Kamite](https://github.com/fauu/Kamite#animevideo-text-extraction) 、[mpv](https://mpv.io/)。
+首先，安装[Yomichan](https://foosoft.net/projects/yomichan)、[Kamite](https://github.com/fauu/Kamite#animevideo-text-extraction)、[mpv](https://mpv.io/)。
 
 然后，在Yomichan拓展程序的图标处右键 → 选项 → Dictionaries → Configure installed and enabled dictionaries → 启用词典「JMdict」。
 
@@ -149,13 +149,13 @@ LOOKUP_TARGETS {
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/dict/Kamite_Preview_02.mkv){ .skip-lightbox }
 
-### 啃古典文学 PDF
+### 啃古典文学PDF
 
 之前听播客时，我听到了一期[「红楼梦」](https://www.ximalaya.com/sound/587170813)。按照播客内容推荐的版本，我在网络上找到了两个简体版的`.pdf`、和一个繁体竖排版的`.epub`。按版本号排序的话，应该是这样的：
 
 ![](hong-lou-meng_cover.jpg)
 
-需要注意的是，`.pdf`由社区发布，供个人免费、正当使用。`.epub`则是由出版公司发行，可按页面上的网址购入，不过页面上给到的信息不多。文件应该是用在[Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle)上的`.mobi`格式，可以自己试试用 [Calibre](https://calibre-ebook.com/) 转换成`.epub`。
+需要注意的是，`.pdf`由社区发布，供个人免费、正当使用。`.epub`则是由出版公司发行，可按页面上的网址购入，不过页面上给到的信息不多。文件应该是用在[Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle)上的`.mobi`格式，可以自己试试用[Calibre](https://calibre-ebook.com/)转换成`.epub`。
 
 ![](hong-lou-meng_shuoming.jpg)
 
@@ -163,7 +163,7 @@ LOOKUP_TARGETS {
 
 首先，下载[漢語大詞典(简体版)](https://github.com/MarvNC/yomichan-dictionaries#mandarin-chinese)。
 
-然后，在 Yomichan 的设置里导入词典：选项 → Dictionaries → Configure installed and enabled dictionaries → Import → 选择下载的压缩包 → 待导入完成，启用词典。
+然后，在Yomichan的设置里导入词典：选项 → Dictionaries → Configure installed and enabled dictionaries → Import → 选择下载的压缩包 → 待导入完成，启用词典。
 
 在交互方面，进行「鼠标取词」，这里需要使用Web端PDF阅读器，如[doqment-demo](https://shivaprsd.github.io/doqment/src/pdfjs/web/viewer.html)或者[PDF.js-demo](https://github.com/mozilla/pdf.js#online-demo)。
 
@@ -175,7 +175,7 @@ LOOKUP_TARGETS {
 
 ![](yomichan_pdf_02.png)
 
-### 啃古典文学 EPUB
+### 啃古典文学EPUB
 
 电子出版物「ePub」，也就是`.epub`，是一种泛用的电子书格式，在大部分智能手机、平板、电脑上都有相应的软件可使用。
 
@@ -203,7 +203,7 @@ LOOKUP_TARGETS {
 作为电子书阅读器，需要注意的是：
 
 - 如果不清除浏览器的缓存，它能够保存阅读进度。
-- 它不能记住上一次打开的文件。如果不想每一次打开网页，都要重新定位`.epub`文件，可以参考这个 [issues](https://github.com/pgaskin/ePubViewer/issues/4#issuecomment-1687223964)，在网址里带上`文件地址`。
+- 它不能记住上一次打开的文件。如果不想每一次打开网页，都要重新定位`.epub`文件，可以参考这个[issue](https://github.com/pgaskin/ePubViewer/issues/4#issuecomment-1687223964)，在网址里带上`文件地址`。
 
 ### 作为桌面端词典
 

@@ -12,7 +12,7 @@ READ: **少数派⾸发**
 文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
 日期：2022-09-19  
 归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
-备注：1)根据编辑的建议从[原稿](../play-lyrics-with-mpv)大修改的版本 2)原始的内容 3)排版上不同 4)另外，页面底部的`Created`日期是我记的写的初稿的开始日期
+备注：1)根据编辑的建议从[原稿](../play-lyrics-with-mpv)大修改的版本 2)原始的内容 3)排版上不同 4)另外，页面底部本来打算记写的初稿的开始日期，目前还有些问题
 
 ## 关于MPV
 
@@ -22,7 +22,7 @@ READ: **少数派⾸发**
 - **屏幕控制器** 在视频的上层，有一栏可浮现的简单控件。
 - **显卡硬件解码** 有需要时，也可发挥显卡的性能。
 - **脚本编写** 支持脚本、插件。
-- **可嵌入性** 对于开发者，mpv 易于作为库使用。
+- **可嵌入性** 对于开发者，mpv易于作为库使用。
 - **积极开发** 它还在不断地发展。
 
 <!-- more -->
@@ -31,7 +31,7 @@ READ: **少数派⾸发**
 
 直到去年，我都在使用轻便、好用、有真正的图形用户界面的播放器[MPC-HC](https://github.com/clsid2/mpc-hc)。但它在播放流行的HDR（**H**igh **D**ynamic **R**ange Imaging，高动态范围成像）影像时有些问题，所以我安装了mpv。
 
-在我装上两个插件，替换控件UI的[uosc](https://github.com/tomasklaen/uosc)、制作和显示键位小抄的 [mpv-cheatsheet](https://github.com/ento/mpv-cheatsheet) 后，我才适应，并将mpv作为了默认的视频播放器。
+在我装上两个插件，替换控件UI的[uosc](https://github.com/tomasklaen/uosc)、制作和显示键位小抄的[mpv-cheatsheet](https://github.com/ento/mpv-cheatsheet)后，我才适应，并将mpv作为了默认的视频播放器。
 
 ![](uosc_mpv-cheatsheet.png)
 
@@ -41,11 +41,11 @@ READ: **少数派⾸发**
 
 ## 作为音乐播放器的MPV和想看歌词的我
 
-日常里，我使用了多个本地音乐播放器。我在[Exaile](https://exaile.org/)中按文件夹播放，也会将一些临时的文件拖拽进[Qmmp](https://qmmp.ylsoftware.com/) 。前些年时候，我用音频标签编辑器[TagScanner](https://www.xdlab.ru/en/)制作了一些自用的`.m3u`格式的播放列表文件，用来配合插件[Mpv Filenavigator](https://github.com/jonniek/mpv-filenavigator)、[Mpv-Playlistmanager](https://github.com/jonniek/mpv-playlistmanager)在mpv中播放歌曲。
+日常里，我使用了多个本地音乐播放器。我在[Exaile](https://exaile.org/)中按文件夹播放，也会将一些临时的文件拖拽进[Qmmp](https://qmmp.ylsoftware.com/)。前些年时候，我用音频标签编辑器[TagScanner](https://www.xdlab.ru/en/)制作了一些自用的`.m3u`格式的播放列表文件，用来配合插件[Mpv Filenavigator](https://github.com/jonniek/mpv-filenavigator)、[Mpv-Playlistmanager](https://github.com/jonniek/mpv-playlistmanager)在mpv中播放歌曲。
 
 有时候，我想看看歌词。在这件事上，**Exaile**，只静态地显示`.mp3`格式的、元数据中的`lyric`内容。**Qmmp**，在曲目的右键菜单中有一个`显示歌词`功能，但不能用。**mpv**，能够以字幕的形式、样式显示`.lrc`格式的歌词，但实质、视觉上都只是字幕。
 
-有一天，我在[mpvacious](https://github.com/Ajatt-Tools/mpvacious#secondary-subtitles)这个库下面，看到了一段演示，提到了 mpv 的[`--secondary-sid=`](https://mpv.io/manual/master/#options-secondary-sid)设置。这个选项用于选择第二字幕，这条字幕会显示在画面的顶部。也就因为这个契机，我打算试试配置mpv来播放歌词。
+有一天，我在[mpvacious](https://github.com/Ajatt-Tools/mpvacious#secondary-subtitles)这个库下面，看到了一段演示，提到了mpv的[`--secondary-sid`](https://mpv.io/manual/master/#options-secondary-sid)设置。这个选项用于选择第二字幕，这条字幕会显示在画面的顶部。也就因为这个契机，我打算试试配置mpv来播放歌词。
 
 ![](mpvacious.png)
 
@@ -86,7 +86,7 @@ READ: **少数派⾸发**
 
 ## 如何食用
 
-### 安装 MPV 和插件
+### 安装MPV和插件
 
 - [mpv](https://mpv.io/installation/)
     - [uosc](https://github.com/tomasklaen/uosc)
