@@ -1,5 +1,7 @@
-site/
 .editorconfig
+.resize-hash
+docs/assets/media
+site/
 docs/.obsidian/
 docs/id
 docs/officia

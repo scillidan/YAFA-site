@@ -97,6 +97,7 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
+  - minify_html
   # - heti:
   #     disable_serve: false
   - meta-manager
@@ -113,11 +114,18 @@ plugins:
         - blog/make-la.isla.minima.2014.srt.ass.md
   # - footermatter
   - autolinks
+  - open-in-new-tab
   - glightbox:
       auto_caption: true
       caption_position: bottom
       skip_classes:
         - skip-lightbox
+  # - resize-images:
+  #     source-dir: assets/media
+  #     target-dir: assets/media-min
+  #     enable_cache: True
+  #     size: [800, 600]
+  #     extensions: ['.jpg', '.jpeg', '.png', '.gif', '.svg']
   - mkdocs-video:
       is_video: True
       video_muted: True
@@ -156,6 +164,10 @@ plugins:
         - ".obsidian"
       # regex:
       #   - '.*\.(tmp|bin|tar|.obsidian)$'
+  # - furigan:
+  #     multiple: "§"
+  #     inicio: "【"
+  #     fin: "】"
   # - monorepo
   # - multirepo:mkdo
   #     cleanup: true
@@ -193,7 +205,9 @@ plugins:
   #     disable_serve: false
 extra_css:
   - assets/css/extra.css
+  # - assets/css/customization.css
   - assets/css/admonition.css
+  # - assets/css/furigana.css
 # extra_javascript:
 #   - assets/javascripts/extra.js
 # nav:

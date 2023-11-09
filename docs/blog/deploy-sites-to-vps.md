@@ -4,7 +4,7 @@ date:
     created: 2023-05-01
     updated: 2023-05-01
 keywords: >
-	Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
+    Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
 locale: en
 ---
 

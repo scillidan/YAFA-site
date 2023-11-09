@@ -4,7 +4,7 @@ date:
     created: 2021-01-01
     updated: 2021-12-01
 keywords: >
-	subtitle, translate, GoldenDict, Saladict, autosub, alass-cli
+    subtitle, translate, GoldenDict, Saladict, autosub, alass-cli
 locale: en
 ---
 

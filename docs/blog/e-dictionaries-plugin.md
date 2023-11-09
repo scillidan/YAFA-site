@@ -23,7 +23,7 @@ READ: **少数派⾸发**
 
 我在浏览器内外，都使用[沙拉查词](https://saladict.crimx.com/)来查段落或者句子，通过[剪切板作为中继](https://saladict.crimx.com/native.html#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%96%E5%88%92%E8%AF%8D)的方式。可以说，只要有英文，我就可能使用它。
 
-为了让功能更稳定，我在「设置 → 词典帐号」中添加了「词典帐号」[腾讯翻译君](https://fanyi.qq.com/)，也就是[腾讯云](https://cloud.tencent.com/)的[机械翻译TMT](https://cloud.tencent.com/act/cps/redirect?redirect=10324&cps_key=f92625eba44ff7159e1b611916c36826)服务。如果同时使用代理梯子，需要在梯子的规则中设置域名`tencentcloudapi.com`为「直连」。
+为了让功能更稳定，我在「设置 → 词典帐号」中添加了[腾讯翻译君](https://fanyi.qq.com/)，也就是[腾讯云](https://cloud.tencent.com/)的[机械翻译TMT](https://cloud.tencent.com/act/cps/redirect?redirect=10324&cps_key=f92625eba44ff7159e1b611916c36826)服务。如果同时使用代理梯子，需要在梯子的规则中设置域名`tencentcloudapi.com`为「直连」。
 
 作为一种廉价、机械的服务，机械翻译始终是一板一眼的。它生硬难啃，还保留了原文的些许痕迹，也倒方便了作对照。如果你不需要进行具体的翻译作业，那么沙拉查词足够好用。例如，这是博物学家[阿尔弗雷德·华莱士](https://en.wikipedia.org/wiki/Alfred_Russel_Wallace)的[「马来群岛」](https://book.douban.com/subject/25728832/)的[一篇介绍](https://vivliostyle.org/viewer/#src=//vivliostyle.github.io/vivliostyle_doc/samples/variable-page-size/TheMalayArchipelago/main.xhtml)的机翻文：
 

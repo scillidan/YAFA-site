@@ -4,7 +4,7 @@ date:
     created: 2023-05-03
     updated: 2023-05-03
 keywords: >
-	腾讯云VPS, CDN, VNC, pm2, rsync
+    腾讯云VPS, CDN, VNC, pm2, rsync
 locale: en
 ---
 

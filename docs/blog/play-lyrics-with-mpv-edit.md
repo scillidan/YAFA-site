@@ -5,7 +5,6 @@ date:
 	updated: 2023-09-18
 keywords: >
 	mpv, lyric, cover
-locale: en
 ---
 
 READ: **少数派⾸发**
