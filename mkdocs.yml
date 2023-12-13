@@ -61,11 +61,12 @@ markdown_extensions:
   - attr_list
   - meta
   - smarty
+  - md_in_html
   - tables
   - def_list
   - admonition
   - toc:
-      permalink: true
+      permalink: "#"
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
@@ -97,7 +98,21 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
-  - minify_html
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+      cache_safe: true
+      # js_files:
+      #     - my/javascript/dir/file1.js
+      # css_files:
+      #     - assets/css/admonition.css
+      #     - assets/css/customization.css
+      #     - assets/css/extra.css
+      #     - assets/css/furigana.css
+  # - minify_html
   # - heti:
   #     disable_serve: false
   - meta-manager
@@ -126,6 +141,8 @@ plugins:
   #     enable_cache: True
   #     size: [800, 600]
   #     extensions: ['.jpg', '.jpeg', '.png', '.gif', '.svg']
+  # - inline-select-svg:
+  #     pattern: "[.]inline[.]svg$"
   - mkdocs-video:
       is_video: True
       video_muted: True
