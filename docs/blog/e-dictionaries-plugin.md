@@ -4,14 +4,16 @@ date:
     created: 2023-09-26
     updated: 2022-10-13
 keywords: >
-		translate, e-dictionary, Yomichan, Saladict, ODH
+    translate, e-dictionary, Yomichan, Saladict, ODH
 ---
 
-READ: **少数派⾸发**
-文章：[在浏览器里使用机械翻译和电子词典](https://sspai.com/post/83385)  
-日期：2022-10-09  
-归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
-备注：1)排版上不同 2)有少量校正内容 3)补充了一个段落
+
+!!! read "少数派⾸发"
+
+    文章：[在浏览器里使用机械翻译和电子词典](https://sspai.com/post/83385)  
+    日期：2022-10-09  
+    归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
+    备注：1)排版上不同 2)有少量校正内容 3)补充了一个段落
 
 早些年时候，由于剩余的精力和兴致，我在Wiki上翻过一些天文地理等等的不着边的页面。一些的中文页，只是翻译了原文的开头或部分的内容。有几次，我就点进了语言栏，切到英语，目测了篇幅。那些密密麻麻的鬼话，就构成了我很长一段时间里，对网络上的外语内容的印象。
 
@@ -104,7 +106,7 @@ mpv ^
 
 启动Kamite后，去终端里运行`kamite yourmovie your-jpn-subtitle`就行了。
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/dict/Kamite_Preview_01.mkv){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/e-dict/Kamite_Preview_01.mkv){ .skip-lightbox }
 
 ### 啃漫画生肉
 
@@ -147,7 +149,7 @@ LOOKUP_TARGETS {
 
 最后，启动Kamite，再打开漫画阅读窗口就行了。
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/dict/Kamite_Preview_02.mkv){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/e-dict/Kamite_Preview_02.mkv){ .skip-lightbox }
 
 ### 啃古典文学PDF
 

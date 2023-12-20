@@ -1,17 +1,18 @@
 ---
 title: "使用MPV播放歌词"
 date:
-	created: 2023-09-15
-	updated: 2023-09-18
+    created: 2023-09-15
+    updated: 2023-09-18
 keywords: >
-	mpv, lyric, cover
+    mpv, lyric, cover
 ---
 
-READ: **少数派⾸发**
-文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
-日期：2022-09-19  
-归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
-备注：1)根据编辑的建议从[原稿](../play-lyrics-with-mpv)大修改的版本 2)原始的内容 3)排版上不同 4)另外，页面底部本来打算记写的初稿的开始日期，目前还有些问题
+!!! read "少数派⾸发"
+
+	文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
+	日期：2022-09-19  
+	归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
+	备注：1)根据编辑的建议从[原稿](../play-lyrics-with-mpv)大修改的版本 2)原始的内容 3)排版上不同 4)另外，页面底部本来打算记写的初稿的开始日期，目前还有些问题
 
 ## 关于MPV
 

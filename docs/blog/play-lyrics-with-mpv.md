@@ -1,10 +1,10 @@
 ---
-title: "使用MPV播放歌词（初稿）"
+title: 使用MPV播放歌词（初稿）
 date:
-		created: 2023-09-01
-		updated: 2023-09-06
+    created: 2023-09-01
+    updated: 2023-09-06
 keywords: >
-		mpv, lyric, cover
+    mpv, lyric, cover
 locale: en
 ---
 
@@ -269,7 +269,7 @@ lyric D:/路径/歌曲或歌曲文件夹
 
 ### 播放歌曲文件夹
 
-播放`音乐文件夹`时，播放列表会加载文件夹里的字幕。音乐开始播放时，可用到插件[reload.lua](https//github.com/sibwaf/mpv-scripts#reloadlua)，默认键位`R`重新加载一下。但实际上这里是清除了当前播放列表，而使用文件浏览器，按`...`就可以返回上层文件夹。
+播放`音乐文件夹`时，播放列表会加载文件夹里的字幕。音乐开始播放时，可用到插件[reload.lua](https://github.com/sibwaf/mpv-scripts#reloadlua)，默认键位`R`重新加载一下。但实际上这里是清除了当前播放列表，而使用文件浏览器，按`...`就可以返回上层文件夹。
 
 ![](play-folder.jpg)
 

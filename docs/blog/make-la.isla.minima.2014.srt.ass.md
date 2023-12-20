@@ -41,8 +41,9 @@ locale: en
 
 ### GoldenDict
 
-REPOTEMPLATE: **「便携版」 2022-09**
-通过Scoop安装的该版本，在菜单项「编辑 → 词典」处，仅有固定的词典存放位置。可使用[linkshellextension](https://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html)，选择词典文件所在的文件夹，创建目录链接到该位置，然后「重新扫描」。
+!!! repotemplate "「便携版」 2022-09"
+    
+    通过Scoop安装的该版本，在菜单项「编辑 → 词典」处，仅有固定的词典存放位置。可使用[linkshellextension](https://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html)，选择词典文件所在的文件夹，创建目录链接到该位置，然后「重新扫描」。
 
 1. `scoop install goldendict`，或者到[GoldenDict官网](http://goldendict.org/download.php)下载32-bit Windows installer这个安装包
 2. 下载词典。这里在[某个论坛](https://www.pdawiki.com/forum)新注册账号后，从[该帖](https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=38700)里的链接，下载了Oxford Spanish English（牛津西语-英语词典）这个文件夹——其中的.mdx（Mdict词典文件）就是所需的
@@ -51,8 +52,9 @@ REPOTEMPLATE: **「便携版」 2022-09**
 
 ![](goldendict.png)
 
-REPOTEMPLATE: **「Next Generation」 2023-07**
-也可以试试这个版本，[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)。
+!!! repotemplate "「Next Generation」 2023-07"
+    
+    也可以试试这个版本，[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)。
 
 GoldenDict默认会启用所有词典。当你有多本词典时，就可以给词典编组，以便筛选语种。
 
@@ -139,8 +141,9 @@ NVIDIA显卡上的参数，应该也可以参考这个。
 
 [Cmder](https://cmder.app)，自称是Windows上最好的shell，由提供命令行界面（CLI，Command-Line Interface）[Clink](https://chrisant996.github.io/clink/)和提供图形用户界面（GUI，Graphical User Interface）的模拟终端[ConEmu](https://conemu.github.io)组合而成。
 
-REPOTEMPLATE: **「壳中壳」 2022-07**
-[Tabby](https://tabby.sh)，作为Cmder的「壳」，安装[Starship](https://starship.rs)并配置后，可以使它看着像原来的Cmder。启动更慢，功能更多。
+!!! repotemplate "「壳中壳」 2022-07"
+    
+    [Tabby](https://tabby.sh)，作为Cmder的「壳」，安装[Starship](https://starship.rs)并配置后，可以使它看着像原来的Cmder。启动更慢，功能更多。
 
 因为Cmder需要进行配置，这里就以应急物品CMD为例。
 
@@ -206,8 +209,9 @@ REPOTEMPLATE: **「壳中壳」 2022-07**
 
 ![](La.isla.minima.2014.mkv_snapshot_00.03.26.png)
 
-REPOTEMPLATE: **「feria」 2023-04**
-应该可对应英语单词fair。词典中的解释是：州、县、乡村的集市或活动，会有商品、动物和娱乐、游戏、比赛。可译成「集会」、「市场」。
+!!! repotemplate "「feria」 2023-04"
+    
+    应该可对应英语单词fair。词典中的解释是：州、县、乡村的集市或活动，会有商品、动物和娱乐、游戏、比赛。可译成「集会」、「市场」。
 
 00:03:06处，文字注释feria译成「交游会」。来自一种早年在小地方举办的，供居民交易、游玩的季节性集会，当地村民乡人对此的称呼「交流会」，可能类似大都会的嘉年华。
 
