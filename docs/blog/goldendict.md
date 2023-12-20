@@ -1,5 +1,5 @@
 ---
-title: 配置Goldendict
+title: "配置Goldendict"
 date:
     created: 2023-12-11
     updated: 2023-12-20

@@ -1,7 +1,6 @@
 .editorconfig
 .resize-hash
 venv/
-docs/assets/media
 site/
 docs/.obsidian/
 docs/id
