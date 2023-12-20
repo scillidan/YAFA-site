@@ -8,6 +8,11 @@ keywords: >
 locale: en
 ---
 
+!!! read ""
+
+    日期：2021  
+    归属：[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)
+
 本篇记叙：外乡人如何借助道具，尝试翻译一门小语种的电影生肉文本，并制作字幕文件。
 
 本次作业介绍了涉及的软件、插件、命令行等工具。内容主要有：安装，设置、操作等。且仅出于个人学习目的，其中所处理的字幕、影片截图没有授权，只在必要时，作为著作进行引用。
@@ -139,7 +144,7 @@ NVIDIA显卡上的参数，应该也可以参考这个。
 
 命令提示符（Command Prompt），也就是可执行文件CMD.exe，是Windows系统默认的命令行解释器（Command-line Interpreter）。后者所解释的语境，通常是给定的操作系统或编程语言中的一种——这一类连接用户与系统内核、解释和执行指令、返回结果的，通常称为shell（壳层或壳）。
 
-[Cmder](https://cmder.app)，自称是Windows上最好的shell，由提供命令行界面（CLI，Command-Line Interface）[Clink](https://chrisant996.github.io/clink/)和提供图形用户界面（GUI，Graphical User Interface）的模拟终端[ConEmu](https://conemu.github.io)组合而成。
+[Cmder](https://cmder.app)，自称是Windows上最好的shell，由提供命令行界面（CLI，Command-Line Interface）的[Clink](https://chrisant996.github.io/clink/)和提供图形用户界面（GUI，Graphical User Interface）的模拟终端[ConEmu](https://conemu.github.io)组合而成。
 
 !!! repotemplate "「壳中壳」 2022-07"
     

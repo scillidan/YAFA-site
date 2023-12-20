@@ -7,11 +7,10 @@ keywords: >
     translate, e-dictionary, Yomichan, Saladict, ODH
 ---
 
-
 !!! read "少数派⾸发"
 
     文章：[在浏览器里使用机械翻译和电子词典](https://sspai.com/post/83385)  
-    日期：2022-10-09  
+    日期：2023-10-09  
     归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
     备注：1)排版上不同 2)有少量校正内容 3)补充了一个段落
 

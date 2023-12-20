@@ -1,5 +1,5 @@
 ---
-title: "配置Goldendict"
+title: "配置GoldenDict"
 date:
     created: 2023-12-11
     updated: 2023-12-20
@@ -7,6 +7,12 @@ keywords: >
     GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
 locale: en
 ---
+
+!!! read ""
+  
+    日期：2023-12-20  
+    归属：[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)  
+    备注：1)有些细节上的校正
 
 [GoldenDict](http://goldendict.org/)是一款开源的桌面端词典检索应用，跨平台，[支持多种词典格式](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)。它有十分丰富的可配置项，包括可离线使用的字典和字典组，拼写检查、单词发音、语音合成，和在线词典、在线翻译等。[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)是基于前者重写的新一代GoldenDict，修复了[一些长期累积的问题](https://github.com/xiaoyifang/goldendict-ng/issues/587)，目前仍然处于积极开发中，安装时可看[发行版块](https://github.com/xiaoyifang/goldendict-ng/releases)和[打包的版本](https://xiaoyifang.github.io/goldendict-ng/install/)。
 
@@ -153,7 +159,7 @@ GoldenDict → 编辑 → 词典 → 词典来源/词典服务器 → 添加：
 2. 音频压缩包都放在同一个文件夹内， 解压到同名的文件夹
 3. ... 词典 → 词典来源/音频文件目录 → 添加 → 音频文件所在文件夹 → 应用
 
-也可以从[该帖](https://rutracker.org/forum/viewtopic.php?t=6211002)下载[Forvo](https://forvo.com/)的多语言语音，使用[qBittorrent](https://www.qbittorrent.org/)一类的工具。根据帖子上的内容，这样操作：
+也可以从[该帖](https://rutracker.org/forum/viewtopic.php?t=6211002)下载[Forvo](https://forvo.com/)的多语言语音，使用[qBittorrent Enhanced](https://github.com/c0re100/qBittorrent-Enhanced-Edition)一类的工具。根据帖子上的内容，这样操作：
 
 1. `.opus`格式体积更小，音质也十分相近，所以下载时只勾选`Forvo_pronunciations/export/opus`，约24GB大小。下载完成后不用解压
 2. 对话提到了「音频文件目录」这个功能不方便也不可靠，推荐使用`.dsl`文件，可以当作是目录册，指向了音频文件`.zip`
@@ -346,4 +352,4 @@ QuickAccessLang3=...
 
 [全部快捷键](https://xiaoyifang.github.io/goldendict-ng/ui_shortcuts/) ，也可在主菜单的「帮助」中查看。以及一些[常用快捷键](https://github.com/goldendict/goldendict/wiki/Useful-Shortcuts)，如：
 - `Ctrl+L` 聚焦到输入框
-- `Alt-Right/Left` 前个/后个查询记录
+- `Alt+Left/Right` 前个/后个查询记录

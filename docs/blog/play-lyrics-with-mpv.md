@@ -8,6 +8,11 @@ keywords: >
 locale: en
 ---
 
+!!! read ""
+  
+	日期：2023-09-06  
+	归属：[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)  
+
 ## 前情提要
 
 我使用的本地音乐播放器，大多数时候是按文件夹播放的[Exaile](https://exaile.org/)。偶尔，也会选中文件，拖进[Qmmp](https://qmmp.ylsoftware.com/)播放。或者用[mpv](https://mpv.io/)打开播放列表`.m3u`。
