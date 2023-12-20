@@ -96,16 +96,15 @@ body
 ## 添加词典
 
 去下载字典文件，如：
-- [Mdict.org](https://mdict.org/)上，添加了中文释义的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等等
+
+- [Mdict.org](https://mdict.org/)上的，添加了中文释义的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等等
 - 还是Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
 - [简明英汉字典增强版#css-版本](https://github.com/skywind3000/ECDICT/wiki/%E7%AE%80%E6%98%8E%E8%8B%B1%E6%B1%89%E5%AD%97%E5%85%B8%E5%A2%9E%E5%BC%BA%E7%89%88#css-%E7%89%88%E6%9C%AC)
 - 离线的[Online Etymology Dictionary](https://downloads.freemdict.com/%E5%B0%9A%E6%9C%AA%E6%95%B4%E7%90%86/%E5%85%B1%E4%BA%AB2020.5.11/content/1_english/z_Grammar_others/Online%20Etymology%20Dictionary/)
 - 工具书，如[翻译人名](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/main/Chinese%20Names%20Corpus/English-Chinese%20Names)
 - 别的语种，[Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典、[proteusx](https://github.com/proteusx)制作的古希腊语词典
 
-GoldenDict → 编辑 → 词典 → 词典来源/文件 → 添加 → 词典文件所在的目录 → 递归搜索 On → 应用
-
-推荐通过「词典群组」来使用词典。
+GoldenDict → 编辑 → 词典 → 词典来源/文件 → 添加 → 词典文件所在的目录 → 递归搜索 On → 应用。
 
 ## 添加词典群组
 
@@ -128,12 +127,15 @@ GoldenDict主界面 → 查找于 → TheGroup。
 
 ## 添加在线词典（可选）
 
-参考[GoldenDict++](https://github.com/nonwill/GoldenDict-OCR)里的默认配置，可添加[DICT.org](https://dict.org/bin/Dict)作为在线词典库：GoldenDict → 编辑 → 词典 → 词典来源/词典服务器 → 添加：
-  - 已启用 On
-  - 名称 `dict.org`
-  - 地址 `dict://dict.org`
-  - 数据库 `*`
-  - 策略 `*`
+参考[GoldenDict++](https://github.com/nonwill/GoldenDict-OCR)里的默认配置，可添加[DICT.org](https://dict.org/bin/Dict)作为在线词典库。
+
+GoldenDict → 编辑 → 词典 → 词典来源/词典服务器 → 添加：
+
+- 已启用 On
+- 名称 `dict.org`
+- 地址 `dict://dict.org`
+- 数据库 `*`
+- 策略 `*`
 
 ## 添加拼写检查词库
 
@@ -166,14 +168,14 @@ GoldenDict主界面 → 查找于 → TheGroup。
 3. 终端中运行`mklink_for_dslfiles.cmd`
 4. ... 词典 → 词典来源/文件 → 添加 → `...\gd_Forvo_pronunciations` → 应用
 
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict/pronunciation.mp4){ .skip-lightbox }
+
 ## 添加语音引擎
 
 1. ... 词典 → 词典来源/语音合成 → 预览/可用语音引擎 → `Microsoft Huihui Desktop - Chinese (Simplified)` → 添加
 2. ... 预览/可用语音引擎 → `Microsoft David Desktop - English (United States)` → 添加
 
 此处的语音引擎来自：Windows设置 → 时间和语言 → 语音 → 语音/选择语音。
-
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict/pronunciation.mp4){ .skip-lightbox }
 
 ## 添加离线维基（仅gd-ng）
 
