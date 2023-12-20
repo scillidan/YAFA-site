@@ -153,15 +153,15 @@ GoldenDict → 编辑 → 词典 → 词典来源/词典服务器 → 添加：
 2. 音频压缩包都放在同一个文件夹内， 解压到同名的文件夹
 3. ... 词典 → 词典来源/音频文件目录 → 添加 → 音频文件所在文件夹 → 应用
 
-也可以从[该帖](https://rutracker.org/forum/viewtopic.php?t=6211002) 下载[Forvo](https://forvo.com/)的多语言语音，使用[qBittorrent](https://www.qbittorrent.org/)一类的工具。根据帖子上的内容，这样操作：
+也可以从[该帖](https://rutracker.org/forum/viewtopic.php?t=6211002)下载[Forvo](https://forvo.com/)的多语言语音，使用[qBittorrent](https://www.qbittorrent.org/)一类的工具。根据帖子上的内容，这样操作：
 
 1. `.opus`格式体积更小，音质也十分相近，所以下载时只勾选`Forvo_pronunciations/export/opus`，约24GB大小。下载完成后不用解压
 2. 对话提到了「音频文件目录」这个功能不方便也不可靠，推荐使用`.dsl`文件，可以当作是目录册，指向了音频文件`.zip`
-3. 补充了新版本的ForvoDSL，这是一个[MEGA分享链接](https://mega.nz/folder/3CwCmR7D#05Q08F-cTKPiOTdjKXAcuw)。[MEGAsync](https://mega.nz/sync)是一个安全可靠的云备份、同步服务。下载后解压`ForvoDSL-20220513.7z`
+3. 补充的新版本的`.dsl`文件，这是一个[MEGA分享链接](https://mega.nz/folder/3CwCmR7D#05Q08F-cTKPiOTdjKXAcuw)。[MEGAsync](https://mega.nz/sync)是一个安全可靠的云备份、同步服务。下载后解压`ForvoDSL-20220513.7z`
 4. 重命名`Forvo_pronunciations/export/opus`里的`en.zip`为`ForvoEnglish.dsl.files.zip`，然后将它和`ForvoDSL/ForvoDSL-20220513`里的`ForvoEnglish.dsl`，放入一个在别处新建的文件夹，如`gd_Forvo_pronunciations`
 5. ... 词典 → 词典来源/文件 → 添加 → `...\gd_Forvo_pronunciations` → 应用
 
-但是如果要添加所有发音词典，考虑到不去移动`Forvo_pronunciations`，且不重命名文件。利用`ForvoDSL/ForvoDSL-20220513/00README.txt`中的信息，可以编辑成一个长命令行脚本用来批量`mklink`。
+这里，如果要添加所有发音词典，考虑到不去移动`Forvo_pronunciations`，且不重命名文件。利用`ForvoDSL/ForvoDSL-20220513/00README.txt`中的信息，可以编辑成一个长命令行脚本用来批量`mklink`。
 
 1. 从`00README.txt`制作`.cmd`脚本。或者下载[mklink_for_dslfiles.cmd](https://gist.github.com/scillidan/6d5ceab14883a2c7a890e88e9f5532a7)
 2. 每一行命令格式都是`mklink ...\gd_Forvo_pronunciations\ForvoEnglish.dsl.files.zip ...\Forvo_pronunciations\export\opus\en.zip`。替换所有的`...`为正确的路径
@@ -188,9 +188,9 @@ Kiwix是一个离线的维基阅读器，也适用于另一些网络内容，如
 
 ![](wiki.png)
 
-也推荐使用[Kiwix客户端](https://kiwix.org/en/applications/)来阅读`.zim`。或者[Kiwix JS]，如果要部署到本地，可参考笔记[kiwix-js-pwa.md](https://github.com/scillidan/PM2-demo/blob/main/_readme/kiwix-js-pwa.md)。
+也推荐使用[Kiwix客户端](https://kiwix.org/en/applications/)来阅读`.zim`。或者[Kiwix JS for PWA](https://github.com/kiwix/kiwix-js-pwa)，如果要部署到本地，可参考笔记[kiwix-js-pwa.md](https://github.com/scillidan/PM2-demo/blob/main/_readme/kiwix-js-pwa.md)。
 
-![](kiwix-js.png)
+![](kiwix-js-pwa.png)
 
 另外，这里再演示一下GoldenDict的「全文搜索」功能。例如，查找「古腾堡计划」的电子书库中提到了某个词的段落：GoldenDict-ng → 搜索 → 全文搜索 → `TheWord` → 搜索 → 单击条目。
 
@@ -298,6 +298,8 @@ Global GoldenDictFileName := "...\GoldenDict.exe"
 - [37行](https://github.com/VimWei/GoldenDictOCR/blob/3ffa7079de4c32c05619c3a8d25b22236eeb8528/IncludeAHK/GoldenDict.ahk#L37)附近，`^!i::` → `^!g::`
 
 启动`GoldenDictOCR.ahk`后，按`Ctrl+Alt+G`即可开关「鼠标选择取词」。
+
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict/with-mouse.mp4){ .skip-lightbox }
 
 ## 设置OCR取词
 
