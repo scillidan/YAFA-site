@@ -11,7 +11,7 @@ locale: en
 !!! read ""
   
 	日期：2023-09-06  
-	归属：[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)  
+	归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
 
 ## 前情提要
 

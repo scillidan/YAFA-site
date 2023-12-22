@@ -11,8 +11,8 @@ locale: en
 !!! read ""
   
     日期：2023-12-20  
-    归属：[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)  
-    备注：1)有些细节上的校正
+    归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
+    备注：有些少量的细节上的校正
 
 [GoldenDict](http://goldendict.org/)是一款开源的桌面端词典检索应用，跨平台，[支持多种词典格式](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)。它有十分丰富的可配置项，包括可离线使用的字典和字典组，拼写检查、单词发音、语音合成，和在线词典、在线翻译等。[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)是基于前者重写的新一代GoldenDict，修复了[一些长期累积的问题](https://github.com/xiaoyifang/goldendict-ng/issues/587)，目前仍然处于积极开发中，安装时可看[发行版块](https://github.com/xiaoyifang/goldendict-ng/releases)和[打包的版本](https://xiaoyifang.github.io/goldendict-ng/install/)。
 

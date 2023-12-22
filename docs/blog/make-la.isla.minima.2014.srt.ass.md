@@ -11,7 +11,7 @@ locale: en
 !!! read ""
 
     日期：2021  
-    归属：[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)
+    归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
 
 本篇记叙：外乡人如何借助道具，尝试翻译一门小语种的电影生肉文本，并制作字幕文件。
 
