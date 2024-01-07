@@ -352,9 +352,9 @@ python cli.py "YourWriting"
 命令行 `...\Gramformer\venv\Scripts\python.exe ...\Gramformer\cli.py %GDWORD%`
 ```
 
-## 另一种联动OCR取词
-
 ![](gramformer.png)
+
+## 另一种联动OCR取词
 
 也是使用[GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)，在它「OCR取词」模式下，按`Ctrl+右键单击`可识别鼠标附近字符，按`Ctrl+反引号`可进行框选。
 

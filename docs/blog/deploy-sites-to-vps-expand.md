@@ -15,6 +15,11 @@ locale: en
     1. 高级配置 → 宽带封顶配置 → 访问闸值
 3. DNS解析 → 添加记录 → 记录类型CNAME...
 
+coscli config
+coscli -c .yaml sync ./ cos://.cos/ -r
+https://console.cloud.tencent.com/cos5/bucket
+https://console.cloud.tencent.com/cam/capi
+
 [Hexo 腾讯云CDN主动刷新插件](https://github.com/Techeek/hexo-deploy-tencentcloud-cdn)
 
 ### HTTPS
