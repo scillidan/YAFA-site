@@ -1,4 +1,4 @@
-name: ci
+name: mkdocs_gh-page
 on:
   push:
     branches:

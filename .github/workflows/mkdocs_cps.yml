@@ -1,0 +1,35 @@
+name: mkdocs_cps
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material
+      - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager mkdocs-auto-tag-plugin mkdocs-exclude mkdocs-exclude-search mkdocs-video mkdocs-meta-descriptions-plugin mkdocs-git-revision-date-localized-plugin mkdocs-open-in-new-tab mkdocs-minify-plugin
+      - run: mkdocs build --clean
+      # Refer to https://github.com/appleboy/scp-action
+      - name: copy file to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          port: ${{ secrets.VPS_PORT }}
+          source: "./site/*"
+          target: /var/www/sub-domains/yafa/
