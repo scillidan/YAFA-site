@@ -23,6 +23,7 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager mkdocs-auto-tag-plugin mkdocs-exclude mkdocs-exclude-search mkdocs-video mkdocs-meta-descriptions-plugin mkdocs-git-revision-date-localized-plugin mkdocs-open-in-new-tab mkdocs-minify-plugin
       - run: mkdocs build --clean
+      - run: mv site html
       # Refer to https://github.com/appleboy/scp-action
       - name: copy file to server
         uses: appleboy/scp-action@v0.1.7
@@ -31,5 +32,5 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           password: ${{ secrets.VPS_PASSWORD }}
           port: ${{ secrets.VPS_PORT }}
-          source: "./site/*"
+          source: "./html/*"
           target: /var/www/sub-domains/yafa/
