@@ -12,12 +12,13 @@ theme:
     name: material
     logo: assets/favicon.png
     favicon: assets/favicon.png
-    # custom_dir: overrides
+    custom_dir: overrides
     language: en
     # font: false
     icon:
       # admonition:
       #   note: material/pin
+      search: material/north-star
       repo: fontawesome/brands/git-alt
       view: material/eye
     palette:
@@ -27,14 +28,14 @@ theme:
       accent: light blue
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Switch to night
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       accent: indigo
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to day
     features:
         - navigation.indexes
         - navigation.prune
@@ -85,6 +86,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       # auto_append: ["assets/css/extra.css"]
@@ -117,16 +121,16 @@ plugins:
   #     disable_serve: false
   - meta-manager
   - meta-descriptions
-  - git-revision-date-localized:
-      locale: en
-      type: iso_date
-      enable_creation_date: true
-      fallback_to_build_date: true
-      exclude:
-        - index.md
-        - blog/deploy-sites-to-vps.md
-        - blog/deploy-sites-to-vps-expand.md
-        - blog/make-la.isla.minima.2014.srt.ass.md
+  # - git-revision-date-localized:
+  #     locale: en
+  #     type: iso_date
+  #     enable_creation_date: true
+  #     fallback_to_build_date: true
+  #     exclude:
+  #       - index.md
+  #       - blog/deploy-sites-to-vps.md
+  #       - blog/deploy-sites-to-vps-expand.md
+  #       - blog/make-la.isla.minima.2014.srt.ass.md
   # - footermatter
   - autolinks
   - open-in-new-tab

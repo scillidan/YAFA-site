@@ -21,7 +21,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material
-      - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager mkdocs-auto-tag-plugin mkdocs-exclude mkdocs-exclude-search mkdocs-video mkdocs-meta-descriptions-plugin mkdocs-git-revision-date-localized-plugin mkdocs-open-in-new-tab mkdocs-minify-plugin
+      - run: pip install mkdocs-table-reader-plugin mkdocs-glightbox mkdocs-autolinks-plugin mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-meta-manager mkdocs-auto-tag-plugin mkdocs-exclude mkdocs-exclude-search mkdocs-video mkdocs-meta-descriptions-plugin mkdocs-open-in-new-tab mkdocs-minify-plugin
       - run: mkdocs build --clean
       - run: mv site html
       # Refer to https://github.com/appleboy/scp-action

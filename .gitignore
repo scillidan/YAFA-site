@@ -1,8 +1,5 @@
 .editorconfig
-.resize-hash
 venv/
 site/
 docs/.obsidian/
-docs/id
-docs/officia
-docs/*.sync-conflict*
+# overrides/partials/footermatter.html
