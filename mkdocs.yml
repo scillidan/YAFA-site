@@ -27,14 +27,14 @@ theme:
       primary: white
       accent: light blue
       toggle:
-        icon: material/brightness-7
+        icon: material/brightness-4
         name: Switch to night
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       accent: indigo
       toggle:
-        icon: material/brightness-4
+        icon: material/brightness-7
         name: Switch to day
     features:
         - navigation.indexes

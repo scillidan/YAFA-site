@@ -251,6 +251,7 @@ firewall-cmd --list-all
 
 ↪ [How to install Apache on Rocky Linux 9](https://www.linuxteck.com/how-to-install-apache-on-rocky-linux/)
 ↪ [firewalld for Beginners](https://docs.rockylinux.org/guides/security/firewalld-beginners/)
+↪ [mod_ssl on Rocky Linux in an Apache web](https://docs.rockylinux.org/guides/web/mod_SSL_apache/)
 
 ## 配置SSL证书
 
