@@ -1,5 +1,5 @@
 ---
-title: "部署网站到VPS"
+title: "部署网站到VPS（笔记）"
 date:
     created: 2023-05-01
     updated: 2023-05-01

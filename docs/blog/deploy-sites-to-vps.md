@@ -8,15 +8,13 @@ keywords: >
 locale: en
 ---
 
-如果你有大量的记录或者创作，无论是文字、图片还是音视频，为此搭建一个个人网站，你便可以在其中任意移动、偶尔清扫。
+如果你有一些或者许多的记录或者创作，无论是文字、图片还是音视频，为此搭建一个个人网站，你便可以在其中任意移动、偶尔清扫。
 
-流行的方式是从「生成式网页」到「静态内容托管」。例如从[Hexo](https://hexo.io)、[Hugo](https://gohugo.io)等网页框架选择一或多个主题模板，通过[Github Pages](https://pages.github.com/)等服务，或者[Vercel](https://vercel.com)、[Netlify](https://app.netlify.com/)等平台来构建和部署站点。
+流行的方式是，同时也是很好的入门选择，是从「生成式网页」到「静态内容托管」。例如从[Hexo](https://hexo.io)、[Hugo](https://gohugo.io)等网页框架选择一或多个主题模板，通过[Github Pages](https://pages.github.com/)等服务，或者[Vercel](https://vercel.com)、[Netlify](https://app.netlify.com/)等平台来构建和部署站点。
 
-Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://github.com/ppoffice/hexo-theme-icarus)，也较喜欢[Stellar](https://github.com/xaoxuu/hexo-theme-stellar)的风格。Hugo中有相对丰富的主题，例如图墙模板的[Gallery Deluxe](https://github.com/bep/gallerydeluxe)，食谱模板的[recipe-book](https://github.com/rametta/recipe-book)等等，也易于修改。也不一定是静态网页和个人站点，但这是一个很好的入门选择。
+Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://github.com/ppoffice/hexo-theme-icarus)，也较喜欢[Stellar](https://github.com/xaoxuu/hexo-theme-stellar)的风格。Hugo有相对丰富的主题，例如图墙模板的[Gallery Deluxe](https://github.com/bep/gallerydeluxe)，食谱模板的[recipe-book](https://github.com/rametta/recipe-book)等等，也易于修改。
 
-而「部署到VPS」属于古代技术，成为了可选项。在不考虑外部资源（CDN、Web字体等等）的情况下，这将一步一步地手工地搭起一个原生的环境，所以它理应有很好的性能表现。
-
-部署的过程繁琐、易出错，主要涉及「多个二级域名」、「开启HTTPS」等操作。以及通用的单独的知识点，例如「更新软件包」「新建子用户」「Git的简单操作」等等。最终，以「本地构建，云端部署」或是「远程构建并部署」的方式，同时地去更新Github Pages和VPS。
+而「部署到VPS」的线路，将一步步地手工搭起一个原生的网页环境。在不考虑外部资源（CDN、Web字体等等）的情况下，它理应有良好的性能表现。作为一门古代技术，它的过程相当繁琐，又容易出错。主要涉及到「多个二级域名」、「开启HTTPS」等操作。以及通用的单独的知识点，例如「更新软件包」「新建子用户」「Git的一般操作」等等。最终，以「本地构建，云端部署」或是「远程构建并部署」的方式，同时地去更新Github Pages和VPS。
 
 ## 选购VPS
 
@@ -31,11 +29,11 @@ Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://gi
 5. 网站备案 → 我的备案 → 网站信息 → 新增网站 ...
 6. 留意核验短信
 
-备案需要预览站点，可以放在最后。完成后会有年审（吧），会检查（主域名的）页面的底部是否有备案号链接以及网站名称。
+备案时需要让站点可被访问，可以放在最后去做。完成后会有年审（吧），会检查（主域名的）页面的底部是否有备案号链接以及网站名称是否和提交的信息一致。
 
 ## VPS上安装系统
 
-我最早使用[Ubuntu](https://ubuntu.com/) + [Nginx](https://www.nginx.com/)的组合，听说了[CentOS](https://www.centos.org/) + [Apache](https://www.apache.org/)的性能会更好。[Rocky Linux](https://rockylinux.org)则是一个由社区支持的CentOS的代替品。
+我最早使用「[Ubuntu](https://ubuntu.com/) + [Nginx](https://www.nginx.com/)」的组合，听说了「[CentOS](https://www.centos.org/) + [Apache](https://www.apache.org/)」的性能会更好。[Rocky Linux](https://rockylinux.org)则是一个由社区支持的CentOS的代替品。
 
 腾讯云 → 控制台 → 云服务器 → 实例 → 目标实例 → 操作系统 → 重装系统 → 重装配置:
 
@@ -90,7 +88,7 @@ dnf update -y
 dnf install httpd php -y
 ```
 
-在Rocky Linux的文档中，为了防止一个网站出问题时影响其他网站，采用了稍复杂的文件结构。
+在Rocky Linux的文档中，为了防止一个网站出问题时影响其他网站，网页的配置文件采用了稍复杂的文件结构。
 
 ```bash
 mkdir -p /etc/httpd/sites-available /etc/httpd/sites-enabled
@@ -102,7 +100,7 @@ mkdir -p /etc/httpd/sites-available /etc/httpd/sites-enabled
 vi /etc/httpd/conf/httpd.conf
 ```
 
-可按`PageDown`定位到末尾。在新的一行，按`i`进入`Insert`模式。可复制下面这行，在WinSSHTerm中可以右键粘贴。官方文档这里写的是`Include`，但是会报错。我删除了报错信息中提到的文件，并且参考上下文，修改了这一处。
+可按`PageDown`定位到末尾。在新的一行，按`i`进入`Insert`模式。可复制下面这行，在WinSSHTerm中可以右键粘贴。
 
 ```
 IncludeOptional /etc/httpd/sites-enabled
@@ -112,7 +110,7 @@ IncludeOptional /etc/httpd/sites-enabled
 
 这里，文档将网站配置文件新建在了`sites-available/`，再通过系统链接，可选择地复制到`sites-enabled/`。文件夹中，以`com.Example.www`, `com.Example.SubDomain`（子域名）的风格来命名。且主域名的文件放在`/var/www/html/`，各个子域名的放在各自的`/var/www/sub-domains/SubDomain/html/`。
 
-新建并配置（主）域名。粘贴之前，根据你的实际域名，替换掉`Example.com`, `SubDomain`等示例名：
+新建并配置域名。粘贴之前，根据你的实际域名，替换掉`Example.com`, `SubDomain`等示例名：
 
 ```bash
 vi /etc/httpd/sites-available/com.Example
@@ -186,7 +184,7 @@ systemctl start httpd
 systemctl enable httpd
 ```
 
-通过新建（或删除）系统链接，来控制Web服务开启（或关闭）站点。这里是开启：
+通过新建（或删除）系统链接，来控制开启（或关闭）站点。这里是开启：
 
 ```bash
 ln -s /etc/httpd/sites-available/com.Example /etc/httpd/sites-enabled/
@@ -226,7 +224,7 @@ systemctl restart httpd
 
 ## 防火墙设置
 
-配置防火墙永久地打开公域的80和443端口，可通过HTTP和HTTPS协议被访问。
+防火墙上永久地打开公域的80和443端口，可通过HTTP和HTTPS协议被访问。
 
 ```bash
 firewall-cmd --permanent --zone=public --add-service=http
@@ -243,7 +241,7 @@ firewall-cmd --list-all
 
 ## 配置SSL证书
 
-使用[certbot](https://certbot.eff.org/)来配置域名的SSL证书。安装软件包：
+使用[certbot](https://certbot.eff.org/)来配置域名的SSL证书，启用HTTPS访问。安装软件包：
 
 ```bash
 dnf install epel-release -y
@@ -281,7 +279,7 @@ certbot renew --dry-run
 
 ↪ [Generating SSL keys - Let's Encrypt](https://docs.rockylinux.org/guides/security/generating_ssl_keys_lets_encrypt/)
 
-## 本地Build、上传云端
+## 本地Build，上传云端
 
 到此，如果你能够上传网页文件到对应的文件夹，就可以访问了。
 
@@ -291,7 +289,7 @@ certbot renew --dry-run
 
 ### PC上安装Git
 
-安装分布式版本控制系统[Git](https://git-scm.com/)。注册一个[GitHub](https://github.com/)账号。打开终端，配置PC上的Git用户信息：
+在PC上，安装分布式版本控制系统[Git](https://git-scm.com/)。注册一个[GitHub](https://github.com/)账号。打开终端，配置本机上的Git的用户信息：
 
 ```sh
 git config --global user.name "YourName"
@@ -305,7 +303,7 @@ git config --list
 ssh-keygen -t rsa -C "YourEmail"
 ```
 
-复制`C:\Users\YourName\.ssh\id_rsa.pub`里的内容, 浏览器中打开Github的[SSH and GPG keys](https://github.com/settings/keys)设置，「New SSH key」，粘贴进去。密钥的名字随意，当你看到名字，能够知道是哪台设备即可。
+复制`C:\Users\YourName\.ssh\id_rsa.pub`里的内容, 在浏览器中打开Github的[SSH and GPG keys](https://github.com/settings/keys)设置，「New SSH key」，粘贴进去。密钥的名字随意，当你看到名字，能够知道是哪台设备即可。
 
 测试与GitHub的SSH连接：
 
@@ -313,19 +311,19 @@ ssh-keygen -t rsa -C "YourEmail"
 ssh -T git@github.com
 ```
 
-这里的`ssh.exe`位于Git安装目录的`\usr\bin\`内，不是其他的`ssh.exe`，可以通过`where ssh`查看。
+这里的`ssh.exe`位于Git安装目录的`\usr\bin\`内，不是其他的`ssh.exe`。可以通过`where ssh`检查。
 
 ### PC上添加远程Repo
 
-新建一个[Repository](https://github.com/new)。Repo默认「公开」，对所有人可见，这样也能够使用[Github Pages](https://pages.github.com/)服务。名称随意。
+新建一个[Repository](https://github.com/new)。Repo默认「公开」，对所有人可见，这样也便能够使用[Github Pages](https://pages.github.com/)服务。名称随意。
 
-在你使用网页生成器生成文件夹后，进入文件夹，新建一个本地Repo：
+在你使用网页生成器生成文件夹后，进入文件夹。新建一个本地Repo：
 
 ```sh
 git init
 ```
 
-加入远程Repo。这里的`origin`是后文的目标远程Repo的默认简称：
+添加远程Repo。这里的`origin`是后文的目标远程Repo的默认简称：
 
 ```sh
 git remote add origin git@github.com:YourName/YourRepo.git
@@ -333,7 +331,9 @@ git remote add origin git@github.com:YourName/YourRepo.git
 
 ### 添加VPS上的远程Repo
 
-参考[One-Command Deployment](https://hexo.io/docs/one-command-deployment#Git)，如果你使用[Hexo](https://hexo.io/zh-cn/index.html)和部署插件[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)，只需要编辑Hexo配置文件`_config.yml`，添加一个Repo:
+「本地部署后上传」的方法来自[Deploy Hexo sites to VPS](https://scillidan.github.io/repo_page/Deploy%20Hexo%20sites%20to%20VPS.md.html)。原文写于2015年，链接已经失效，我在[Internet Archive](https://archive.org/)上找到了存档并保存了副本。
+
+如果你使用[Hexo](https://hexo.io/zh-cn/index.html)和部署插件[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)，只需要编辑Hexo配置文件`_config.yml`，再添加一个Repo:
 
 ```yaml
 deploy:
@@ -345,17 +345,15 @@ deploy:
     branch: main
 ```
 
-这个工具会在运行`hexo deploy`后上传`public/`里的所有内容。
+这个工具在运行`hexo deploy`后，只会上传`public/`里的所有内容，同时上传到Github，以及VPS上的Repo。
 
-没有专用的部署工具时，可采用手动的方法。方法来自[Deploy Hexo sites to VPS](https://scillidan.github.io/repo_page/Deploy%20Hexo%20sites%20to%20VPS.md.html)。原文写于2015年，链接已经失效，我在[Internet Archive](https://archive.org/)上找到了存档并保存了副本。
-
-以Hugo站点为例，在添加了`github.com`上的Repo后，额外添加VPS上的Repo，可命名为`vps`。这里，VPS上还没有`SubUser`这个用户，和`com.Example.git`文件夹，稍后会新建。
+没有专用的部署工具时，可采用手动的方法，以Hugo站点为例。在添加了远程Repo后，额外添加VPS上的Repo（稍后会使用子账户`git`来新建），命名为`vps`。
 
 ```sh
 git remote add vps SubUser@YourHost:/home/SubUser/com.Example.git
 ```
 
-编辑`.git/config`，增加两行。在`git push`时，就会同时`push`到Github和VPS：
+编辑`.git/config`，增加两行：
 
 ```
 [remote "origin"]
@@ -403,7 +401,7 @@ vim .ssh/authorized_keys
 
 粘贴PC上的`C:\Users\YourName\.ssh\id_rsa.pub`里的内容，保存并退出。
 
-回到PC。测试以`git`账户登录VPS：
+回到PC，测试以`git`账户登录VPS：
 
 ```bash
 ssh git@YourHost
@@ -418,7 +416,7 @@ su root
 yum install git -y
 ```
 
-账户目录下新建一个仅用以协作的Repo：
+子目录下新建一个仅用以协作的Repo：
 
 ```bash
 su git
@@ -438,7 +436,7 @@ chmod +x post-receive
 vi post-receive
 ```
 
-```
+```bash
 #!/bin/bash -l
 GIT_REPO=/home/git/com.Example.git
 TMP_GIT_CLONE=/tmp/com.Example
@@ -449,13 +447,13 @@ rm -rf ${PUBLIC_WWW}/*
 cp -rf ${TMP_GIT_CLONE}/BuildDir/* ${PUBLIC_WWW}
 ```
 
-这里的`BuildDir`是网页文件所在的目录名，常见的有`public`、`site`、`docs`等。对于使用[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)部署的分支，这里可能需要改成`cp -rf ${TMP_GIT_CLONE}/* ${PUBLIC_WWW}`。
+这里的`BuildDir`是网页文件所在的目录名，常见的名称有`public`、`site`、`docs`等。对于使用[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)部署的分支，这里可能需要改成`cp -rf ${TMP_GIT_CLONE}/* ${PUBLIC_WWW}`。
 
-如果你在这个步骤出错，可尝试重新删除相关文件夹，再重新配置。
+如果你在这个步骤出错，可尝试删除相关文件和文件夹，再重新操作。
 
 ### 上传到Repo（PC上）
 
-暂存当前目录和子目录的所有更改：
+在生成了网页文件后，暂存当前目录和子目录的所有更改：
 
 ```sh
 git add .
@@ -475,9 +473,31 @@ git push -u origin main
 
 ## 上传云端，再Build
 
-只需要在「部署到Github Pages」的基础上，加入[SCP for GitHub Actions](https://github.com/appleboy/scp-action)里的关键工作流。
+只需要在「部署到Github Pages」的任务脚本上，加入[SCP for GitHub Actions](https://github.com/appleboy/scp-action)里的关键工作流。
 
-以Hugo站点为例，根据[Host on GitHub Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/)，在`.github/workflows`下创建`deploy.yaml`。复制一份`deploy.yaml`，重命名为`deploy_cps.yml`，编辑文件，替换「Deployment job」段落为：
+以Hugo站点为例，根据[Host on GitHub Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/)的说明，在`.github/workflows`下新建`deploy.yml`。再复制一份，重命名为`deploy_cps.yml`，编辑该文件。
+
+修改这里的`--baseURL`这行的URL:
+
+```yaml
+- name: Build with Hugo
+  env:
+    # For maximum backward compatibility with Hugo modules
+    HUGO_ENVIRONMENT: production
+    HUGO_ENV: production
+  run: |
+    hugo \
+      --minify \
+      --baseURL "${{ steps.pages.outputs.base_url }}/"
+```
+
+到：
+
+```yaml
+--baseURL "https://SubDomain.Example.com"
+```
+
+替换`# Deployment job`以下的内容为：
 
 ```yaml
 - name: Rename public to html
@@ -493,7 +513,7 @@ git push -u origin main
     target: /var/www/sub-domains/SubDomain/
 ```
 
-去到你在Github上的Repo → Settings → Secrets and variables → Actions → New repository secret → 依次创建以上4个secret，填写Name和Secret：
+去到你在Github上的Repo → Settings → Secrets and variables → Actions → New repository secret → 依次创建脚本中写到的4个secret。Name和Secret分别为：
 
 ```
 VPS_HOST `YourHost`
@@ -502,15 +522,17 @@ VPS_USERNAME `git`
 VPS_PASSWORD `YourPassword`
 ```
 
-对于其他网页框架，请查找并阅读文档中的Publish、Deploy说明，或者你使用的具体的[GitHub Actions](https://github.com/marketplace)。再举个例子，在Material for MkDocs的[Publishing your site](https://squidfunk.github.io/mkdocs-material/publishing-your-site/)部分提供了用于GitHub Actions的`deploy.yaml`内容，它提示了如果要手动部署，去看[MkDocs](https://www.mkdocs.org/)的[Deploying your docs](https://www.mkdocs.org/user-guide/deploying-your-docs)。对于部署到VPS，就属于Other Providers部分。最后，知道了需要修改`deploy.yaml`的：
+再举个例子，在Material for MkDocs的[Publishing your site](https://squidfunk.github.io/mkdocs-material/publishing-your-site/)部分，也提供了`deploy.yml`内容，它提示去看[MkDocs文档](https://www.mkdocs.org/user-guide/deploying-your-docs)来进行手动部署。
 
-```
+依旧复制一份，重命名为`deploy_cps.yml`，修改`deploy_cps.yml`的：
+
+```yaml
 - run: mkdocs gh-deploy --force
 ```
 
 到：
 
-```
+```yaml
 - run: mkdocs build --clean
 - run: mv site html
 - name: Copy file to server
@@ -524,7 +546,7 @@ VPS_PASSWORD `YourPassword`
     target: /var/www/sub-domains/SubDomain/
 ```
 
-上传你的更新：
+最后，上传你的这些Actions脚本文件并测试。在主分支上进行测试不是一个规范的操作，但没大问题：
 
 ```sh
 git add .github\workflows\deploy.yml .github\workflows\deploy_scp.yml
