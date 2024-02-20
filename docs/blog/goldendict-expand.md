@@ -140,6 +140,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 - 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606
 
 特别一提，对于在线翻译，脚本集[GoldenDict tools](https://github.com/Ajatt-Tools/gd-tools)的[gd-mecab](https://github.com/Ajatt-Tools/gd-tools#gd-mecab)、[gd-marisa](https://github.com/Ajatt-Tools/gd-tools#gd-marisa)演示了一种梦幻般的辅助功能，可以置顶句子、分词、动态断句。但不支持Windows（我没有安装成功）。
+
 ## 使用LanguageTool进行语法检查
 
 [LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在运行了它的本地服务应用后，可以去到它的浏览器插件中，切换服务源，从「云服务」切换到「本地服务」：
@@ -153,7 +154,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-ex/languagetool.mp4){ .skip-lightbox }
 
-在一些场景，例如提交和回复Issues时，我需要使用简单的书面英语。虽然不进行检查，也有可能被理解意思，但我考虑在书写时更自然地使用LanguageTool。
+在一些场景，例如提交和回复Issues时，我需要使用简单的书面英语。虽然不进行检查，也有可能被理解意思，但我考虑在书写时用上语法检查。
 
 本地版的LanguageTool插件，它似乎只方便于：在浏览器的「输入框」输入完后，进行检查。我不太想无论长短句都去到新窗口中处理。这里就用到[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)，将它嵌入到GoldenDict来进行交互。
 
@@ -245,9 +246,7 @@ echo-cli "this is a exampl" | pylanguagetool --api-url http://localhost:8081/v2/
 
 需要等宽字体才能对齐「字母」和「波浪线」。速度上不如插件。
 
-另一方面，作为本地服务，LanguageTool大概占用`500~600mb`内存，耗电量属非常低。
-
-在不使用「Windows计划任务」的情况下，开机后在后台运行LanguageTool服务。新建`srv_languagetool.cmd`:
+作为本地服务，LanguageTool大概占用`500~600mb`内存，耗电量属非常低。在不使用「Windows计划任务」的情况下，开机后在后台运行LanguageTool服务，可以新建`srv_languagetool.cmd`:
 
 ```sh
 ...\java.exe -cp ...\LanguageTool\languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin
@@ -262,6 +261,8 @@ Set WshShell = Nothing
 ```
 
 右键`srv_languagetool.vbs`，新建快捷方式。将快捷方式，移动到`C:\Users\YourName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\`。
+
+目前，我一般集中地去处理（遗留的）Issues，所以我并未在后台常驻这个服务。
 
 ## 另一个语法检查脚本
 

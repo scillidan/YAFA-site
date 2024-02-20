@@ -21,6 +21,7 @@ GoldenDict向前兼容一些Windows XP之类的老旧系统，我个人也一般
 安装上，我使用了[Scoop](https://scoop.sh/)上的便携版，额外要手动删除`C:\Users\YourName\scoop\apps\goldendict\current\portable`目录，也就是挂掉配置文件夹`C:\Users\YourName\scoop\persist\goldendict`里的系统目录链接，而使用安装版的配置文件位置`C:\Users\YourName\AppData\Roaming\GoldenDict`，见[issue](https://github.com/goldendict/goldendict/issues/1560)。
 
 在配置上，我主要的需求是「词典」「在线翻译」「语法检查」「可离线使用」。
+
 ## 黑暗主题
 
 下载[GoldenDict-Full-Dark-Theme](https://github.com/yozhic/GoldenDict-Full-Dark-Theme)。原样式有几处圆角边框，我额外进行了一些调整，可以跳过。
@@ -70,6 +71,7 @@ GoldenDict → 编辑 → 首选项 → 附加样式 → Dark
 ![](dark-theme.png)
 
 主窗口的布局可在菜单栏的「查看」中设置，窗口大小可手动调整。对于弹窗窗口，参考该[issue](https://github.com/goldendict/goldendict/issues/1010)来操作。我个人使用的布局是：主窗口只保留「查询面板」，尺寸约为屏幕的3/4，宽的1/3；弹窗的尺寸约为屏幕高的1/2，宽的1/4。
+
 ## 修改字典字体
 
 去下载并安装收录全、完成度高的字体，例如[思源黑体](https://github.com/adobe-fonts/source-han-sans/)、[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)。
@@ -242,6 +244,10 @@ Send ^{c 2}  // 118行附近，此处的Ctrl+C+C改为Alt+Z，即Send !z
 按`Win+Shift+X`进行框选即可查词。
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict/umi-ocr.mp4){ .skip-lightbox }
+
+!!! repotemplate "Win键"
+    
+    即Windows键，或者Windows系统的菜单键。这个键默认地与一些有关的窗口(Window)功能绑定，例如我不用或者不怎么用的「截屏」、「窗口布局」、「虚拟桌面」等等。我虽然设置了[关闭Windows键热键](https://scillidan.github.io/LOG-page/#/page/65c48e97-fc16-4af2-8604-0b282509f112)，但十分清晰地，我犹记得在设置的几天后，它幽灵般地起了作用。而在后来的GoldenDict里，我需要在用过一次`Alt+Shift+G`后，才能正常使用`Alt+Z`。总之，在日常使用中，我布置了一些圣物、仪式，用来在各种情况下护身，例如：[Restart Explorer](https://www.sordum.org/9192/restart-explorer-v1-7/)、「设置Ctrl+Alt+Shift+R组合键来重启小狼毫算法服务」等等。
 
 ## 一些实用键位
 
