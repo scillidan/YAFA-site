@@ -16,7 +16,7 @@ Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://gi
 
 而「部署到VPS」几乎是一门古代技术，此文即是这条古老却生僻的路线的徒步记录。主要途径「多个二级域名」、「开启HTTPS」，以及「本地Build」「云端Build」两种部署方案，涉及到了不少Unix系统上的基础操作。
 
-最终，在这样一个原生的网页环境下，它理应会有良好的性能表现。具体情况下，它受到了VPS性能、网络运营商、CDN资源（Web字体等）、大型媒体文件（图片、音频、视频）等等的影响。
+而我之前买的VPS再不使用的话，就要到期了。最终，在那样一个原生的网页环境下，它理应会有良好的性能表现。具体情况下，它又受到了VPS性能、网络运营商、CDN资源（Web字体等）、大型媒体文件（图片、音频、视频）等等的影响。
 
 ## 选购VPS
 
@@ -285,7 +285,7 @@ certbot renew --dry-run
 
 ## 选择部署方式
 
-到此，如果你能够上传网页文件到对应的文件夹，就可以进行访问了。这个步骤，网络上有许多不同的方法和工具。例如，对于Hexo，可参考[One-Command Deployment](https://hexo.io/docs/one-command-deployment)，对于Hugo，可参考[Hosting and Deployment](https://gohugo.io/categories/hosting-and-deployment/)。我试过[SiriKali](https://mhogomchungu.github.io/sirikali/)、[cwRsync](https://itefix.net/cwrsync)等等，最终使用[Gitbub Actions](https://github.com/marketplace)在云端进行构建，再「部署到Gihub Pages」。而我的VPS再不使用的话，就要到期了，所以再试试「部署到VPS」。
+到此，如果你能够上传网页文件到对应的文件夹，就可以进行访问了。这个步骤，网络上有许多不同的方法和工具。例如，对于Hexo，可参考[One-Command Deployment](https://hexo.io/docs/one-command-deployment)，对于Hugo，可参考[Hosting and Deployment](https://gohugo.io/categories/hosting-and-deployment/)。我试过[SiriKali](https://mhogomchungu.github.io/sirikali/)、[cwRsync](https://itefix.net/cwrsync)等等，最终使用[Gitbub Actions](https://github.com/marketplace)在云端进行构建，再部署到Gihub Pages和VPS。
 
 ## 本地Build
 
