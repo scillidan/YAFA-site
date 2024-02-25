@@ -8,6 +8,11 @@ keywords: >
 locale: en
 ---
 
+!!! read ""
+  
+    日期：2023-12-26  
+    归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
+
 如果你有一些，或者正在进行着记录、创作，无论是文字、图片还是音频、视频——像档案一样归类、保存它们，再使用流行却陌生的「生成式网页」工具，从你的文本文件和媒体文件生成Web页面，上传到云端，你便可以在空中有一块土地。你可以一砖一瓦地建造，亦或是重建。也可以在其中任意移动、偶尔清扫。对你来说，它是你的文件的备份，历史内容的归档，归属关系的证明。对于别人来说，它是高可信度的来源，目录化、图形化的可读、可视事物。
 
 从「生成式网页」到「静态内容托管」，是很好的入门选择。例如从[Hexo](https://hexo.io)、[Hugo](https://gohugo.io)等网页框架选择一或多个主题模板，通过[Github Pages](https://pages.github.com/)等服务，或者[Vercel](https://vercel.com)、[Netlify](https://app.netlify.com/)等平台来构建和部署站点。
