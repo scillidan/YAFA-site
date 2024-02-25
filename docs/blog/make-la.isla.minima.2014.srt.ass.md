@@ -23,7 +23,7 @@ locale: en
 
 一些影视DVD的光盘文件，有一定几率掉落母语版字幕，它通常有正确的时间轴。2014年的西班牙剧情、悬疑题材电影《沼泽地》，它的西语版.srt（SubRip Text）文件，通篇带有一些电影脚本内容——包含背景声、音效、人物演出等注释。这些通常是之后会剔除的部分，例如在它的英译版字幕里。
 
-留下这些内容…这里挪用影片中的一个角色事件「无证狩猎」——先去拿到几 个关键道具：电子词典浏览器[GoldenDict](http://goldendict.org)、网页浏览器插件[沙拉查词](https://saladict.crimx.com)、Python包[autosub](https://github.com/agermanidis/autosub)、Rust包[alass-cli](https://crates.io/crates/alass-cli)，便开始寻迹和偷猎。
+留下这些内容…这里挪用影片中的一个角色事件「无证狩猎」——先去拿到几个关键道具：电子词典浏览器[GoldenDict](http://goldendict.org)、网页浏览器插件[沙拉查词](https://saladict.crimx.com)、Python包[autosub](https://github.com/agermanidis/autosub)、Rust包[alass-cli](https://crates.io/crates/alass-cli)，便开始寻迹和偷猎。
 
 ## 翻译
 
@@ -148,7 +148,7 @@ NVIDIA显卡上的参数，应该也可以参考这个。
 
 !!! repotemplate "「壳中壳」 2022-07"
     
-    [Tabby](https://tabby.sh)，作为Cmder的「壳」，安装[Starship](https://starship.rs)并配置后，可以使它看着像原来的Cmder。启动更慢，功能更多。
+    [Tabby](https://tabby.sh)，作为Cmder的「壳」，安装[Starship](https://starship.rs)并配置后，可以使它看着像原来的Cmder。启动更慢，功能更多。我需要它的窗口相关的功能。
 
 因为Cmder需要进行配置，这里就以应急物品CMD为例。
 

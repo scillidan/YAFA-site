@@ -247,7 +247,8 @@ Send ^{c 2}  // 118行附近，此处的Ctrl+C+C改为Alt+Z，即Send !z
 
 !!! repotemplate "Win键"
     
-    即Windows键，或者Windows系统的菜单键。这个键默认地与一些有关的窗口(Window)功能绑定，例如我不用或者不怎么用的「截屏」、「窗口布局」、「虚拟桌面」等等。我虽然设置了[关闭Windows键热键](https://scillidan.github.io/LOG-page/#/page/65c48e97-fc16-4af2-8604-0b282509f112)，但十分清晰地，我犹记得在设置的几天后，它幽灵般地起了作用。而在后来的GoldenDict里，我需要在用过一次`Alt+Shift+G`后，才能正常使用`Alt+Z`。总之，在日常使用中，我布置了一些圣物、仪式，用来在各种情况下护身，例如：[Restart Explorer](https://www.sordum.org/9192/restart-explorer-v1-7/)、「设置Ctrl+Alt+Shift+R组合键来重启小狼毫算法服务」等等。
+    即Windows键，或者Windows系统的菜单键。这个键默认地与一些有关的窗口(Window)功能绑定，例如我不用或者不怎么用的「截屏」、「窗口布局」、「虚拟桌面」等等。我虽然设置了[关闭Windows键热键](https://scillidan.github.io/LOG-page/#/page/65c48e97-fc16-4af2-8604-0b282509f112)，但十分清晰地，我记得在设置的几天后，它幽灵般地起了作用，然后又经常在某个时候抽风。<br/>类似的情况，在后来的GoldenDict里，我需要在用过一次`Alt+Shift+G`后，才能正常使用`Alt+Z`。
+    <br/>总之，在日常使用中，我布置了一些圣物、仪式，用于在各种日常里护身，例如：[Restart Explorer](https://www.sordum.org/9192/restart-explorer-v1-7/)、「设置Ctrl+Alt+Shift+R组合键来重启小狼毫算法服务」等等。
 
 ## 一些实用键位
 
