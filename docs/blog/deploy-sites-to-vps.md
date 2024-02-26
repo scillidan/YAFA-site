@@ -57,7 +57,7 @@ Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://gi
 
 目标实例 → IP地址 `YourHost (公)` → 复制
 
-我使用的SSH工具箱是[WinSSHTerm](https://winsshterm.blogspot.com/)。
+我使用的SSH工具箱是[WinSSHTerm](https://winsshterm.blogspot.com/)。也可以选择[WindTerm](https://github.com/kingToolbox/WindTerm)、[electerm](https://electerm.github.io/electerm/)、[MobaXterm](https://mobaxterm.mobatek.net/)等。
 
 WinSSHTerm → Connections → Connect → Add Connection:
 
@@ -613,3 +613,5 @@ git push
 到你在Github上的Repo的Actions栏，观察运行情况。如果顺利的话，将看到：
 
 ![](deploy_cps.png)
+
+如果你未看到有任何信息，可能需要先确认「Actions的workflow是否开启」，以及「Setting里的Pages是否开启」。
