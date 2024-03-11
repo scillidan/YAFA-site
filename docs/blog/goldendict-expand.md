@@ -155,7 +155,7 @@ GoldenDict-ng → 编辑 → 词典 → 词典来源/程序 → 添加：
 命令行 `...\Ajatt-tools\gd-tools\gd-tools.exe marisa --word %GDWORD% --sentence %GDSEARCH% --path-to-dic ...\Ajatt-tools\gd-tools\marisa_words.dic`
 ```
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-ex/gd-marisa.mp4){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/gd-marisa.mp4){ .skip-lightbox }
 
 
 ## 使用LanguageTool进行语法检查
@@ -169,7 +169,7 @@ GoldenDict-ng → 编辑 → 词典 → 词典来源/程序 → 添加：
 5. 浏览器插件 → Settings → Advanced settings → Localserver (localhost)
 6. ... General settings → Show in right-click menu (On)
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-ex/languagetool.mp4){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/languagetool.mp4){ .skip-lightbox }
 
 在一些场景，例如提交和回复Issues时，我需要使用简单的书面英语。虽然不进行检查，也有可能被理解意思，但我考虑在书写时用上语法检查。
 
