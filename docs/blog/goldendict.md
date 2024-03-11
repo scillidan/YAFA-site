@@ -18,7 +18,7 @@ locale: en
 
 GoldenDict向前兼容一些Windows XP之类的老旧系统，我个人也一般使用软件的稳定版，这里就以配置GoldenDict为例。软件版本为[GoldenDict 1.5.0](https://github.com/goldendict/goldendict/releases/tag/1.5.0)、[GoldenDict-ng-v23.09.29](https://github.com/xiaoyifang/goldendict-ng/releases/tag/v23.09.29-MoonCake.7f0f8778)的`6.5.2-****.zip`。二者在菜单的配置步骤上，可能有小部分差异，而配置文件几乎可以共用（不推荐）。更多的使用说明见[GoldenDict文档](https://github.com/goldendict/goldendict/wiki)和[GoldenDict-ng文档](https://xiaoyifang.github.io/goldendict-ng/)。
 
-安装上，我使用了[Scoop](https://scoop.sh/)上的便携版，额外要手动删除`C:\Users\YourName\scoop\apps\goldendict\current\portable`目录，也就是挂掉配置文件夹`C:\Users\YourName\scoop\persist\goldendict`里的系统目录链接，而使用安装版的配置文件位置`C:\Users\YourName\AppData\Roaming\GoldenDict`，见[issue](https://github.com/goldendict/goldendict/issues/1560)。
+安装上，我使用了[Scoop](https://scoop.sh/)上的便携版，额外要手动删除`C:\Users\YourName\scoop\apps\goldendict\current\portable`目录，也就是挂掉配置文件夹`C:\Users\YourName\scoop\persist\goldendict`里的系统目录链接，而使用安装版的配置文件位置`C:\Users\YourName\AppData\Roaming\GoldenDict`，见[issue](https://github.com/goldendict/goldendict/issues/1560)。可以备份这里的`config`文件。
 
 在配置上，我主要的需求是「词典」「在线翻译」「语法检查」「可离线使用」。
 
@@ -163,7 +163,7 @@ GoldenDict已内置了部分的拼写词库，勾选条目即可。
 
 1. `.opus`格式的体积更小，音质也十分相近，所以下载时只勾选`Forvo_pronunciations/export/opus`。约24GB大小，下载完成后不需解压
 2. 成员提到了GoldenDict的「音频文件目录」这个功能不方便也不可靠，推荐使用`.dsl`文件。可以当成是目录册，指向音频文件的位置
-3. 新版本的`.dsl`文件被补充了，需要从[MEGA分享链接](https://mega.nz/folder/3CwCmR7D#05Q08F-cTKPiOTdjKXAcuw) 下载，下载后解压`ForvoDSL-20220513.7z`
+3. 新版本的`.dsl`文件被补充了，需要从[MEGA分享链接](https://mega.nz/folder/3CwCmR7D#05Q08F-cTKPiOTdjKXAcuw)下载，下载后解压`ForvoDSL-20220513.7z`
 
 这里，`ForvoDSL/ForvoDSL-20220513`里的`.dsl`文件，需要同`Forvo_pronunciations/export/opus`里的`zip`，放入同一个文件夹，例如`gd_forvo`。并且修改文件名，一一对应，例如将`en.zip`重命名为`ForvoEnglish.dsl.files.zip`，对应`ForvoEnglish.dsl`。然后：
 
@@ -234,9 +234,11 @@ Send ^{c 2}  // 118行附近，此处的Ctrl+C+C改为Alt+Z，即Send !z
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict/with-mouse.mp4){ .skip-lightbox }
 
-## 设置联动OCR取词
+## 设置OCR取词
 
-[Umi-OCR](https://github.com/hiroi-sora/Umi-OCR)是一款开源、可离线、功能灵活的OCR软件。用于一般OCR时，它可提供高速稳定、准确率较高的中英文混合识别。并且可以再配置一组快捷键，在OCR后触发GoldenDict查词，即[「截图联动」](https://github.com/hiroi-sora/Umi-OCR/issues/166)。配置步骤：
+[Umi-OCR](https://github.com/hiroi-sora/Umi-OCR)是一款开源、可离线、功能灵活的OCR软件。用于一般OCR时，它可提供高速稳定、准确率较高的中英文混合识别。
+
+在[V1版本]([https://github.com/hiroi-sora/Umi-OCR/releases/tag/v1.3.5](https://link.zhihu.com/?target=https%3A//github.com/hiroi-sora/Umi-OCR/releases/tag/v1.3.5))里，可以再配置一组快捷键，在OCR后触发GoldenDict查词，即[「截图联动」](https://github.com/hiroi-sora/Umi-OCR/issues/166)。配置步骤：
 
 1. Umi-OCR → 设置 → 截图联动 On → 快捷键/修改 → 例如`Win+Shift+X`
 2. ... 联动发送按键/修改 → `Alt+Z`
@@ -250,6 +252,9 @@ Send ^{c 2}  // 118行附近，此处的Ctrl+C+C改为Alt+Z，即Send !z
     即Windows键，或者Windows系统的菜单键。这个键默认地与一些有关的窗口(Window)功能绑定，例如我不用或者不怎么用的「截屏」、「窗口布局」、「虚拟桌面」等等。我虽然设置了[关闭Windows键热键](https://scillidan.github.io/LOG-page/#/page/65c48e97-fc16-4af2-8604-0b282509f112)，但十分清晰地，我记得在设置的几天后，它幽灵般地起了作用，然后又经常在某个时候抽风。<br/>类似的情况，在后来的GoldenDict里，我需要在用过一次`Alt+Shift+G`后，才能正常使用`Alt+Z`。
     <br/>总之，在日常使用中，我布置了一些圣物、仪式，用于在各种日常里护身，例如：[Restart Explorer](https://www.sordum.org/9192/restart-explorer-v1-7/)、「设置Ctrl+Alt+Shift+R组合键来重启小狼毫算法服务」等等。
 
+对于V2版本，或者说更通用的情况，只需要勾选「复制OCR结果」，在OCR之后按`Alt+Z`就可以了。配置步骤：
+
+Umi-OCR → 添加 → Screenshot OCR → Action after recognition → Copy result (开)
 ## 一些实用键位
 
 [全部快捷键](https://xiaoyifang.github.io/goldendict-ng/ui_shortcuts/) ，也可在主菜单的「帮助」中查看。以及一些[常用快捷键](https://github.com/goldendict/goldendict/wiki/Useful-Shortcuts)，如：

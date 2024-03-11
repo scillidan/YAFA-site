@@ -48,7 +48,7 @@ apple (English)
     └── æppel (Old English (ca. 450-1100))
 ```
 
-当在Windows 10的GoldenDict里使用`ety-python`时，我遇到了一些问题（见[issue](https://github.com/goldendict/goldendict/issues/1678), [blog](https://isaacong.me/posts/unicodeencodeerror-when-redirecting-python-output/)）。最后虽然并未解决问题，但算是勉强能用了。使用了一个在隔离环境中的、有修改的`ety-python`：
+当在Windows 10的GoldenDict里使用`ety-python`时，我遇到了一些问题（见[issue #1678](https://github.com/goldendict/goldendict/issues/1678), [blog](https://isaacong.me/posts/unicodeencodeerror-when-redirecting-python-output/)）。最后虽然并未解决问题，但算是勉强能用了。使用了一个在隔离环境中的、有修改的`ety-python`：
 
 ```sh
 git clone https://github.com/jmsv/ety-python
@@ -129,7 +129,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 已启用 On
 类型 纯文本
 名称 `TencentTrans-22`
-命令行 `python .../TencentTrans-22.py %GDWORD%`
+命令行 `python ...\TencentTrans-22.py %GDWORD%`
 ```
 
 ![](tencenttrans_22.png)
@@ -139,7 +139,24 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 - 不明Bug，例如有些语言如韩语，当在GoldenDict中输出时，在翻译文字前会显示一串报错
 - 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606
 
-特别一提，对于在线翻译，脚本集[GoldenDict tools](https://github.com/Ajatt-Tools/gd-tools)的[gd-mecab](https://github.com/Ajatt-Tools/gd-tools#gd-mecab)、[gd-marisa](https://github.com/Ajatt-Tools/gd-tools#gd-marisa)演示了一种梦幻般的辅助功能，可以置顶句子、分词、动态断句。但不支持Windows（我没有安装成功）。
+
+## 添加分词脚本（仅gd-ng）
+
+[GoldenDict tools](https://github.com/Ajatt-Tools/gd-tools)是一套GoldenDict-ng的增强脚本集，主要用于日语学习。它的[gd-marisa](https://github.com/Ajatt-Tools/gd-tools#gd-marisa)、[gd-mecab](https://github.com/Ajatt-Tools/gd-tools#gd-mecab)脚本，可以置顶句子、分词、断句。似乎也能用于中文，但并没有实际的「中文分词」的功能，可以用「划词再右键」来代替。
+
+参考[Issue #18](https://github.com/Ajatt-Tools/gd-tools/issues/18)下载`gd-tools_windows.zip`，解压后运行安装包。当安装包没有提供Hash值时，我习惯拖到[VirusTotal](https://www.virustotal.com)进行检查。虽然这个安装包有几个红色警告，但我在[HiBit Uninstaller](https://www.hibitsoft.ir/Uninstaller.html)的「安装监视程序」下，选择了任意一处位置进行安装。
+
+GoldenDict-ng → 编辑 → 词典 → 词典来源/程序 → 添加：
+
+```
+已启用 On
+类型 Html
+名称 `gd-marisa`
+命令行 `...\Ajatt-tools\gd-tools\gd-tools.exe marisa --word %GDWORD% --sentence %GDSEARCH% --path-to-dic ...\Ajatt-tools\gd-tools\marisa_words.dic`
+```
+
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-ex/gd-marisa.mp4){ .skip-lightbox }
+
 
 ## 使用LanguageTool进行语法检查
 
@@ -281,7 +298,7 @@ pip install -e .
 pip install ...\torch-2.0.1+cu118-cp39-cp39-win_amd64.whl
 ```
 
-参考[issue](https://github.com/PrithivirajDamodaran/Gramformer/issues/31):
+参考[issue #31](https://github.com/PrithivirajDamodaran/Gramformer/issues/31):
 
 ```sh
 python -m spacy download en
