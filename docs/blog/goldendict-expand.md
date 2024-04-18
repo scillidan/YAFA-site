@@ -122,7 +122,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 1. 首先参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)说明，或者看[官方介绍](https://cloud.tencent.com/product/tmt)去获得API
 2. 下载修改版的[TencentTrans_22.py](https://github.com/scillidan/tencent-translate-for-goldendict/blob/master/TencentTrans_22.py)，脚本中填写API的`SecretId`和`SecretKey`
-3. `pip install tencentcloud-sdk-python`
+3. `pip install tencentcloud-sdk-python langid`
 4. ... 词典 → 词典来源/程序 → 添加：
 
 ```

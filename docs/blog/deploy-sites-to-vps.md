@@ -4,14 +4,15 @@ date:
     created: 2024-01-27
     updated: 2024-01-29
 keywords: >
-    Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
+    Deploy Site, VPS, Rocky Linux, Apache, Ubuntu, Nginx
 locale: en
 ---
 
 !!! read ""
   
     日期：2024-01-27  
-    归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
+    归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
+    存档：[2023-05-01](../deploy-sites-to-vps-note)
 
 如果你有一些，或者正在进行着记录、创作，无论是文字、图片还是音频、视频——像档案一样归类、保存它们，再使用流行却陌生的「生成式网页」工具，从你的文本文件和媒体文件生成Web页面，上传到云端，你便可以在空中有一块土地。你可以一砖一瓦地建造，亦或是重建。也可以在其中任意移动、偶尔清扫。对你来说，它是你的文件的备份，历史内容的归档，归属关系的证明。对于别人来说，它是高可信度的来源，目录化、图形化的可读、可视事物。
 
@@ -21,7 +22,7 @@ Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://gi
 
 而「部署到VPS」几乎是一门古代技术，此文即是这条古老却生僻的路线的徒步记录。主要途径「多个二级域名」、「开启HTTPS」，以及「本地Build」「云端Build」两种部署方案，涉及到了不少Unix系统上的基础操作。
 
-而我之前买的VPS再不使用的话，就要到期了。最终，在那样一个原生的网页环境下，它理应会有良好的性能表现。具体情况下，它又受到了VPS性能、网络运营商、CDN资源（Web字体等）、大型媒体文件（图片、音频、视频）等等的影响。
+而我之前买的VPS再不使用的话，就要到期了。最终，在那样一个原生环境下，低性能的VPS配置理应会有相对良好的性能。具体情况下，它又受到了VPS性能、网络运营商、CDN资源（Web字体等）、大型媒体文件（图片、音频、视频）等因素的影响。
 
 ## 选购VPS
 
@@ -614,4 +615,7 @@ git push
 
 ![](deploy_cps.png)
 
-如果你未看到有任何信息，可能需要先确认「Actions的workflow是否开启」，以及「Setting里的Pages是否开启」。
+如果你未看到有任何信息，可能需要先确认：
+
+- Setting → Pages → Build and deployment/Source → Github Actions
+- Actions → I understand my workflows, go ahead and enable them

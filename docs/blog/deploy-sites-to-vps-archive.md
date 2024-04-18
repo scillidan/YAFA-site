@@ -1,27 +1,14 @@
 ---
-title: "部署网站到VPS（笔记）"
+title: "部署网站到VPS（归档）"
 date:
     created: 2023-05-01
     updated: 2023-05-01
 keywords: >
-    Deploy Site, VPS, Rocky Linux, Apache , Ubuntu, Nginx
+    Deploy Site, VPS, Ubuntu, Nginx
 locale: en
 ---
 
-## VPS
-
-这里用的腾讯云VPS，随着平台更新，操作流程可能会变化。我沿用了2021年的「关键步骤」的笔记。
-
-1. 注册腾讯云帐号 → 实名认证
-2. 云服务器 → 立即选购
-3. 云产品 → DNS解析DNSPod → 域名注册
-4. 域名 → 操作 → 解析 → 记录管理 → 添加记录 ...
-5. 网站备案 → 我的备案 → 网站信息 → 新增网站 ...
-6. 留意核验短信
-
 ## Rocky Linux or Ubuntu
-
-云服务器 → 实例 ... 更多操作 → 重装系统 → 公共镜像 ...
 
 === "Rocky Linux"
 
@@ -157,11 +144,6 @@ locale: en
     ```bash
     sudo systemctl restart httpd
     ```
-    ↪ † link diushi he sunhuai
-
-> 术语虚拟主机指的是在单一机器上运行多个网站 (例如 `company1.example.com` 和 `company2.example.com`) 。 虚拟主机可以“[基于 IP](https://httpd.apache.org/docs/2.4/vhosts/ip-based.html)”，即每个 IP 一个站点； 或者“[基于名称](https://httpd.apache.org/docs/2.4/vhosts/name-based.html)”， 即每个 IP 多个站点。这些站点运行在同一物理服务器上的事实不会明显的透漏给最终用户。
-
-摘自[Apache 虚拟主机文档2.4版中文页](https://httpd.apache.org/docs/2.4/vhosts/)
 
 ## SSL 
 

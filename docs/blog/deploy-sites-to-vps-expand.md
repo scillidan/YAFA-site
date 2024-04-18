@@ -8,6 +8,16 @@ keywords: >
 locale: en
 ---
 
+## 资源压缩
+
+### Xnconvert、Yoga
+
+### Xmedia
+
+### Hardbrake
+
+### web-font
+
 ## CDN
 
 个人网站上，常见的是图文。如果你已经预处理过媒体文件，并且使用CDN节点来访问它们，以及Web字体、部分CSS和JS脚本，即使是低配的VPS，也可以获得十分高的速度。但是较流行的做法是将大型的音频、视频等媒体文件上传到各个平台。
@@ -63,7 +73,6 @@ https://console.cloud.tencent.com/cam/capi
 
 按提示`systemctl status httpd.service`后，可尝试删除报错的文件，然后重试。
 步骤被分割得细碎，如果你在某个地方卡壳，可以向前退回到某个还没报错节点
-
 
 ### HTTPS
 
@@ -244,8 +253,4 @@ To
 ↪ [How to specify a port number for pm2](https://stackoverflow.com/questions/31502351/how-to-specify-a-port-number-for-pm2)
 ↪ [How to change the port in nextjs?](https://medium.com/frontendweb/how-to-change-port-in-nextjs-1b99930bb81f)
 
-## rsync
-
-```bash
-dnf install rsync
-```
+## Docker
