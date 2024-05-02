@@ -512,6 +512,7 @@ git push -u origin main
 ```
 
 打开浏览器，访问`Example.com`，查看页面是否更新。
+
 ## 云端Build
 
 首先去取得「部署到Github Pages」的自动化脚本。
@@ -619,3 +620,83 @@ git push
 
 - Setting → Pages → Build and deployment/Source → Github Actions
 - Actions → I understand my workflows, go ahead and enable them
+
+!!! repotemplate "Bug"
+    
+    后来，我重新处理、压缩了[BYYA](https://github.com/scillidan/BYYA-site)上的所有图片。因为我不熟悉Git的某些操作，我删除并重新上传了整个Repo，也就遇到了[Issue #169](https://github.com/appleboy/scp-action/issues/169)中说明的问题。
+
+## 小抄
+
+最后，是一份小抄。如果你需要在VPS上，添加一个子域名，依次：
+
+```sh
+vi /etc/httpd/sites-available/com.Example.SubDomain
+```
+
+```
+<VirtualHost *:80>
+    ServerName SubDomain.Example.com
+    DocumentRoot /var/www/sub-domains/SubDomain/html
+    DirectoryIndex index.php index.htm index.html
+
+    CustomLog "/var/log/httpd/demo-access_log" combined
+    ErrorLog  "/var/log/httpd/demo-error_log"
+
+    <Directory /var/www/sub-domains/SubDomain/html>
+        Options -ExecCGI -Indexes
+        AllowOverride None
+
+        Order deny,allow
+        Deny from all
+        Allow from all
+
+        Satisfy all
+    </Directory>
+</VirtualHost>
+```
+
+```sh
+mkdir -p /var/www/sub-domains/SubDomain/html
+ln -s /etc/httpd/sites-available/com.Example.SubDomain /etc/httpd/sites-enabled/
+systemctl restart httpd
+```
+
+打开浏览器，登录VPS的控制台，添加子域名的解析。
+
+```sh
+certbot --apache
+```
+
+```sh
+chown git:git -R /var/www/sub-domains/SubDomain/html
+su git
+```
+
+```sh
+cd ~
+mkdir com.Example.SubDomain.git
+cd com.Example.SubDomain.git
+git config --global init.defaultBranch main
+git init --bare
+cd hooks
+touch post-receive
+chmod +x post-receive
+vi post-receive
+```
+
+```
+#!/bin/bash -l
+GIT_REPO=/home/git/com.Example.SubDomain.git
+TMP_GIT_CLONE=/tmp/com.Example.SubDomain
+PUBLIC_WWW=/var/www/html/sub-domains/SubDomain/html
+rm -rf ${TMP_GIT_CLONE}
+git clone $GIT_REPO $TMP_GIT_CLONE
+rm -rf ${PUBLIC_WWW}/*
+cp -rf ${TMP_GIT_CLONE}/BuildDir/* ${PUBLIC_WWW}
+```
+
+```sh
+git add .
+git commit -m "test add sub-domain"
+git push
+```
