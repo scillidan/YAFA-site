@@ -616,9 +616,9 @@ git push
 
 ![](deploy_cps.png)
 
-如果你未看到有任何信息，可能需要先确认：
+如果你未看到有任何信息，可能需要检查：
 
-- Setting → Pages → Build and deployment/Source → Github Actions
+- Setting → Pages → Build and deployment/Source → Github Actions ...
 - Actions → I understand my workflows, go ahead and enable them
 
 !!! repotemplate "Bug"
