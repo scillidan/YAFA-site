@@ -1,4 +1,3 @@
-<!-- - [vps ex (tbd)](deploy-sites-to-vps-expand.md) -->
 - [vps](deploy-sites-to-vps.md)
 - [goldendict ex](goldendict-expand.md)
 - [goldendict](goldendict.md)

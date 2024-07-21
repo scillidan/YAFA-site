@@ -10,7 +10,9 @@ locale: en
 
 ## 资源压缩
 
-### Xnconvert、Yoga
+### Xnconvert
+
+↪ https://zhuanlan.zhihu.com/p/490282841
 
 ### Xmedia
 

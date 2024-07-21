@@ -181,8 +181,9 @@ plugins:
       exclude_unreferenced: true
   - exclude:
       glob:
+        - ".obsidian/*"
+        - "draft/*"
         - "*.pdf"
-        - ".obsidian"
       # regex:
       #   - '.*\.(tmp|bin|tar|.obsidian)$'
   # - furigan:

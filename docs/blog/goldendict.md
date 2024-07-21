@@ -12,7 +12,6 @@ locale: en
   
     日期：2023-12-20  
     归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
-    备注：1)有少量细节校正
 
 [GoldenDict](http://goldendict.org/)是一款开源的桌面端词典检索应用，跨平台，[支持多种词典格式](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)。它有十分丰富的可配置项，包括字典组，拼写检查、单词发音、语音合成、在线翻译等等。[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)是基于前者重写的新一代GoldenDict，修复了[一些长期累积的问题](https://github.com/xiaoyifang/goldendict-ng/issues/587)，目前仍然处于积极开发中，安装时可看[发行版块](https://github.com/xiaoyifang/goldendict-ng/releases)和[打包的版本](https://xiaoyifang.github.io/goldendict-ng/install/)。
 
@@ -143,11 +142,9 @@ etymology
 
 ## 添加拼写检查词库
 
-GoldenDict已内置了部分的拼写词库，勾选条目即可。
+GoldenDict已内置了部分拼写词库，勾选所需即可。如果需要额外添加词库：
 
-如果需要额外添加词库：
-
-1. 搜索并下载名「Hunspell Dictionary」，里面有`.aff`、`.dic`文件，例如[English Spell Checker Dictionaries](http://wordlist.aspell.net/dicts/)上的「en_US」。要添加多个词库时，需要将所有的`.aff`、`.dic`文件放在同一目录下，例如新建一个文件夹`gd_hunspell`
+1. 搜索并下载名「Hunspell Dictionary」，里面包含`.aff`、`.dic`文件，例如[English Spell Checker Dictionaries](http://wordlist.aspell.net/dicts/)上的「en_US」、[LibreOffice Hunspell dictionaries](https://github.com/LibreOffice/dictionaries)[]。要添加多个词库时，需要将所有的`.aff`、`.dic`文件放在同一目录下，例如新建一个文件夹`gd_hunspell`
 2. ... 词典 → 词典来源/构词法规则库 → 变更 → `gd_hunspell`所在 → 勾选库中条目 → 应用
 3. ... 群组 → 将拼写词典拖入词典群组
 
@@ -255,6 +252,7 @@ Send ^{c 2}  // 118行附近，此处的Ctrl+C+C改为Alt+Z，即Send !z
 对于V2版本，或者说更通用的情况，只需要勾选「复制OCR结果」，在OCR之后按`Alt+Z`就可以了。配置步骤：
 
 Umi-OCR → 添加 → Screenshot OCR → Action after recognition → Copy result (开)
+
 ## 一些实用键位
 
 [全部快捷键](https://xiaoyifang.github.io/goldendict-ng/ui_shortcuts/) ，也可在主菜单的「帮助」中查看。以及一些[常用快捷键](https://github.com/goldendict/goldendict/wiki/Useful-Shortcuts)，如：
