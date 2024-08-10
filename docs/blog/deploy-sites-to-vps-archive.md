@@ -8,6 +8,21 @@ keywords: >
 locale: en
 ---
 
+```asciinema-player
+{
+    "file": "assets/asciinema/echo.cast",
+    "title": "",
+    "mkap_theme": "no-border",
+    "theme": "nord",
+    "cols": 120,
+    "rows": 20,
+    "terminal_font_size": "small",
+    "terminal_font_family": "Sarasa Mono SC",
+    "terminal_line_height": "1.3",
+    "pause_on_markers": true
+}
+```
+
 ## Rocky Linux or Ubuntu
 
 === "Rocky Linux"

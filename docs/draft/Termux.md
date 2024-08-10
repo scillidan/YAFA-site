@@ -1,5 +1,11 @@
 ↪ https://termux.dev/en
 
+```sh
+pkg install git
+pkg install gh
+gh auth login
+```
+
 ```
 cp /storage/emulated/0/Download/font.ttf ~/.termux/font.ttf""termux-reload-settings
 ```

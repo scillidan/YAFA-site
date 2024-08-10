@@ -153,6 +153,7 @@ plugins:
       video_controls: True
       css_style:
         width: "100%"
+  - asciinema-player
   - table-reader
   - literate-nav:
       nav_file: SUMMARY.md
