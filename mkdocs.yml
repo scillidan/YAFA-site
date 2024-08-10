@@ -185,8 +185,10 @@ plugins:
         - ".obsidian/*"
         - "draft/*"
         - "*.pdf"
+        - "*.j2"
       # regex:
       #   - '.*\.(tmp|bin|tar|.obsidian)$'
+  - include-markdown
   # - furigan:
   #     multiple: "§"
   #     inicio: "【"
@@ -208,6 +210,25 @@ plugins:
   #     post_date_format: short
   #     post_url_format: "{slug}"
   #     archive_date_format: yyyy
+  # - pdf-generate:
+  #     author: "scillidan"
+  #     author_logo: img/logo.svg
+  #     copyright: "Copyright © 2023-2024 scillidan"
+  #     disclaimer: "Disclaimer: Content can change at anytime and best to refer to website for latest information."
+  #     include_legal_terms: true
+  #     cover: true
+  #     cover_title: TITLE TEXT
+  #     cover_subtitle: SUBTITLE TEXT
+  #     custom_template_path: "docs/assets/pdf"
+  #     toc: false
+  #     toc_level: 3
+  #     toc_title: TOC TITLE TEXT
+  #     toc_numbering: true
+  #     cover_images:
+  #       default: docs/assets/favicon.png
+        # type1: img/type1.png
+        # type2: https://example.com/cover.svg
+      # enabled_if_env: ENABLE_PDF_EXPORT
   # - mkdocs/exporter
   # - mkdocs/exporter/pdf:
   #     concurrency: 8

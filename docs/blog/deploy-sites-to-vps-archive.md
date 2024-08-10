@@ -8,6 +8,15 @@ keywords: >
 locale: en
 ---
 
+
+<!-- ## mkdocs-include-markdown-plugin
+
+{%
+    include "C:/Users/User/Github/My_Draft/linux_arch.md"
+%} -->
+
+## asciinema-player
+
 ```asciinema-player
 {
     "file": "assets/asciinema/echo.cast",
