@@ -1,4 +1,21 @@
-↪ https://termux.dev/en
+↪ https://termux.dev
+
+Install Termux.
+
+```sh
+pkg install git
+```
+
+```sh
+pkg install gh
+gh auth login
+```
+
+↪ https://www.chezmoi.io
+
+```sh
+pkg install chezmoi
+```
 
 ```sh
 pkg install git
