@@ -94,6 +94,7 @@ markdown_extensions:
       # auto_append: ["assets/css/extra.css"]
       base_path: ["docs"]
       check_paths: true
+      url_download: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -153,6 +154,7 @@ plugins:
       video_controls: True
       css_style:
         width: "100%"
+  - mkdocs-audio
   - asciinema-player
   - table-reader
   - literate-nav:
@@ -183,12 +185,12 @@ plugins:
   - exclude:
       glob:
         - ".obsidian/*"
-        - "draft/*"
+        # - "draft/*"
         - "*.pdf"
         - "*.j2"
       # regex:
       #   - '.*\.(tmp|bin|tar|.obsidian)$'
-  - include-markdown
+  # - include-markdown
   # - furigan:
   #     multiple: "§"
   #     inicio: "【"

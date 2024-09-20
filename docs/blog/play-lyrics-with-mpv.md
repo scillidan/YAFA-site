@@ -12,7 +12,7 @@ keywords: >
 	文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
 	日期：2023-09-19  
 	归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
-	备注：1)根据编辑的建议从[原稿](../play-lyrics-with-mpv-origin)大修的版本 2)排版上不同 3)页面的元数据记录的写成的大致起止日期
+	备注：1)根据编辑的建议从[原稿](../achive/play-lyrics-with-mpv)大修的版本 2)排版上不同 3)页面的元数据记录了写成的大致起止日期 4)我目前使用[mpv配置脚本](https://github.com/scillidan/SETUP-note/tree/main/mpv)
 
 ## 关于MPV
 
@@ -29,7 +29,7 @@ keywords: >
 
 ## 作为视频播放器的MPV
 
-直到去年，我都在使用轻便、好用、有真正的图形用户界面的播放器[MPC-HC](https://github.com/clsid2/mpc-hc)。但它在播放流行的HDR（**H**igh **D**ynamic **R**ange Imaging，高动态范围成像）影像时有些问题，所以我安装了mpv。
+直到去年，我都在使用轻便、好用、有真正的图形用户界面的播放器[MPC-HC](https://github.com/clsid2/mpc-hc)。但它在播放流行的HDR（High Dynamic Range Imaging，高动态范围成像）影像时有些问题，所以我安装了mpv。
 
 在我装上两个插件，替换控件UI的[uosc](https://github.com/tomasklaen/uosc)、制作和显示键位小抄的[mpv-cheatsheet](https://github.com/ento/mpv-cheatsheet)后，我才适应，并将mpv作为了默认的视频播放器。
 

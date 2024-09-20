@@ -136,8 +136,8 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 不足之处有：
 
-- 不明Bug，例如有些语言如韩语，当在GoldenDict中输出时，在翻译文字前会显示一串报错
 - 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606)
+- 翻译句子时的Bug，例如有些语言如韩语，当在GoldenDict中输出时，在翻译文字前会显示一串报错
 
 
 ## 添加分词脚本（仅gd-ng）
