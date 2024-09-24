@@ -11,7 +11,7 @@ locale: en
 !!! read ""
   
     日期：2023-12-20  
-    归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
+    更新：2024-09-20
 
 [GoldenDict](http://goldendict.org/)是一款开源的桌面端词典检索应用，跨平台，[支持多种词典格式](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)。它有十分丰富的可配置项，包括字典组，拼写检查、单词发音、语音合成、在线翻译等等。[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)是基于前者重写的新一代GoldenDict，修复了[一些长期累积的问题](https://github.com/xiaoyifang/goldendict-ng/issues/587)，目前仍然处于积极开发中，更多地说明见[GoldenDict-ng文档](https://xiaoyifang.github.io/goldendict-ng/)。
 
@@ -127,11 +127,12 @@ body
 - [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等等
 - Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
 - [简明英汉字典增强版](hhttps://github.com/skywind3000/ECDICT)
-- [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的自由的离线StarDict词典，如词源词典（[Douglas Harper's Online Etymology Dictionary](https://www.etymonline.com/)），GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）
+- [21世纪英汉汉英双向词典](https://www.nchrs.xyz/stardict/zh_CN/index.html)
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
+- [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的自由的离线StarDict词典，如词源词典（[Douglas Harper's Online Etymology Dictionary](https://www.etymonline.com/)），GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）
 - [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://github.com/BoboTiG/ebook-reader-dict/blob/master/docs/en/README.md)
 - 工具书，如[翻译人名](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/main/Chinese%20Names%20Corpus/English-Chinese%20Names)等等
-- 别的语种，[Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典、[proteusx](https://github.com/proteusx)制作的古希腊语词典等等
+- 其他的，[Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典、[proteusx](https://github.com/proteusx)制作的古希腊语词典、[佛學術語字辭典](https://glossaries.dila.edu.tw)等等
 
 编辑 → 词典 → 词典来源 → 文件 → 添加 → ... → 递归搜索 (On) → 应用。
 

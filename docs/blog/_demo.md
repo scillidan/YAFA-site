@@ -9,12 +9,6 @@ locale: en
 
 ↪ https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#embedding-external-files
 
---8<-- "draft/deploy-sites-to-vps-expand.md:func"
-
-``` title="embedding external files"
---8<-- "https://raw.githubusercontent.com/facelessuser/pymdown-extensions/main/pymdownx/snippets.py::20"
-```
-
 ↪ https://github.com/jfcmontmorency/mkdocs-audio
 
 ![type:audio](../../assets/audio/melancholy.ogg)

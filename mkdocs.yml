@@ -130,7 +130,6 @@ plugins:
   #     exclude:
   #       - index.md
   #       - blog/deploy-sites-to-vps.md
-  #       - blog/deploy-sites-to-vps-expand.md
   #       - blog/make-la.isla.minima.2014.srt.ass.md
   # - footermatter
   - autolinks
