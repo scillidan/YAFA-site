@@ -181,7 +181,7 @@ pnpm add -g echo-cli
 go install github.com/neurosnap/sentences/cmd/sentences@latest
 ```
 
-或者从[Sentences - Releases](https://github.com/neurosnap/sentences/releases)下载并解压`sentences_windows-amd64.tar.gz`，得到`sentences.exe`。
+或者从[Sentences - Releases](https://github.com/neurosnap/sentences/releases)下载并解压`sentences_windows-amd64.tar.gz`，重命名`sentences`到`sentences.exe`。
 
 程序 → 添加：
 
