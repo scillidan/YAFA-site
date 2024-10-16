@@ -294,7 +294,7 @@ certbot renew --dry-run
 
 ## 本地Build
 
-这个方法源自[Deploy Hexo sites to VPS](https://scillidan.github.io/repo_page/Deploy%20Hexo%20sites%20to%20VPS.md.html)。原文写于2015年，链接在几年前失效，我在[Internet Archive](https://archive.org/)上找到了存档并保存了副本。
+这个方法源自[Deploy Hexo sites to VPS](https://github.com/scillidan/PIDAN-journal/blob/main/blog/Deploy-Hexo-sites-to-VPS.md)。原文写于2015年，链接在几年前失效，我在[Internet Archive](https://archive.org/)上找到了存档并保存了副本。
 
 ### 安装和配置Git（PC上）
 
