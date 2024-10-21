@@ -274,8 +274,8 @@ pip install -e .
 
 另外推荐两个相关的Web应用：[etytree](https://github.com/agmmnn/etytree)、[jsetymology](https://github.com/myrriad/jsetymology)。
 
-![](https://raw.githubusercontent.com/scillidan/Cos_Asset/main/screenshot/etytree.png)
-![](https://raw.githubusercontent.com/scillidan/Cos_Asset/main/screenshot/jsetymology.png)
+![](https://raw.githubusercontent.com/scillidan/asset/main/screenshot/etytree.png)
+![](https://raw.githubusercontent.com/scillidan/asset/main/screenshot/jsetymology.png)
 
 ## 其他
 

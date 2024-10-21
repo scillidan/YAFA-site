@@ -248,10 +248,10 @@ lyric D:/路径/歌曲或歌曲文件夹
 
 ![](cover.png)
 
-或者视频封面，下载这个[5分钟长的循环视频](https://github.com/scillidan/Cos_Asset_others/blob/main/video_loop/kara-no-kyoukai-6-oblivion-recording_480p.mp4)。使用时，在命令中加上一行：
+或者视频封面，下载5分钟长的循环视频。使用时，在命令中加上一行：
 
 ```
---external-files="D:/路径/kara-no-kyoukai-6-oblivion-recording_480p.mp4"
+--external-files="D:/路径/loop_480p.mp4"
 ```
 
 ![](video-cover.gif)
