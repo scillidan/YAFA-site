@@ -48,9 +48,9 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 
 ![](dictd.png)
 
-## [Cambridge-Dictionary](https://github.com/spignelon/cambridge-dictionary)
+### [Cambridge-Dictionary](https://github.com/spignelon/cambridge-dictionary)
 
-> Once you search for the word and gets the meaning, it saves it into a local database from which it retrieves them if you search for the same word again in the future instead of fetching it from the server. This makes it quick, run even when there's no internet connection (assuming that your local database is of substantial size) and prevents making too many queries to the server.
+> Once you search for the word and gets the meaning, it saves it into a local database from which it retrieves them if you search for the same word again in the future instead of fetching it from the server. This makes it quick, run even when there's no internet connection (assuming that your local database is of substantial size) and prevents making too many queries to the server.  
 > （机翻）一旦您搜索该单词并获得其含义，它就会将其保存到本地数据库中，如果您将来再次搜索同一单词，而不是从服务器获取它，它就会从该数据库中检索它们。这使得它快速运行，即使没有互联网连接（假设您的本地数据库规模很大），并防止向服务器进行太多查询。
 
 ```sh
@@ -151,7 +151,7 @@ tencenttrans_2zh_zh2en\venv\Scripts\python.exe tencenttrans_2zh_zh2en\tencenttra
 - 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606)
 - 未知的Bug，例如在GoldenDict里输出某些语言时，翻译文字前面会显示一串报错
 
-但我已经使用了有一年左右，在这之前，我一直使用[沙拉查词](https://saladict.crimx.com/)
+截止文章写成，我已使用了近一年。这之前，我使用的是[沙拉查词](https://saladict.crimx.com/)。
 
 ## 分词断句脚本
 
@@ -173,7 +173,7 @@ tencenttrans_2zh_zh2en\venv\Scripts\python.exe tencenttrans_2zh_zh2en\tencenttra
 
 ### [Sentences](https://github.com/neurosnap/sentences)
 
-> This command line utility will convert a blob of text into a list of sentences.
+> This command line utility will convert a blob of text into a list of sentences.  
 > （机翻）此命令行实用程序将文本块转换为句子列表。
 
 ```sh
@@ -254,7 +254,7 @@ apple (English)
     └── æppel (Old English (ca. 450-1100))
 ```
 
-在Windows 10的GoldenDict里使用`ety-python`时，我遇到了一些问题（见[issue #1678](https://github.com/goldendict/goldendict/issues/1678), [blog](https://isaacong.me/posts/unicodeencodeerror-when-redirecting-python-output/)）。虽然未解决，但是勉强能够使用。修改部分见[31a8be9](https://github.com/jmsv/ety-python/commit/31a8be922bf8402c430eb456591d729879a030ed)
+在Windows 10的GoldenDict里使用`ety-python`时，我遇到了一些问题（见[issue #1678](https://github.com/goldendict/goldendict/issues/1678), [blog](https://isaacong.me/posts/unicodeencodeerror-when-redirecting-python-output/)）。虽然未解决，但是勉强能够使用。修改部分见[31a8be9](https://github.com/jmsv/ety-python/commit/31a8be922bf8402c430eb456591d729879a030ed)。
 
 ```sh
 git clone --depth=1 https://github.com/scillidan/ety-python
@@ -273,9 +273,6 @@ pip install -e .
 ```
 
 另外推荐两个相关的Web应用：[etytree](https://github.com/agmmnn/etytree)、[jsetymology](https://github.com/myrriad/jsetymology)。
-
-![](https://raw.githubusercontent.com/scillidan/asset/main/screenshot/etytree.png)
-![](https://raw.githubusercontent.com/scillidan/asset/main/screenshot/jsetymology.png)
 
 ## 其他
 
