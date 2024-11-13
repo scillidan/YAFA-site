@@ -1,4 +1,4 @@
-name: mkdocs_gh-page
+name: mkdocs
 on:
   push:
     branches:
