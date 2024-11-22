@@ -213,9 +213,9 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ### Gramformer
 
-[Gramformer](https://github.com/PrithivirajDamodaran/Gramformer)是一个Python库，可以用于检查句子的拼写、标点符号、语法或用词错误。曾经计划支持64个字符（包括空格和标点符号）以上长度的句子。虽然可以使用GPU模式，但是我总觉得有些慢，或者哪里不对。
+[Gramformer](https://github.com/PrithivirajDamodaran/Gramformer)是一个Python库，可以用于检查句子的拼写、标点符号、语法或用词错误。曾经计划支持64个字符（包括空格和标点符号）以上长度的句子。虽然可以使用GPU模式，但是我总觉得有些慢。
 
-仅作参考，[gramformer_cli_demo.py](https://gist.github.com/scillidan/14a9176b431fcafde94528c209f2fc15)
+仅作参考，[gramformer_cli_demo.py](https://gist.github.com/scillidan/14a9176b431fcafde94528c209f2fc15)。
 
 程序 → 添加：
 
