@@ -12,7 +12,7 @@ keywords: >
 	文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
 	日期：2023-09-19  
 	归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
-	备注：1)根据编辑的建议从[原稿](../achive/play-lyrics-with-mpv)大修的版本 2)排版上不同 3)页面的元数据记录了写成的大致起止日期 4)我目前使用[mpv配置脚本](https://github.com/scillidan/SETUP-note/tree/main/mpv)
+	备注：1)根据编辑的建议从[原稿](../archive/play-lyrics-with-mpv)大修的版本 2)排版上不同 3)页面的元数据记录了写成的大致起止日期 4)我目前使用[mpv配置脚本](https://github.com/scillidan/SETUP-note/tree/main/mpv)
 
 ## 关于MPV
 

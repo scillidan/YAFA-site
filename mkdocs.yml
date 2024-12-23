@@ -173,6 +173,13 @@ plugins:
   #       # - "{0}"
   #       - "{1}/"
   #       # - "{0}/{1}/"
+  # - ai-summary:
+  #     api: "chatgpt"
+  #     model: "gpt-4o-mini"
+  #     ignore_code: true
+  #     cache: true
+  #     cache_dir: "./"
+  #     prompt: "Please help me summarize the following content into an abstract within 50 words: "
   - search
   - exclude-search:
       exclude:
@@ -253,12 +260,15 @@ extra_css:
   # - assets/css/customization.css
   - assets/css/admonition.css
   # - assets/css/furigana.css
+  # - ai-summary.css
 # extra_javascript:
 #   - assets/javascripts/extra.js
 # nav:
   # - Version:
   #   - v1: '*include /*/mkdocs.yml'
 extra:
+  ignore:
+    - docs/.obsidian/*
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/scillidan/YAFA-site
