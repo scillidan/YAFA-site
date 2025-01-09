@@ -126,7 +126,7 @@ body
 
 - [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等等
 - Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
-- [简明英汉字典增强版](hhttps://github.com/skywind3000/ECDICT)
+- [简明英汉字典增强版](https://github.com/skywind3000/ECDICT)
 - [21世纪英汉汉英双向词典](https://www.nchrs.xyz/stardict/zh_CN/index.html)
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
 - [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的自由的离线StarDict词典，如词源词典（[Douglas Harper's Online Etymology Dictionary](https://www.etymonline.com/)），GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）
