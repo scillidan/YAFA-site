@@ -1,17 +1,11 @@
 ---
 title: "配置GoldenDict·番外"
-date:
-    created: 2024-01-05
-    updated: 2024-09-24
+created: 2024-01-06
+modified: 2024-09-24
+locale: zh
 keywords: >
     GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
-locale: en
 ---
-
-!!! read ""
-  
-    日期：2024-01-06  
-    更新：2024-09-24
 
 ## 在线词典
 

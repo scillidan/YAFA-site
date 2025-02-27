@@ -1,19 +1,11 @@
 ---
 title: "部署静态网站到VPS"
-date:
-    created: 2024-01-27
-    updated: 2024-01-29
+created: 2024-01-27
+modified: 2024-01-29
+locale: zh
 keywords: >
     Deploy Site, VPS, Rocky Linux, Apache, Ubuntu, Nginx
-locale: en
-include:
-- ai-summary
 ---
-
-!!! read ""
-  
-    日期：2024-01-27  
-    存档：[2023-05-01](../archive/deploy-sites-to-vps)
 
 如果你有一些，或者正在进行着记录、创作，无论是文字、图片还是音频、视频——像档案一样归类、保存它们，再使用流行却陌生的「生成式网页」工具，从你的文本文件和媒体文件生成Web页面，上传到云端，你便可以在空中有一块土地。你可以一砖一瓦地建造，亦或是重建。也可以在其中任意移动、偶尔清扫。对你来说，它是你的文件的备份，历史内容的归档，归属关系的证明。对于别人来说，它是高可信度的来源，目录化、图形化的可读、可视事物。
 

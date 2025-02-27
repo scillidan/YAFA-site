@@ -1,5 +1,5 @@
 .editorconfig
-venv/
+.venv/
 site/
 docs/.obsidian/
 docs/assets/pdf/

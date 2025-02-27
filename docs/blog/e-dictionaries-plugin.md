@@ -1,8 +1,8 @@
 ---
 title: "浏览器中的机械翻译、电子词典插件"
-date:
-    created: 2023-09-26
-    updated: 2022-10-13
+created: 2023-09-26
+modified: 2022-10-13
+locale: zh
 keywords: >
     translate, e-dictionary, Yomichan, Saladict, ODH
 ---

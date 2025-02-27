@@ -1,16 +1,11 @@
 ---
 title: "制作la.isla.minima.2014.srt.ass"
-date:
-    created: 2021-01-01
-    updated: 2021-12-01
+created: 2021-01-01
+modified: 2021-12-31
+locale: zh
 keywords: >
     subtitle, translate, GoldenDict, Saladict, autosub, alass-cli
-locale: en
 ---
-
-!!! read ""
-
-    日期：2021
 
 本篇记叙：外乡人如何借助道具，尝试翻译一门小语种的电影生肉文本，并制作字幕文件。
 

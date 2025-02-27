@@ -122,6 +122,17 @@ plugins:
   #     disable_serve: false
   - meta-manager
   - meta-descriptions
+  - document-dates:
+      type: date
+      locale: zh
+      date_format: '%Y-%m-%d'
+      time_format: '%H:%M:%S'
+      position: bottom
+      exclude:
+        - index.md
+        - archive/*.md
+        - blog/_playground.md
+        - draft/*.md
   # - git-revision-date-localized:
   #     locale: en
   #     type: iso_date

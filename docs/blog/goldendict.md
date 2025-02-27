@@ -1,17 +1,11 @@
 ---
 title: "配置GoldenDict"
-date:
-    created: 2023-12-11
-    updated: 2024-09-20
+created: 2023-12-20
+modified: 2024-09-20
+locale: zh
 keywords: >
     GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
-locale: en
 ---
-
-!!! read ""
-  
-    日期：2023-12-20  
-    更新：2024-09-20
 
 [GoldenDict](http://goldendict.org/)是一款开源的桌面端词典检索应用，跨平台，[支持多种词典格式](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)。它有十分丰富的可配置项，包括字典组，拼写检查、单词发音、语音合成、在线翻译等等。[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)是基于前者重写的新一代GoldenDict，修复了[一些长期累积的问题](https://github.com/xiaoyifang/goldendict-ng/issues/587)，目前仍然处于积极开发中，更多地说明见[GoldenDict-ng文档](https://xiaoyifang.github.io/goldendict-ng/)。
 
