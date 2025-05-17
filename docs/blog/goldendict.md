@@ -165,9 +165,28 @@ GNU版国际协作英语词典
 
 ## 添加单词音频库
 
-对于英语语音资料[pronunciations](https://github.com/yousefvand/pronunciations)，在`v1`版本里，它似乎清理了旧版本里的约2GB的文件，而使用`generate.sh`脚本。这里就仅留作参考：
+对于英语语音资料[pronunciations](https://github.com/yousefvand/pronunciations)，在`v1`版本里，它似乎已经清理了旧版本里的约2GB的文件，而使用`generate.sh`脚本。这里就仅留作参考：
 
 词典 → 词典来源 → 音频文件目录 → 添加 → `pronunciations/`所在 → 应用
+
+这里，如果使用的是便携版GoldenDict，可以将所有音频文件如：
+
+```
+a.mp3
+a'.mp3
+A'asia.mp3
+a's.mp3
+a-.mp3
+...
+B.mp3
+b'hoy.mp3
+b's.mp3
+B-.mp3
+B-axes.mp3
+...
+```
+
+压缩到`pronunciations-en.zips`，压缩包里不要有文件夹路径，然后作为一本词典导入即可。
 
 对于[Forvo](https://forvo.com/)的多语言资料，可使用[qBittorrent](https://github.com/c0re100/qBittorrent-Enhanced-Edition)一类的工具，从[该帖](https://rutracker.org/forum/viewtopic.php?t=6211002)下载，参考帖子内容：
 

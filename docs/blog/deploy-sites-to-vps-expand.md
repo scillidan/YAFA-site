@@ -76,4 +76,4 @@ Rocky Linux里，如果你在重启`httpd`或者设置SSL时出错，通常跟`/
     1. 设置HTTP响应头配置
 3. 在`.css`文件中调用字体文件的网址，进行测试
 
-另外有不怎么推荐的配置：[PM2](https://scillidan.github.io/notes/os/rocky-linux.html#pm2-cache)、[VNC](https://scillidan.github.io/notes/os/rocky-linux.html#vnc-cache)。
+另外有不怎么推荐的配置：[PM2](https://scillidan.github.io/notes/os/rocky-linux.html#pm2-12-cache)、[VNC](https://scillidan.github.io/notes/os/rocky-linux.html#vnc-34-cache)。
