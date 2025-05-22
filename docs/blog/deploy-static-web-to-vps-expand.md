@@ -1,5 +1,5 @@
 ---
-title: "部署静态网站到VPS·番外"
+title: "VPS部署静态网站·番外"
 created: 2024-01-27
 modified: 2025-05-13
 locale: zh

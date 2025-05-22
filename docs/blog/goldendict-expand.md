@@ -27,15 +27,16 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 
 以运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）为例：
 
-1. 参考[bin.md#dict-ecdict](https://github.com/scillidan/My_Note/blob/main/bin.md#dict-ecdict)制作`dictd`使用的`.dz`等文件
-2. 参考[server.md#dictd](https://github.com/scillidan/My_Note/blob/main/service.md#dictd)部署`dictd`服务
+1. 可参考[dict-ecdict.md](https://scillidan.github.io/notes/bin/dict-ecdict.html)来制作`dictd`使用的`.dz`等文件
+2. 可使用[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)转换StarDict字典文件到`.dz`格式。StarDict的`.ifo`文件里最好不要有中文
+3. 参考[dictd.md](https://scillidan.github.io/notes/serve/dictd.html)部署`dictd`服务
 
 词典 → 词典来源 → 词典服务器 → 添加：
 
 ```sh
 已启用 On
 名称 `dictd`
-地址 `dict://<YourHost>:2628`
+地址 `dict://<your_host>:2628`
 数据库 `*`
 策略 `*`
 ```
@@ -60,8 +61,8 @@ pip install requests bs4
 ```
 已启用 On
 类型 纯文本
-名称 `cambridge-dictionary`
-命令行 `cambridge-dictionary\venv\Scripts\python.exe cambridge-dictionary\cambridge.py "%GDWORD%"`
+名称 `Cambridge-Dictionary`
+命令行 `<path_to>\cambridge-dictionary\venv\Scripts\python.exe <path_to>\cambridge-dictionary\cambridge.py "%GDWORD%"`
 ```
 
 ![](cambridge-dictionary.png)
@@ -70,7 +71,7 @@ pip install requests bs4
 
 ### deep-translator
 
-[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。如何申请或创建API请看各翻译器的官网介绍。像我只申请了腾讯云的API，需要从源码安装这个工具，才能使用这个翻译器：
+[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。如何申请或创建API请看各翻译器的官网介绍。像我只申请了腾讯云的API，写文时，需要从源码安装这个工具，才能使用这个翻译器：
 
 ```sh
 git clone --depth=1 https://github.com/nidhaloff/deep-translator
@@ -108,7 +109,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ### TencentTrans_22.py
 
-我当前的需求有：将多语言（主要是英语）翻译到中文，中文翻译到英文，希望运行快而较稳。所以我使用的是特定翻译器的脚本，[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)，即「用于Goldendict的腾讯云翻译」。支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕组机翻小助手](https://github.com/1c7/Translate-Subtitle-File)、[沉浸式翻译](https://immersivetranslate.com/zh-Hans/)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用这个API。
+我有将多语言（主要是英语）翻译到中文，中文翻译到英文的需求，希望运行快而较稳。所以我使用的是特定翻译器的脚本，[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)，即「用于Goldendict的腾讯云翻译」。支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[沉浸式翻译](https://immersivetranslate.com/zh-Hans/)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用这个API。
 
 1. 参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API
 2. `git clone https://gist.github.com/scillidan/e95773454d79dc047aeed016fb00daef tencenttrans_2zh_zh2en`
@@ -135,7 +136,7 @@ venv\Scripts\activate.bat
 在「命令行」那一栏，补全文件路径，如：
 
 ```sh
-tencenttrans_2zh_zh2en\venv\Scripts\python.exe tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en.py "%GDWORD%"`
+<path_to>\tencenttrans_2zh_zh2en\venv\Scripts\python.exe <path_to>\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en.py "%GDWORD%"
 ```
 
 ![](tencenttrans_22.png)
@@ -160,7 +161,7 @@ tencenttrans_2zh_zh2en\venv\Scripts\python.exe tencenttrans_2zh_zh2en\tencenttra
 ```
 类型 Html
 名称 `gd-marisa`
-命令行 `Ajatt-tools\gd-tools\gd-tools.exe marisa --word %GDWORD% --sentence %GDSEARCH% --path-to-dic Ajatt-tools\gd-tools\marisa_words.dic`
+命令行 `<path_to>\Ajatt-tools\gd-tools\gd-tools.exe marisa --word %GDWORD% --sentence %GDSEARCH% --path-to-dic <path_to>\Ajatt-tools\gd-tools\marisa_words.dic`
 ```
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/gd-marisa.mp4){ .skip-lightbox }
@@ -181,7 +182,7 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ```
 类型 纯文本
-名称 `sentences`
+名称 `Sentences`
 命令行 `C:\Users\<User>\AppData\Roaming\pnpm\echo-cli.CMD "%GDWORD%" | sentences.exe`
 ```
 
@@ -193,13 +194,27 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 [LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但效能可能不是特别出色。
 
-参考[service.md#languagetool](https://github.com/scillidan/My_Note/blob/main/service.md#languagetool)来部署`LanguageTool`服务。
+参考[languagetool.md](https://scillidan.github.io/notes/serve/languagetool.html)来部署`LanguageTool`服务。
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/languagetool.mp4){ .skip-lightbox }
 
 ### pyLanguagetool
 
-我使用了跟以前不同的服务配置，运行[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)时遇到了Bug，这里就仅留一些[旧笔记](https://github.com/scillidan/My_Note/blob/main/_draft.md#pylanguagetool)作为参考。
+[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)是一个Python库和命令行工具，使用LanguageTool的[JSON API](https://languagetool.org/http-api/swagger-ui/#/default)。
+
+```sh
+pip install pylanguagetool
+pylanguagetool -h
+echo "This is a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US
+```
+
+并不能直接在GoldenDict里使用，如下文中的`ety-python`，需要一些修改，但不推荐这样做。配置和预览图仅做参考，程序 → 添加：
+
+```
+类型 纯文本
+名称 `pyLanguagetool`
+命令行 `C:\Users\User\AppData\Roaming\pnpm\echo-cli.CMD "%GDWORD%" | C:\Users\User\Scoop\persist\python312\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US`
+```
 
 ![](pylanguagetool.png)
 
@@ -207,7 +222,7 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ### Gramformer
 
-[Gramformer](https://github.com/PrithivirajDamodaran/Gramformer)是一个Python库，可以用于检查句子的拼写、标点符号、语法或用词错误。曾经计划支持64个字符（包括空格和标点符号）以上长度的句子。虽然可以使用GPU模式，但是我总觉得有些慢。
+[Gramformer](https://github.com/PrithivirajDamodaran/Gramformer)是一个Python库，可以用于检查句子的拼写、标点符号、语法或用词错误。曾经计划支持64个字符（包括空格和标点符号）以上长度的句子。虽然可以使用GPU模式，但我觉得有些慢。
 
 仅作参考，[gramformer_cli_demo.py](https://gist.github.com/scillidan/14a9176b431fcafde94528c209f2fc15)。
 
@@ -215,8 +230,8 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ```
 类型 纯文本
-名称 `gramformer`
-命令行 `Gramformer\venv\Scripts\python Gramformer\gramformer_cli_demo.py %GDWORD%`
+名称 `Gramformer`
+命令行 `<path_to>\Gramformer\venv\Scripts\python Gramformer\gramformer_cli_demo.py %GDWORD%`
 ```
 
 ![](gramformer.png)
@@ -263,7 +278,7 @@ pip install -e .
 ```
 类型 纯文本
 名称 `ety-python`
-命令行 `ety-python\venv\Scripts\python.exe ety-python\ety\__main__.py -r -t "%GDWORD%"`
+命令行 `<path_to>\ety-python\venv\Scripts\python.exe <path_to>\ety-python\ety\__main__.py -r -t "%GDWORD%"`
 ```
 
 另外推荐两个相关的Web应用：[etytree](https://github.com/agmmnn/etytree)、[jsetymology](https://github.com/myrriad/jsetymology)。

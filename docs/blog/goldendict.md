@@ -13,9 +13,9 @@ keywords: >
 
 ## 配置文件的位置
 
-同于大多数的软件的安装版，GoldenDict的配置文件也位于`C:\Users\<User>\AppData\Roaming`的`<软件名>`。如果要保存GoldenDict的配置，可备份此处的`config`文件。
+同于大多数的软件的安装版，GoldenDict的配置文件也位于`C:\Users\<username>\AppData\Roaming`的`<软件名>`。如果要保存GoldenDict的配置，可备份此处的`config`文件。
 
-如果使用[Scoop](https://scoop.sh/)安装，需要删除`C:\Users\<User>\scoop\apps\goldendict\current\portable`目录，也就是断开了和Scoop配置目录里的系统目录链接，位于`C:\Users\<User>\scoop\persist\goldendict`。见[issue](https://github.com/goldendict/goldendict/issues/1560)。
+如果使用[Scoop](https://scoop.sh/)安装，需要删除`C:\Users\<username>\scoop\apps\goldendict\current\portable`目录，也就是断开了和Scoop配置目录里的系统目录链接，位于`C:\Users\<username>\scoop\persist\goldendict`。见[issue](https://github.com/goldendict/goldendict/issues/1560)。
 
 文章分为「基础篇」和「番外篇」。基础篇主要涉及「黑暗主题」、各类的「词典」、「取词方式」等。「番外篇」更多地涉及了「程序」这一功能，具有更多的实验性和Bug，也提及了一些和语言相关的第三方工具，如[LanguageTool](https://languagetool.org/)等。
 
@@ -77,7 +77,7 @@ git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 // 添加本地字体
 @font-face {
   font-family: <FontName>;
-  src: local('<Font Name>') url('file:C:\\Users\\<User>\\AppData\\Local\\Microsoft\\Windows\\Fonts\\<FontName>.ttf') format('truetype');
+  src: local('<Font Name>') url('file:C:\\Users\\<username>\\AppData\\Local\\Microsoft\\Windows\\Fonts\\<FontName>.ttf') format('truetype');
   font-weight: normal;
   font-style:  normal;
 }
@@ -121,10 +121,10 @@ body
 - [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等等
 - Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
 - [简明英汉字典增强版](https://github.com/skywind3000/ECDICT)
-- [21世纪英汉汉英双向词典](https://www.nchrs.xyz/stardict/zh_CN/index.html)
+- [21世纪英汉汉英双向词典](https://stardict.uber.space/zh_CN/index.html)
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
 - [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的自由的离线StarDict词典，如词源词典（[Douglas Harper's Online Etymology Dictionary](https://www.etymonline.com/)），GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）
-- [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://github.com/BoboTiG/ebook-reader-dict/blob/master/docs/en/README.md)
+- [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://www.reader-dict.com/en/download/en)
 - 工具书，如[翻译人名](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/main/Chinese%20Names%20Corpus/English-Chinese%20Names)等等
 - 其他的，[Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典、[proteusx](https://github.com/proteusx)制作的古希腊语词典、[佛學術語字辭典](https://glossaries.dila.edu.tw)等等
 
@@ -186,7 +186,7 @@ B-axes.mp3
 ...
 ```
 
-压缩到`pronunciations-en.zips`，压缩包里不要有文件夹路径，然后作为一本词典导入即可。
+压缩到`pronunciations-en.zips`，压缩包里不要有文件夹路径，然后作为一本词典导入即可。参考[issue](https://github.com/goldendict/goldendict/issues/150)。
 
 对于[Forvo](https://forvo.com/)的多语言资料，可使用[qBittorrent](https://github.com/c0re100/qBittorrent-Enhanced-Edition)一类的工具，从[该帖](https://rutracker.org/forum/viewtopic.php?t=6211002)下载，参考帖子内容：
 

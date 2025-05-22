@@ -1,10 +1,10 @@
 ---
-title: "部署静态网站到VPS"
+title: "VPS部署静态网站：Apache、多二级域名、HTTPS、本地Build、云端Build"
 created: 2024-01-27
 modified: 2024-01-29
 locale: zh
 keywords: >
-    Deploy Site, VPS, Rocky Linux, Apache, Ubuntu, Nginx
+    Deploy Site, VPS, Rocky Linux, Apache
 ---
 
 如果你有一些，或者正在进行着记录、创作，无论是文字、图片还是音频、视频——像档案一样归类、保存它们，再使用流行却陌生的「生成式网页」工具，从你的文本文件和媒体文件生成Web页面，上传到云端，你便可以在空中有一块土地。你可以一砖一瓦地建造，亦或是重建。也可以在其中任意移动、偶尔清扫。对你来说，它是你的文件的备份，历史内容的归档，归属关系的证明。对于别人来说，它是高可信度的来源，目录化、图形化的可读、可视事物。
@@ -40,16 +40,16 @@ Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://gi
 
 ```
 镜像配置 公共镜像
-目标镜像 Rocky Linux（我目前用的是9.3）
+目标镜像 Rocky Linux（我当前用的是9.3）
 登录方式 设置密码
 用户名 `root`
-新密码 `YourPassword`
-确认密码 `YourPassword`
+新密码 `<your_password>`
+确认密码 `<your_password>`
 ```
 
 ## 登录VPS
 
-目标实例 → IP地址 `YourHost (公)` → 复制
+目标实例 → IP地址 `<your_host> (公)` → 复制
 
 我使用的SSH工具箱是[WinSSHTerm](https://winsshterm.blogspot.com/)。也可以选择[WindTerm](https://github.com/kingToolbox/WindTerm)、[electerm](https://electerm.github.io/electerm/)、[MobaXterm](https://mobaxterm.mobatek.net/)等。
 
@@ -57,10 +57,10 @@ WinSSHTerm → Connections → Connect → Add Connection:
 
 ```
 Name `vps`
-Host/IP `YourHost`
+Host/IP `<your_host>`
 port `22`
 User `root`
-Password `YourPassword`
+Password `<your_password>`
 ```
 
 双击`vps` → PuTTY Secutity Alert → Accept
@@ -69,7 +69,7 @@ Password `YourPassword`
 
 显示系统信息：
 
-```bash
+```sh
 hostnamectl
 ```
 
@@ -77,27 +77,27 @@ hostnamectl
 
 更新所有软件包，确认时默认`Yes`：
 
-```bash
+```sh
 dnf update -y
 ```
 
-## Apache上配置（多）站点
+## Apache上配置（多）站点 [^1][^2]
 
 安装Apache：
 
-```bash
+```sh
 dnf install httpd php -y
 ```
 
 在Rocky Linux的文档中，为了防止一个网站出问题时影响其他网站，网页的配置采用了稍复杂的文件结构。
 
-```bash
+```sh
 mkdir -p /etc/httpd/sites-available /etc/httpd/sites-enabled
 ```
 
 使用[Vim](https://www.vim.org/)编辑器编辑Apache的配置文件：
 
-```bash
+```sh
 vi /etc/httpd/conf/httpd.conf
 ```
 
@@ -109,20 +109,20 @@ IncludeOptional /etc/httpd/sites-enabled
 
 按`Esc`退回`Normal`模式。按`:`进入`Command`模式，继续输入`wq`并回车，即`write(save)`并`quit`。
 
-这里，文档将网站的配置文件新建在了`sites-available/`下，再通过系统链接，可选择地复制到`sites-enabled/`。文件夹中，以`com.Example.www`, `com.Example.SubDomain`（子域名）的风格来命名。且主域名的文件放在`/var/www/html/`，各个子域名的放在各自的`/var/www/sub-domains/SubDomain/html/`。
+这里，文档将网站的配置文件新建在了`sites-available/`下，再通过系统链接，可选择地复制到`sites-enabled/`。文件夹中，以`com.<example>.www`, `com.<example>.<sub_domain>`（子域名）的风格来命名。且主域名的文件放在`/var/www/html/`，各个子域名的放在各自的`/var/www/sub-domains/<sub_domain>/html/`。
 
-进行以下操作时，根据你的实际域名，替换掉`Example.com`, `SubDomain`等示例名。
+进行以下操作时，根据你的实际域名，替换掉`<example>.com`, `<sub_domain>`等示例名。
 
 新建并配置域名：
 
-```bash
-vi /etc/httpd/sites-available/com.Example
+```sh
+vi /etc/httpd/sites-available/com.<example>
 ```
 
 ```
 <VirtualHost *:80>
-    ServerName www.Example.com
-    ServerAlias Example.com
+    ServerName www.<example>.com
+    ServerAlias <example>.com
     DocumentRoot /var/www/html
     DirectoryIndex index.php index.htm index.html
 
@@ -144,20 +144,20 @@ vi /etc/httpd/sites-available/com.Example
 
 新建并配置二级域名：
 
-```bash
-vi /etc/httpd/sites-available/com.Example.SubDomain
+```sh
+vi /etc/httpd/sites-available/com.<example>.<sub_domain>
 ```
 
 ```
 <VirtualHost *:80>
-    ServerName SubDomain.Example.com
-    DocumentRoot /var/www/sub-domains/SubDomain/html
+    ServerName <sub_domain>.<example>.com
+    DocumentRoot /var/www/sub-domains/<sub_domain>/html
     DirectoryIndex index.php index.htm index.html
 
-    CustomLog "/var/log/httpd/SubDomain-access_log" combined
-    ErrorLog  "/var/log/httpd/SubDomain-error_log"
+    CustomLog "/var/log/httpd/<sub_domain>-access_log" combined
+    ErrorLog  "/var/log/httpd/<sub_domain>-error_log"
 
-    <Directory /var/www/sub-domains/SubDomain/html>
+    <Directory /var/www/sub-domains/<sub_domain>/html>
         Options -ExecCGI -Indexes
         AllowOverride None
 
@@ -172,31 +172,31 @@ vi /etc/httpd/sites-available/com.Example.SubDomain
 
 新建文件夹：
 
-```bash
+```sh
 mkdir -p /var/www/html
 ```
 
-```bash
-mkdir -p /var/www/sub-domains/SubDomain/html
+```sh
+mkdir -p /var/www/sub-domains/<sub_domain>/html
 ```
 
 启动Web服务：
 
-```bash
+```sh
 systemctl start httpd
 systemctl enable httpd
 ```
 
 通过「新建或删除系统链接」，来开启或关闭站点。这里是开启：
 
-```bash
-ln -s /etc/httpd/sites-available/com.Example /etc/httpd/sites-enabled/
-ln -s /etc/httpd/sites-available/com.Example.SubDomain /etc/httpd/sites-enabled/
+```sh
+ln -s /etc/httpd/sites-available/com.<example> /etc/httpd/sites-enabled/
+ln -s /etc/httpd/sites-available/com.<example>.<sub_domain> /etc/httpd/sites-enabled/
 ```
 
 每次编辑过站点配置，或者开关了站点后，重启Web服务：
 
-```bash
+```sh
 systemctl restart httpd
 ```
 
@@ -207,29 +207,26 @@ systemctl restart httpd
 ```
 主机记录 `@`和`www`
 记录类型 `A`
-记录值 `YourHost`
+记录值 `<your_host>`
 ```
 
 对于子域名，新增记录：
 
 ```
-主机记录 `SubDomain`
+主机记录 `<sub_domain>`
 记录类型 `A`
-记录值 `YourHost`
+记录值 `<your_host>`
 ```
 
-在浏览器中确认`Example.com`、`SubDomain.Example.com`。如果顺利，将看到：
+在浏览器中确认`<example>.com`、`<sub_domain>.<example>.com`。如果顺利，将看到：
 
 ![](rocky-linux-apache.png)
 
-↪ [Apache web server multiple site setup](https://docs.rockylinux.org/guides/web/apache-sites-enabled/)  
-↪ [What ServerAlias for my Subdomain?](https://www.linode.com/community/questions/10436/what-serveralias-for-my-subdomain)
-
-## 防火墙设置
+## 防火墙设置 [^3][^4][^5]
 
 在防火墙上，永久地打开公域的80和443端口，对应访问网站使用的HTTP和HTTPS协议。
 
-```bash
+```sh
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --permanent --add-port=80/tcp
@@ -238,15 +235,11 @@ firewall-cmd --reload
 firewall-cmd --list-all
 ```
 
-↪ [How to install Apache on Rocky Linux 9](https://www.linuxteck.com/how-to-install-apache-on-rocky-linux/)  
-↪ [firewalld for Beginners](https://docs.rockylinux.org/guides/security/firewalld-beginners/)  
-↪ [mod_ssl on Rocky Linux in an Apache web](https://docs.rockylinux.org/guides/web/mod_SSL_apache/)
-
-## 配置SSL证书
+## 配置SSL证书 [^6]
 
 使用[certbot](https://certbot.eff.org/)来配置域名的SSL证书，启用HTTPS访问。安装软件包：
 
-```bash
+```sh
 dnf install epel-release -y
 dnf install certbot python3-certbot-apache mod_ssl -y
 systemctl restart httpd
@@ -254,7 +247,7 @@ systemctl restart httpd
 
 申请证书：
 
-```bash
+```sh
 certbot --apache
 ```
 
@@ -266,21 +259,19 @@ certbot --apache
 
 如果顺利，这里会列出Web服务中开启的域名：
 
-```bash
-1: Example.com
-2: www.Example.com
-3: SubDomain.Example.com
+```sh
+1: <example>.com
+2: www.<example>.com
+3: <sub_domain>.<example>.com
 ```
 
 输入数字，以空格间隔即可，如`1 2 3`。如果是以后新增一个域名，这里只需输入新域名的数字。
 
 只是测试一下证书的续订功能是否正常：
 
-```bash
+```sh
 certbot renew --dry-run
 ```
-
-↪ [Generating SSL keys - Let's Encrypt](https://docs.rockylinux.org/guides/security/generating_ssl_keys_lets_encrypt/)
 
 ## 选择部署方式
 
@@ -345,7 +336,7 @@ deploy:
     repo: git@github.com:YourName/Repo.git
     branch: main
   - type: git
-    repo: SubUser@YourHost:/home/git/com.Example.git
+    repo: SubUser@<your_host>:/home/git/com.<example>.git
     branch: main
 ```
 
@@ -357,14 +348,14 @@ deploy:
 [remote "origin"]
 	url = https://github.com/YourName/Repo.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-    url = SubUser@YourHost:/home/git/com.Example.git
+    url = SubUser@<your_host>:/home/git/com.<example>.git
     fetch = +refs/heads/*:refs/remotes/vps/*
 ```
 
 这个操作实际上是添加了一个VPS上的远程Repo：
 
 ```sh
-git remote add vps SubUser@YourHost:/home/SubUser/com.Example.git
+git remote add vps SubUser@<your_host>:/home/SubUser/com.<example>.git
 ```
 
 但是组合进了`origin`，使得运行`git push -u origin main`时，同时上传到两个Repo。
@@ -375,13 +366,13 @@ git remote add vps SubUser@YourHost:/home/SubUser/com.Example.git
 
 回到VPS，新建上文提到的Repo。先添加一个SubUser（子用户），命名为`git`:
 
-```bash
+```sh
 adduser git
 ```
 
 设置子用户的登录密码：
 
-```bash
+```sh
 passwd git
 ```
 
@@ -389,22 +380,22 @@ passwd git
 
 递归地给予`git`用户网页文件夹的权限：
 
-```bash
+```sh
 chown git:git -R /var/www/html
-chown git:git -R /var/www/sub-domains/SubDomain/html
+chown git:git -R /var/www/sub-domains/<sub_domain>/html
 ```
 
 ### 为子用户开启SSH访问
 
 切换到`git`用户：
 
-```bash
+```sh
 su git
 ```
 
 为子用户设置用以SSH访问的密钥：
 
-```bash
+```sh
 cd ~
 mkdir .ssh
 touch .ssh/authorized_keys
@@ -415,35 +406,35 @@ vim .ssh/authorized_keys
 
 回到PC，测试以`git`账户登录VPS：
 
-```bash
-ssh git@YourHost
+```sh
+ssh git@<your_host>
 ```
 
 ### 文件夹里新建Hook脚本
 
 VPS上安装Git：
 
-```bash
+```sh
 su root
 yum install git -y
 ```
 
 在子用户的`home/`目录里，新建仅用以协作的Repo：
 
-```bash
+```sh
 su git
 cd ~
-mkdir com.Example.git
-cd com.Example.git
+mkdir com.<example>.git
+cd com.<example>.git
 git config --global init.defaultBranch main
 git init --bare
 ```
 
-`com.Example.git`对应了`com.Example`。`com.Example.SubDomain.git`则对应`com.Example.SubDomain`。
+`com.<example>.git`对应了`com.<example>`。`com.<example>.<sub_domain>.git`则对应`com.<example>.<sub_domain>`。
 
 新建Hook脚本：
 
-```bash
+```sh
 cd hooks
 touch post-receive
 chmod +x post-receive
@@ -452,10 +443,10 @@ vi post-receive
 
 粘贴进去：
 
-```bash
+```sh
 #!/bin/bash -l
-GIT_REPO=/home/git/com.Example.git
-TMP_GIT_CLONE=/tmp/com.Example
+GIT_REPO=/home/git/com.<example>.git
+TMP_GIT_CLONE=/tmp/com.<example>
 PUBLIC_WWW=/var/www/html
 rm -rf ${TMP_GIT_CLONE}
 git clone $GIT_REPO $TMP_GIT_CLONE
@@ -465,11 +456,11 @@ cp -rf ${TMP_GIT_CLONE}/BuildDir/* ${PUBLIC_WWW}
 
 对应子域名是：
 
-```bash
+```sh
 #!/bin/bash -l
-GIT_REPO=/home/git/com.Example.SubDomain.git
-TMP_GIT_CLONE=/tmp/com.Example.SubDomain
-PUBLIC_WWW=/var/www/html/sub-domains/SubDomain/html
+GIT_REPO=/home/git/com.<example>.<sub_domain>.git
+TMP_GIT_CLONE=/tmp/com.<example>.<sub_domain>
+PUBLIC_WWW=/var/www/html/sub-domains/<sub_domain>/html
 rm -rf ${TMP_GIT_CLONE}
 git clone $GIT_REPO $TMP_GIT_CLONE
 rm -rf ${PUBLIC_WWW}/*
@@ -480,7 +471,7 @@ cp -rf ${TMP_GIT_CLONE}/BuildDir/* ${PUBLIC_WWW}
 
 如果使用了[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)，这行自然是：
 
-```bash
+```sh
 cp -rf ${TMP_GIT_CLONE}/* ${PUBLIC_WWW}
 ```
 
@@ -504,7 +495,7 @@ git commit -m "SomeMessage"
 git push -u origin main
 ```
 
-打开浏览器，访问`Example.com`，查看页面是否更新。
+打开浏览器，访问`<example>.com`，查看页面是否更新。
 
 ## 云端Build
 
@@ -524,13 +515,13 @@ run: |
 到：
 
 ```yaml
---baseURL "https://Example.com"
+--baseURL "https://<example>.com"
 ```
 
 对应子域名是：
 
 ```yaml
---baseURL "https://SubDomain.Example.com"
+--baseURL "https://<sub_domain>.<example>.com"
 ```
 
 参考[SCP for GitHub Actions](https://github.com/appleboy/scp-action)，替换`Deployment job`以下的内容为：
@@ -562,16 +553,16 @@ run: |
     password: ${{ secrets.VPS_PASSWORD }}
     port: ${{ secrets.VPS_PORT }}
     source: "./html/*"
-    target: /var/www/sub-domains/SubDomain/
+    target: /var/www/sub-domains/<sub_domain>/
 ```
 
 去到你在Github上的Repo → Settings → Secrets and variables → Actions → New repository secret → 依次创建脚本中写到的4个secret。`Name`和`Secret`分别为：
 
 ```
-VPS_HOST `YourHost`
+VPS_HOST `<your_host>`
 VPS_PORT `22`
 VPS_USERNAME `git`
-VPS_PASSWORD `YourPassword`
+VPS_PASSWORD `<your_password>`
 ```
 
 再举一个例子，在Material for MkDocs的[Publishing your site](https://squidfunk.github.io/mkdocs-material/publishing-your-site/)部分，也提供了脚本，并且提示去看[MkDocs文档](https://www.mkdocs.org/user-guide/deploying-your-docs)来进行手动部署。新建`deploy.yml`后，再复制一份，重命名为`deploy_cps.yml`，修改`deploy_cps.yml`的：
@@ -623,19 +614,19 @@ git push
 最后，是一份小抄。如果你需要在VPS上，添加一个子域名，依次：
 
 ```sh
-vi /etc/httpd/sites-available/com.Example.SubDomain
+vi /etc/httpd/sites-available/com.<example>.<sub_domain>
 ```
 
 ```
 <VirtualHost *:80>
-    ServerName SubDomain.Example.com
-    DocumentRoot /var/www/sub-domains/SubDomain/html
+    ServerName <sub_domain>.<example>.com
+    DocumentRoot /var/www/sub-domains/<sub_domain>/html
     DirectoryIndex index.php index.htm index.html
 
     CustomLog "/var/log/httpd/demo-access_log" combined
     ErrorLog  "/var/log/httpd/demo-error_log"
 
-    <Directory /var/www/sub-domains/SubDomain/html>
+    <Directory /var/www/sub-domains/<sub_domain>/html>
         Options -ExecCGI -Indexes
         AllowOverride None
 
@@ -649,8 +640,8 @@ vi /etc/httpd/sites-available/com.Example.SubDomain
 ```
 
 ```sh
-mkdir -p /var/www/sub-domains/SubDomain/html
-ln -s /etc/httpd/sites-available/com.Example.SubDomain /etc/httpd/sites-enabled/
+mkdir -p /var/www/sub-domains/<sub_domain>/html
+ln -s /etc/httpd/sites-available/com.<example>.<sub_domain> /etc/httpd/sites-enabled/
 systemctl restart httpd
 ```
 
@@ -661,14 +652,14 @@ certbot --apache
 ```
 
 ```sh
-chown git:git -R /var/www/sub-domains/SubDomain/html
+chown git:git -R /var/www/sub-domains/<sub_domain>/html
 su git
 ```
 
 ```sh
 cd ~
-mkdir com.Example.SubDomain.git
-cd com.Example.SubDomain.git
+mkdir com.<example>.<sub_domain>.git
+cd com.<example>.<sub_domain>.git
 git config --global init.defaultBranch main
 git init --bare
 cd hooks
@@ -679,9 +670,9 @@ vi post-receive
 
 ```
 #!/bin/bash -l
-GIT_REPO=/home/git/com.Example.SubDomain.git
-TMP_GIT_CLONE=/tmp/com.Example.SubDomain
-PUBLIC_WWW=/var/www/html/sub-domains/SubDomain/html
+GIT_REPO=/home/git/com.<example>.<sub_domain>.git
+TMP_GIT_CLONE=/tmp/com.<example>.<sub_domain>
+PUBLIC_WWW=/var/www/html/sub-domains/<sub_domain>/html
 rm -rf ${TMP_GIT_CLONE}
 git clone $GIT_REPO $TMP_GIT_CLONE
 rm -rf ${PUBLIC_WWW}/*
@@ -693,3 +684,10 @@ git add .
 git commit -m "test add sub-domain"
 git push
 ```
+
+[^1]: [Apache web server multiple site setup](https://docs.rockylinux.org/guides/web/apache-sites-enabled/)  
+[^2]: [What ServerAlias for my Subdomain?](https://www.linode.com/community/questions/10436/what-serveralias-for-my-subdomain)
+[^3]: [How to install Apache on Rocky Linux 9](https://www.linuxteck.com/how-to-install-apache-on-rocky-linux/)  
+[^4]: [firewalld for Beginners](https://docs.rockylinux.org/guides/security/firewalld-beginners/)  
+[^5]: [mod_ssl on Rocky Linux in an Apache web](https://docs.rockylinux.org/guides/web/mod_SSL_apache/)
+[^6]: [Generating SSL keys - Let's Encrypt](https://docs.rockylinux.org/guides/security/generating_ssl_keys_lets_encrypt/)
