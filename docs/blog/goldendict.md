@@ -118,8 +118,9 @@ body
 
 下载词典文件，例如：
 
-- [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等等
+- [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等
 - Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
+- StarDict格式的[汉语大词典(繁)](https://kdr2.com/resource/stardict.html)、[汉语大词典(简)](https://github.com/scillidan/file_StarDict)
 - [简明英汉字典增强版](https://github.com/skywind3000/ECDICT)
 - [21世纪英汉汉英双向词典](https://stardict.uber.space/zh_CN/index.html)
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
@@ -134,21 +135,18 @@ body
 
 ## 添加词典群组
 
-1. 词典 → 群组 → 添加群组 → `<Group>` → 将词典拖入群组 → 应用
-2. GoldenDict的主界面 → 查找于 → `<Group>`
+1. 词典 → 群组 → 添加群组 → `<group>` → 将词典拖入群组 → 应用
+2. GoldenDict的主界面 → 查找于 → `<group>`
 
 我目前常用的`default`分组中，除开翻译脚本和语音、拼写检查等功能词典，大部分都是StarDict格式：
 
 ```
 在线翻译脚本
 单词发音
-专业词汇词典
-简明英汉字典(仅含释义)
-21世纪英汉汉英双向词典
-词源词典
-GNU版国际协作英语词典
-维基英英词典
+简明英汉字典
 拼写词库
+专业词汇词典
+汉语大词典
 ```
 
 ## 添加拼写词库
@@ -229,7 +227,7 @@ B-axes.mp3
 
 对于大型档案，无论是搜索条目，还是「全文搜索」，其速度称得上「很快」。例如，如果我需要检索「古腾堡计划」的电子书库中提到某个词的段落：
 
-GoldenDict-ng → 搜索 → 全文搜索 → `<Word>` → 搜索 → 单击条目
+GoldenDict-ng → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
 
 ![](full-text-search.png)
 
