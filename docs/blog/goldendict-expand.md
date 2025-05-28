@@ -46,7 +46,7 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 ### [Cambridge-Dictionary](https://github.com/spignelon/cambridge-dictionary)
 
 > Once you search for the word and gets the meaning, it saves it into a local database from which it retrieves them if you search for the same word again in the future instead of fetching it from the server. This makes it quick, run even when there's no internet connection (assuming that your local database is of substantial size) and prevents making too many queries to the server.  
-> （机翻）一旦您搜索该单词并获得其含义，它就会将其保存到本地数据库中，如果您将来再次搜索同一单词，而不是从服务器获取它，它就会从该数据库中检索它们。这使得它快速运行，即使没有互联网连接（假设您的本地数据库规模很大），并防止向服务器进行太多查询。
+“一旦您搜索该单词并获得其含义，它就会将其保存到本地数据库中，如果您将来再次搜索同一单词，而不是从服务器获取它，它就会从该数据库中检索它们。这使得它快速运行，即使没有互联网连接（假设您的本地数据库规模很大），并防止向服务器进行太多查询。”
 
 ```sh
 git clone --depth=1 https://github.com/spignelon/cambridge-dictionary
@@ -169,21 +169,22 @@ venv\Scripts\activate.bat
 ### [Sentences](https://github.com/neurosnap/sentences)
 
 > This command line utility will convert a blob of text into a list of sentences.  
-> （机翻）此命令行实用程序将文本块转换为句子列表。
+
+“此命令行实用程序将文本块转换为句子列表。”
 
 ```sh
 pnpm add -g echo-cli
+# Test on go1.20.1
+go get github.com/neurosnap/sentences
 go install github.com/neurosnap/sentences/cmd/sentences@latest
 ```
-
-或者从[Sentences - Releases](https://github.com/neurosnap/sentences/releases)下载并解压`sentences_windows-amd64.tar.gz`，重命名`sentences`到`sentences.exe`。
 
 程序 → 添加：
 
 ```
 类型 纯文本
 名称 `Sentences`
-命令行 `C:\Users\<User>\AppData\Roaming\pnpm\echo-cli.CMD "%GDWORD%" | sentences.exe`
+命令行 `C:\Users\User\AppData\Roaming\pnpm\echo-cli.CMD "%GDWORD%" | sentences.exe`
 ```
 
 ![](sentences.png)
@@ -200,25 +201,35 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ### pyLanguagetool
 
-[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)是一个Python库和命令行工具，使用LanguageTool的[JSON API](https://languagetool.org/http-api/swagger-ui/#/default)。
+我有一些在浏览器外对句子做语法检查的情况。[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)是一个Python库和命令行工具，使用LanguageTool的[JSON API](https://languagetool.org/http-api/swagger-ui/#/default)。
 
 ```sh
-pip install pylanguagetool
-pylanguagetool -h
-echo "This is a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US
+uv venv .pyLanguagetool
+.pyLanguagetool\Scripts\activate.bat
+uv pip install --upgrade setuptools beautifulsoup4 pyLanguagetool
+echo "This are a exampl" | pylanguagetool --lang en-US
+echo "This are a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US
 ```
 
-并不能直接在GoldenDict里使用，如下文中的`ety-python`，需要一些修改，但不推荐这样做。配置和预览图仅做参考，程序 → 添加：
+和下文中的工具ety-python一样，并不能直接在GoldenDict里使用。需要做一些修改，但不推荐这样做，此处仅留做参考。程序 → 添加：
 
 ```
 类型 纯文本
 名称 `pyLanguagetool`
-命令行 `C:\Users\User\AppData\Roaming\pnpm\echo-cli.CMD "%GDWORD%" | C:\Users\User\Scoop\persist\python312\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US`
+命令行 `C:\Users\User\AppData\Roaming\pnpm\echo-cli.CMD "%GDWORD%" | C:\Users\User\Usr\Script\.pyLanguagetool\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US`
 ```
 
 ![](pylanguagetool.png)
 
-需要等宽字体才能对齐「字母」和「波浪线」。
+需要等宽字体才能对齐「字母」和「波浪线」。我目前使用一个`pylanguagetool.bat`从剪切板进行检查：
+
+```batchfile
+@echo off
+
+C:\Users\User\Usr\Script\.pyLanguagetool\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --lang en-US -c
+
+pause
+```
 
 ### Gramformer
 
@@ -242,7 +253,6 @@ echo "This is a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ -
 
 - 拼写提示[DoYouMean](https://github.com/hisbaan/didyoumean)
 - 同义词词典[thes](https://github.com/grantshandy/thes)
-- 缩写查询[abbr-cli](https://github.com/mhadidg/abbr-cli)。不过我依旧在使用网页端[All Acronyms](https://www.abbreviations.com/)
 
 ![](scripts.png)
 
@@ -295,7 +305,7 @@ pip install -e .
 4. 编辑`GdOcrTool.ahk`。补全`Capture2Text.exe`的完整路径
 5. 按`Ctrl+Alt+O`开关一次「OCR取词」
 6. 打开配置文件示例`Capture2Text.ini`，复制从`[BubbleCapture]`到`[Hotkey]`的内容
-7. 编辑`C:\Users\<user>\AppData\Roaming\Capture2Text\Capture2Text.ini`，在文件末尾，粘贴复制的内容
+7. 编辑`C:\Users\User\AppData\Roaming\Capture2Text\Capture2Text.ini`，在文件末尾，粘贴复制的内容
 8. 编辑以下两处，用于设置3个快捷键，来切换到对应的识别语言，如：
 
 ```
