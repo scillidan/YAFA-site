@@ -1,8 +1,8 @@
-site_name: 𝔜𝔄𝔉𝔄 𝔪𝔞𝔯𝔨𝔱 # Change this to your site name
-site_url: # Change this to your site URL
+site_name: 𝔜𝔄𝔉𝔄 𝔪𝔞𝔯𝔨𝔱
+site_url: 
 site_description: "yafa markt, 雅法"
 site_author: scillidan
-copyright: Copyright © 2023-2024 scillidan
+copyright: Copyright © 2023-2025 scillidan
 # docs_dir: .
 # site_dir: ../site
 # repo_name: YAFA-site
@@ -25,7 +25,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: white
-      accent: light blue
+      accent: blue
       toggle:
         icon: material/brightness-4
         name: Switch to night
@@ -51,6 +51,27 @@ theme:
         - content.code.copy
         - search.suggest
         - search.highlight
+extra:
+  # ignore:
+  #   - docs/draft/*
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/scillidan/YAFA-site
+      name: YAFA-site
+    - icon: fontawesome/brands/creative-commons-by
+      link: https://creativecommons.org/licenses/by/4.0/
+      name: CC BY 4.0
+extra_css:
+  - assets/css/admonition.css
+  - assets/css/extra.css
+  # - assets/css/customization.css
+  # - assets/css/furigana.css
+  # - ai-summary.css
+# extra_javascript:
+#   - assets/javascripts/extra.js
+# nav:
+#   - Version:
+#     - v1: "*include /*/mkdocs.yml"
 markdown_extensions:
   # - callouts
   - mdx_truly_sane_lists:
@@ -103,6 +124,47 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
+  - search
+  - autolinks
+  - document-dates:
+      type: date
+      locale: zh
+      date_format: "%Y-%m-%d"
+      time_format: "%H:%M:%S"
+      position: bottom
+      exclude:
+        - index.md
+        - archive/*.md
+        - blog/_playground.md
+  - exclude:
+      glob:
+        - "docs/archive/*"
+        - "*.pdf"
+        - "*.j2"
+      # regex:
+      #   - ".*\.(tmp|bin|tar)$"
+  - exclude-search:
+      exclude:
+        - index.md
+        - docs/.htaccess
+        - docs/robots.txt
+        - docs/SUMMARY.md
+        - draft/_playground.md
+      # ignore:
+      #   - dir/second.md#some-heading
+      exclude_unreferenced: true
+  - glightbox:
+      auto_caption: true
+      caption_position: bottom
+      skip_classes:
+        - skip-lightbox
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - llmstxt:
+      markdown_description: Blogs.
+      sections:
+        Usage documentation:
+        - blog/*.md
   - minify:
       minify_html: true
       minify_js: true
@@ -117,64 +179,22 @@ plugins:
       #     - assets/css/customization.css
       #     - assets/css/extra.css
       #     - assets/css/furigana.css
-  # - minify_html
-  # - heti:
-  #     disable_serve: false
-  - meta-manager
-  - meta-descriptions
-  - document-dates:
-      type: date
-      locale: zh
-      date_format: '%Y-%m-%d'
-      time_format: '%H:%M:%S'
-      position: bottom
-      exclude:
-        - index.md
-        - archive/*.md
-        - blog/_playground.md
-        - draft/*.md
-  # - git-revision-date-localized:
-  #     locale: en
-  #     type: iso_date
-  #     enable_creation_date: true
-  #     fallback_to_build_date: true
-  #     exclude:
-  #       - index.md
-  #       - blog/deploy-sites-to-vps.md
-  #       - blog/make-la.isla.minima.2014.srt.ass.md
-  # - footermatter
-  - autolinks
-  - open-in-new-tab
-  - glightbox:
-      auto_caption: true
-      caption_position: bottom
-      skip_classes:
-        - skip-lightbox
-  # - resize-images:
-  #     source-dir: assets/media
-  #     target-dir: assets/media-min
-  #     enable_cache: True
-  #     size: [800, 600]
-  #     extensions: ['.jpg', '.jpeg', '.png', '.gif', '.svg']
-  # - inline-select-svg:
-  #     pattern: "[.]inline[.]svg$"
+  - mkdocs-audio
   - mkdocs-video:
       is_video: True
       video_muted: True
       video_controls: True
       css_style:
         width: "100%"
-  - mkdocs-audio
-  - asciinema-player
-  - table-reader
-  - literate-nav:
-      nav_file: SUMMARY.md
-  # - tags:
-  #     tags_slugify: !!python/object/apply:pymdownx.slugs.slugify
-  #       kwds:
-  #         case: lower
-  #     tags_slugify_separator: "-"
-  #     tags_file: Note/index.md
+  - open-in-new-tab
+  # - ai-summary:
+  #     api: "chatgpt"
+  #     model: "gpt-4o-mini"
+  #     ignore_code: true
+  #     cache: true
+  #     cache_dir: "./"
+  #     prompt: "Please help me summarize the following content into an abstract within 50 words: "
+  # - asciinema-player
   # - autotag:
   #     globs:
   #       "Blog/**": Blog
@@ -184,34 +204,50 @@ plugins:
   #       # - "{0}"
   #       - "{1}/"
   #       # - "{0}/{1}/"
-  # - ai-summary:
-  #     api: "chatgpt"
-  #     model: "gpt-4o-mini"
-  #     ignore_code: true
-  #     cache: true
-  #     cache_dir: "./"
-  #     prompt: "Please help me summarize the following content into an abstract within 50 words: "
-  - search
-  - exclude-search:
-      exclude:
-        - docs/.htaccess
-        - docs/robots.txt
-      # ignore:
-      #   - dir/second.md#some-heading
-      exclude_unreferenced: true
-  - exclude:
-      glob:
-        - ".obsidian/*"
-        # - "draft/*"
-        - "*.pdf"
-        - "*.j2"
-      # regex:
-      #   - '.*\.(tmp|bin|tar|.obsidian)$'
-  # - include-markdown
+  # - awesome-pages
+  # - blog:
+  #     blog_dir: .
+  #     blog_toc: true
+  #     post_date_format: short
+  #     post_url_format: "{slug}"
+  #     archive_date_format: yyyy
+  # - footermatter
   # - furigan:
   #     multiple: "§"
   #     inicio: "【"
   #     fin: "】"
+  # - git-revision-date-localized:
+  #     locale: en
+  #     type: iso_date
+  #     enable_creation_date: true
+  #     fallback_to_build_date: true
+  #     exclude:
+  #       - index.md
+  #       - blog/deploy-sites-to-vps.md
+  #       - blog/make-la.isla.minima.2014.srt.ass.md
+  # - heti:
+  #     disable_serve: false
+  # - include-markdown
+  # - inline-select-svg:
+  #     pattern: "[.]inline[.]svg$"
+  # - meta-manager
+  # - minify_html
+  # - mkdocs/exporter
+  # - mkdocs/exporter/extras:
+  #     buttons:
+  #       - title: Download as PDF
+  #         enabled: !!python/name:mkdocs_exporter.plugins.pdf.button.enabled
+  #         icon: !!python/name:mkdocs_exporter.plugins.pdf.button.icon
+  #         attributes:
+  #           href: !!python/name:mkdocs_exporter.plugins.pdf.button.href
+  #           download: !!python/name:mkdocs_exporter.plugins.pdf.button.download
+  # - mkdocs/exporter/pdf:
+  #     concurrency: 8
+  #     covers:
+  #       front: D:/cacher/mkdocs_exporter/resources/templates/covers/front.html.j2
+  #       back: D:/cacher/mkdocs_exporter/resources/templates/covers/back.html.j2
+  #     stylesheets:
+  #       - D:/cacher/mkdocs_exporter/resources/stylesheets/pdf.scss
   # - monorepo
   # - multirepo:mkdo
   #     cleanup: true
@@ -220,15 +256,7 @@ plugins:
   #       - section: "Readme-page"
   #         section_path: Readme
   #         import_url: "https://github.com/scillidan/README-page?branch=main"
-  # - same-dir
-  # - awesome-pages
   # - pagenav-generator
-  # - blog:
-  #     blog_dir: .
-  #     blog_toc: true
-  #     post_date_format: short
-  #     post_url_format: "{slug}"
-  #     archive_date_format: yyyy
   # - pdf-generate:
   #     author: "scillidan"
   #     author_logo: img/logo.svg
@@ -245,45 +273,20 @@ plugins:
   #     toc_numbering: true
   #     cover_images:
   #       default: docs/assets/favicon.png
-        # type1: img/type1.png
-        # type2: https://example.com/cover.svg
-      # enabled_if_env: ENABLE_PDF_EXPORT
-  # - mkdocs/exporter
-  # - mkdocs/exporter/pdf:
-  #     concurrency: 8
-  #     covers:
-  #       front: D:/cacher/mkdocs_exporter/resources/templates/covers/front.html.j2
-  #       back: D:/cacher/mkdocs_exporter/resources/templates/covers/back.html.j2
-  #     stylesheets:
-  #       - D:/cacher/mkdocs_exporter/resources/stylesheets/pdf.scss
-  # - mkdocs/exporter/extras:
-  #     buttons:
-  #       - title: Download as PDF
-  #         enabled: !!python/name:mkdocs_exporter.plugins.pdf.button.enabled
-  #         icon: !!python/name:mkdocs_exporter.plugins.pdf.button.icon
-  #         attributes:
-  #           href: !!python/name:mkdocs_exporter.plugins.pdf.button.href
-  #           download: !!python/name:mkdocs_exporter.plugins.pdf.button.download
-  # - heti:
-  #     disable_serve: false
-extra_css:
-  - assets/css/extra.css
-  # - assets/css/customization.css
-  - assets/css/admonition.css
-  # - assets/css/furigana.css
-  # - ai-summary.css
-# extra_javascript:
-#   - assets/javascripts/extra.js
-# nav:
-  # - Version:
-  #   - v1: '*include /*/mkdocs.yml'
-extra:
-  ignore:
-    - docs/.obsidian/*
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/scillidan/YAFA-site
-      name: YAFA-site
-    - icon: fontawesome/brands/creative-commons-by
-      link: https://creativecommons.org/licenses/by/4.0/
-      name: CC BY 4.0
+  #       type1: img/type1.png
+  #       type2: https://example.com/cover.svg
+  #     enabled_if_env: ENABLE_PDF_EXPORT
+  # - resize-images:
+  #     source-dir: assets/media
+  #     target-dir: assets/media-min
+  #     enable_cache: True
+  #     size: [800, 600]
+  #     extensions: [".jpg", ".jpeg", ".png", ".gif", ".svg"]
+  # - same-dir
+  # - table-reader
+  # - tags:
+  #     tags_slugify: !!python/object/apply:pymdownx.slugs.slugify
+  #       kwds:
+  #         case: lower
+  #     tags_slugify_separator: "-"
+  #     tags_file: Note/index.md

@@ -12,7 +12,7 @@ keywords: >
 	文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
 	日期：2023-09-19  
 	归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
-	备注：1)根据编辑的建议从[原稿](../archive/play-lyrics-with-mpv)大修的版本 2)排版上不同
+	备注：1)根据编辑建议从[原稿](../archive/play-lyrics-with-mpv_archive)大修的版本 2)排版上不同
 
 ## 关于MPV
 

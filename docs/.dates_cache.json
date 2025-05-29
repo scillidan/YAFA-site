@@ -1,23 +1,23 @@
 {
   "index.md": {
     "created": "2023-09-04T01:40:13.039608",
-    "modified": "2024-08-11T23:46:17.932055"
+    "modified": "2025-05-29T18:31:17.025848"
   },
   "SUMMARY.md": {
     "created": "2023-09-04T01:40:13.052607",
     "modified": "2024-02-20T13:43:05.358417"
   },
-  "archive\\deploy-sites-to-vps.md": {
+  "archive\\deploy-sites-to-vps_archive.md": {
     "created": "2023-09-04T01:40:13.032606",
     "modified": "2024-08-12T00:41:27.948560"
   },
-  "archive\\play-lyrics-with-mpv.md": {
+  "archive\\play-lyrics-with-mpv_archive.md": {
     "created": "2023-09-06T16:50:29.506886",
     "modified": "2024-10-17T13:33:57.182192"
   },
   "blog\\deploy-static-web-to-vps-expand.md": {
     "created": "2025-05-13T08:08:34.970314",
-    "modified": "2025-05-22T17:37:08.976803"
+    "modified": "2025-05-29T18:31:11.760690"
   },
   "blog\\deploy-static-web-to-vps.md": {
     "created": "2023-09-04T01:40:13.032606",
@@ -41,14 +41,14 @@
   },
   "blog\\play-lyrics-with-mpv.md": {
     "created": "2023-09-06T16:50:29.506886",
-    "modified": "2025-02-27T23:08:08.691472"
+    "modified": "2025-05-29T18:48:54.404085"
   },
   "blog\\SUMMARY.md": {
     "created": "2023-09-04T01:40:13.052607",
-    "modified": "2025-05-22T17:28:26.694532"
+    "modified": "2025-05-29T18:44:01.852344"
   },
-  "blog\\_playground.md": {
+  "draft\\_playground.md": {
     "created": "2024-08-12T00:41:40.826680",
-    "modified": "2025-02-27T23:32:53.327399"
+    "modified": "2025-05-29T18:49:41.695975"
   }
 }
