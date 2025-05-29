@@ -20,5 +20,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material mkdocs-glightbox mkdocs-autolinks-plugin mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-exclude mkdocs-exclude-search mkdocs-video mkdocs-open-in-new-tab mkdocs-minify-plugin mkdocs-audio
+      - run: pip install mkdocs-material mkdocs-glightbox mkdocs-autolinks-plugin mdx_truly_sane_lists mdx-breakless-lists mkdocs-literate-nav mkdocs-exclude mkdocs-exclude-search mkdocs-video mkdocs-open-in-new-tab mkdocs-minify-plugin mkdocs-audio mkdocs-llmstxt
       - run: mkdocs gh-deploy --force
