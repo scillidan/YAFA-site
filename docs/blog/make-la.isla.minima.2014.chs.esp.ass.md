@@ -279,16 +279,16 @@ NVIDIA显卡上的参数，应该也可以参考这个。
 
 ### 其他事件
 
-|date|translation tools|staff|source|
-|:-:|:-:|:-:|:-:|
-|2023.05|Tern|机翻、后期|千禧年三部曲：[1](https://assrt.net/xml/sub/662/662664.xml)、[2](https://assrt.net/xml/sub/662/662663.xml)、[3](https://assrt.net/xml/sub/662/662662.xml)|
-|2022.01||后期|[平家物语](https://assrt.net/xml/sub/648/648399.xml)|
-|2021.09|DeepL|机翻、粗校|[Rosy](https://assrt.net/xml/sub/648/648393.xml)|
-|2021.09|沙拉查词、GoldenDict|校对|[The Green Knight](https://assrt.net/xml/sub/644/644477.xml)|
-|2021.08|Reverso、GoldenDict、沙拉查词|翻译、校对、后期|[La isla minima](https://assrt.net/xml/sub/663/663797.xml)|
-|2019.12||校对、后期|[Lolita（1997）](https://assrt.net/xml/sub/641/641712.xml)|
-|2019.01|谷歌翻译|翻译|词条[Sibyl](https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%AF%94%E6%8B%89)|
-|2018.03|谷歌翻译|翻译|[Das Herz ist ein dunkler Wald](https://assrt.net/xml/sub/644/644933.xml)|
+|date|tools|staff|link|note|
+|:-|:-|:-|:-|:-|
+|2023.05|Tern|机翻、后期|千禧年三部曲 (2009)：[1](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20with%20the%20Dragon%20Tattoo%20(2009).chs.swe.srt)、[2](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20Who%20Played%20with%20Fire%20(2009)%20Part%2001.chs.eng.srt)、[3](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20Who%20Kicked%20the%20Hornet's%20Nest%20(2009).chs.eng.srt)|[.info](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20with%20the%20Dragon%20Tattoo%20(2009).chs.swe.info)|
+|2022.01|/|后后期|[平家物語 [The Heike Story][平家物语] (2021)](https://github.com/scillidan/subtitle/tree/main/The%20Heike%20Story%20(2021)/S01)|/|
+|2021.09|DeepL|机翻、粗校|[Rosy (2018)](https://github.com/scillidan/subtitle/blob/main/Rosy%20(2018).chs.eng.srt)|[.info](https://github.com/scillidan/subtitle/blob/main/Rosy%20(2018).chs.eng.info)|
+|2021.09|沙拉查词、GoldenDict|校对|[The Green Knight [绿骑士] (2021)](https://github.com/scillidan/subtitle/blob/main/The%20Green%20Knight%20(2021).chs.eng.srt)|[.info](https://github.com/scillidan/subtitle/blob/main/The%20Green%20Knight%20(2021).chs.eng.info)|
+|2021.08|Reverso、GoldenDict、沙拉查词|翻译、校对、后期|[La isla minima [Marshland][沼泽地] (2014)](https://github.com/scillidan/subtitle/blob/main/Marshland%20(2014).chs.esp%5Bfull%5D.ass)|[.info](https://github.com/scillidan/subtitle/blob/main/Marshland%20(2014).chs.esp.info)|
+|2019.12|/|校对、后期|[Lolita [洛丽塔] (1997)](https://github.com/scillidan/subtitle/blob/main/Lolita%20(1997).chs.eng.srt)|/|
+|2019.01|谷歌翻译|翻译|词条: [Sibyl [西比拉]](https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%AF%94%E6%8B%89)|/|
+|2018.03|谷歌翻译|翻译|[Das Herz ist ein dunkler Wald [The Heart is a Dark Forest][心是一片暗林] (2007)](https://github.com/scillidan/subtitle/blob/main/The%20Heart%20is%20a%20Dark%20Forest%20(2007).chs.eng.srt)| [.info](https://github.com/scillidan/subtitle/blob/main/The%20Heart%20is%20a%20Dark%20Forest%20(2007).chs.eng.info)
 
 ## 其他道具一览
 
