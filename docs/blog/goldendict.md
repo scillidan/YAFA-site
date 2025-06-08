@@ -9,23 +9,23 @@ keywords: >
 
 [GoldenDict](http://goldendict.org/)是一款开源的桌面端词典检索应用，跨平台，[支持多种词典格式](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)。它有十分丰富的可配置项，包括字典组，拼写检查、单词发音、语音合成、在线翻译等等。[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)是基于前者重写的新一代GoldenDict，修复了[一些长期累积的问题](https://github.com/xiaoyifang/goldendict-ng/issues/587)，目前仍然处于积极开发中，更多地说明见[GoldenDict-ng文档](https://xiaoyifang.github.io/goldendict-ng/)。
 
-二者操作相近，配置文件几乎可以共用（但不推荐）。GoldenDict-ng采用了更新的技术，而GoldenDict向前兼容了一些像Windows XP之类的老旧系统。这里就主要以配置GoldenDict为例。软件版本为[GoldenDict 1.5.0](https://github.com/goldendict/goldendict/releases/tag/1.5.0)、[GoldenDict-ng-v24.05.05](https://github.com/xiaoyifang/goldendict-ng/releases/tag/v24.05.05-LiXia.ecd1138c)。
+二者操作相近，配置文件几乎可以共用（但不推荐）。GoldenDict-ng采用了更新的技术，而GoldenDict向前兼容了一些像Windows XP之类的老旧系统。这里就主要以配置GoldenDict为例。软件版本为[GoldenDict 1.5.1](https://github.com/goldendict/goldendict/releases/tag/1.5.1)、[GoldenDict-ng-v24.05.05](https://github.com/xiaoyifang/goldendict-ng/releases/tag/v24.05.05-LiXia.ecd1138c)。
 
 ## 配置文件的位置
 
 同于大多数的软件的安装版，GoldenDict的配置文件也位于`C:\Users\<username>\AppData\Roaming`的`<软件名>`。如果要保存GoldenDict的配置，可备份此处的`config`文件。
 
-如果使用[Scoop](https://scoop.sh/)安装，需要删除`C:\Users\<username>\scoop\apps\goldendict\current\portable`目录，也就是断开了和Scoop配置目录里的系统目录链接，位于`C:\Users\<username>\scoop\persist\goldendict`。见[issue](https://github.com/goldendict/goldendict/issues/1560)。
+如果使用[Scoop](https://scoop.sh/)安装，可以删除`C:\Users\<username>\scoop\apps\goldendict\current\portable`目录，也就是断开了和Scoop配置目录里的系统目录链接，位于`C:\Users\<username>\scoop\persist\goldendict`，见[issue](https://github.com/goldendict/goldendict/issues/1560)。这样配置起来相对简单些，我使用的是Scoop的配置文件夹，也更麻烦。
 
-文章分为「基础篇」和「番外篇」。基础篇主要涉及「黑暗主题」、各类的「词典」、「取词方式」等。「番外篇」更多地涉及了「程序」这一功能，具有更多的实验性和Bug，也提及了一些和语言相关的第三方工具，如[LanguageTool](https://languagetool.org/)等。
+文章分为「基础篇」和「番外篇」。基础篇主要涉及「黑暗主题」、各类「词典」、「取词方式」等。「番外篇」更多地涉及了「程序」这一功能，有更多的实验性和Bug，不限于字典，涉及到文本翻译、语法检查等。
 
 ## 窗口布局
 
 主窗口的布局可在菜单栏的「查看」中设置。
 
-窗口大小可手动调整。对于弹窗窗口，参考该[issue](https://github.com/goldendict/goldendict/issues/1010)。
+窗口的大小可手动调整。对于弹窗窗口，参考该[issue](https://github.com/goldendict/goldendict/issues/1010)。
 
-我个人在主窗口只保留了「查询面板」，窗口尺寸约为屏幕高的`3/4`，宽的`1/3`，弹窗的尺寸约为屏幕高的`1/2，宽的1/4`。
+我个人在主窗口只保留了「查询面板」。窗口尺寸约为屏幕高的`1/2`、宽的`1/3`，弹窗尺寸约为屏幕高的`1/2`、宽的`1/4`。
 
 ## 黑暗主题
 
@@ -35,7 +35,7 @@ git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 
 参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落安装样式。
 
-原样式有几处圆角边框，我额外进行了一些调整。可以编辑`styles\Dark\article-style.css`：
+原样式有几处圆角边框。可以编辑`styles\Dark\article-style.css`：
 
 ```css
 // 词典框的圆角改为直角等
@@ -99,8 +99,6 @@ body
 ```
 
 字体不会生效于有内置样式的词典，或者[ZIM](https://wiki.openzim.org/wiki/ZIM_file_format)档案。
-
-为了更好地显示脚本，我个人目前使用的是等宽字体[Sarasa Term SC Nerd 字体](https://github.com/laishulu/Sarasa-Term-SC-Nerd)。
 
 ## 修改字典内置样式
 
@@ -214,24 +212,22 @@ B-axes.mp3
 1. 设置 → 时间和语言 → 语音 → 管理语音 → 添加语音
 2. 词典 → 词典来源 → 语音合成 → 预览 → 可用语音引擎 → `Microsoft David Desktop - English (United States)` → 添加 → 应用
 
-## 添加离线维基（仅gd-ng）
+## 添加离线维基
 
-[Kiwix](https://kiwix.org/en/)是一个离线的维基阅读器，也适用别的网络内容，如[StackExchange](https://stackexchange.com/)([Stack Overflow](https://stackoverflow.com/))、[Project Gutenberg](https://www.gutenberg.org/)等等，可用来提供高速、稳定的档案访问服务。它支持高度压缩的`.zim`格式，该格式可包含元数据、HTML、图像等资源。配置步骤：
+[Kiwix](https://kiwix.org/en/)是一个离线的维基阅读器，支持多客户端，也可部署服务端。也适用别的网络内容，如[StackExchange](https://stackexchange.com/)([Stack Overflow](https://stackoverflow.com/))、[Project Gutenberg](https://www.gutenberg.org/)等等，用来提供高速、稳定的档案访问服务。它支持高度压缩的`.zim`格式，该格式可包含元数据、HTML、图像等资源。配置步骤：
 
-1. 在[Content in all languages](https://wiki.kiwix.org/wiki/Content_in_all_languages)的列表中选择档案，例如「wikipedia (English)」，型号「all maxi」。这个型号包含了除音频、视频等大型媒体文件外的所有内容。关于各型号的详细说明，见[issue1](https://github.com/openzim/zim-requests/issues/129)，[issue2](https://github.com/openzim/mwoffliner/issues/485)
-2. 下载档案
-3. GoldenDict-ng → 编辑 → 词典 → 词典来源 → 文件 → 添加 → `.zim`所在目录
-4. 等待GoldenDict-ng创建索引
+1. 从[ZIM Ebook Library](https://library.kiwix.org/)选择档案，例如「wikipedia (English)」，当鼠标移到档案上时，或者点击档案在线阅读时，在浏览的左下角或者地址栏会提示档案全名。「all maxi」这个型号包含了除音频、视频等大型媒体文件外的所有内容。关于各型号的详细说明，见[issue1](https://github.com/openzim/zim-requests/issues/129)，[issue2](https://github.com/openzim/mwoffliner/issues/485)
+2. 点击`Download - xx GB`。对于大型档案，选择Torrent file，之后在BT下载器中打开该文件并下载
+3. GoldenDict → 编辑 → 词典 → 词典来源 → 文件 → 添加 → `.zim`所在目录
+4. 等待GoldenDict创建索引
 
 ![](wiki.png)
 
 对于大型档案，无论是搜索条目，还是「全文搜索」，其速度称得上「很快」。例如，如果我需要检索「古腾堡计划」的电子书库中提到某个词的段落：
 
-GoldenDict-ng → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
+GoldenDict → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
 
 ![](full-text-search.png)
-
-题外话：也可使用[Kiwix客户端](https://kiwix.org/en/applications/)或者[Kiwix JS for PWA](https://github.com/kiwix/kiwix-js-pwa)阅读`.zim`档案。
 
 ## 设置鼠标取词
 
@@ -273,11 +269,11 @@ Umi-OCR → 添加 → 截图OCR → 设置 → 识图后的操作 → 复制结
 
 ## 一些实用键位
 
-我目前常用的有：
-
-- `Ctrl+L` 聚焦到输入框
-- `Alt+Left/Right` 前个/后个查询记录
-
 所有的快捷键在：
 
 帮助 → GoldenDict帮助 → `Shortcuts`
+
+常用的有：
+
+- `Ctrl+L` 聚焦到输入框
+- `Alt+Left/Right` 前个/后个查询记录

@@ -211,7 +211,7 @@ echo "This are a exampl" | pylanguagetool --lang en-US
 echo "This are a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US
 ```
 
-和下文中的工具ety-python一样，并不能直接在GoldenDict里使用。需要做一些修改，但不推荐这样做，此处仅留做参考。程序 → 添加：
+和下文中的工具ety-python一样，并不能直接在GoldenDict里使用。原因可能是[字符相关问题](https://github.com/Twinblade-i/goldendict-openai-translator?tab=readme-ov-file#preface)。需要做一些修改，但不推荐这样做，此处仅留做参考。程序 → 添加：
 
 ```
 类型 纯文本
