@@ -7,7 +7,7 @@ keywords: >
     GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
 ---
 
-## 在线词典
+## 词典脚本和服务
 
 ### DICT.org
 
@@ -25,11 +25,10 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 
 ### dictd.service
 
-以运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）为例：
+参考[dictd.md](https://scillidan.github.io/notes/srv/dictd.html)部署自用`dictd`服务，笔记中使用的是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，推荐两种方法：
 
-1. 可参考[dict-ecdict.md](https://scillidan.github.io/notes/bin/dict-ecdict.html)来制作`dictd`使用的`.dz`等文件
-2. 可使用[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)转换StarDict字典文件到`.dz`格式。StarDict的`.ifo`文件里最好不要有中文
-3. 参考[dictd.md](https://scillidan.github.io/notes/serve/dictd.html)部署`dictd`服务
+1. 使用[PyGlossary](https://github.com/ilius/pyglossary)转换`StarDict (.ifo)`格式到`DICT.org file format (.index)`格式。StarDict的`.ifo`文件里最好不要有中文。
+2. 参考[dict-ecdict.md](https://scillidan.github.io/notes/bin/dict-ecdict.html)来制作，这里使用到了[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
 
 词典 → 词典来源 → 词典服务器 → 添加：
 
@@ -67,11 +66,11 @@ pip install requests bs4
 
 ![](cambridge-dictionary.png)
 
-## 在线翻译脚本
+## 翻译脚本和服务
 
 ### deep-translator
 
-[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。如何申请或创建API请看各翻译器的官网介绍。像我只申请了腾讯云的API，写文时，需要从源码安装这个工具，才能使用这个翻译器：
+[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。如何申请或创建API请看各翻译器的官网介绍。我一般使用腾讯云机翻API，写文时，需要从源码安装这个工具，才能使用这个翻译器：
 
 ```sh
 git clone --depth=1 https://github.com/nidhaloff/deep-translator
@@ -109,34 +108,30 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ### TencentTrans_22.py
 
-我有将多语言（主要是英语）翻译到中文，中文翻译到英文的需求，希望运行快而较稳。所以我使用的是特定翻译器的脚本，[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)，即「用于Goldendict的腾讯云翻译」。支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[沉浸式翻译](https://immersivetranslate.com/zh-Hans/)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用这个API。
+这是我常用的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[沉浸式翻译](https://immersivetranslate.com/zh-Hans/)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用这个API。
 
-1. 参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API
-2. `git clone https://gist.github.com/scillidan/e95773454d79dc047aeed016fb00daef tencenttrans_2zh_zh2en`
-3. `cd tencenttrans_2zh_zh2en`
-4. 参考脚本里的注释：
-    1. `pip install tencentcloud-sdk-python langid`
-    2. 需要填写API的`SecretId`和`SecretKey`
-5. 程序 → 添加：
-
-```
-类型 纯文本
-名称 `tencenttrans_2zh_zh2en`
-命令行 `python tencenttrans_2zh_zh2en.py %GDWORD%`
-```
-
-对于未打包成`pip`包的Python脚本，也因为`python.exe`在GoldenDict里运行时出现过一些奇怪的问题，所以我后来都使用虚拟环境：
+首先，参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API。
 
 ```sh
+mkdir tencenttrans_2zh_zh2en
 cd tencenttrans_2zh_zh2en
 python -m venv venv
 venv\Scripts\activate.bat
 ```
 
-在「命令行」那一栏，补全文件路径，如：
+下载[tencenttrans_2zh_zh2en.py](https://gist.github.com/scillidan/e95773454d79dc047aeed016fb00daef)并编辑，填写你的翻译API的`SecretId`和`SecretKey`。
 
 ```sh
-<path_to>\tencenttrans_2zh_zh2en\venv\Scripts\python.exe <path_to>\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en.py "%GDWORD%"
+pip install tencentcloud-sdk-python langid
+python tencenttrans_2zh_zh2en.py "golden apple"
+```
+
+GoldenDict → 字典 → 程序 → 添加：
+
+```
+类型 纯文本
+名称 `tencenttrans_2zh_zh2en`
+命令行 `<path_to>\tencenttrans_2zh_zh2en\venv\Scripts\python.exe <path_to>\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en.py "%GDWORD%"`
 ```
 
 ![](tencenttrans_22.png)
@@ -148,13 +143,21 @@ venv\Scripts\activate.bat
 
 截止文章写成，我已使用了近一年。这之前，我使用的是[沙拉查词](https://saladict.crimx.com/)。
 
-## 分词断句脚本
+### LibreTranslate
+
+[LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
+
+可参考[libretranslate.md](https://scillidan.github.io/notes/srv/libretranslate.html)部署到家用服务器，并参考[libretrans.md](https://scillidan.github.io/notes/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，但能在Linux版本里正常使用。
+
+![](libretrans.png)
+
+## 分词、断句脚本
 
 ### gd-mecab（仅gd-ng）
 
 [GoldenDict tools](https://github.com/Ajatt-Tools/gd-tools)是一套GoldenDict-ng的增强脚本集，主要用于日语学习。它的[gd-marisa](https://github.com/Ajatt-Tools/gd-tools#gd-marisa)、[gd-mecab](https://github.com/Ajatt-Tools/gd-tools#gd-mecab)脚本，可以置顶句子、分词、断句。似乎也能用于中文，但并没有实际的「中文分词」的功能，可以用「划词再右键」来代替。
 
-参考[issue #18](https://github.com/Ajatt-Tools/gd-tools/issues/18)下载`gd-tools_windows.zip`，解压后运行安装包。出于一个好习惯，当安装文件没有从[Github](https://github.com/)（虽然有时候文件也会报毒）、[SourceForge](https://sourceforge.net/)等可信网站提供时，建议上传到[VirusTotal](https://www.virustotal.com)，进行Hash检查。虽然这个安装包有几个红色警告，但应该可以忽略，或者在类似于[HiBit Uninstaller](https://www.hibitsoft.ir/Uninstaller.html)的「安装监视程序」模式下，进行安装。
+参考[issue #18](https://github.com/Ajatt-Tools/gd-tools/issues/18)下载`gd-tools_windows.zip`，解压后运行安装包。出于一个好习惯，当安装文件（非便携的）没有从[Github](https://github.com/)（虽然有时候文件也会报毒）、[SourceForge](https://sourceforge.net/)等可信网站提供时，建议上传到[VirusTotal](https://www.virustotal.com)，进行Hash检查。虽然这个安装包有几个红色警告，但应该（或许）可以忽略，或者在类似于[HiBit Uninstaller](https://www.hibitsoft.ir/Uninstaller.html)的「安装监视程序」模式下，进行安装。
 
 程序 → 添加：
 
@@ -191,17 +194,19 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ## 语法检查脚本
 
-### 自托管LanguageTool
+### LanguageTool
 
 [LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但效能可能不是特别出色。
 
-参考[languagetool.md](https://scillidan.github.io/notes/serve/languagetool.html)来部署`LanguageTool`服务。
+参考[languagetool.md](https://scillidan.github.io/notes/srv/languagetool.html)来部署`LanguageTool`服务。
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/languagetool.mp4){ .skip-lightbox }
 
 ### pyLanguagetool
 
-我有一些在浏览器外对句子做语法检查的情况。[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)是一个Python库和命令行工具，使用LanguageTool的[JSON API](https://languagetool.org/http-api/swagger-ui/#/default)。
+还会有一些不在浏览器里编辑或者划句的情况。我尝试了在GoldenDict里对句子做语法检查。但这种方法不是很直观，而且在Windows的GoldenDict里去使用一些命令行工具，可能会遇到[字符相关问题](https://github.com/Twinblade-i/goldendict-openai-translator?tab=readme-ov-file#preface)。
+
+[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)是一个Python库和命令行工具，使用LanguageTool的[JSON API](https://languagetool.org/http-api/swagger-ui/#/default)。
 
 ```sh
 uv venv .pyLanguagetool
@@ -211,17 +216,7 @@ echo "This are a exampl" | pylanguagetool --lang en-US
 echo "This are a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US
 ```
 
-和下文中的工具ety-python一样，并不能直接在GoldenDict里使用。原因可能是[字符相关问题](https://github.com/Twinblade-i/goldendict-openai-translator?tab=readme-ov-file#preface)。需要做一些修改，但不推荐这样做，此处仅留做参考。程序 → 添加：
-
-```
-类型 纯文本
-名称 `pyLanguagetool`
-命令行 `C:\Users\User\AppData\Roaming\pnpm\echo-cli.CMD "%GDWORD%" | C:\Users\User\Usr\Script\.pyLanguagetool\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US`
-```
-
-![](pylanguagetool.png)
-
-需要等宽字体才能对齐「字母」和「波浪线」。我目前使用一个`pylanguagetool.bat`从剪切板进行检查：
+目前，我使用的是一个`check.bat`脚本：
 
 ```batchfile
 @echo off
@@ -231,25 +226,21 @@ C:\Users\User\Usr\Script\.pyLanguagetool\Scripts\pylanguagetool.exe --api-url ht
 pause
 ```
 
-### Gramformer
-
-[Gramformer](https://github.com/PrithivirajDamodaran/Gramformer)是一个Python库，可以用于检查句子的拼写、标点符号、语法或用词错误。曾经计划支持64个字符（包括空格和标点符号）以上长度的句子。虽然可以使用GPU模式，但我觉得有些慢。
-
-仅作参考，[gramformer_cli_demo.py](https://gist.github.com/scillidan/14a9176b431fcafde94528c209f2fc15)。
-
-程序 → 添加：
+和一个开机启动的[AutoHotkey](https://www.autohotkey.com/)脚本`user.ahk`：
 
 ```
-类型 纯文本
-名称 `Gramformer`
-命令行 `<path_to>\Gramformer\venv\Scripts\python Gramformer\gramformer_cli_demo.py %GDWORD%`
+#NoEnv
+SetWorkingDir %A_ScriptDir%
+^!+c::Run "<path_to>/check.bat"
 ```
 
-![](gramformer.png)
+当我复制一段文本后按下`Ctrl+Shift+Alt+c`， 就会运行语法检查。
+
+![](pylanguagetool.png)
 
 ## 其他脚本
 
-添加到「程序」里即可，并不会报错：
+添加到「程序」里即可：
 
 - 拼写提示[DoYouMean](https://github.com/hisbaan/didyoumean)
 - 同义词词典[thes](https://github.com/grantshandy/thes)
@@ -291,7 +282,7 @@ pip install -e .
 命令行 `<path_to>\ety-python\venv\Scripts\python.exe <path_to>\ety-python\ety\__main__.py -r -t "%GDWORD%"`
 ```
 
-另外推荐两个相关的Web应用：[etytree](https://github.com/agmmnn/etytree)、[jsetymology](https://github.com/myrriad/jsetymology)。
+Mark两个相关的Web应用：[etytree](https://github.com/agmmnn/etytree)、[jsetymology](https://github.com/myrriad/jsetymology)。
 
 ## 其他
 
