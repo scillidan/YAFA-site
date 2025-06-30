@@ -118,7 +118,7 @@ body
 
 - [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等
 - Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
-- StarDict格式的[汉语大词典(繁)](https://kdr2.com/resource/stardict.html)、[汉语大词典(简)](https://github.com/scillidan/file_StarDict)
+- StarDict格式的[汉语大词典(繁)](https://kdr2.com/resource/stardict.html)、[汉语大词典(简)](https://github.com/scillidan/file_sdcv)
 - [简明英汉字典增强版](https://github.com/skywind3000/ECDICT)
 - [21世纪英汉汉英双向词典](https://stardict.uber.space/zh_CN/index.html)
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
@@ -127,16 +127,16 @@ body
 - 工具书，如[翻译人名](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/main/Chinese%20Names%20Corpus/English-Chinese%20Names)等等
 - 其他的，[Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典、[proteusx](https://github.com/proteusx)制作的古希腊语词典、[佛學術語字辭典](https://glossaries.dila.edu.tw)等等
 
-编辑 → 词典 → 词典来源 → 文件 → 添加 → ... → 递归搜索 (On) → 应用。
+编辑 → 词典 → 词典来源 → 文件 → 添加 → 字典所在文件夹 → 递归搜索 (On) → 应用。
 
-需要注意，`.dict`格式和[StarDict](https://github.com/huzheng001/stardict-3)词典应用都是开源。而`.mdx`属于专有软件[MDict](https://www.mdict.cn/wp/?lang=en)的词典格式，更多信息见[fileformat](https://github.com/zhansliu/writemdict/blob/master/fileformat.md)。
+我目前常用的字典，大部分都是StarDict格式。需注意，`.dict`格式和[StarDict](https://github.com/huzheng001/stardict-3)词典应用都是开源。而`.mdx`属于专有软件[MDict](https://www.mdict.cn/wp/?lang=en)的词典格式，更多信息见[fileformat](https://github.com/zhansliu/writemdict/blob/master/fileformat.md)。
 
 ## 添加词典群组
 
 1. 词典 → 群组 → 添加群组 → `<group>` → 将词典拖入群组 → 应用
 2. GoldenDict的主界面 → 查找于 → `<group>`
 
-我目前常用的`default`分组中，除开翻译脚本和语音、拼写检查等功能词典，大部分都是StarDict格式：
+你可以在群组内拖动字典来调整顺序：
 
 ```
 在线翻译脚本
@@ -149,7 +149,7 @@ body
 
 ## 添加拼写词库
 
-通常称为「Hunspell Dictionary」，包含了所需的`.aff`、`.dic`文件。GoldenDict已内置了部分拼写词库，在这里勾选所需即可：
+通常称为「Hunspell Dictionary」，包含了所需的`.aff`、`.dic`文件。GoldenDict已内置了部分拼写词库，这里勾选所需即可：
 
 编辑 → 词典 → 词典来源 → 构词法规则库
 
@@ -161,7 +161,7 @@ body
 
 ## 添加单词音频库
 
-对于英语语音资料[pronunciations](https://github.com/yousefvand/pronunciations)，在`v1`版本里，它似乎已经清理了旧版本里的约2GB的文件，而使用`generate.sh`脚本。这里就仅留作参考：
+对于英语语音资料[pronunciations](https://github.com/yousefvand/pronunciations)，在`v1`分支里，它似乎已经清理了旧分支里的约2GB的文件，而使用`generate.sh`脚本来创建。这里就仅留作参考：
 
 词典 → 词典来源 → 音频文件目录 → 添加 → `pronunciations/`所在 → 应用
 
@@ -189,11 +189,11 @@ B-axes.mp3
 1. `.opus`格式的体积更小，音质同`.mp3`也十分相近，所以下载时只勾选`Forvo_pronunciations/export/opus`。约24GB大小，下载完成后不需要解压
 2. 某个成员提到了GoldenDict的「音频文件目录」功能：不方便也不可靠，建议使用`.dsl`文件。类似目录文件，指出音频文件的位置
 3. 从[MEGA分享链接](https://mega.nz/folder/3CwCmR7D#05Q08F-cTKPiOTdjKXAcuw)下载新版本的`.dsl`文件，下载后解压`ForvoDSL-20220513.7z`到同名文件夹
-4. `ForvoDSL-20220513`里的`.dsl`文件，需要同`Forvo_pronunciations/export/opus`里的`.zip`，放入同一个文件夹，例如`Forvo_pron/`。这里，也可以使用`mklink`创建系统链接完成，如`mklink ...\Forvo_pron\ForvoEnglish.dsl.files.zip ...\en.zip`
+4. `ForvoDSL-20220513`里的`.dsl`文件，需要同`Forvo_pronunciations/export/opus`里的`.zip`，放入同一个文件夹，例如`Forvo_pron/`。这里，也可以使用`mklink`创建系统链接完成，如`mklink <path_to>\Forvo_pron\ForvoEnglish.dsl.files.zip <path_to>\en.zip`
 5. 修改`.zip`文件的文件名，一一对应。例如将`en.zip`重命名为`ForvoEnglish.dsl.files.zip`，对应`ForvoEnglish.dsl`
 6. 词典 → 词典来源 → 文件 → 添加 → `Forvo_pron/`所在 → 应用
 
-对于所有语音包，因为这些压缩档案包含了大量小文件，移动、复制、解压上都很慢。所以这里参考`ForvoDSL-20220513/00README.txt`的内容，使用Windows批处理脚本[mklink_forvo_pron.bat](https://gist.github.com/scillidan/fd36bd6c9a84b565c131cccc4508df7b)或者Bash脚本[mklink_forvo_pron.sh](https://gist.github.com/scillidan/1b7c6cd69611320660ca4c2279dead78)进行批量操作。运行前，需编辑脚本`4-8`行，参考我的目录设置，填写你的实际的目录位置。
+因为这些压缩档案包含了大量的小文件，移动、复制、解压上都非常慢。所以这里参考`ForvoDSL-20220513/00README.txt`的内容，使用Windows批处理脚本[mklink_forvo_pron.bat](https://gist.github.com/scillidan/fd36bd6c9a84b565c131cccc4508df7b)（或者Bash脚本[mklink_forvo_pron.sh](https://gist.github.com/scillidan/1b7c6cd69611320660ca4c2279dead78)）进行批量操作。运行前，需编辑脚本`4-8`行，参考我的目录设置，填写你的实际的目录位置。
 
 在Windows上运行时：
 
@@ -223,7 +223,7 @@ B-axes.mp3
 
 ![](wiki.png)
 
-对于大型档案，无论是搜索条目，还是「全文搜索」，其速度称得上「很快」。例如，如果我需要检索「古腾堡计划」的电子书库中提到某个词的段落：
+对于大型档案，无论是搜索条目，还是「全文搜索」，其速度称得上「很快」。例如，如果检索「古腾堡计划」的电子书库中提到某个词的段落：
 
 GoldenDict → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
 
@@ -241,7 +241,7 @@ cd GoldenDictOCR
 编辑`IncludeAHK/GdOcrTool.ahk`，填写`GoldenDict.exe`所在的正确位置:
 
 ```
-Global GoldenDictFileName := "...\GoldenDict.exe"
+Global GoldenDictFileName := "<path_to>\GoldenDict.exe"
 ```
 
 运行`GoldenDictOCR.ahk`后，按`Alt+i`即可开关「鼠标选择取词」。

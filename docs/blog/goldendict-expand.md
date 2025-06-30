@@ -108,7 +108,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ### TencentTrans_22.py
 
-这是我常用的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[沉浸式翻译](https://immersivetranslate.com/zh-Hans/)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用这个API。
+这是我常用的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[沉浸式翻译](https://immersivetranslate.com/zh-Hans/)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过这个API。
 
 首先，参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API。
 
