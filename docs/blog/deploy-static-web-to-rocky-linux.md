@@ -1,5 +1,5 @@
 ---
-title: "VPS部署静态网站：Apache、多二级域名、HTTPS、本地Build、云端Build"
+title: "Rocky Linux部署静态网站：Apache、多二级域名、HTTPS、本地Build、云端Build"
 created: 2024-01-27
 modified: 2024-01-29
 locale: zh

@@ -118,7 +118,7 @@ body
 
 - [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等
 - Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
-- StarDict格式的[汉语大词典(繁)](https://kdr2.com/resource/stardict.html)、[汉语大词典(简)](https://github.com/scillidan/file_sdcv)
+- StarDict格式的[汉语大词典(繁)](https://kdr2.com/resource/stardict.html)、[汉语大词典(简)](https://github.com/scillidan/share_sdcv)
 - [简明英汉字典增强版](https://github.com/skywind3000/ECDICT)
 - [21世纪英汉汉英双向词典](https://stardict.uber.space/zh_CN/index.html)
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
@@ -214,7 +214,7 @@ B-axes.mp3
 
 ## 添加离线维基
 
-[Kiwix](https://kiwix.org/en/)是一个离线的维基阅读器，支持多客户端，也可部署服务端。也适用别的网络内容，如[StackExchange](https://stackexchange.com/)([Stack Overflow](https://stackoverflow.com/))、[Project Gutenberg](https://www.gutenberg.org/)等等，用来提供高速、稳定的档案访问服务。它支持高度压缩的`.zim`格式，该格式可包含元数据、HTML、图像等资源。配置步骤：
+[Kiwix](https://kiwix.org/en/)是一个跨平台的离线的维基阅读器，也可自部署服务端。可阅读内容不限Wiki内容，也适用于如[StackExchange](https://stackexchange.com/)([Stack Overflow](https://stackoverflow.com/))、[Project Gutenberg](https://www.gutenberg.org/)等等，来提供高速、稳定的档案访问服务。它支持高度压缩的`.zim`格式，该格式可包含元数据、HTML、图像等资源。配置步骤：
 
 1. 从[ZIM Ebook Library](https://library.kiwix.org/)选择档案，例如「wikipedia (English)」，当鼠标移到档案上时，或者点击档案在线阅读时，在浏览的左下角或者地址栏会提示档案全名。「all maxi」这个型号包含了除音频、视频等大型媒体文件外的所有内容。关于各型号的详细说明，见[issue1](https://github.com/openzim/zim-requests/issues/129)，[issue2](https://github.com/openzim/mwoffliner/issues/485)
 2. 点击`Download - xx GB`。对于大型档案，选择Torrent file，之后在BT下载器中打开该文件并下载
@@ -231,7 +231,7 @@ GoldenDict → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
 
 ## 设置鼠标取词
 
-[GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)是一个[AutoHotKey](https://www.autohotkey.com/)脚本，在它的「鼠标选择取词」模式下，可通过「双击选词、划词」来查词。需要配合GoldenDict的默认查词快捷键`Ctrl+C+C`来使用。
+[GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)是一个[AutoHotKey](https://www.autohotkey.com/)脚本，在它的「鼠标选择取词」模式下，可通过「双击选词、划词」来查词。需要配合GoldenDict的默认查词快捷键`Ctrl+c+c`来使用。
 
 ```sh
 git clone https://github.com/VimWei/GoldenDictOCR
@@ -250,10 +250,10 @@ Global GoldenDictFileName := "<path_to>\GoldenDict.exe"
 
 如果需要修改键位，例如：
 
-1. 编辑 → 首选项 → 热键 → 使用下列热键翻译剪切板中的单词 → `Alt+Z`
+1. 编辑 → 首选项 → 热键 → 使用下列热键翻译剪切板中的单词 → `Alt+z`
 2. 编辑`GoldenDict.ahk`，修改两处：
-  - 118行附近，此处的`Send ^{c 2}`，即`Ctrl+C+C`，修改为了`Send !z`，即`Alt+Z`
-  - 37行附近，此处的`!i::`，即`Alt+I`，修改为了`^!g::`，即`Ctrl+Alt+G`
+  - 118行附近，此处的`Send ^{c 2}`，即`Ctrl+c+c`，改为`Send !z`，即`Alt+z`
+  - 37行附近，此处的`!i::`，即`Alt+i`，改为`^!g::`，即`Ctrl+Alt+g`
 
 ## 设置OCR取词
 
@@ -275,5 +275,5 @@ Umi-OCR → 添加 → 截图OCR → 设置 → 识图后的操作 → 复制结
 
 常用的有：
 
-- `Ctrl+L` 聚焦到输入框
+- `Ctrl+l` 聚焦到输入框
 - `Alt+Left/Right` 前个/后个查询记录

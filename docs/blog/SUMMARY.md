@@ -1,5 +1,5 @@
-- [vps ex](deploy-static-web-to-vps-expand.md)
-- [vps](deploy-static-web-to-vps.md)
+- [vps ex](deploy-static-web-to-rocky-linux-expand.md)
+- [vps](deploy-static-web-to-rocky-linux.md)
 - [goldendict ex](goldendict-expand.md)
 - [goldendict](goldendict.md)
 - [e-dict](e-dictionaries-plugin.md)

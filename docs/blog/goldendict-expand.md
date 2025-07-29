@@ -147,7 +147,7 @@ GoldenDict → 字典 → 程序 → 添加：
 
 [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
 
-可参考[libretranslate.md](https://scillidan.github.io/notes/srv/libretranslate.html)部署到家用服务器，并参考[libretrans.md](https://scillidan.github.io/notes/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，但能在Linux版本里正常使用。
+可参考[libretranslate.md](https://scillidan.github.io/notes/srv/libretranslate.html)部署到家用服务器，并参考[libretrans.md](https://scillidan.github.io/notes/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
 
 ![](libretrans.png)
 
