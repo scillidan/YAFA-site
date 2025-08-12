@@ -157,7 +157,11 @@ GoldenDict → 字典 → 程序 → 添加：
 
 [GoldenDict tools](https://github.com/Ajatt-Tools/gd-tools)是一套GoldenDict-ng的增强脚本集，主要用于日语学习。它的[gd-marisa](https://github.com/Ajatt-Tools/gd-tools#gd-marisa)、[gd-mecab](https://github.com/Ajatt-Tools/gd-tools#gd-mecab)脚本，可以置顶句子、分词、断句。似乎也能用于中文，但并没有实际的「中文分词」的功能，可以用「划词再右键」来代替。
 
-参考[issue #18](https://github.com/Ajatt-Tools/gd-tools/issues/18)下载`gd-tools_windows.zip`，解压后运行安装包。出于一个好习惯，当安装文件（非便携的）没有从[Github](https://github.com/)（虽然有时候文件也会报毒）、[SourceForge](https://sourceforge.net/)等可信网站提供时，建议上传到[VirusTotal](https://www.virustotal.com)，进行Hash检查。虽然这个安装包有几个红色警告，但应该（或许）可以忽略，或者在类似于[HiBit Uninstaller](https://www.hibitsoft.ir/Uninstaller.html)的「安装监视程序」模式下，进行安装。
+目前不支持Windows，可参考[issue #18](https://github.com/Ajatt-Tools/gd-tools/issues/18)下载gd-tools_windows.zip，解压后运行安装包。务必留意，这里并未提供Windows版本的构建流程和代码。
+
+出于一些好习惯，当安装程序或可执行程序不是从[SourceForge](https://sourceforge.net/)等可信发行网站提供时，务必进行杀毒扫描，或上传到[VirusTotal](https://www.virustotal.com)进行Hash检查。虽然从[Github](https://github.com/)的Releases板块下载时，也有小几率报毒，但公开的代码、构建流程等都降低了中毒风险。
+
+当时，这个安装包有几个VirusTotal的红色警告，我在[HiBit Uninstaller](https://www.hibitsoft.ir/Uninstaller.html)的「安装监视程序」模式下，进行了安装。
 
 程序 → 添加：
 
