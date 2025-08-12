@@ -25,10 +25,10 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 
 ### dictd.service
 
-参考[dictd.md](https://scillidan.github.io/notes/srv/dictd.html)部署自用`dictd`服务，笔记中使用的是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，推荐两种方法：
+参考[dictd.md](https://scillidan.github.io/cheat/srv/dictd.html)部署自用`dictd`服务，笔记中使用的是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，推荐两种方法：
 
 1. 使用[PyGlossary](https://github.com/ilius/pyglossary)转换`StarDict (.ifo)`格式到`DICT.org file format (.index)`格式。StarDict的`.ifo`文件里最好不要有中文。
-2. 参考[dict-ecdict.md](https://scillidan.github.io/notes/bin/dict-ecdict.html)来制作，这里使用到了[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
+2. 参考[dict-ecdict.md](https://scillidan.github.io/cheat/bin/dict-ecdict.html)来制作，这里使用到了[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
 
 词典 → 词典来源 → 词典服务器 → 添加：
 
@@ -147,7 +147,7 @@ GoldenDict → 字典 → 程序 → 添加：
 
 [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
 
-可参考[libretranslate.md](https://scillidan.github.io/notes/srv/libretranslate.html)部署到家用服务器，并参考[libretrans.md](https://scillidan.github.io/notes/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
+可参考[libretranslate.md](https://scillidan.github.io/cheat/srv/libretranslate.html)部署到家用服务器，并参考[libretrans.md](https://scillidan.github.io/cheat/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
 
 ![](libretrans.png)
 
@@ -202,7 +202,7 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 [LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但效能可能不是特别出色。
 
-参考[languagetool.md](https://scillidan.github.io/notes/srv/languagetool.html)来部署`LanguageTool`服务。
+参考[languagetool.md](https://scillidan.github.io/cheat/srv/languagetool.html)来部署`LanguageTool`服务。
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/languagetool.mp4){ .skip-lightbox }
 
