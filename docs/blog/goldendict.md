@@ -4,7 +4,7 @@ created: 2023-12-20
 modified: 2024-09-20
 locale: zh
 keywords: >
-    GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
+		GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
 ---
 
 [GoldenDict](http://goldendict.org/)是一款开源的桌面端词典检索应用，跨平台，[支持多种词典格式](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)。它有十分丰富的可配置项，包括字典组，拼写检查、单词发音、语音合成、在线翻译等等。[GoldenDict-ng](https://github.com/xiaoyifang/goldendict-ng)是基于前者重写的新一代GoldenDict，修复了[一些长期累积的问题](https://github.com/xiaoyifang/goldendict-ng/issues/587)，目前仍然处于积极开发中，更多地说明见[GoldenDict-ng文档](https://xiaoyifang.github.io/goldendict-ng/)。
@@ -41,25 +41,25 @@ git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 // 词典框的圆角改为直角等
 .gdarticle
 {
-  border-radius: 0;
+	border-radius: 0;
 }
 
 .programs_plaintext, .programs_html {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .gdactivearticle .gddictname {
-  border: none;
+	border: none;
 }
 
 .gddictname {
-  border: none;
-  border-radius: 0;
+	border: none;
+	border-radius: 0;
 }
 
 // 处理「语音合成」词典的文字的显示问题
 .voiceengines_play {
-  margin-top: 22.5px;
+	margin-top: 22.5px;
 }
 ```
 
@@ -76,10 +76,10 @@ git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 ```css
 // 添加本地字体
 @font-face {
-  font-family: <FontName>;
-  src: local('<Font Name>') url('file:C:\\Users\\<username>\\AppData\\Local\\Microsoft\\Windows\\Fonts\\<FontName>.ttf') format('truetype');
-  font-weight: normal;
-  font-style:  normal;
+	font-family: <FontName>;
+	src: local('<Font Name>') url('file:C:\\Users\\<username>\\AppData\\Local\\Microsoft\\Windows\\Fonts\\<FontName>.ttf') format('truetype');
+	font-weight: normal;
+	font-style:  normal;
 }
 ```
 
@@ -88,58 +88,58 @@ git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 ```css
 body
 {
-  font-family: "<Font Name>", NotoSans;
-  font-size:   9.5pt;
+	font-family: "<Font Name>", NotoSans;
+	font-size:   9.5pt;
 }
 
 .dsl_t
 {
-  font-family: "<Font Name>", NotoSerif;
+	font-family: "<Font Name>", NotoSerif;
 }
 ```
 
-字体不会生效于有内置样式的词典，或者[ZIM](https://wiki.openzim.org/wiki/ZIM_file_format)档案。
-
-## 修改字典内置样式
-
-例如编辑[ODE 3/e](https://mdict.org/post/0011/)里的`ODE.css`：
-
-``` css
-// 让字更小
-.Od3 {
-    font-size: 102%;
-    line-height: 97%;
-}
-```
+字体不会覆盖有内置样式的词典，或者[ZIM](https://wiki.openzim.org/wiki/ZIM_file_format)档案。你可以尝试字典文件内的`.css`文件。
 
 ## 添加词典
 
-下载词典文件，例如：
+我目前常用的字典，大部分都是StarDict格式。需注意，`.dict`格式和[StarDict](https://github.com/huzheng001/stardict-3)词典应用都是开源。而`.mdx`属于专有软件[MDict](https://www.mdict.cn/wp/?lang=en)的词典格式，更多信息见[fileformat](https://github.com/zhansliu/writemdict/blob/master/fileformat.md)。
 
-- [Mdict.org](https://mdict.org/)上的[新牛津英汉双解词典](https://mdict.org/post/0011/)、[企鹅英语词典](https://mdict.org/post/penguin-english-dictionary-3rd/)、[柯林斯COBUILD英语用法大全](https://mdict.org/post/collins-cobuild-english-usage/)、[韦氏发音词典](https://mdict.org/post/0010/)等
-- Mdict.org上的[汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)，推荐`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
-- StarDict格式的[汉语大词典(繁)](https://kdr2.com/resource/stardict.html)、[汉语大词典(简)](https://github.com/scillidan/share_sdcv)
-- [简明英汉字典增强版](https://github.com/skywind3000/ECDICT)
-- [21世纪英汉汉英双向词典](https://stardict.uber.space/zh_CN/index.html)
+我个人使用也推荐的：
+
+- [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)（StarDict版本）
+- [CC-CEDICT](https://github.com/scillidan/share_cc-cedict)（StarDict）
+- [汉语大词典](https://github.com/scillidan/share_hanyudacidian)（StarDict）
+
+不推荐的：
+
+- [KDr2.com](https://kdr2.com/resource/stardict.html)上的`汉语大词典 离线版`（StarDict）
+- [Mdict.org上的汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)上的`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
+
+具体理由还有别的，但主要理由是我看了字典文件的元数据后一头雾水，浏览了几个帖子：[汉语大词典从没经过转码的文本（自动转码谬种流传）](https://forum.freemdict.com/t/topic/3840/28)、[【结项】汉语大词典2.0源数据](https://forum.freemdict.com/t/topic/15998)等等。之后认为，这个字典，如果非要进行繁简转换，对于释义（meaning），需要排除其中的引用、专用部分，对于个词条（word），需要有一个替换表等等。`word`和`meaning`这两个词，来自字典格式转换工具[pyglossary](https://github.com/ilius/pyglossary)定义的数据库格式的字典文件里的数据表的关键字。
+
+一些开源的StarDicty英语字典：
+
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
 - [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的自由的离线StarDict词典，如词源词典（[Douglas Harper's Online Etymology Dictionary](https://www.etymonline.com/)），GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）
 - [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://www.reader-dict.com/en/download/en)
-- 工具书，如[翻译人名](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/main/Chinese%20Names%20Corpus/English-Chinese%20Names)等等
-- 其他的，[Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典、[proteusx](https://github.com/proteusx)制作的古希腊语词典、[佛學術語字辭典](https://glossaries.dila.edu.tw)等等
+
+其他的：
+
+- 工具书，如[翻译人名](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/main/Chinese%20Names%20Corpus/English-Chinese%20Names)
+- [Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典
+- [proteusx](https://github.com/proteusx)制作的古希腊语词典
 
 编辑 → 词典 → 词典来源 → 文件 → 添加 → 字典所在文件夹 → 递归搜索 (On) → 应用。
-
-我目前常用的字典，大部分都是StarDict格式。需注意，`.dict`格式和[StarDict](https://github.com/huzheng001/stardict-3)词典应用都是开源。而`.mdx`属于专有软件[MDict](https://www.mdict.cn/wp/?lang=en)的词典格式，更多信息见[fileformat](https://github.com/zhansliu/writemdict/blob/master/fileformat.md)。
 
 ## 添加词典群组
 
 1. 词典 → 群组 → 添加群组 → `<group>` → 将词典拖入群组 → 应用
 2. GoldenDict的主界面 → 查找于 → `<group>`
 
-你可以在群组内拖动字典来调整顺序：
+你可以在群组内拖动字典来调整顺序，如：
 
 ```
-在线翻译脚本
+翻译脚本
 单词发音
 简明英汉字典
 拼写词库
@@ -252,8 +252,8 @@ Global GoldenDictFileName := "<path_to>\GoldenDict.exe"
 
 1. 编辑 → 首选项 → 热键 → 使用下列热键翻译剪切板中的单词 → `Alt+z`
 2. 编辑`GoldenDict.ahk`，修改两处：
-  - 118行附近，此处的`Send ^{c 2}`，即`Ctrl+c+c`，改为`Send !z`，即`Alt+z`
-  - 37行附近，此处的`!i::`，即`Alt+i`，改为`^!g::`，即`Ctrl+Alt+g`
+	- 118行附近，此处的`Send ^{c 2}`，即`Ctrl+c+c`，改为`Send !z`，即`Alt+z`
+	- 37行附近，此处的`!i::`，即`Alt+i`，改为`^!g::`，即`Ctrl+Alt+g`
 
 ## 设置OCR取词
 
