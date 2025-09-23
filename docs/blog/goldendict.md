@@ -98,29 +98,31 @@ body
 }
 ```
 
-字体不会覆盖有内置样式的词典，或者[ZIM](https://wiki.openzim.org/wiki/ZIM_file_format)档案。你可以尝试字典文件内的`.css`文件。
+字体不会覆盖有内置样式的词典，或者[ZIM](https://wiki.openzim.org/wiki/ZIM_file_format)档案。这种情况下，你可以尝试修改字典文件内部的`.css`文件。
 
 ## 添加词典
 
 我目前常用的字典，大部分都是StarDict格式。需注意，`.dict`格式和[StarDict](https://github.com/huzheng001/stardict-3)词典应用都是开源。而`.mdx`属于专有软件[MDict](https://www.mdict.cn/wp/?lang=en)的词典格式，更多信息见[fileformat](https://github.com/zhansliu/writemdict/blob/master/fileformat.md)。
 
-我个人使用也推荐的：
+我个人使用也推荐的（StarDict格式）：
 
-- [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)（StarDict版本）
-- [CC-CEDICT](https://github.com/scillidan/share_cc-cedict)（StarDict）
-- [汉语大词典](https://github.com/scillidan/share_hanyudacidian)（StarDict）
+- [WordNet](https://github.com/scillidan/share_wordnet)
+- [etymonline](https://github.com/scillidan/share_etymonline)
+- [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)
+- [CC-CEDICT](https://github.com/scillidan/share_cc-cedict)
+- [汉语大词典](https://github.com/scillidan/share_hanyudacidian)
 
 不推荐的：
 
 - [KDr2.com](https://kdr2.com/resource/stardict.html)上的`汉语大词典 离线版`（StarDict）
 - [Mdict.org上的汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)上的`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
 
-具体理由还有别的，但主要理由是我看了字典文件的元数据后一头雾水，浏览了几个帖子：[汉语大词典从没经过转码的文本（自动转码谬种流传）](https://forum.freemdict.com/t/topic/3840/28)、[【结项】汉语大词典2.0源数据](https://forum.freemdict.com/t/topic/15998)等等。之后认为，这个字典，如果非要进行繁简转换，对于释义（meaning），需要排除其中的引用、专用部分，对于个词条（word），需要有一个替换表等等。`word`和`meaning`这两个词，来自字典格式转换工具[pyglossary](https://github.com/ilius/pyglossary)定义的数据库格式的字典文件里的数据表的关键字。
+主要理由是我浏览了几个帖子：[汉语大词典从没经过转码的文本（自动转码谬种流传）](https://forum.freemdict.com/t/topic/3840/28)、[【结项】汉语大词典2.0源数据](https://forum.freemdict.com/t/topic/15998)等几个帖子。具体理由也还有别的，举一个来说，`word`和`meaning`这两个词，来自字典格式转换工具[pyglossary](https://github.com/ilius/pyglossary)定义的数据库格式的字典文件里的数据表的关键字。对于这本字典，如果要进行繁简转换，对于meaning（释义）部分，需要排除其中的引用、专用词句部分，对于word（词条）部分，可能需要有一个替换表，等等。
 
-一些开源的StarDicty英语字典：
+另一些StarDict字典：
 
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
-- [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的自由的离线StarDict词典，如词源词典（[Douglas Harper's Online Etymology Dictionary](https://www.etymonline.com/)），GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）
+- [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）等
 - [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://www.reader-dict.com/en/download/en)
 
 其他的：
@@ -141,10 +143,13 @@ body
 ```
 翻译脚本
 单词发音
-简明英汉字典
 拼写词库
+英汉字典
+英英字典
 专业词汇词典
+双语双向字典
 汉语大词典
+...
 ```
 
 ## 添加拼写词库
