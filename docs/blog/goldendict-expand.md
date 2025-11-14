@@ -7,7 +7,7 @@ keywords: >
     GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
 ---
 
-## 词典脚本和服务
+## 词典服务和脚本
 
 ### DICT.org
 
@@ -28,7 +28,7 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 参考[dictd.md](https://scillidan-cheat.vercel.app/?search=dictd)部署自用`dictd`服务，笔记中使用的服务器硬件是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，可以查阅以下方法：
 
 - 使用[PyGlossary](https://github.com/ilius/pyglossary)转换字典格式，`StarDict (.ifo)`到`DICT.org file format (.index)`。StarDict的`.ifo`文件推荐以英文书写。
-- 参考[dict-ecdict.md](https://scillidan-cheat.vercel.app/?search=dict-ecdict)来制作，这里使用到了[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
+- 参考[dict-ecdict.md](https://scillidan-cheat.vercel.app/?search=dict-ecdict)来制作，这里需要[dictzip](https://dictzip.github.io/)或[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
 
 词典 → 词典来源 → 词典服务器 → 添加：
 
@@ -70,7 +70,7 @@ pip install requests bs4
 
 ### TencentTrans_2zh_zh2en.py
 
-这是我常用的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过这个API。
+这是我使用了两年以上的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过这个API。
 
 首先，参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API。
 
@@ -102,8 +102,6 @@ GoldenDict → 字典 → 程序 → 添加：
 
 - 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606)
 - 未知的Bug，例如在GoldenDict里输出某些语言时，翻译文字前面会显示一串报错
-
-截止文章写成，我已使用了近一年。这之前，我使用的是[沙拉查词](https://saladict.crimx.com/)。
 
 ### deep-translator
 
@@ -151,17 +149,19 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ![](libretrans.png)
 
-## 分词、断句脚本
+它的翻译效果通常逊于云端机器翻译，在我的印象里，它曾在某个上下文，将「Firefox Nightly」翻译成了「火狐夜总会」。目前，我在GoldenDict和浏览器插件[Linguist](https://linguister.io/)里使用它。
+
+## 分词断句脚本
 
 ### gd-mecab（仅gd-ng）
 
 [GoldenDict tools](https://github.com/Ajatt-Tools/gd-tools)是一套GoldenDict-ng的增强脚本集，主要用于日语学习。它的[gd-marisa](https://github.com/Ajatt-Tools/gd-tools#gd-marisa)、[gd-mecab](https://github.com/Ajatt-Tools/gd-tools#gd-mecab)脚本，可以置顶句子、分词、断句。似乎也能用于中文，但并没有实际的「中文分词」的功能，可以用「划词再右键」来代替。
 
-目前不支持Windows，可参考[issue #18](https://github.com/Ajatt-Tools/gd-tools/issues/18)下载gd-tools_windows.zip，解压后运行安装包。务必留意，这里并未提供Windows版本的构建流程和代码。
+目前不支持Windows，可参考[issue #18](https://github.com/Ajatt-Tools/gd-tools/issues/18)，下载`gd-tools_windows.zip`，解压后运行安装包。
 
-出于一些好习惯，当安装程序或可执行程序不是从[SourceForge](https://sourceforge.net/)等可信发行网站提供时，务必进行杀毒扫描，或上传到[VirusTotal](https://www.virustotal.com)进行Hash检查。虽然从[Github](https://github.com/)的Releases板块下载时，也有小几率报毒，但公开的代码、构建流程等都降低了中毒风险。
+务必留意！这里需要安装，而且没有安装文件的构建流程和源代码可查看。出于一些好习惯，当安装程序或可执行程序不是从[SourceForge](https://sourceforge.net/)等可信发行网站提供时，务必进行杀毒扫描，或上传到[VirusTotal](https://www.virustotal.com)进行Hash检查。虽然从[Github](https://github.com/)的Releases板块下载时，也有小几率报毒，但公开的代码、构建流程等都降低了中毒风险。
 
-当时，这个安装包有几个VirusTotal的红色警告，我在[HiBit Uninstaller](https://www.hibitsoft.ir/Uninstaller.html)的「安装监视程序」模式下，进行了安装。
+当时，这个安装包有几个由VirusTotal检查的红色警告，我在[HiBit Uninstaller](https://www.hibitsoft.ir/Uninstaller.html)的「安装监视程序」模式下，进行了安装。当你下载后，务必用有效的杀毒工具重新检查。
 
 程序 → 添加：
 
@@ -196,7 +196,7 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ![](sentences.png)
 
-## 语法检查脚本
+## 语法检查服务和脚本
 
 ### LanguageTool
 
@@ -242,7 +242,7 @@ SetWorkingDir %A_ScriptDir%
 
 ![](pylanguagetool.png)
 
-## 其他脚本
+## 其他脚本或程序
 
 添加到「程序」里即可：
 
@@ -321,7 +321,7 @@ QuickAccessLang3=...
 
 在[V1版本](https://github.com/hiroi-sora/Umi-OCR/releases/tag/v1.3.5)里，可配置一组快捷键，在OCR后触发GoldenDict查词，即[「截图联动」](https://github.com/hiroi-sora/Umi-OCR/issues/166)。
 
-对于V2版本，或者说更通用的情况是，只需勾选「复制OCR结果」，在进行OCR后，再按下GoldenDict查词快捷键就可以了。配置步骤：
+对于V2版本，或者说更通用的情况（且不限于Umi-OCR）是，只需勾选「复制OCR结果」，在进行OCR后，再按下GoldenDict查词快捷键就可以了。配置步骤：
 
 Umi-OCR → 添加 → 截图OCR → 设置 → 识图后的操作 → 复制结果 (On)
 
