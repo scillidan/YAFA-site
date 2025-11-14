@@ -17,7 +17,7 @@ keywords: >
 
 如果使用[Scoop](https://scoop.sh/)安装，可以删除`C:\Users\<username>\scoop\apps\goldendict\current\portable`目录，也就是断开了和Scoop配置目录里的系统目录链接，位于`C:\Users\<username>\scoop\persist\goldendict`，见[issue](https://github.com/goldendict/goldendict/issues/1560)。这样配置起来相对简单些，我使用的是Scoop的配置文件夹，也更麻烦。
 
-文章分为「基础篇」和「番外篇」。基础篇主要涉及「黑暗主题」、各类「词典」、「取词方式」等。「番外篇」更多地涉及了「程序」这一功能，有更多的实验性和Bug，不限于字典，涉及到文本翻译、语法检查等。
+文章分为「基础篇」和「番外篇」。「番外篇」更多地涉及到「程序」这一功能，有更多的实验性和Bug，如文本翻译等。也并不一定与GoldenDict有很强的相关，如语法检查等，只是我之前考虑过在GoldenDict中对句子进行检查。
 
 ## 窗口布局
 
@@ -33,7 +33,7 @@ keywords: >
 git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 ```
 
-参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落安装样式。
+参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落进行安装。
 
 原样式有几处圆角边框。可以编辑`styles\Dark\article-style.css`：
 
@@ -122,7 +122,7 @@ body
 另一些StarDict字典：
 
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
-- [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的GNU版国际协作英语词典（GNU Collaborative International Dictionary of English）等
+- [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的GNU版国际协作英语词典
 - [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://www.reader-dict.com/en/download/en)
 
 其他的：
@@ -166,7 +166,7 @@ body
 
 ## 添加单词音频库
 
-对于英语语音资料[pronunciations](https://github.com/yousefvand/pronunciations)，在`v1`分支里，它似乎已经清理了旧分支里的约2GB的文件，而使用`generate.sh`脚本来创建。这里就仅留作参考：
+[pronunciations](https://github.com/yousefvand/pronunciations)是一个英语语音资料仓库，但在`v1`分支里，它似乎已经清理了旧分支里的约2GB的音频文件，而使用`generate.sh`脚本来创建。这里假设你有了单词的音频文件：
 
 词典 → 词典来源 → 音频文件目录 → 添加 → `pronunciations/`所在 → 应用
 
@@ -202,7 +202,7 @@ B-axes.mp3
 
 在Windows上运行时：
 
-命令提示符 → `mklink_forvo_pron.bat` → `Enter`
+命令提示符 → `<path_to>\mklink_forvo_pron.bat` → `Enter`
 
 最后：
 
@@ -219,9 +219,9 @@ B-axes.mp3
 
 ## 添加离线维基
 
-[Kiwix](https://kiwix.org/en/)是一个跨平台的离线的维基阅读器，也可自部署服务端。可阅读内容不限Wiki内容，也适用于如[StackExchange](https://stackexchange.com/)([Stack Overflow](https://stackoverflow.com/))、[Project Gutenberg](https://www.gutenberg.org/)等等，来提供高速、稳定的档案访问服务。它支持高度压缩的`.zim`格式，该格式可包含元数据、HTML、图像等资源。配置步骤：
+[Kiwix](https://kiwix.org/en/)是一个跨平台的离线的维基阅读器，也可自部署服务端。可阅读的内容不限Wiki，也适用于如[StackExchange](https://stackexchange.com/)([Stack Overflow](https://stackoverflow.com/))、[Project Gutenberg](https://www.gutenberg.org/)等等，来提供高速、稳定的档案访问服务。它支持高度压缩的`.zim`格式，该格式可包含元数据、HTML、图像等资源。配置步骤：
 
-1. 从[ZIM Ebook Library](https://library.kiwix.org/)选择档案，例如「wikipedia (English)」，当鼠标移到档案上时，或者点击档案在线阅读时，在浏览的左下角或者地址栏会提示档案全名。「all maxi」这个型号包含了除音频、视频等大型媒体文件外的所有内容。关于各型号的详细说明，见[issue1](https://github.com/openzim/zim-requests/issues/129)，[issue2](https://github.com/openzim/mwoffliner/issues/485)
+1. 从[ZIM Ebook Library](https://library.kiwix.org/)选择档案，例如「wikipedia (English)」，当鼠标移到档案上时，或者点击档案在线阅读时，在浏览的左下角或者地址栏会提示档案全名。「all maxi」这个型号包含了除音频、视频等大型媒体文件外的所有内容。关于各型号的详细说明，见[issue1](https://github.com/openzim/zim-requests/issues/129)、[issue2](https://github.com/openzim/mwoffliner/issues/485)
 2. 点击`Download - xx GB`。对于大型档案，选择Torrent file，之后在BT下载器中打开该文件并下载
 3. GoldenDict → 编辑 → 词典 → 词典来源 → 文件 → 添加 → `.zim`所在目录
 4. 等待GoldenDict创建索引
@@ -260,17 +260,7 @@ Global GoldenDictFileName := "<path_to>\GoldenDict.exe"
 	- 118行附近，此处的`Send ^{c 2}`，即`Ctrl+c+c`，改为`Send !z`，即`Alt+z`
 	- 37行附近，此处的`!i::`，即`Alt+i`，改为`^!g::`，即`Ctrl+Alt+g`
 
-## 设置OCR取词
-
-[Umi-OCR](https://github.com/hiroi-sora/Umi-OCR)是一款开源、可离线、功能灵活的OCR软件。用于一般OCR时，它可提供高速稳定、准确率较高的中英文混合识别。
-
-在[V1版本](https://github.com/hiroi-sora/Umi-OCR/releases/tag/v1.3.5)里，可配置一组快捷键，在OCR后触发GoldenDict查词，即[「截图联动」](https://github.com/hiroi-sora/Umi-OCR/issues/166)。
-
-对于V2版本，或者说更通用的情况是，只需勾选「复制OCR结果」，在进行OCR后，接GoldenDict查词快捷键就可以了。配置步骤：
-
-Umi-OCR → 添加 → 截图OCR → 设置 → 识图后的操作 → 复制结果 (On)
-
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict/umi-ocr.mp4){ .skip-lightbox }
+这个脚本也能和[YomiNinja](https://github.com/matt-m-o/YomiNinja)等工具很好的配合。
 
 ## 一些实用键位
 

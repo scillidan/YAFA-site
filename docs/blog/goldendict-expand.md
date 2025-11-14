@@ -25,10 +25,10 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 
 ### dictd.service
 
-参考[dictd.md](https://scillidan-cheat.vercel.app/srv/dictd.html)部署自用`dictd`服务，笔记中使用的是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，推荐两种方法：
+参考[dictd.md](https://scillidan-cheat.vercel.app/?search=dictd)部署自用`dictd`服务，笔记中使用的服务器硬件是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，可以查阅以下方法：
 
-1. 使用[PyGlossary](https://github.com/ilius/pyglossary)转换`StarDict (.ifo)`格式到`DICT.org file format (.index)`格式。StarDict的`.ifo`文件里最好不要有中文。
-2. 参考[dict-ecdict.md](https://scillidan-cheat.vercel.app/bin/dict-ecdict.html)来制作，这里使用到了[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
+- 使用[PyGlossary](https://github.com/ilius/pyglossary)转换字典格式，`StarDict (.ifo)`到`DICT.org file format (.index)`。StarDict的`.ifo`文件推荐以英文书写。
+- 参考[dict-ecdict.md](https://scillidan-cheat.vercel.app/?search=dict-ecdict)来制作，这里使用到了[dictzip](https://dictzip.github.io/)或者[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
 
 词典 → 词典来源 → 词典服务器 → 添加：
 
@@ -68,9 +68,46 @@ pip install requests bs4
 
 ## 翻译脚本和服务
 
+### TencentTrans_2zh_zh2en.py
+
+这是我常用的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过这个API。
+
+首先，参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API。
+
+```sh
+mkdir tencenttrans_2zh_zh2en
+cd tencenttrans_2zh_zh2en
+python -m venv venv
+venv\Scripts\activate.bat
+```
+
+下载[tencenttrans_2zh_zh2en.py](https://gist.github.com/scillidan/e95773454d79dc047aeed016fb00daef)并编辑，填写你的翻译API的`SecretId`和`SecretKey`。
+
+```sh
+pip install tencentcloud-sdk-python langid
+python tencenttrans_2zh_zh2en.py "golden apple"
+```
+
+GoldenDict → 字典 → 程序 → 添加：
+
+```
+类型 纯文本
+名称 `tencenttrans_2zh_zh2en`
+命令行 `<path_to>\tencenttrans_2zh_zh2en\venv\Scripts\python.exe <path_to>\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en.py "%GDWORD%"`
+```
+
+![](tencenttrans_22.png)
+
+虽然有不少不足，如：
+
+- 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606)
+- 未知的Bug，例如在GoldenDict里输出某些语言时，翻译文字前面会显示一串报错
+
+截止文章写成，我已使用了近一年。这之前，我使用的是[沙拉查词](https://saladict.crimx.com/)。
+
 ### deep-translator
 
-[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。如何申请或创建API请看各翻译器的官网介绍。我一般使用腾讯云机翻API，写文时，需要从源码安装这个工具，才能使用这个翻译器：
+[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。如何申请或创建API请看各翻译器的官网介绍。我一般使用腾讯云机翻API，写文时，我需要从源码安装这个工具，才能使用这个翻译器：
 
 ```sh
 git clone --depth=1 https://github.com/nidhaloff/deep-translator
@@ -106,48 +143,11 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ![](deep-translator.png)
 
-### TencentTrans_22.py
-
-这是我常用的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[沉浸式翻译](https://immersivetranslate.com/zh-Hans/)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过这个API。
-
-首先，参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API。
-
-```sh
-mkdir tencenttrans_2zh_zh2en
-cd tencenttrans_2zh_zh2en
-python -m venv venv
-venv\Scripts\activate.bat
-```
-
-下载[tencenttrans_2zh_zh2en.py](https://gist.github.com/scillidan/e95773454d79dc047aeed016fb00daef)并编辑，填写你的翻译API的`SecretId`和`SecretKey`。
-
-```sh
-pip install tencentcloud-sdk-python langid
-python tencenttrans_2zh_zh2en.py "golden apple"
-```
-
-GoldenDict → 字典 → 程序 → 添加：
-
-```
-类型 纯文本
-名称 `tencenttrans_2zh_zh2en`
-命令行 `<path_to>\tencenttrans_2zh_zh2en\venv\Scripts\python.exe <path_to>\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en.py "%GDWORD%"`
-```
-
-![](tencenttrans_22.png)
-
-虽然有不少不足，如：
-
-- 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606)
-- 未知的Bug，例如在GoldenDict里输出某些语言时，翻译文字前面会显示一串报错
-
-截止文章写成，我已使用了近一年。这之前，我使用的是[沙拉查词](https://saladict.crimx.com/)。
-
 ### LibreTranslate
 
 [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
 
-可参考[libretranslate.md](https://scillidan-cheat.vercel.app/srv/libretranslate.html)部署到家用服务器，并参考[libretrans.md](https://scillidan-cheat.vercel.app/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
+可参考[libretranslate.md](https://scillidan-cheat.vercel.app/?search=libretranslate)部署到家用服务器，并参考[libretrans.md](https://scillidan-cheat.vercel.app/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
 
 ![](libretrans.png)
 
@@ -202,7 +202,7 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 [LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但效能可能不是特别出色。
 
-参考[languagetool.md](https://scillidan-cheat.vercel.app/srv/languagetool.html)来部署`LanguageTool`服务。
+参考[languagetool.md](https://scillidan-cheat.vercel.app/?search=languagetool)来部署`LanguageTool`服务。
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/languagetool.mp4){ .skip-lightbox }
 
@@ -225,12 +225,12 @@ echo "This are a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ 
 ```batchfile
 @echo off
 
-C:\Users\User\Usr\Script\.pyLanguagetool\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --lang en-US -c
+<path_to>\.pyLanguagetool\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --lang en-US -c
 
 pause
 ```
 
-和一个开机启动的[AutoHotkey](https://www.autohotkey.com/)脚本`user.ahk`：
+和一个[AutoHotkey](https://www.autohotkey.com/)脚本`user.ahk`，并且设置为开机启动：
 
 ```
 #NoEnv
@@ -238,7 +238,7 @@ SetWorkingDir %A_ScriptDir%
 ^!+c::Run "<path_to>/check.bat"
 ```
 
-当我复制一段文本后按下`Ctrl+Shift+Alt+c`， 就会运行语法检查。
+这样，当我复制一段文本后按下`Ctrl+Shift+Alt+c`， 就会运行语法检查。
 
 ![](pylanguagetool.png)
 
@@ -286,11 +286,9 @@ pip install -e .
 命令行 `<path_to>\ety-python\venv\Scripts\python.exe <path_to>\ety-python\ety\__main__.py -r -t "%GDWORD%"`
 ```
 
-Mark两个相关的Web应用：[etytree](https://github.com/agmmnn/etytree)、[jsetymology](https://github.com/myrriad/jsetymology)。
+## OCR取词
 
-## 其他
-
-### 另一种联动OCR取词
+### Capture2Text
 
 也是使用[GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)。在它「OCR取词」模式下，按`Ctrl+右键单击`可识别鼠标附近字符，按`Ctrl+反引号`可进行框选。
 
@@ -316,3 +314,15 @@ QuickAccessLang3=...
 ```
 
 用来识别印刷体的单个英文词时，识别率还可以，稳定性略差。
+
+### Umi-OCR
+
+[Umi-OCR](https://github.com/hiroi-sora/Umi-OCR)是一款开源、可离线、功能灵活的OCR软件。用于一般OCR时，它可提供高速稳定、准确率较高的中英文混合识别。
+
+在[V1版本](https://github.com/hiroi-sora/Umi-OCR/releases/tag/v1.3.5)里，可配置一组快捷键，在OCR后触发GoldenDict查词，即[「截图联动」](https://github.com/hiroi-sora/Umi-OCR/issues/166)。
+
+对于V2版本，或者说更通用的情况是，只需勾选「复制OCR结果」，在进行OCR后，再按下GoldenDict查词快捷键就可以了。配置步骤：
+
+Umi-OCR → 添加 → 截图OCR → 设置 → 识图后的操作 → 复制结果 (On)
+
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expend/umi-ocr.mp4){ .skip-lightbox }
