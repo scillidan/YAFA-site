@@ -145,11 +145,11 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
 
-可参考[libretranslate.md](https://scillidan-cheat.vercel.app/?search=libretranslate)部署到家用服务器，并参考[libretrans.md](https://scillidan-cheat.vercel.app/bin/libretrans.html)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
+可参考[libretranslate.md](https://scillidan-cheat.vercel.app/?search=libretranslate)部署到家用服务器，并参考[libretrans.md](https://scillidan-cheat.vercel.app/?search=libretrans)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
 
 ![](libretrans.png)
 
-它的翻译效果通常逊于云端机器翻译，在我的印象里，它曾在某个上下文，将「Firefox Nightly」翻译成了「火狐夜总会」。目前，我在GoldenDict和浏览器插件[Linguist](https://linguister.io/)里使用它。
+它的翻译效果通常逊于云端机器翻译，在我的印象里，它曾在某个上下文，将「Firefox Nightly」翻译成了「火狐夜总会」。目前，我在浏览器插件[Linguist](https://linguister.io/)和Arch系统的GoldenDict里使用它。
 
 ## 分词断句脚本
 
@@ -200,7 +200,7 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ### LanguageTool
 
-[LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但效能可能不是特别出色。
+[LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但能效方面可能并不出色。
 
 参考[languagetool.md](https://scillidan-cheat.vercel.app/?search=languagetool)来部署`LanguageTool`服务。
 
@@ -290,7 +290,7 @@ pip install -e .
 
 ### Capture2Text
 
-也是使用[GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)。在它「OCR取词」模式下，按`Ctrl+右键单击`可识别鼠标附近字符，按`Ctrl+反引号`可进行框选。
+使用到[GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)，在它「OCR取词」模式下，按`Ctrl+右键单击`可识别鼠标附近字符，按`Ctrl+反引号`可进行框选。
 
 1. 安装OCR工具[Capture2Text](https://capture2text.sourceforge.net/)
 2. 默认OCR语言为英语，可参考[Installing Additional OCR Languages](https://capture2text.sourceforge.net/#install_additional_languages)添加语言
