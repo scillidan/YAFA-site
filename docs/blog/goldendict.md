@@ -56,11 +56,6 @@ git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 	border: none;
 	border-radius: 0;
 }
-
-// 处理「语音合成」词典的文字的显示问题
-.voiceengines_play {
-	margin-top: 22.5px;
-}
 ```
 
 编辑 → 首选项 → 附加样式 → Dark
@@ -69,32 +64,29 @@ git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
 
 ## 修改字典字体
 
-首先去下载并安装收录全、完成度高的字体，例如[思源黑体](https://github.com/adobe-fonts/source-han-sans/)、[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)等。
-
-还是编辑`article-style.css`，在开头添加：
+1. 下载并安装收录全、完成度高的字体，例如[思源黑体](https://github.com/adobe-fonts/source-han-sans/)、[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)等。
+2. 编辑`article-style.css`：
 
 ```css
-// 添加本地字体
+// 在开头添加
 @font-face {
 	font-family: <FontName>;
+	/* 添加本地字 */
 	src: local('<Font Name>') url('file:C:\\Users\\<username>\\AppData\\Local\\Microsoft\\Windows\\Fonts\\<FontName>.ttf') format('truetype');
 	font-weight: normal;
 	font-style:  normal;
 }
-```
 
-在末尾添加：
-
-```css
+// 在末尾添加
 body
 {
-	font-family: "<Font Name>", NotoSans;
+	font-family: '<Font Name>', NotoSans;
 	font-size:   9.5pt;
 }
 
 .dsl_t
 {
-	font-family: "<Font Name>", NotoSerif;
+	font-family: '<Font Name>', NotoSerif;
 }
 ```
 
@@ -142,8 +134,9 @@ body
 
 ```
 翻译脚本
-单词发音
 拼写词库
+单词音频库
+语音引擎
 英汉字典
 英英字典
 专业词汇词典

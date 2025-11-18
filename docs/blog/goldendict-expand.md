@@ -149,7 +149,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ![](libretrans.png)
 
-它的翻译效果通常逊于云端机器翻译，在我的印象里，它曾在某个上下文，将「Firefox Nightly」翻译成了「火狐夜总会」。目前，我在浏览器插件[Linguist](https://linguister.io/)和Arch系统的GoldenDict里使用它。
+它的翻译效果通常逊于云端机器翻译，在我的印象里，它曾在某个上下文，将「Firefox Nightly」翻译成「火狐夜总会」。目前，我在浏览器插件[Linguist](https://linguister.io/)和Arch系统的GoldenDict里使用它。
 
 ## 分词断句脚本
 
@@ -241,6 +241,60 @@ SetWorkingDir %A_ScriptDir%
 这样，当我复制一段文本后按下`Ctrl+Shift+Alt+c`， 就会运行语法检查。
 
 ![](pylanguagetool.png)
+
+## 文本转语音脚本
+
+### [Kokoro TTS](https://github.com/nazdridoy/kokoro-tts)
+
+> A CLI text-to-speech tool using the Kokoro model, supporting multiple languages, voices (with blending), and various input formats including EPUB books and PDF documents.
+
+“使用Kokoro模型的CLI文本转语音工具，支持多种语言、语音（具有混合）和各种输入格式，包括EPub书籍和PDF文档。”
+
+```sh
+uv tool install kokoro-tts
+```
+
+1. Download [voice data](https://github.com/nazdridoy/kokoro-tts/releases/download/v1.0.0/voices-v1.0.bin) (bin format is preferred).
+2. Download [the model](https://github.com/nazdridoy/kokoro-tts/releases/download/v1.0.0/kokoro-v1.0.onnx).
+
+测试运行：
+
+```sh
+echo "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,” thought Alice “without pictures or conversations?”" | kokoro-tts - --stream --voice "af_bella" --voices <path_to>\voices-v1.0.bin --model <path_to>\kokoro-v1.0.onnx
+```
+
+程序 → 添加：
+
+```
+类型 音频
+名称 `kokoro-tts`
+命令行 `echo "%GDWORD%" | kokoro-tts - --stream --voice "af_bella" --voices <path_to>\voices-v1.0.bin --model <path_to>\kokoro-v1.0.onnx`
+```
+
+### [ltts](https://github.com/fcjr/ltts)
+
+> Quick CLI for local text-to-speech using [Kokoro TTS](https://huggingface.co/hexgrad/Kokoro-82M).
+
+“使用Kokoro TTS的本地文本转语音快速命令行工具。”
+
+```sh
+git clone --depth=1 https://github.com/fcjr/ltts
+cd ltts
+uv venv .venv --python 3.12
+.venv\bin\activate.bat
+uv pip install hf_transfer hf-xet
+uv sync
+```
+
+程序 → 添加：
+
+```
+类型 音频
+名称 `ltts`
+命令行 `<path_to>\ltts.exe "%GDWORD%" -v af_bella --say`
+```
+
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expend/ltts.mp4){ .skip-lightbox }
 
 ## 其他脚本或程序
 
