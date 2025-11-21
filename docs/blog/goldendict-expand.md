@@ -286,6 +286,12 @@ uv pip install hf_transfer hf-xet
 uv sync
 ```
 
+进行测试，一般输入的内容越多，运行需要的时间也越长：
+
+```sh
+ltts "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do." -v af_bella --say
+```
+
 程序 → 添加：
 
 ```

@@ -17,23 +17,19 @@ keywords: >
 
 如果使用[Scoop](https://scoop.sh/)安装，可以删除`C:\Users\<username>\scoop\apps\goldendict\current\portable`目录，也就是断开了和Scoop配置目录里的系统目录链接，位于`C:\Users\<username>\scoop\persist\goldendict`，见[issue](https://github.com/goldendict/goldendict/issues/1560)。这样配置起来相对简单些，我使用的是Scoop的配置文件夹，也更麻烦。
 
-文章分为「基础篇」和「番外篇」。「番外篇」更多地涉及到「程序」这一功能，有更多的实验性和Bug，如文本翻译等。也并不一定与GoldenDict有很强的相关，如语法检查等，只是我之前考虑过在GoldenDict中对句子进行检查。
+文章分为「基础篇」和「番外篇」。「番外篇」更多地涉及到「程序」这一功能，有更多的实验性和Bug，如文本翻译等。也并不一定与GoldenDict有很强的相关，如语法检查等。
 
 ## 窗口布局
 
-主窗口的布局可在菜单栏的「查看」中设置。
+主窗口的布局可在菜单栏的「查看」中设置。我个人只保留了「查询面板」。
 
-窗口的大小可手动调整。对于弹窗窗口，参考该[issue](https://github.com/goldendict/goldendict/issues/1010)。
-
-我个人在主窗口只保留了「查询面板」。
+窗口的大小可以拖动窗口边框调整。对于调整弹窗窗口，参考该[issue](https://github.com/goldendict/goldendict/issues/1010)才操作。
 
 ## 黑暗主题
 
-```sh
-git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme
-```
 
-参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落进行安装。
+1. `git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme`
+2. 参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落进行安装
 
 原样式有几处圆角边框。可以编辑`styles\Dark\article-style.css`：
 
@@ -98,10 +94,15 @@ body
 
 我个人使用也推荐的（StarDict格式）：
 
-- [WordNet](https://github.com/scillidan/share_wordnet)
-- [etymonline](https://github.com/scillidan/share_etymonline)
 - [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)
-- [CC-CEDICT](https://github.com/scillidan/share_cc-cedict)
+- [CC-CEDICT](https://github.com/scillidan/share_cc-cedict)  
+	英汉词典，且能进行汉英查询。适合快速查询。不含详细释义、语法、例句。
+- GCIDE（GNU版国际协作英语词典），从[FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)下载  
+	英英定义词典，提供详细释义、词源信息、文学例句。适合建立准确词义概念，尤其是对于专业词汇等。解释相对复杂，也可能缺少现代和当代的词汇、释义、日常用法，或者已不再使用。
+- [etymonline](https://github.com/scillidan/share_etymonline)  
+	词源词典。
+- [WordNet](https://github.com/scillidan/share_wordnet)  
+	非传统形式词典，实际上是英语词汇数据库、词汇网络。核心为同义词集，也含“反义词”等关系集合。适合用于扩展词汇、理解。
 - [汉语大词典](https://github.com/scillidan/share_hanyudacidian)
 
 不推荐的：
@@ -114,7 +115,6 @@ body
 另一些StarDict字典：
 
 - [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
-- [FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)上的GNU版国际协作英语词典
 - [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://www.reader-dict.com/en/download/en)
 
 其他的：
@@ -209,6 +209,8 @@ B-axes.mp3
 
 1. 设置 → 时间和语言 → 语音 → 管理语音 → 添加语音
 2. 词典 → 词典来源 → 语音合成 → 预览 → 可用语音引擎 → `Microsoft David Desktop - English (United States)` → 添加 → 应用
+
+效果较差。我目前使用[Kokoro](https://huggingface.co/hexgrad/Kokoro-82M)进行文字转语音，见番外篇。
 
 ## 添加离线维基
 
