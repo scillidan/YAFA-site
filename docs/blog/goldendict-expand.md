@@ -149,7 +149,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ![](libretrans.png)
 
-它的翻译效果通常逊于云端机器翻译，在我的印象里，它曾在某个上下文，将「Firefox Nightly」翻译成「火狐夜总会」。目前，我在浏览器插件[Linguist](https://linguister.io/)和Arch系统的GoldenDict里使用它。
+它的翻译效果通常逊于云端机器翻译。在我的印象里，它曾在一篇上下文里，将「Firefox Nightly」翻译成「火狐夜总会」。目前，我在浏览器插件[Linguist](https://linguister.io/)和Arch系统的GoldenDict里使用它。
 
 ## 分词断句脚本
 

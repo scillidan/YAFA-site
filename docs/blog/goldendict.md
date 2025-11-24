@@ -229,6 +229,8 @@ GoldenDict → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
 
 ![](full-text-search.png)
 
+不过我目前使用的是[Kiwix Server](https://kiwix.org/en/applications/)，在浏览器里预览ZIM档案，见[kiwix-server.md](https://scillidan-cheat.vercel.app/?search=kiwix-server)。
+
 ## 设置鼠标取词
 
 [GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)是一个[AutoHotKey](https://www.autohotkey.com/)脚本，在它的「鼠标选择取词」模式下，可通过「双击选词、划词」来查词。需要配合GoldenDict的默认查词快捷键`Ctrl+c+c`来使用。
