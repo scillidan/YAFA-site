@@ -92,18 +92,20 @@ body
 
 我目前常用的字典，大部分都是StarDict格式。需注意，`.dict`格式和[StarDict](https://github.com/huzheng001/stardict-3)词典应用都是开源。而`.mdx`属于专有软件[MDict](https://www.mdict.cn/wp/?lang=en)的词典格式，更多信息见[fileformat](https://github.com/zhansliu/writemdict/blob/master/fileformat.md)。
 
-我个人使用也推荐的（StarDict格式）：
+我个人使用也推荐的（附StarDict文件）：
 
-- [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)
-- [CC-CEDICT](https://github.com/scillidan/share_cc-cedict)  
+- [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)，或者[Ultimate版本](https://github.com/skywind3000/ECDICT-ultimate) （[share_ecdict](https://github.com/scillidan/share_ecdict)）  
+	汇编的收录广泛的英中双解词典数据库，含音标、词频和考试大纲标注。
+- [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cedict) （[share_cc-cedict](https://github.com/scillidan/share_cc-cedict)）  
 	英汉词典，且能进行汉英查询。适合快速查询。不含详细释义、语法、例句。
-- GCIDE（GNU版国际协作英语词典），从[FireDict](https://tuxor1337.frama.io/firedict/dictionaries.html)下载  
-	英英定义词典，提供详细释义、词源信息、文学例句。适合建立准确词义概念，尤其是对于专业词汇等。解释相对复杂，也可能缺少现代和当代的词汇、释义、日常用法，或者已不再使用。
-- [etymonline](https://github.com/scillidan/share_etymonline)  
+- [GCIDE](https://gcide.gnu.org.ua/)（GNU版国际协作英语词典） （[share_gcide](https://github.com/scillidan/share_gcide)）  
+	英英定义词典，提供详细释义、词源信息、文学例句。适合了解词义概念，尤其专业词汇等。可能缺少现代、当代的词汇、释义、日常用法，或者已过时、不再被使用。
+- [Online Etymology Dictionary](http://etymonline.com/) （[share_etymonline](https://github.com/scillidan/share_etymonline)）  
 	词源词典。
-- [WordNet](https://github.com/scillidan/share_wordnet)  
-	非传统形式词典，实际上是英语词汇数据库、词汇网络。核心为同义词集，也含“反义词”等关系集合。适合用于扩展词汇、理解。
-- [汉语大词典](https://github.com/scillidan/share_hanyudacidian)
+- [WordNet](https://wordnet.princeton.edu/download) （[share_wordnet](https://github.com/scillidan/share_wordnet)）  
+	非传统形式词典，实际上是英语词汇数据库、词汇网络。核心为同义词集，也含“反义词”等关系集。适合用于扩展词汇、理解。
+- [汉语大词典](https://www.hanyudacidian.cn) （[share_hanyudacidian](https://github.com/scillidan/share_hanyudacidian)）  
+	“大型的、历史性的汉语语文辞典”，详细见[《前言》](https://www.hanyudacidian.cn/about/preface)。
 
 不推荐的：
 
