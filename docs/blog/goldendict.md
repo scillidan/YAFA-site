@@ -67,7 +67,7 @@ keywords: >
 // 在开头添加
 @font-face {
 	font-family: <FontName>;
-	/* 添加本地字 */
+	/* 添加本地字体 */
 	src: local('<Font Name>') url('file:C:\\Users\\<username>\\AppData\\Local\\Microsoft\\Windows\\Fonts\\<FontName>.ttf') format('truetype');
 	font-weight: normal;
 	font-style:  normal;
@@ -95,13 +95,13 @@ body
 我个人使用也推荐的（附StarDict文件）：
 
 - [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)，或者[Ultimate版本](https://github.com/skywind3000/ECDICT-ultimate) （[share_ecdict](https://github.com/scillidan/share_ecdict)）  
-	汇编的收录广泛的英中双解词典数据库，含音标、词频和考试大纲标注。
+	汇编的收录广泛的英汉双解词典数据库，含音标、词频和考试大纲标注。
 - [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cedict) （[share_cc-cedict](https://github.com/scillidan/share_cc-cedict)）  
-	英汉词典，且能进行汉英查询。适合快速查询。不含详细释义、语法、例句。
+	英汉词典，且能进行部分汉英查询。适合快速查询。不含详细释义、语法、例句。
 - [GCIDE](https://gcide.gnu.org.ua/)（GNU版国际协作英语词典） （[share_gcide](https://github.com/scillidan/share_gcide)）  
-	英英定义词典，提供详细释义、词源信息、文学例句。适合了解词义概念，尤其专业词汇等。可能缺少现代、当代的词汇、释义、日常用法，或者已过时、不再被使用。
+	英英定义词典，提供详细释义、词源信息、文学例句。适合了解词义概念，尤其是专业词汇等。可能缺少现代、当代的词汇、释义、日常用法，或者已经过时、弃用。
 - [Online Etymology Dictionary](http://etymonline.com/) （[share_etymonline](https://github.com/scillidan/share_etymonline)）  
-	词源词典。
+	英语词源词典。
 - [WordNet](https://wordnet.princeton.edu/download) （[share_wordnet](https://github.com/scillidan/share_wordnet)）  
 	非传统形式词典，实际上是英语词汇数据库、词汇网络。核心为同义词集，也含“反义词”等关系集。适合用于扩展词汇、理解。
 - [汉语大词典](https://www.hanyudacidian.cn) （[share_hanyudacidian](https://github.com/scillidan/share_hanyudacidian)）  
@@ -112,7 +112,7 @@ body
 - [KDr2.com](https://kdr2.com/resource/stardict.html)上的`汉语大词典 离线版`（StarDict）
 - [Mdict.org上的汉语词典](https://mdx.mdict.org/%E6%8C%89%E8%AF%8D%E5%85%B8%E8%AF%AD%E7%A7%8D%E6%9D%A5%E5%88%86%E7%B1%BB/%E6%B1%89%E8%AF%AD/%E5%AD%97%E5%85%B8/)上的`汉语大词典(简体精排).mdx`、`漢語大詞典.mdx`
 
-主要理由是我浏览了几个帖子：[汉语大词典从没经过转码的文本（自动转码谬种流传）](https://forum.freemdict.com/t/topic/3840/28)、[【结项】汉语大词典2.0源数据](https://forum.freemdict.com/t/topic/15998)等几个帖子。具体理由也还有别的，举一个来说，`word`和`meaning`这两个词，来自字典格式转换工具[pyglossary](https://github.com/ilius/pyglossary)定义的数据库格式的字典文件里的数据表的关键字。对于这本字典，如果要进行繁简转换，对于meaning（释义）部分，需要排除其中的引用、专用词句部分，对于word（词条）部分，可能需要有一个替换表，等等。
+主要理由是我浏览了几个帖子：[汉语大词典从没经过转码的文本（自动转码谬种流传）](https://forum.freemdict.com/t/topic/3840/28)、[【结项】汉语大词典2.0源数据](https://forum.freemdict.com/t/topic/15998)等几个帖子。具体理由也还有别的，举一个来说，`word`和`meaning`这两个词，来自字典格式转换工具[pyglossary](https://github.com/ilius/pyglossary)定义的数据库格式字典文件，里面的数据表的关键字。对于这本字典，如果要进行繁简转换，对于meaning（释义）部分，需要排除其中的引用、专用词句部分，对于word（词条）部分，可能需要有一个替换表，等等。
 
 另一些StarDict字典：
 
@@ -139,10 +139,10 @@ body
 拼写词库
 单词音频库
 语音引擎
-英汉字典
-英英字典
+英汉词典
+英英词典
 专业词汇词典
-双语双向字典
+双语双向词典
 汉语大词典
 ...
 ```
