@@ -141,6 +141,33 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 
 ![](deep-translator.png)
 
+### golden-dict-trans
+
+[golden-dict-trans](https://github.com/xiaodaxia-2008/golden-dict-trans)是一个谷歌翻译专用脚本，可检测输入语言，将中文翻译到英文，或者将多语言翻译到中文，并提供干净的HTML格式输出。
+
+```sh
+scoop install uv
+git clone --depth=1 https://github.com/xiaodaxia-2008/golden-dict-trans
+cd golden-dict-trans
+uv run translate.py "golden apple"
+```
+
+程序 → 添加：
+
+```
+类型 Html
+名称 `golden-dict-trans`
+命令行 `uv run <path_to>\golden-dict-trans\translate.py "%GDWORD%"
+```
+
+如果不想显示标题，可注释掉`translate.py`里的这行：
+
+```html
+    <h2 style="color: #333; font-size: 1.2em; margin-bottom: 5px;">Translation ({target_language})</h2>
+```
+
+![](golden-dict-trans.png)
+
 ### LibreTranslate
 
 [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
@@ -345,6 +372,57 @@ pip install -e .
 名称 `ety-python`
 命令行 `<path_to>\ety-python\venv\Scripts\python.exe <path_to>\ety-python\ety\__main__.py -r -t "%GDWORD%"`
 ```
+
+## Web应用
+
+一些相关的Web应用：
+
+- [AllAcronyms](https://www.allacronyms.com)  
+  专用于查找、解释各种缩略词和缩写，涵盖科技、医疗、商业等多个领域。
+- [SKELL](https://skell.sketchengine.eu)  
+  提供词语的大量常见搭配、例句，支持多语言。
+- [wordnik](https://www.wordnik.com)  
+  在线英语词典，汇集了尽可能多的单词、同义，提供定义、同义词，和例句、词源、相关词汇等。
+- [ConceptNet](https://conceptnet.io/)  
+  “ConceptNet是一个免费可用的语义网络，旨在帮助计算机理解人们使用的单词的含义。”
+- [BabelNet](https://babelnet.org/)  
+  “每个BabelNet同义词集代表一个给定的含义，并包含用一系列不同语言表达该含义的所有同义词。”
+- [OpenHowNet](https://openhownet.thunlp.org/)  
+  “OpenHowNet源自在中文世界有巨大影响力的语言知识库——知网（HowNet）。知网的构建秉承还原论思想，即所有词语的含义可以由更小的语义单位构成，而这种语义单位被称为“义原”（Sememe），即最基本的、不宜再分割的最小语义单位。”
+
+不过我目前不在GoldenDict里使用Web字典。我在Windows上使用启动器[Keypirinha](https://keypirinha.com/)的官方软件包[WebSearch](https://keypirinha.com/packages/websearch.html)或者第三方软件包[EasySearch](https://github.com/bantya/Keypirinha-EasySearch)，在Arch上使用[Rofi](https://github.com/davatorium/rofi)的脚本[web-search.sh](https://github.com/miroslavvidovic/rofi-scripts/blob/master/web-search.sh)来运行搜索。添加如下内容到配置文件或脚本文件：
+
+`websearch.ini`:
+
+```
+[site/allacronyms.com]
+url = https://www.allacronyms.com/aa-searchme?q=%s
+
+[site/skell.sketchengine.eu]
+url = https://skell.sketchengine.eu/#result?lang=en&f=concordance&query=%s
+```
+
+![](keypirinha_websearch.png)
+
+`easysearch.ini`，可设置专门的别名，但不支持一般空格:
+
+```
+[engines]
+abbr = allacronyms https://www.allacronyms.com/aa-searchme?q={q}
+```
+
+![](keypirinha_easysearch.png)
+
+`web-search.sh`:
+
+```sh
+URLS=(
+  ["allacronyms.com"]="https://www.allacronyms.com/aa-searchme?q="
+  ["skell.sketchengine.eu"]="https://skell.sketchengine.eu/#result?lang=en&f=concordance&query="
+)
+```
+
+![](rofi_web-search.png)
 
 ## OCR取词
 
