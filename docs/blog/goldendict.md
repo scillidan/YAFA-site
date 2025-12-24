@@ -27,30 +27,35 @@ keywords: >
 
 ## 黑暗主题
 
-
 1. `git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme`
 2. 参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落进行安装
 
-原样式有几处圆角边框。可以编辑`styles\Dark\article-style.css`：
+对于高级用户，可以在搜索后按F12调出开发者工具，使用搜索功能直接在GoldenDict主窗口，查找CSS元素，编辑它的属性并实时预览效果。调整完成后，将修改编辑进CSS文件`styles\Dark\article-style.css`即可，例如：
 
 ```css
-// 词典框的圆角改为直角等
-.gdarticle
-{
-	border-radius: 0;
-}
-
-.programs_plaintext, .programs_html {
-	margin-top: 20px;
+// 修改为直角、无边框
+.gddictname {
+  border: none;
+  border-radius: 0;
 }
 
 .gdactivearticle .gddictname {
-	border: none;
+  border: none;
 }
 
-.gddictname {
-	border: none;
-	border-radius: 0;
+.gdarticle
+{
+  border-radius: 0;
+}
+
+// 调整部分字典内容的上边距
+.programs_plaintext, .programs_html {
+  margin-top: 20px;
+}
+
+.programs_play {
+  margin-top: 20px;
+  margin-left: 0;
 }
 ```
 

@@ -178,6 +178,17 @@ uv run translate.py "golden apple"
 
 它的翻译效果通常逊于云端机器翻译。在我的印象里，它曾在一篇上下文里，将「Firefox Nightly」翻译成「火狐夜总会」。目前，我在浏览器插件[Linguist](https://linguister.io/)和Arch系统的GoldenDict里使用它。
 
+### ollama_trans.py
+
+> Translate Non-Chinese to Chinese or translate Chinese to English with Ollama.
+
+- [ollama_trans.py](https://github.com/scillidan/Shell/blob/main/lib/python/ollama_trans.py)  
+  目前只测试了`llama3.1:8b`，`qwen3:14b`。
+- [ollama_trans_gemma3_translator.py](https://github.com/scillidan/Shell/blob/main/lib/python/ollama_trans_gemma3_translator.py)  
+  模型[gemma3-translator](https://ollama.com/zongwei/gemma3-translator)专用脚本，也是我目前使用的。
+
+![](ollama_trans_gemma3_translator.png)
+
 ## 分词断句脚本
 
 ### gd-mecab（仅gd-ng）
@@ -404,7 +415,7 @@ url = https://skell.sketchengine.eu/#result?lang=en&f=concordance&query=%s
 
 ![](keypirinha_websearch.png)
 
-`easysearch.ini`，可设置专门的别名，但不支持一般空格:
+`easysearch.ini`，可设置专门的别名，但输入应为[URL编码](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURI)格式，如可以使用`+`表示空格:
 
 ```
 [engines]
