@@ -13,9 +13,9 @@ keywords: >
 
 ## 配置文件的位置
 
-同于大多数的软件的安装版，GoldenDict的配置文件也位于`C:\Users\<username>\AppData\Roaming`的`<软件名>`。如果要保存GoldenDict的配置，可备份此处的`config`文件。
+同于大多数的软件的安装版，GoldenDict的配置文件也位于`C:\Users\<user>\AppData\Roaming`的`<软件名>`。如果要保存GoldenDict的配置，可备份此处的`config`文件。
 
-如果使用[Scoop](https://scoop.sh/)安装，可以删除`C:\Users\<username>\scoop\apps\goldendict\current\portable`目录，也就是断开了和Scoop配置目录里的系统目录链接，位于`C:\Users\<username>\scoop\persist\goldendict`，见[issue](https://github.com/goldendict/goldendict/issues/1560)。这样配置起来相对简单些，我使用的是Scoop的配置文件夹，也更麻烦。
+如果使用[Scoop](https://scoop.sh/)安装，配置文件默认位于`C:\Users\<user>\scoop\apps\goldendict\current\portable`。我个人的配置文件和其他文件都自行分开存放，再使用环境变量和[Link Shell Extension](https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html)等完成软件配置。所以我没有去处理某些相关的问题，如[issue](https://github.com/goldendict/goldendict/issues/1560)。
 
 文章分为「基础篇」和「番外篇」。「番外篇」更多地涉及到「程序」这一功能，有更多的实验性和Bug，如文本翻译等。也并不一定与GoldenDict有很强的相关，如语法检查等。
 
@@ -25,30 +25,53 @@ keywords: >
 
 窗口的大小可以拖动窗口边框调整。对于调整弹窗窗口，参考该[issue](https://github.com/goldendict/goldendict/issues/1010)才操作。
 
-## 黑暗主题
+## 显示风格
 
-1. `git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme`
-2. 参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落进行安装
+编辑 → 首选项 → 显示风格 → Modern。
 
-对于高级用户，可以在搜索后按F12调出开发者工具，使用搜索功能直接在GoldenDict主窗口，查找CSS元素，编辑它的属性并实时预览效果。调整完成后，将修改编辑进CSS文件`styles\Dark\article-style.css`即可，例如：
+对于高级用户，可以在搜索后按F12调出开发者工具，使用搜索功能直接在GoldenDict主窗口，查找CSS元素，编辑它的属性并实时预览效果。调整完成后，在GoldenDict配置文件目录下新建的CSS文件`article-style.css`，将修改编辑进去即可。例如：
 
 ```css
+// 使用本地字体，以Sarasa Term SC Nerd字体为例
+@font-face {
+  font-family: "Sarasa Term SC Nerd";
+  src:
+    local('Sarasa Term SC Nerd') format('truetype');
+  font-weight: normal;
+  font-style:  normal;
+}
+
+body
+{
+  font-family: "Sarasa Term SC Nerd", NotoSans;
+  font-size:   10pt;
+}
+
+.dsl_t
+{
+  font-family: "Sarasa Term SC Nerd", NotoSerif;
+}
+
 // 修改为直角、无边框
-.gddictname {
-  border: none;
-  border-radius: 0;
+.gdarticle {
+	border-radius: 0;
+	background: #fffff8
+}
+
+.gdactivearticle {
+	border: 1px solid #black
 }
 
 .gdactivearticle .gddictname {
-  border: none;
+	border: 1px solid #black;
+	background: #deecf8
 }
 
-.gdarticle
-{
-  border-radius: 0;
+.gddictname {
+	border-radius: 0;
 }
 
-// 调整部分字典内容的上边距
+// 可选，增加某些显示内容的上边距
 .programs_plaintext, .programs_html {
   margin-top: 20px;
 }
@@ -59,39 +82,20 @@ keywords: >
 }
 ```
 
-编辑 → 首选项 → 附加样式 → Dark
+重启GoldenDict。
 
-![](dark-theme.png)
+![](goldendict_modern.png)
 
-## 修改字典字体
+注意，字体不会覆盖有内置样式的词典（主要是MDX格式），或者[ZIM](https://wiki.openzim.org/wiki/ZIM_file_format)档案。
 
-1. 下载并安装收录全、完成度高的字体，例如[思源黑体](https://github.com/adobe-fonts/source-han-sans/)、[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)等。
-2. 编辑`article-style.css`：
+## 黑暗主题
 
-```css
-// 在开头添加
-@font-face {
-	font-family: <FontName>;
-	/* 添加本地字体 */
-	src: local('<Font Name>') url('file:C:\\Users\\<username>\\AppData\\Local\\Microsoft\\Windows\\Fonts\\<FontName>.ttf') format('truetype');
-	font-weight: normal;
-	font-style:  normal;
-}
+1. `git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme`
+2. 参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落进行安装
+3. 同样，可以修改样式，编辑配置文件目录下`styles\Dark\article-style.css`
+4. 编辑 → 首选项 → 附加样式 → Dark
 
-// 在末尾添加
-body
-{
-	font-family: '<Font Name>', NotoSans;
-	font-size:   9.5pt;
-}
-
-.dsl_t
-{
-	font-family: '<Font Name>', NotoSerif;
-}
-```
-
-字体不会覆盖有内置样式的词典，或者[ZIM](https://wiki.openzim.org/wiki/ZIM_file_format)档案。这种情况下，你可以尝试修改字典文件内部的`.css`文件。
+![](goldendict_dark.png)
 
 ## 添加词典
 
@@ -112,6 +116,8 @@ body
 - [汉语大词典](https://www.hanyudacidian.cn) （[share_hanyudacidian](https://github.com/scillidan/share_hanyudacidian)）  
 	“大型的、历史性的汉语语文辞典”，详细见[《前言》](https://www.hanyudacidian.cn/about/preface)。
 
+![](stardict.png)
+
 不推荐的：
 
 - [KDr2.com](https://kdr2.com/resource/stardict.html)上的`汉语大词典 离线版`（StarDict）
@@ -126,7 +132,6 @@ body
 
 其他的：
 
-- 工具书，如[翻译人名](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/main/Chinese%20Names%20Corpus/English-Chinese%20Names)
 - [Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典
 - [proteusx](https://github.com/proteusx)制作的古希腊语词典
 

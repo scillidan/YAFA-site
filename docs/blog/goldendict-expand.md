@@ -50,9 +50,10 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 ```sh
 git clone --depth=1 https://github.com/spignelon/cambridge-dictionary
 cd cambridge-dictionary
-python -m venv venv
-venv\Scripts\activate.bat
-pip install requests bs4
+uv venv
+.venv\Scripts\activate.bat
+uv pip install requests bs4
+python cambridge.py "dictionary"
 ```
 
 词典 → 词典来源 → 程序 → 添加：
@@ -61,65 +62,47 @@ pip install requests bs4
 已启用 On
 类型 纯文本
 名称 `Cambridge-Dictionary`
-命令行 `<path_to>\cambridge-dictionary\venv\Scripts\python.exe <path_to>\cambridge-dictionary\cambridge.py "%GDWORD%"`
+命令行 `<path_to>\cambridge-dictionary\.venv\Scripts\python.exe <path_to>\cambridge-dictionary\cambridge.py "%GDWORD%"`
 ```
 
 ![](cambridge-dictionary.png)
 
 ## 翻译脚本和服务
 
-### TencentTrans_2zh_zh2en.py
+### [tencent_trans_zh.py](https://github.com/scillidan/Shell/blob/main/lib/python/tencent_trans_zh.py)
 
-这是我使用了两年以上的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。脚本由[tencent-translate-for-goldendict](https://github.com/LexsionLee/tencent-translate-for-goldendict)修改而来，即「用于Goldendict的腾讯云翻译」，后者的翻译API支持[多门外语](https://cloud.tencent.com/document/api/551/15620)，文本翻译一项上，[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过这个API。
+这是我使用了两年以上，最近经过AI重写的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。
 
-首先，参考[申请翻译API](https://github.com/LexsionLee/tencent-translate-for-goldendict#%E7%94%B3%E8%AF%B7%E7%BF%BB%E8%AF%91api)，以及[官方介绍](https://cloud.tencent.com/product/tmt)去获得API。
-
-```sh
-mkdir tencenttrans_2zh_zh2en
-cd tencenttrans_2zh_zh2en
-python -m venv venv
-venv\Scripts\activate.bat
-```
-
-下载[tencenttrans_2zh_zh2en.py](https://gist.github.com/scillidan/e95773454d79dc047aeed016fb00daef)并编辑，填写你的翻译API的`SecretId`和`SecretKey`。
+1. 如何申请或创建API请看腾讯云机器翻译的官网介绍。API的文本翻译一项[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过。
+2. 设置系统环境变量，可以使用环境变量编辑器[Rapid Environment Editor](https://www.rapidee.com/en/about)：
+  1. RapidEE → 用户变量 → 右键 → 添加环境变量 → 变量名称 `TENCENT_SECRET_ID` → 填写你的`SecretId`
+  2. 添加环境变量 → 变量名称 `TENCENT_SECRET_KEY` → 填写你的`SecretKey`
 
 ```sh
-pip install tencentcloud-sdk-python langid
-python tencenttrans_2zh_zh2en.py "golden apple"
+https://raw.githubusercontent.com/scillidan/Shell/refs/heads/main/lib/python/tencent_trans_zh.py
+uv run tencent_trans_zh.py "Golden apple"
 ```
 
 GoldenDict → 字典 → 程序 → 添加：
 
 ```
 类型 纯文本
-名称 `tencenttrans_2zh_zh2en`
-命令行 `<path_to>\tencenttrans_2zh_zh2en\venv\Scripts\python.exe <path_to>\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en.py "%GDWORD%"`
+名称 `tencent_trans_zh`
+命令行 `uv run <path_to>\tencent_trans_2zh.py --original-text "%GDWORD%"`
 ```
 
-![](tencenttrans_22.png)
-
-虽然有不少不足，如：
-
-- 输出的文本没有段落，因为[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606)
-- 未知的Bug，例如在GoldenDict里输出某些语言时，翻译文字前面会显示一串报错
+![](tencent_trans.png)
 
 ### deep-translator
 
-[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。如何申请或创建API请看各翻译器的官网介绍。我一般使用腾讯云机翻API，写文时，我需要从源码安装这个工具，才能使用这个翻译器：
+[deep-translator](https://github.com/nidhaloff/deep-translator)是一个支持了多引擎的翻译脚本工具。
 
 ```sh
 git clone --depth=1 https://github.com/nidhaloff/deep-translator
 cd deep-translator
-pip install -e .
-```
-
-设置系统环境变量，可以使用环境变量编辑器[Rapid Environment Editor](https://www.rapidee.com/en/about)：
-
-1. RapidEE → 用户变量 → 右键 → 添加环境变量 → 变量名称 `TENCENT_SECRET_ID` → 填写你的`SecretId`
-2. 添加环境变量 → 变量名称 `TENCENT_SECRET_KEY` → 填写你的`SecretKey`
-
-```sh
-deep-translator --translator tencent --source "en" --target "zh" --text "Golden Apple"
+uv venv
+uv pip install -e .
+deep-translator --translator <translator> --source "en" --target "zh" --text "Golden apple"
 ```
 
 有些翻译器，支持检查`源语言`，然后都需要指明`目标语言`。但我需要「中英文互译」，有一个可行的方法是：在GoldenDict中添加两条脚本设置，其中一条的输入语言为`en`，目标语言为`zh`。
@@ -129,14 +112,14 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 ```
 类型 纯文本
 名称 `deep-translator en2zh`
-命令行 `deep-translator --translator tencent --source "en" --target "zh" --text "%GDWORD%"`
+命令行 `<path_to>\deep-translator\.venv\Scripts\deep-translator.exe --translator <translator> --source "en" --target "zh" --text "%GDWORD%"`
 ```
 
 另一条则将两者互换：
 
 ```
 名称 `deep-translator zh2en`
-命令行 `deep-translator --translator tencent --target "zh" --source "en" --text "%GDWORD%"`
+命令行 `deep-translator --translator <translator> --target "zh" --source "en" --text "%GDWORD%"`
 ```
 
 ![](deep-translator.png)
@@ -149,7 +132,7 @@ deep-translator --translator tencent --source "en" --target "zh" --text "Golden 
 scoop install uv
 git clone --depth=1 https://github.com/xiaodaxia-2008/golden-dict-trans
 cd golden-dict-trans
-uv run translate.py "golden apple"
+uv run translate.py "Golden apple"
 ```
 
 程序 → 添加：
@@ -172,7 +155,7 @@ uv run translate.py "golden apple"
 
 [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
 
-可参考[libretranslate.md](https://scillidan-cheat.vercel.app/?search=libretranslate)部署到家用服务器，并参考[libretrans.md](https://scillidan-cheat.vercel.app/?search=libretrans)来使用。它在Windows版的GoldenDict里有一些字符问题，在Linux里可正常使用。
+可参考[libretranslate.md](https://scillidan-cheat.vercel.app/?search=libretranslate)部署到家用服务器，并参考[libretrans.md](https://scillidan-cheat.vercel.app/?search=libretrans)来使用。
 
 ![](libretrans.png)
 
@@ -187,7 +170,15 @@ uv run translate.py "golden apple"
 - [ollama_trans_gemma3_translator.py](https://github.com/scillidan/Shell/blob/main/lib/python/ollama_trans_gemma3_translator.py)  
   模型[gemma3-translator](https://ollama.com/zongwei/gemma3-translator)专用脚本，也是我目前使用的。
 
-![](ollama_trans_gemma3_translator.png)
+程序 → 添加：
+
+```
+类型 纯文本
+名称 `ollama_trans`
+命令行 `uv run <path_to>\ollama_trans_gemma3_translator.py --utf16 "%GDWORD%"
+```
+
+![](ollama_trans.png)
 
 ## 分词断句脚本
 
@@ -233,6 +224,8 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 ```
 
 ![](sentences.png)
+
+并没有用来解决[GoldenDict会删除换行符](https://github.com/goldendict/goldendict/issues/1606)的问题。
 
 ## 语法检查服务和脚本
 
@@ -366,23 +359,7 @@ apple (English)
     └── æppel (Old English (ca. 450-1100))
 ```
 
-在Windows 10的GoldenDict里使用`ety-python`时，我遇到了一些问题（见[issue #1678](https://github.com/goldendict/goldendict/issues/1678), [blog](https://isaacong.me/posts/unicodeencodeerror-when-redirecting-python-output/)）。虽然未解决，但是勉强能够使用。修改部分见[31a8be9](https://github.com/jmsv/ety-python/commit/31a8be922bf8402c430eb456591d729879a030ed)。
-
-```sh
-git clone --depth=1 https://github.com/scillidan/ety-python
-cd ety-python
-python -m venv venv
-venv\Scripts\activate.bat
-pip install -e .
-```
-
-程序 → 添加：
-
-```
-类型 纯文本
-名称 `ety-python`
-命令行 `<path_to>\ety-python\venv\Scripts\python.exe <path_to>\ety-python\ety\__main__.py -r -t "%GDWORD%"`
-```
+当它在Windows 10的GoldenDict里运行时，会出现编码问题，（可能）见[issue #1678](https://github.com/goldendict/goldendict/issues/1678), [blog](https://isaacong.me/posts/unicodeencodeerror-when-redirecting-python-output/)。
 
 ## Web应用
 
