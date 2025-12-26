@@ -92,8 +92,8 @@ body
 
 1. `git clone https://github.com/yozhic/GoldenDict-Full-Dark-Theme`
 2. 参考[Installation](https://github.com/yozhic/GoldenDict-Full-Dark-Theme#installation)段落进行安装
-3. 同样，可以修改样式，编辑配置文件目录下`styles\Dark\article-style.css`
-4. 编辑 → 首选项 → 附加样式 → Dark
+3. 编辑 → 首选项 → 附加样式 → Dark
+4. 同样，可以修改样式，参考上文，编辑配置文件目录下`styles\Dark\article-style.css`
 
 ![](goldendict_dark.png)
 
@@ -152,7 +152,7 @@ body
 英汉词典
 英英词典
 专业词汇词典
-双语双向词典
+英汉汉英词典
 汉语大词典
 ...
 ```
