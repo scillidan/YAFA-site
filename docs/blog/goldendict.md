@@ -125,15 +125,16 @@ body
 
 主要理由是我浏览了几个帖子：[汉语大词典从没经过转码的文本（自动转码谬种流传）](https://forum.freemdict.com/t/topic/3840/28)、[【结项】汉语大词典2.0源数据](https://forum.freemdict.com/t/topic/15998)等几个帖子。具体理由也还有别的，举一个来说，`word`和`meaning`这两个词，来自字典格式转换工具[pyglossary](https://github.com/ilius/pyglossary)定义的数据库格式字典文件，里面的数据表的关键字。对于这本字典，如果要进行繁简转换，对于meaning（释义）部分，需要排除其中的引用、专用词句部分，对于word（词条）部分，可能需要有一个替换表，等等。
 
-另一些StarDict字典：
-
-- [WikDict](https://www.wikdict.com/)上的[双语词典](https://download.wikdict.com/dictionaries/stardict/)
-- [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)上的基于维基百科的[英英词典](https://www.reader-dict.com/en/download/en)
-
 其他的：
 
-- [Latin dictionaries](https://latin-dict.github.io/)上的拉丁语词典
-- [proteusx](https://github.com/proteusx)制作的古希腊语词典
+- [FreeDict](https://freedict.org/)  
+	由热心成员在闲暇时间更新并维护的双语字典，支持超过45种语言。其中人工编撰的字典项目位于[Github](https://github.com/freedict/fd-dictionaries)，其他字典则是通过[工具](https://github.com/freedict/tools)导入，这里的eng-zho就实际上是来自于[WikDict](https://www.wikdict.com/)。
+- [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)  
+	和WikDict一样，基于[Wiktionary](https://en.wiktionary.org/)的[英英字典](https://www.reader-dict.com/en/download/en)。
+- [Latin dictionaries](https://latin-dict.github.io/)  
+	拉丁语字典和一些希腊语字典
+- [proteusx](https://github.com/proteusx)  
+	古希腊语词典。
 
 编辑 → 词典 → 词典来源 → 文件 → 添加 → 字典所在文件夹 → 递归搜索 (On) → 应用。
 
