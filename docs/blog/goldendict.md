@@ -135,7 +135,7 @@ body
 其他的：
 
 - [FreeDict](https://freedict.org/) & [WikDict](https://www.wikdict.com/)  
-	由[社区](https://freedict.org/community/)驱动的双语字典，支持超过45种语言。人工编纂的项目公开在[Github](https://github.com/freedict/fd-dictionaries)上，其他的字典则是通过[工具](https://github.com/freedict/tools)导入，它提供`eng-zho`就实际上来自于WikDict。我使用它们，由英语作中继，来查询更多陌生语言。
+	由[社区](https://freedict.org/community/)驱动的双语字典，支持超过45种语言。人工编纂的项目公开在[Github](https://github.com/freedict/fd-dictionaries)上，其他的字典则是通过[工具](https://github.com/freedict/tools)导入，它提供`eng-zho`就实际上来自于WikDict。我下载了所有`*-eng`字典，由英语作中继，来查询更多陌生语言。
 - [Latin dictionaries](https://latin-dict.github.io/)  
 	拉丁语字典和一些希腊语字典。
 - [proteusx](https://github.com/proteusx)  
