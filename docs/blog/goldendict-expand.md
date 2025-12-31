@@ -288,6 +288,14 @@ edge-tts --list-voices
 edge-playback --voice en-US-AndrewMultilingualNeural --text "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,” thought Alice “without pictures or conversations?”"
 ```
 
+程序 → 添加：
+
+```
+类型 音频
+名称 `edge-tts`
+命令行 `edge-playback --voice en-US-AndrewMultilingualNeural --text "%GDWORD%"`
+```
+
 ### [Kokoro TTS](https://github.com/nazdridoy/kokoro-tts)
 
 > A CLI text-to-speech tool using the Kokoro model, supporting multiple languages, voices (with blending), and various input formats including EPUB books and PDF documents.
