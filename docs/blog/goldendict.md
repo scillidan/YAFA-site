@@ -125,18 +125,23 @@ body
 
 主要理由是我浏览了几个帖子：[汉语大词典从没经过转码的文本（自动转码谬种流传）](https://forum.freemdict.com/t/topic/3840/28)、[【结项】汉语大词典2.0源数据](https://forum.freemdict.com/t/topic/15998)等几个帖子。具体理由也还有别的，举一个来说，`word`和`meaning`这两个词，来自字典格式转换工具[pyglossary](https://github.com/ilius/pyglossary)定义的数据库格式字典文件，里面的数据表的关键字。对于这本字典，如果要进行繁简转换，对于meaning（释义）部分，需要排除其中的引用、专用词句部分，对于word（词条）部分，可能需要有一个替换表，等等。
 
+繁简字相关的问题应考虑使用GoldenDict内置的繁简转写工具。
+
+1. 词典 → 词典来源 → 转写 → 中文转换 → 勾选`简体转繁体`、`繁体转简体`
+2. 词典 → 群组 → 将`转写工具`放在对应`字典`的前面。例如，《汉语大词典》包含了繁体（原文）内容，可将`简体转繁体`放在字典前：
+
+![](transcribe.png)
+
 其他的：
 
-- [FreeDict](https://freedict.org/)  
-	由热心成员在闲暇时间更新并维护的双语字典，支持超过45种语言。其中人工编撰的字典项目位于[Github](https://github.com/freedict/fd-dictionaries)，其他字典则是通过[工具](https://github.com/freedict/tools)导入，这里的eng-zho就实际上是来自于[WikDict](https://www.wikdict.com/)。
-- [eBook Reader Dictionaries](https://github.com/BoboTiG/ebook-reader-dict)  
-	和WikDict一样，基于[Wiktionary](https://en.wiktionary.org/)的[英英字典](https://www.reader-dict.com/en/download/en)。
+- [FreeDict](https://freedict.org/) & [WikDict](https://www.wikdict.com/)  
+	由[社区](https://freedict.org/community/)驱动的双语字典，支持超过45种语言。人工编纂的项目公开在[Github](https://github.com/freedict/fd-dictionaries)上，其他的字典则是通过[工具](https://github.com/freedict/tools)导入，它提供`eng-zho`就实际上来自于WikDict。我使用它们，由英语作中继，来查询更多陌生语言。
 - [Latin dictionaries](https://latin-dict.github.io/)  
-	拉丁语字典和一些希腊语字典
+	拉丁语字典和一些希腊语字典。
 - [proteusx](https://github.com/proteusx)  
 	古希腊语词典。
 
-编辑 → 词典 → 词典来源 → 文件 → 添加 → 字典所在文件夹 → 递归搜索 (On) → 应用。
+编辑 → 词典 → 词典来源 → 文件 → 添加 → 字典所在文件夹 → 递归搜索 (On) → 应用
 
 ## 添加词典群组
 
@@ -223,7 +228,7 @@ B-axes.mp3
 1. 设置 → 时间和语言 → 语音 → 管理语音 → 添加语音
 2. 词典 → 词典来源 → 语音合成 → 预览 → 可用语音引擎 → `Microsoft David Desktop - English (United States)` → 添加 → 应用
 
-效果较差。我目前使用[Kokoro](https://huggingface.co/hexgrad/Kokoro-82M)进行文字转语音，见番外篇。
+效果较差。推荐使用[edge-tts](github.com/rany2/edge-tts)，见[番外篇](https://zhuanlan.zhihu.com/p/676424891)。
 
 ## 添加离线维基
 
