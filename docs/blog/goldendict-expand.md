@@ -44,7 +44,8 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 
 ### [Cambridge-Dictionary](https://github.com/spignelon/cambridge-dictionary)
 
-> Once you search for the word and gets the meaning, it saves it into a local database from which it retrieves them if you search for the same word again in the future instead of fetching it from the server. This makes it quick, run even when there's no internet connection (assuming that your local database is of substantial size) and prevents making too many queries to the server.  
+> Once you search for the word and gets the meaning, it saves it into a local database from which it retrieves them if you search for the same word again in the future instead of fetching it from the server. This makes it quick, run even when there's no internet connection (assuming that your local database is of substantial size) and prevents making too many queries to the server.
+
 “一旦您搜索该单词并获得其含义，它就会将其保存到本地数据库中，如果您将来再次搜索同一单词，而不是从服务器获取它，它就会从该数据库中检索它们。这使得它快速运行，即使没有互联网连接（假设您的本地数据库规模很大），并防止向服务器进行太多查询。”
 
 ```sh
@@ -91,7 +92,7 @@ GoldenDict → 字典 → 程序 → 添加：
 命令行 `uv run <path_to>\tencent_trans_2zh.py --original-text "%GDWORD%"`
 ```
 
-![](tencent_trans.png)
+![](tencent_trans_zh.png)
 
 ### deep-translator
 
@@ -115,12 +116,7 @@ deep-translator --translator <translator> --source "en" --target "zh" --text "Go
 命令行 `<path_to>\deep-translator\.venv\Scripts\deep-translator.exe --translator <translator> --source "en" --target "zh" --text "%GDWORD%"`
 ```
 
-另一条则将两者互换：
-
-```
-名称 `deep-translator zh2en`
-命令行 `deep-translator --translator <translator> --target "zh" --source "en" --text "%GDWORD%"`
-```
+另一条则将两者互换，即`--target "zh" --source "en"`。
 
 ![](deep-translator.png)
 
@@ -166,9 +162,15 @@ uv run translate.py "Golden apple"
 > Translate Non-Chinese to Chinese or translate Chinese to English with Ollama.
 
 - [ollama_trans.py](https://github.com/scillidan/Shell/blob/main/lib/python/ollama_trans.py)  
-  目前只测试了`llama3.1:8b`，`qwen3:14b`。
+  目前只试用过模型`llama3.1:8b`，`qwen3:14b`。
 - [ollama_trans_gemma3_translator.py](https://github.com/scillidan/Shell/blob/main/lib/python/ollama_trans_gemma3_translator.py)  
-  模型[gemma3-translator](https://ollama.com/zongwei/gemma3-translator)专用脚本，也是我目前使用的。
+  模型[gemma3-translator](https://ollama.com/zongwei/gemma3-translator)的专用脚本，也是我目前使用的。
+
+```sh
+uv run ollama_trans.py --model llama3.1:8b "<text>"
+uv run ollama_trans.py --model qwen3:14b --think true --hidethinking "<text>"
+uv run ollama_trans_gemma3_translator.py "<text>"
+```
 
 程序 → 添加：
 
@@ -229,51 +231,62 @@ go install github.com/neurosnap/sentences/cmd/sentences@latest
 
 ## 语法检查服务和脚本
 
-### LanguageTool
-
-[LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但能效方面可能并不出色。
-
-参考[languagetool.md](https://scillidan-cheat.vercel.app/?search=languagetool)来部署`LanguageTool`服务。
-
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/languagetool.mp4){ .skip-lightbox }
+在查词的功能上，有了翻译脚本就能够处理句子。同样的，在对单词可做拼写检查外，也就需要语法检查工具来处理句子。
 
 ### pyLanguagetool
 
-还会有一些不在浏览器里编辑或者划句的情况。我尝试了在GoldenDict里对句子做语法检查。但这种方法不是很直观，而且在Windows的GoldenDict里去使用一些命令行工具，可能会遇到[字符相关问题](https://github.com/Twinblade-i/goldendict-openai-translator?tab=readme-ov-file#preface)。
+[LanguageTool](https://languagetool.org/)是一个开源的多语言的拼写、语法、风格检查工具。在它的浏览器插件里，可切换服务源，从「云服务」切换到「本地服务」。作为服务应用，Java有很好的兼容性，但能效方面可能并不出色。
 
-[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)是一个Python库和命令行工具，使用LanguageTool的[JSON API](https://languagetool.org/http-api/swagger-ui/#/default)。
+作为一个外部工具，可以参考[languagetool.md](https://scillidan-cheat.vercel.app/?search=languagetool)来部署`LanguageTool`服务。
+
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/languagetool.mp4){ .skip-lightbox }
+
+我还有不少不在浏览器里编辑或者划句的场景。我尝试了在GoldenDict里对句子做语法检查，这种方法实际用起来却不太直观。而且在Windows的GoldenDict里去使用一些命令行工具，还可能会遇到[字符相关问题](https://github.com/Twinblade-i/goldendict-openai-translator?tab=readme-ov-file#preface)。
+
+目前，我使用的是一个设置为开机启动的[AutoHotkey](https://www.autohotkey.com/)脚本`user.ahk`：
+
+```
+#NoEnv
+SetWorkingDir %A_ScriptDir%
+^!+c::Run "<path_to>/grammer_check.cmd" --api-url http://<your_host>:8040/v2/
+```
+
+这样，当我复制一段文本后按下`Ctrl+Shift+Alt+c`， 就会运行`grammer_check.cmd`：
+
+```batchfile
+@echo off
+
+<path_to>\.pyLanguagetool\Scripts\pylanguagetool.exe --input-type html --lang en-US -c
+
+pause
+```
+
+这里，[pyLanguagetool](https://github.com/Findus23/pyLanguagetool)是一个Python库和命令行工具，使用LanguageTool的[JSON API](https://languagetool.org/http-api/swagger-ui/#/default)。
 
 ```sh
 uv venv .pyLanguagetool
 .pyLanguagetool\Scripts\activate.bat
 uv pip install --upgrade setuptools beautifulsoup4 pyLanguagetool
 echo "This are a exampl" | pylanguagetool --lang en-US
-echo "This are a exampl" | pylanguagetool --api-url http://<your_host>:8040/v2/ --input-type html --no-color --lang en-US
 ```
-
-目前，我使用的是一个`check.bat`脚本：
-
-```batchfile
-@echo off
-
-<path_to>\.pyLanguagetool\Scripts\pylanguagetool.exe --api-url http://<your_host>:8040/v2/ --input-type html --lang en-US -c
-
-pause
-```
-
-和一个[AutoHotkey](https://www.autohotkey.com/)脚本`user.ahk`，并且设置为开机启动：
-
-```
-#NoEnv
-SetWorkingDir %A_ScriptDir%
-^!+c::Run "<path_to>/check.bat"
-```
-
-这样，当我复制一段文本后按下`Ctrl+Shift+Alt+c`， 就会运行语法检查。
 
 ![](pylanguagetool.png)
 
 ## 文本转语音脚本
+
+### [edge-tts](https://github.com/rany2/edge-tts)
+
+edge-tts是一个Python库，让你无需安装Microsoft Edge或Windows系统，也无需API密钥，即可使用微软Edge的在线文本转语音服务。它速度快，且效果好。
+
+```sh
+uv tool install edge-tts
+edge-playback --text "Hello, hello."
+```
+
+```sh
+edge-tts --list-voices
+edge-playback --voice en-US-AndrewMultilingualNeural --text "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,” thought Alice “without pictures or conversations?”"
+```
 
 ### [Kokoro TTS](https://github.com/nazdridoy/kokoro-tts)
 
@@ -315,12 +328,7 @@ uv venv .venv --python 3.12
 .venv\bin\activate.bat
 uv pip install hf_transfer hf-xet
 uv sync
-```
-
-进行测试，一般输入的内容越多，运行需要的时间也越长：
-
-```sh
-ltts "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do." -v af_bella --say
+ltts "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,” thought Alice “without pictures or conversations?" -v af_bella --say
 ```
 
 程序 → 添加：
@@ -332,6 +340,8 @@ ltts "Alice was beginning to get very tired of sitting by her sister on the bank
 ```
 
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expend/ltts.mp4){ .skip-lightbox }
+
+这里可看到明显的延迟。我的显卡是RTX 4070TiS O12G。
 
 ## 其他脚本或程序
 
@@ -380,7 +390,7 @@ apple (English)
 
 不过我目前不在GoldenDict里使用Web字典。我在Windows上使用启动器[Keypirinha](https://keypirinha.com/)的官方软件包[WebSearch](https://keypirinha.com/packages/websearch.html)或者第三方软件包[EasySearch](https://github.com/bantya/Keypirinha-EasySearch)，在Arch上使用[Rofi](https://github.com/davatorium/rofi)的脚本[web-search.sh](https://github.com/miroslavvidovic/rofi-scripts/blob/master/web-search.sh)来运行搜索。添加如下内容到配置文件或脚本文件：
 
-`websearch.ini`:
+`websearch.ini`：
 
 ```
 [site/allacronyms.com]
@@ -392,7 +402,7 @@ url = https://skell.sketchengine.eu/#result?lang=en&f=concordance&query=%s
 
 ![](keypirinha_websearch.png)
 
-`easysearch.ini`，可设置专门的别名，但输入应为[URL编码](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURI)格式，如可以使用`+`表示空格:
+`easysearch.ini`，可设置专门的别名，但输入应为[URL编码](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURI)格式，如可以使用`+`表示空格：
 
 ```
 [engines]
@@ -401,7 +411,7 @@ abbr = allacronyms https://www.allacronyms.com/aa-searchme?q={q}
 
 ![](keypirinha_easysearch.png)
 
-`web-search.sh`:
+`web-search.sh`：
 
 ```sh
 URLS=(
