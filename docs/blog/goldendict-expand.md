@@ -296,6 +296,8 @@ edge-playback --voice en-US-AndrewMultilingualNeural --text "Alice was beginning
 命令行 `edge-playback --voice en-US-AndrewMultilingualNeural --text "%GDWORD%"`
 ```
 
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expend/edge-tts.mp4){ .skip-lightbox }
+
 ### [Kokoro TTS](https://github.com/nazdridoy/kokoro-tts)
 
 > A CLI text-to-speech tool using the Kokoro model, supporting multiple languages, voices (with blending), and various input formats including EPUB books and PDF documents.
