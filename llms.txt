@@ -1,0 +1,17 @@
+# 𝔜𝔄𝔉𝔄 𝔪𝔞𝔯𝔨𝔱
+
+> yafa markt, 雅法
+
+Blogs.
+
+## Usage documentation
+
+- [SUMMARY](https://scillidan.github.io/YAFA-site/blog/SUMMARY/index.md)
+- [vps ex](https://scillidan.github.io/YAFA-site/blog/deploy-static-web-to-rocky-linux-expand/index.md)
+- [vps](https://scillidan.github.io/YAFA-site/blog/deploy-static-web-to-rocky-linux/index.md)
+- [e-dict](https://scillidan.github.io/YAFA-site/blog/e-dictionaries-plugin/index.md)
+- [goldendict ex](https://scillidan.github.io/YAFA-site/blog/goldendict-expand/index.md)
+- [goldendict](https://scillidan.github.io/YAFA-site/blog/goldendict/index.md)
+- [chs.esp.ass](https://scillidan.github.io/YAFA-site/blog/make-la.isla.minima.2014.chs.esp.ass/index.md)
+- [mpv-lrc](https://scillidan.github.io/YAFA-site/blog/play-lyrics-with-mpv/index.md)
+
