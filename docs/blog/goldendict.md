@@ -32,7 +32,7 @@ keywords: >
 对于高级用户，可以在搜索后按F12调出开发者工具，使用搜索功能直接在GoldenDict主窗口，查找CSS元素，编辑它的属性并实时预览效果。调整完成后，在GoldenDict配置文件目录下新建的CSS文件`article-style.css`，将修改编辑进去即可。例如：
 
 ```css
-// 使用本地字体，以Sarasa Term SC Nerd字体为例
+/* 使用本地字体，以Sarasa Term SC Nerd字体为例 */
 @font-face {
   font-family: "Sarasa Term SC Nerd";
   src:
@@ -52,32 +52,27 @@ body
   font-family: "Sarasa Term SC Nerd", NotoSerif;
 }
 
-// 修改为直角、无边框
+/* 修改直角风格 */
 .gdarticle {
-	border-radius: 0;
-	background: #fffff8
-}
-
-.gdactivearticle {
-	border: 1px solid #black
-}
-
-.gdactivearticle .gddictname {
-	border: 1px solid #black;
-	background: #deecf8
+  border-radius: 0;
 }
 
 .gddictname {
-	border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 0;
 }
 
-// 可选，增加某些显示内容的上边距
+.gdactivearticle .gddictname {
+  margin-bottom: 0;
+}
+
+/* 可选，增加某些显示内容的上边距 */
 .programs_plaintext, .programs_html {
-  margin-top: 21px;
+  margin-top: 22px;
 }
 
 .programs_play {
-  margin-top: 21px;
+  margin-top: 22px;
   margin-left: 0;
 }
 ```
@@ -103,8 +98,6 @@ body
 
 我个人使用也推荐的（附StarDict文件）：
 
-- [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)，或者[Ultimate版本](https://github.com/skywind3000/ECDICT-ultimate) （[share_ecdict](https://github.com/scillidan/share_ecdict)）  
-	汇编的收录广泛的英汉双解词典数据库，含音标、词频和考试大纲标注。
 - [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cedict) （[share_cc-cedict](https://github.com/scillidan/share_cc-cedict)）  
 	英汉词典，且能进行部分汉英查询。适合快速查询。不含详细释义、语法、例句。
 - [GCIDE](https://gcide.gnu.org.ua/)（GNU版国际协作英语词典） （[share_gcide](https://github.com/scillidan/share_gcide)）  
@@ -134,6 +127,8 @@ body
 
 其他的：
 
+- [ECDICT/简明英汉字典](https://github.com/skywind3000/ECDICT)，或者[Ultimate版本](https://github.com/skywind3000/ECDICT-ultimate) （[share_ecdict](https://github.com/scillidan/share_ecdict)）  
+	汇编的收录广泛的英汉双解词典数据库，含音标、词频和考试大纲标注。
 - [FreeDict](https://freedict.org/) & [WikDict](https://www.wikdict.com/)  
 	由[社区](https://freedict.org/community/)驱动的双语字典，支持超过45种语言。人工编纂的项目公开在[Github](https://github.com/freedict/fd-dictionaries)上，其他的字典则是通过[工具](https://github.com/freedict/tools)导入，它提供`eng-zho`就实际上来自于WikDict。我下载了所有`*-eng`字典，由英语作中继，来查询更多陌生语言。
 - [Latin dictionaries](https://latin-dict.github.io/)  
