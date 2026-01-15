@@ -1,0 +1,6 @@
+.editorconfig
+.venv/
+site/
+docs/.obsidian/
+docs/assets/pdf/
+# overrides/partials/footermatter.html

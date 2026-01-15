@@ -1,0 +1,2 @@
+- [Blog](blog/)
+- [About](index.md)
