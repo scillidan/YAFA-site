@@ -4,3 +4,4 @@ site/
 docs/.obsidian/
 docs/assets/pdf/
 # overrides/partials/footermatter.html
+docs/.dates_cache.json
