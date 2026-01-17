@@ -38,38 +38,42 @@ keywords: >
   src:
     local('Sarasa Term SC Nerd') format('truetype');
   font-weight: normal;
-  font-style:  normal;
+  font-style: normal;
 }
 
-body
-{
+body {
   font-family: "Sarasa Term SC Nerd", NotoSans;
+  font-zise: 9pt;
 }
 
-.dsl_t
-{
-  font-family: "Sarasa Term SC Nerd", NotoSerif;
-}
-
-/* 修改直角风格 */
-.gddictname {
-  margin-bottom: 0;
-}
-
-.gdarticle .gddictname {
+.gdarticle {
   border-radius: 0;
+  background: #fffff8;
 }
 
 .gdactivearticle .gddictname {
-  margin-bottom: 0;
+  font-size: .8em;
+  background: #fffff8;
 }
 
-/* 增加某些显示内容的上边距 */
+.gddictname {
+  font-size: .8em;
+  border-radius: 0;
+}
+
+span.gddicticon {
+  display: none;
+}
+
+.dsl_m1 {
+  padding-left: 0;
+}
+
 .programs_plaintext, .programs_html {
   margin-top: 1.8em;
 }
 
-.programs_play, .voiceengines_play {
+.programs_play .voiceengines_play {
   margin-top: 1.8em;
   margin-left: 0;
 }
@@ -94,17 +98,12 @@ body
   src:
     local('Sarasa Term SC Nerd') format('truetype');
   font-weight: normal;
-  font-style:  normal;
+  font-style: normal;
 }
 
-body
-{
+body {
   font-family: "Sarasa Term SC Nerd", NotoSans;
-}
-
-.dsl_t
-{
-  font-family: "Sarasa Term SC Nerd", NotoSerif;
+  font-size: 9pt;
 }
 
 .gdarticle {
@@ -113,6 +112,7 @@ body
 }
 
 .gddictname {
+  font-size: .8em;
   border-radius: 0;
   border: none;
 }
@@ -122,8 +122,17 @@ body
 }
 
 .gdactivearticle .gddictname {
+  font-size: .8em;
   margin-bottom: 0;
   border: none;
+}
+
+span.gddicticon {
+  display: none;
+}
+
+.dsl_m1 {
+  padding-left: 0;
 }
 
 .programs_plaintext, .programs_html {
