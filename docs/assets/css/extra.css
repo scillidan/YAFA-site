@@ -1,0 +1,16 @@
+@import url("https://cdn.jsdelivr.net/gh/scillidan/fonts@master/serve/sarasa-mono-sc.css");
+
+:root {
+  --md-text-font: "Sarasa Mono SC", sans-serif;
+  --md-code-font: "Sarasa Mono SC", monospace;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 3px;
+}
+
+h1 {
+  display: none;
+}

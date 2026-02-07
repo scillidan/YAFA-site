@@ -1,0 +1,7 @@
+- [vps ex](deploy-static-web-to-rocky-linux-expand.md)
+- [vps](deploy-static-web-to-rocky-linux.md)
+- [goldendict ex](goldendict-expand.md)
+- [goldendict](goldendict.md)
+- [e-dict](e-dictionaries-plugin.md)
+- [mpv-lrc](play-lyrics-with-mpv.md)
+- [chs.esp.ass](make-la.isla.minima.2014.chs.esp.ass.md)

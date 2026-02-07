@@ -1,0 +1,4 @@
+.editorconfig
+.venv/
+site/
+# overrides/partials/footermatter.html

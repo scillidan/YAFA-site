@@ -1,0 +1,14 @@
+.furigana-plugin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column-reverse;
+}
+
+.furigana-plugin > .furigana-plugin-kanji {
+    font-size: 100%;
+}
+
+.furigana-plugin > .furigana-plugin-furigana {
+    font-size: 40%;
+}
