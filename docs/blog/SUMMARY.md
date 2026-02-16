@@ -4,4 +4,4 @@
 - [goldendict](goldendict.md)
 - [e-dict](e-dictionaries-plugin.md)
 - [mpv-lrc](play-lyrics-with-mpv.md)
-- [chs.esp.ass](make-la.isla.minima.2014.chs.esp.ass.md)
+- [zh-cn.es.ass](make-la.isla.minima.2014.zh-cn.es.ass.md)

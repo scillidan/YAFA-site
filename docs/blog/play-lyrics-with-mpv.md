@@ -25,8 +25,6 @@ keywords: >
 - **可嵌入性** 对于开发者，mpv易于作为库使用。
 - **积极开发** 它还在不断地发展。
 
-<!-- more -->
-
 ## 作为视频播放器的MPV
 
 直到去年，我都在使用轻便、好用、有真正的图形用户界面的播放器[MPC-HC](https://github.com/clsid2/mpc-hc)。但它在播放流行的HDR（High Dynamic Range Imaging，高动态范围成像）影像时有些问题，所以我安装了mpv。

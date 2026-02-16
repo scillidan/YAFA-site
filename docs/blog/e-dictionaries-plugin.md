@@ -18,8 +18,6 @@ keywords: >
 
 2018年左右，我在搜索和阅读时，了解到了[Chocolatey](https://chocolatey.org/)、[Cmder](https://cmder.app/)、[Hexo](https://hexo.io/index.html)等一众软件或框架。翻着中文文章和文档，我作为小白渡过了担惊受怕的初见阶段。随着经验值提升，在某一天，我也终于装备上了[沙拉查词](https://saladict.crimx.com/)、[Yomichan](https://foosoft.net/projects/yomichan)等翻译、字典工具，开始到「本地化」外的地方野游。
 
-<!-- more -->
-
 ## 沙拉查词
 
 我在浏览器内外，都使用[沙拉查词](https://saladict.crimx.com/)来查段落或者句子，通过[剪切板作为中继](https://saladict.crimx.com/native.html#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%96%E5%88%92%E8%AF%8D)的方式。可以说，只要有英文，我就可能使用它。

@@ -224,7 +224,7 @@ plugins:
   #     exclude:
   #       - index.md
   #       - blog/deploy-sites-to-vps.md
-  #       - blog/make-la.isla.minima.2014.srt.ass.md
+  #       - blog/make-la.isla.minima.2014.zh-cn.es.ass.md
   # - heti:
   #     disable_serve: false
   # - include-markdown
