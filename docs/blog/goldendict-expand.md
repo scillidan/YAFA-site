@@ -313,7 +313,21 @@ piper -m en_US-libritts_r-medium.onnx -- "this is a text"
 piper -m en_US-libritts_r-medium.onnx --output_raw -- "this is a text" | ffplay -nodisp -autoexit -f s16le -ar 22050 -ch_layout mono -
 ```
 
-不过我无法在GoldenDict里使用它。这里选择用[Windows text-to-speech](https://github.com/Lej77/windows-text-to-speech)。
+创建一个`_piper.bat`:
+
+```batch
+echo %* | piper -m <path_to>\en_US-libritts_r-medium.onnx --output-raw | ffplay -nodisp -autoexit -f s16le -ar 22050 -ch_layout mono -i -
+```
+
+词典来源 → 程序 → 添加：
+
+```
+类型 音频
+名称 `piper`
+命令行 `<path_to>/_piper.bat "%GDWORD%"`
+```
+
+也可以使用[Windows text-to-speech](https://github.com/Lej77/windows-text-to-speech)。
 
 ```sh
 git clone --depth=1 https://github.com/Lej77/windows-text-to-speech
