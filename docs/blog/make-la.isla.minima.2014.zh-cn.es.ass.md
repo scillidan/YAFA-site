@@ -277,16 +277,17 @@ NVIDIA显卡上的参数，应该也可以参考这个。
 
 ### 其他事件
 
-|date|tools|staff|link|note|
+|date|tools|staff|link|info|
 |:-|:-|:-|:-|:-|
-|2023.05|Tern|机翻、后期|千禧年三部曲 (2009)：[1](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20with%20the%20Dragon%20Tattoo%20(2009).chs.swe.srt)、[2](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20Who%20Played%20with%20Fire%20(2009)%20Part%2001.chs.eng.srt)、[3](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20Who%20Kicked%20the%20Hornet's%20Nest%20(2009).chs.eng.srt)|[.info](https://github.com/scillidan/subtitle/blob/main/The%20Girl%20with%20the%20Dragon%20Tattoo%20(2009).chs.swe.info)|
-|2022.01|/|后后期|[平家物語 [The Heike Story][平家物语] (2021)](https://github.com/scillidan/subtitle/tree/main/The%20Heike%20Story%20(2021)/S01)|/|
-|2021.09|DeepL|机翻、粗校|[Rosy (2018)](https://github.com/scillidan/subtitle/blob/main/Rosy%20(2018).chs.eng.srt)|[.info](https://github.com/scillidan/subtitle/blob/main/Rosy%20(2018).chs.eng.info)|
-|2021.09|沙拉查词、GoldenDict|校对|[The Green Knight [绿骑士] (2021)](https://github.com/scillidan/subtitle/blob/main/The%20Green%20Knight%20(2021).chs.eng.srt)|[.info](https://github.com/scillidan/subtitle/blob/main/The%20Green%20Knight%20(2021).chs.eng.info)|
-|2021.08|Reverso、GoldenDict、沙拉查词|翻译、校对、后期|[La isla minima [Marshland][沼泽地] (2014)](https://github.com/scillidan/subtitle/blob/main/Marshland%20(2014).chs.esp%5Bfull%5D.ass)|[.info](https://github.com/scillidan/subtitle/blob/main/Marshland%20(2014).chs.esp.info)|
-|2019.12|/|校对、后期|[Lolita [洛丽塔] (1997)](https://github.com/scillidan/subtitle/blob/main/Lolita%20(1997).chs.eng.srt)|/|
+|2026.03|[en2zh_srts.bat](https://github.com/scillidan/Shell/blob/main/_windows/SendTo/en2zh_srts.bat)|时间轴、校对、机翻|[Lost Land of the Volcano (2009)](https://github.com/scillidan/file_subtitle/tree/main/Lost%20Land%20of%20the%20Volcano%20(2009))|[.txt](https://github.com/scillidan/file_subtitle/blob/main/Lost%20Land%20of%20the%20Volcano%20(2009)/Lost%20Land%20of%20the%20Volcano%20S01.info.txt)
+|2023.05|Tern|机翻、后期|千禧年三部曲 (2009)：[1](https://github.com/scillidan/file_subtitle/blob/main/The%20Girl%20with%20the%20Dragon%20Tattoo%20(2009).zh-cn.swe.srt)、[2-1](https://github.com/scillidan/file_subtitle/blob/main/The%20Girl%20Who%20Played%20with%20Fire%20(2009)%20Part%201.zh-cn.en.srt)、[2-2](https://github.com/scillidan/file_subtitle/blob/main/The%20Girl%20Who%20Played%20with%20Fire%20(2009)%20Part%202.zh-cn.en.srt)、[3](https://github.com/scillidan/file_subtitle/blob/main/The%20Girl%20Who%20Kicked%20the%20Hornet's%20Nest%20(2009).zh-cn.en.srt)|[.txt](https://github.com/scillidan/file_subtitle/blob/main/The%20Girl%20with%20the%20Dragon%20Tattoo%20(2009).zh-cn.swe.info.txt)|
+|2022.01|/|后后期|[平家物語 [The Heike Story][平家物语] (2021)](https://github.com/scillidan/file_subtitle/tree/main/The%20Heike%20Story%20(2021))|/|
+|2021.09|DeepL|机翻、粗校|[Rosy (2018)](https://github.com/scillidan/file_subtitle/blob/main/Rosy%20(2018).zh-cn.en.srt)|[.txt](https://github.com/scillidan/file_subtitle/blob/main/Rosy%20(2018).zh-cn.en.info.txt)|
+|2021.09|沙拉查词、GoldenDict|校对|[The Green Knight [绿骑士] (2021)](https://github.com/scillidan/file_subtitle/blob/main/The%20Green%20Knight%20(2021).zh-cn.en.srt)|[.txt](https://github.com/scillidan/file_subtitle/blob/main/The%20Green%20Knight%20(2021).zh-cn.en.info.txt)|
+|2021.08|Reverso、GoldenDict、沙拉查词|翻译、校对、后期|[La isla minima [Marshland][沼泽地] (2014)](https://github.com/scillidan/file_subtitle/blob/main/Marshland%20(2014).zh-cn.es.ass)|[.txt](https://github.com/scillidan/file_subtitle/blob/main/Marshland%20(2014).zh-cn.es.info.txt)|
+|2019.12|/|校对、后期|[Lolita [洛丽塔] (1997)](https://github.com/scillidan/file_subtitle/blob/main/Lolita%20(1997).zh-cn.en.srt)|/|
 |2019.01|谷歌翻译|翻译|词条: [Sibyl [西比拉]](https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%AF%94%E6%8B%89)|/|
-|2018.03|谷歌翻译|翻译|[Das Herz ist ein dunkler Wald [The Heart is a Dark Forest][心是一片暗林] (2007)](https://github.com/scillidan/subtitle/blob/main/The%20Heart%20is%20a%20Dark%20Forest%20(2007).chs.eng.srt)| [.info](https://github.com/scillidan/subtitle/blob/main/The%20Heart%20is%20a%20Dark%20Forest%20(2007).chs.eng.info)
+|2018.03|谷歌翻译|翻译|[Das Herz ist ein dunkler Wald [The Heart is a Dark Forest][心是一片暗林] (2007)](https://github.com/scillidan/file_subtitle/blob/main/The%20Heart%20is%20a%20Dark%20Forest%20(2007).zh-cn.en.srt)| [.txt](https://github.com/scillidan/file_subtitle/blob/main/The%20Heart%20is%20a%20Dark%20Forest%20(2007).zh-cn.en.info.txt)
 
 ## 其他道具一览
 
