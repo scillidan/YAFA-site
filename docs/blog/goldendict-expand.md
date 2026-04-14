@@ -298,7 +298,7 @@ edge-playback --voice en-US-AndrewMultilingualNeural --text "Alice was beginning
 命令行 `edge-playback --voice en-US-AndrewMultilingualNeural --text "%GDWORD%"`
 ```
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expend/edge-tts.mp4){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/edge-tts.mp4){ .skip-lightbox }
 
 ### [piper](https://github.com/rhasspy/piper)
 
@@ -339,7 +339,7 @@ windows_tts_engine_installer.exe
 
 词典来源 → 语音合成 → 可用语音引擎 → `Lej77 - Piper - Multilingual` → 添加 → Apply
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expend/piper.mp4){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/piper.mp4){ .skip-lightbox }
 
 ## 其他脚本或程序
 
@@ -459,7 +459,7 @@ QuickAccessLang3=...
 
 Umi-OCR → 添加 → 截图OCR → 设置 → 识图后的操作 → 复制结果 (On)
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expend/umi-ocr.mp4){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/umi-ocr.mp4){ .skip-lightbox }
 
 ## 键位设置
 
