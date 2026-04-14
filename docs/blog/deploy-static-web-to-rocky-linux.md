@@ -7,11 +7,11 @@ keywords: >
     Deploy Site, VPS, Rocky Linux, Apache
 ---
 
-如果你有一些，或者正在进行着记录、创作，无论是文字、图片还是音频、视频——像档案一样归类、保存它们，再使用流行却陌生的「生成式网页」工具，从你的文本文件和媒体文件生成Web页面，上传到云端，你便可以在空中有一块土地。你可以一砖一瓦地建造，亦或是重建。也可以在其中任意移动、偶尔清扫。对你来说，它是你的文件的备份，历史内容的归档，归属关系的证明。对于别人来说，它是高可信度的来源，目录化、图形化的可读、可视事物。
+如果你有一些，或者正在进行着记录、创作，无论是文字、图片还是音频、视频——像档案一样归类、保存它们，再使用流行却陌生的「生成式网页」工具，从你的文本文件和媒体文件生成Web页面，上传到云端，你便可以在空中有一块土地。你可以一砖一瓦地建造，亦或是重建。也可以在其中任意移动、偶尔清扫。对你来说，它是你的文件的备份，历史内容的归档，归属关系的证明。对于别人来说，它是高可信度的来源，目录化的可读物。
 
 从「生成式网页」到「静态内容托管」，是很好的入门选择。例如从[Hexo](https://hexo.io)、[Hugo](https://gohugo.io)等网页框架选择一或多个主题模板，通过[Github Pages](https://pages.github.com/)等服务，或者[Vercel](https://vercel.com)、[Netlify](https://app.netlify.com/)等平台来构建和部署站点。
 
-Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://github.com/ppoffice/hexo-theme-icarus)，也较喜欢[Stellar](https://github.com/xaoxuu/hexo-theme-stellar)的风格。Hugo有相对丰富的主题，例如图墙模板的[AutoPhugo](https://github.com/kc0bfv/autophugo)、[Gallery Deluxe](https://github.com/bep/gallerydeluxe)、[Hugo Split Gallery](https://gitlab.com/tmuguet/hugo-split-gallery)，食谱模板的[recipe-book](https://github.com/rametta/recipe-book)等等，也较容易修改源码。
+Hexo中更多的是博客模板，我最早使用了几年的[Icarus](https://github.com/ppoffice/hexo-theme-icarus)，也较喜欢[Stellar](https://github.com/xaoxuu/hexo-theme-stellar)的风格。Hugo有相对丰富的主题，例如图墙模板的[AutoPhugo](https://github.com/kc0bfv/autophugo)、[Gallery Deluxe](https://github.com/bep/gallerydeluxe)、[Hugo Split Gallery](https://gitlab.com/tmuguet/hugo-split-gallery)等等，也较容易修改源码。
 
 而「部署到VPS」几乎是一门古代技术，此文即是这条古老却生僻的路线的徒步记录。主要途径「多个二级域名」、「开启HTTPS」，以及「本地Build」「云端Build」两种部署方案，涉及到了不少Unix系统上的基础操作。
 
