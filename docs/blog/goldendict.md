@@ -43,7 +43,7 @@ keywords: >
 
 body {
   font-family: "Sarasa Term SC Nerd", NotoSans;
-  font-zise: 9pt;
+  font-size: 9pt;
 }
 
 .gdarticle {
