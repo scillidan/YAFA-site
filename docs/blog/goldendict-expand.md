@@ -327,18 +327,6 @@ echo %* | piper -m <path_to>\en_US-libritts_r-medium.onnx --output-raw | ffplay 
 命令行 `<path_to>/_piper.bat "%GDWORD%"`
 ```
 
-也可以使用[Windows text-to-speech](https://github.com/Lej77/windows-text-to-speech)。
-
-```sh
-git clone --depth=1 https://github.com/Lej77/windows-text-to-speech
-cargo build --release --workspace
-cd %CARGO_TARGET_DIR%\release
-windows_tts_engine_installer.exe
-# windows_tts_engine_installer.exe --uninstall
-```
-
-词典来源 → 语音合成 → 可用语音引擎 → `Lej77 - Piper - Multilingual` → 添加 → Apply
-
 ![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/piper.mp4){ .skip-lightbox }
 
 ## 其他脚本或程序
