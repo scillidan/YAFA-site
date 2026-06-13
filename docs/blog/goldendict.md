@@ -300,34 +300,6 @@ GoldenDict → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
 
 不过我目前使用的是[Kiwix Server](https://kiwix.org/en/applications/)，在浏览器里预览ZIM档案，见[kiwix-server.md](https://scillidan-cheat.vercel.app/?search=kiwix-server)。
 
-## 设置鼠标取词
-
-[GoldenDictOCR](https://github.com/VimWei/GoldenDictOCR)是一个[AutoHotKey](https://www.autohotkey.com/)脚本，在它的「鼠标选择取词」模式下，可通过「双击选词、划词」来查词。需要配合GoldenDict的默认查词快捷键`Ctrl+c+c`来使用。
-
-```sh
-git clone https://github.com/VimWei/GoldenDictOCR
-cd GoldenDictOCR
-```
-
-编辑`IncludeAHK/GdOcrTool.ahk`，填写`GoldenDict.exe`所在的正确位置:
-
-```
-Global GoldenDictFileName := "<path_to>\GoldenDict.exe"
-```
-
-运行`GoldenDictOCR.ahk`后，按`Alt+i`即可开关「鼠标选择取词」。
-
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict/with-mouse.mp4){ .skip-lightbox }
-
-如果需要修改键位，例如：
-
-1. 编辑 → 首选项 → 热键 → 使用下列热键翻译剪切板中的单词 → `Alt+z`
-2. 编辑`GoldenDict.ahk`，修改两处：
-	- 118行附近，此处的`Send ^{c 2}`，即`Ctrl+c+c`，改为`Send !z`，即`Alt+z`
-	- 37行附近，此处的`!i::`，即`Alt+i`，改为`^!g::`，即`Ctrl+Alt+g`
-
-这个脚本也能和[Text Grab](https://github.com/TheJoeFin/Text-Grab)、[YomiNinja](https://github.com/matt-m-o/YomiNinja)等工具很好的配合。
-
 ## 一些实用键位
 
 所有的快捷键在：
@@ -337,4 +309,5 @@ Global GoldenDictFileName := "<path_to>\GoldenDict.exe"
 常用的有：
 
 - `Ctrl+l` 聚焦到输入框
+- `Alt+PageUp/PageDown` 前个/后个字典组
 - `Alt+Left/Right` 前个/后个查询记录
