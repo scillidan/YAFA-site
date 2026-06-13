@@ -95,11 +95,11 @@ uv run tencent_trans_zh.py "Golden apple"
 
 ### [llm_trans.py](https://github.com/scillidan/scripts/blob/main/lib/llm_trans.py)
 
-> llm_trans - Local LLM translator via llama.cpp server
+> Local LLM translator via llama.cpp server
 
 "由llama.cpp提供服务的本地LLM翻译器"
 
-我原来使用一个`ollama_trans.py`，正好它现在不能用了。我从[Ollama](https://ollama.com/)迁移到了[[llama.cpp](https://llama-cpp.com/)]，并使用[llama-swap](https://github.com/mostlygeek/llama-swap)来运行服务。使用前请阅读脚本内的注释。
+我原来使用一个`ollama_trans.py`，正好它现在不能用了。我从[Ollama](https://ollama.com/)迁移到了[llama.cpp](https://llama-cpp.com/)]，并使用[llama-swap](https://github.com/mostlygeek/llama-swap)来运行服务。使用前请阅读脚本内的注释。
 
 ```sh
 # 根据你安装了的CUDA版本选择
@@ -268,6 +268,8 @@ echo "This are a exampl" | pylanguagetool --lang en-US
 
 ## [llm_grammar.py](https://github.com/scillidan/scripts/blob/main/lib/llm_grammar.py)
 
+> Local LLM grammar checker via llama.cpp server
+
 "由llama.cpp提供服务的本地LLM语法检查器"
 
 使用前请阅读脚本内的注释。
@@ -418,7 +420,7 @@ URLS=(
 
 我使用字典组1搜词，字典组2进行文字转语音、翻译、字典组3进行（英语）语法检查。
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/goldendict-search-in-group){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/goldendict-search-in-group.webm){ .skip-lightbox }
 
 使用前，请读[README.md](https://github.com/scillidan/AHK-GoldenDictSearchInGroup/blob/main/README.md)，配置文件[GoldenDictSearchInGroup.ini](https://github.com/scillidan/AHK-GoldenDictSearchInGroup/blob/main/GoldenDictSearchInGroup.ini)。
 
@@ -428,7 +430,7 @@ URLS=(
 
 "通过双击或剪贴板，自动在GoldenDict里搜索词。"
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/goldendict-auto-search){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/goldendict-expand/goldendict-auto-search.webm){ .skip-lightbox }
 
 我考虑在用[Sioyek](https://sioyek.info/)看书时，或者在[qutebrowser](https://qutebrowser.org/)看在线文档时实际使用试试。它也能配合[Text Grab](https://github.com/TheJoeFin/Text-Grab)、[YomiNinja](https://github.com/matt-m-o/YomiNinja)等工具。
 
