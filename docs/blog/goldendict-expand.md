@@ -254,7 +254,7 @@ echo "This are a exampl" | pylanguagetool --lang en-US
 
 ![](pylanguagetool.png)
 
-但是至少在Windows上的GoldenDict里，无法直接这么使用。所以这里使用[pylanguagetool_goldendict.py](https://github.com/scillidan/scripts/blob/main/lib/pylanguagetool_goldendict.py)
+但是GoldenDict里，至少在Windows上是，无法直接这样使用。所以这里使用[pylanguagetool_goldendict.py](https://github.com/scillidan/scripts/blob/main/lib/pylanguagetool_goldendict.py)
 
 词典来源 → 程序 → 添加：
 
