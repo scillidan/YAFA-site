@@ -254,17 +254,17 @@ echo "This are a exampl" | pylanguagetool --lang en-US
 
 ![](pylanguagetool.png)
 
-但是GoldenDict里，至少在Windows上是，无法直接这样使用。所以这里使用[pylanguagetool_goldendict.py](https://github.com/scillidan/scripts/blob/main/lib/pylanguagetool_goldendict.py)
+但是GoldenDict里，至少在Windows上是，无法直接这样使用。所以这里使用[lt_api_check.py](https://github.com/scillidan/scripts/blob/main/lib/lt_api_check.py)
 
 词典来源 → 程序 → 添加：
 
 ```
 类型 Html
-名称 `pylanguagetool_goldendict.py`
-命令行 `uv run <path_to>\pylanguagetool_goldendict.py --api-url "http://localhost:8040/v2/" --lang en-US --html "%GDWORD%"
+名称 `lt_api_check.py`
+命令行 `uv run <path_to>\lt_api_check.py --api-url "http://localhost:8040/v2/" --lang en-US --html "%GDWORD%"
 ```
 
-![](pylanguagetool_goldendict.png)
+![](lt_api_check.png)
 
 ## [llm_grammar.py](https://github.com/scillidan/scripts/blob/main/lib/llm_grammar.py)
 
