@@ -1,10 +1,9 @@
 ---
 title: "配置GoldenDict·番外"
 created: 2024-01-06
-modified: 2024-09-24
 locale: zh
 keywords: >
-    GoldenDict, GoldenDict-ng, Setting, Dictionaries, Pronunciation, Morphology, Programs
+    GoldenDict, Server, Programs, Scripts, LLM, Web-App, AutoHotkey
 ---
 
 ## 词典服务和脚本
@@ -434,6 +433,10 @@ URLS=(
 
 我考虑在用[Sioyek](https://sioyek.info/)看书时，或者在[qutebrowser](https://qutebrowser.org/)看在线文档时实际使用试试。它也能配合[Text Grab](https://github.com/TheJoeFin/Text-Grab)、[YomiNinja](https://github.com/matt-m-o/YomiNinja)等工具。
 
-### OCR取词
+### [Screen-OCR](https://github.com/scillidan/AHK-ScreenOCR)
 
-我之前在用[Umi-OCR](https://github.com/hiroi-sora/Umi-OCR)，但是有段时间它随机地出现响应延迟或者不响应，而且它的其余大部分功能我都用不上。
+> Screen OCR with [Tesseract](https://github.com/tesseract-ocr/tesseract) and [RapidOCR](https://github.com/RapidAI/RapidOCR) (PaddleOCR ONNX, PP-OCRv5).
+
+“使用Tesseract和RapidOCR进行屏幕OCR识别。”
+
+以前一直用[Vis2](https://github.com/iseahound/Vis2)，为了识别中文，还需要RapidOCR（更重的推荐[MinerU](https://github.com/opendatalab/MinerU)、[DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR-2)等）。搭配剪切板来搜词即可。

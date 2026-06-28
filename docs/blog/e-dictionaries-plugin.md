@@ -9,7 +9,7 @@ keywords: >
 
 !!! read "少数派⾸发"
 
-    文章：[在浏览器里使用机械翻译和电子词典](https://sspai.com/post/83385)  
+    文章：[（归档）在浏览器里使用机械翻译和电子词典](https://sspai.com/post/83385)  
     日期：2023-10-09  
     归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
     备注：1)排版上不同 2)有少量校正内容 3)补充了一个段落
@@ -103,7 +103,7 @@ mpv ^
 
 启动Kamite后，去终端里运行`kamite yourmovie your-jpn-subtitle`就行了。
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/e-dict/Kamite_Preview_01.mkv){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/e-dict/Kamite_Preview_01.webm){ .skip-lightbox }
 
 ### 啃漫画生肉
 
@@ -146,7 +146,7 @@ LOOKUP_TARGETS {
 
 最后，启动Kamite，再打开漫画阅读窗口就行了。
 
-![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/e-dict/Kamite_Preview_02.mkv){ .skip-lightbox }
+![type:video](https://raw.githubusercontent.com/scillidan/YAFA-site/main/docs/assets/media/e-dict/Kamite_Preview_02.webm){ .skip-lightbox }
 
 ### 啃古典文学PDF
 
