@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /css/
+Disallow: /js/
+Disallow: /font/
+Disallow: /media/
+Disallow: /lrc/
+Disallow: /vtt/
+
+User-agent: Googlebot
+Disallow: /css/
+Disallow: /js/
+Disallow: /media/
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: HaosouSpider
+Disallow: /
+
+User-agent: 360Spider
+Disallow: /
+
+User-agent: QihooBot
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
