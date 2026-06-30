@@ -435,8 +435,8 @@ URLS=(
 
 ### [Screen-OCR](https://github.com/scillidan/AHK-ScreenOCR)
 
-> Screen OCR with [Tesseract](https://github.com/tesseract-ocr/tesseract) and [RapidOCR](https://github.com/RapidAI/RapidOCR) (PaddleOCR ONNX, PP-OCRv5).
+> Screen OCR with [RapidOCR](https://github.com/RapidAI/RapidOCR) (PaddleOCR ONNX, PP-OCRv5).
 
-“使用Tesseract和RapidOCR进行屏幕OCR识别。”
+“使用RapidOCR进行屏幕OCR识别。”
 
-以前一直用[Vis2](https://github.com/iseahound/Vis2)，为了识别中文，还需要RapidOCR（更重的推荐[MinerU](https://github.com/opendatalab/MinerU)、[DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR-2)等）。搭配剪切板来搜词即可。
+以前一直用[Vis2](https://github.com/iseahound/Vis2)，RapidOCR支持识别中英文等混合识别（更重的推荐[MinerU](https://github.com/opendatalab/MinerU)、[DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR-2)等）。搭配剪切板来搜词即可。
