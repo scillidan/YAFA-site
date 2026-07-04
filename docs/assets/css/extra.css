@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/scillidan/fonts@master/serve/sarasa-mono-sc.css");
+@import url("https://cdn.jsdelivr.net/gh/scillidan/fonts-cdn@sarasa-mono-sc@1.0.40/dist/css/sarasa-mono-sc.css");
 
 :root {
   --md-text-font: "Sarasa Mono SC", sans-serif;
