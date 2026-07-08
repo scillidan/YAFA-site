@@ -9,7 +9,7 @@ keywords: >
 
 !!! read "少数派⾸发"
 
-	文章：[使用MPV播放歌词](https://sspai.com/post/82744)  
+	文章：[（归档）使用MPV播放歌词](https://sspai.com/post/82744)  
 	日期：2023-09-19  
 	归属：[CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)  
 	备注：1)根据编辑建议从[原稿](../archive/play-lyrics-with-mpv_archive)大修的版本 2)排版上不同
@@ -169,6 +169,6 @@ Set WshShell = Nothing
 
 ## 结语
 
-最后提一下，封面加载的默认顺序，依次是：内镶封面 → `--cover-art-files`处设置封面 → `--external-files`处设置的视频 → `同名文件.*`图片 → `cover.*`图片。
+最后提一下，封面加载的默认顺序，依次是：内镶封面 → `--cover-art-files`处设置封面 → `--external-files`处设置的视频 → `同名文件.*`图片 → `cover.*`图片。
 
 ![](mpv-lrc.jpg)

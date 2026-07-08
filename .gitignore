@@ -2,3 +2,5 @@
 .venv/
 site/
 # overrides/partials/footermatter.html
+*.mkv
+*.mp4
