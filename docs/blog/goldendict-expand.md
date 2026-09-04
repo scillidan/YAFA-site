@@ -71,9 +71,9 @@ python cambridge.py "dictionary"
 
 ### [tencent_trans_zh.py](https://github.com/scillidan/scripts/blob/main/lib/tencent_trans_zh.py)
 
-这是我使用了两年以上，后来让AI重新搓的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。
+这是我使用了两年以上，后来让AI重新搓的一个脚本，主要用于将多语言（主要是英语）翻译到中文，中文翻译到英文。注意，根据[《机器翻译：QPS调整与免费资源包下线通知》](https://cloud.tencent.com/announce/detail/2448)，2026年10月开始，API每月不再发放免费资源包，使用时需按量计费。
 
-1. 如何申请或创建API请看腾讯云机器翻译的官网介绍。API的文本翻译一项[每月有500万字符免费额度](https://cloud.tencent.com/document/product/551/35017)，重度使用也完全够用。我在[字幕机翻](https://github.com/1c7/Translate-Subtitle-File)、[Translate Shell](https://github.com/soimort/translate-shell)里也都使用过。
+1. 如何申请或创建API请看腾讯云机器翻译的官网介绍。
 2. 设置系统环境变量，可以使用环境变量编辑器[Rapid Environment Editor](https://www.rapidee.com/en/about)：
   1. RapidEE → 用户变量 → 右键 → 添加环境变量 → 变量名称 `TENCENT_SECRET_ID` → 填写你的`SecretId`
   2. 添加环境变量 → 变量名称 `TENCENT_SECRET_KEY` → 填写你的`SecretKey`
