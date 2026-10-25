@@ -297,7 +297,19 @@ GoldenDict → 搜索 → 全文搜索 → `<word>` → 搜索 → 单击条目
 
 ![](full-text-search.png)
 
-不过我目前使用的是[Kiwix Server](https://kiwix.org/en/applications/)，在浏览器里预览ZIM档案，见[kiwix-server.md](https://scillidan-cheat.vercel.app/?search=kiwix-server)。
+不过我倾向于用[Kiwix Server](https://kiwix.org/en/applications/)，在浏览器里预览ZIM档案。
+
+```sh
+scoop bucket add pile https://github.com/scillidan/scoop-pile
+scoop install pile/kiwix-server
+```
+
+```sh
+kiwix-serve --address 0.0.0.0 --port 5173 $.zim
+# Or
+kiwix-manage <path_to>\kiwix\library.xml add $1.zim $2.zim
+kiwix-serve --library <path_to>\kiwix\library.xml --address 0.0.0.0 --port 5173
+```
 
 ## 一些实用键位
 

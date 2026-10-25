@@ -24,10 +24,7 @@ GoldenDict → 编辑 → 词典 → 词典来源 → 词典服务器 → 添加
 
 ### dictd.service
 
-参考[dictd.md](https://scillidan-cheat.vercel.app/?search=dictd)部署自用`dictd`服务，笔记中使用的服务器硬件是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，可以查阅以下方法：
-
-- 使用[PyGlossary](https://github.com/ilius/pyglossary)转换字典格式，`StarDict (.ifo)`到`DICT.org file format (.index)`。StarDict的`.ifo`文件推荐以英文书写。
-- 参考[dict-ecdict.md](https://scillidan-cheat.vercel.app/?search=dict-ecdict)来制作，这里需要[dictzip](https://dictzip.github.io/)或[dictzip for Windows 10 (x64)](https://github.com/KaseyJenkins/dictzip-win64)。
+参考[dictd.md](https://github.com/scillidan/cheats/blob/main/_cache/dictd.md)部署自用`dictd`服务，笔记中使用的服务器硬件是运行[Ubuntu Server for ARM 22.04](https://cdimage.ubuntu.com/releases/jammy/release/)的树莓派4（CM4）。`dictd`需要`.dz`等格式文件，可以使用[PyGlossary](https://github.com/ilius/pyglossary)转换字典格式，`StarDict (.ifo)`到`DICT.org file format (.index)`。StarDict的`.ifo`文件推荐以英文书写。
 
 词典来源 → 词典服务器 → 添加：
 
@@ -138,7 +135,7 @@ uv run translate.py "Golden apple"
 
 [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)是一个开源、有离线功能的机器翻译API。它被设计用于本地托管，允许用户在不依赖其他外部服务的情况下进行翻译，安装简单，高效经济。可作为一种备用。
 
-可参考[libretranslate.md](https://scillidan-cheat.vercel.app/?search=libretranslate)部署到家用服务器，并参考[libretrans.md](https://scillidan-cheat.vercel.app/?search=libretrans)来使用。
+可参考[LibreTranslate.md](https://github.com/scillidan/cheats/blob/main/_extra/LibreTranslate.md)部署到家用服务器，再使用[libretrans](https://github.com/grantshandy/libretrans)。
 
 ![](libretrans.png)
 
